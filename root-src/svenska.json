@@ -1,0 +1,36 @@
+data {
+    verbs : [
+        {
+            grp : 1,
+            infinitiv : arbeta,
+            presens : arbetar,
+            preteritum : arbetade,
+            perfekt : arbetat,
+            en : work
+        },
+        {
+            grp : 1,
+            infinitiv : bada,
+            presens : badar,
+            preteritum : badade,
+            perfekt : badat,
+            en : bathe
+        },
+        {
+            grp : 1,
+            infinitiv : baka,
+            presens : bakar,
+            preteritum : bakade,
+            perfekt : bakat,
+            en : bake
+        },
+        {
+            grp : 1,
+            infinitiv : berätta,
+            presens : berättar,
+            preteritum : berättade,
+            perfekt : berättat,
+            en : bake
+        }
+    ]
+}
