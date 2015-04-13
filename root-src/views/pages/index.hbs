@@ -1,11 +1,34 @@
 ---
-title: SFi verbs
+title: Verb
 layout: _default.hbs
 
 ---
 
+<div ng-app="VerbsApp">
 
-<h1>{{title}}</h1>
+    <h1>{{title}}</h1>
+    
+    <section ng-controller="verbsListController">
 
-hello world!
+        <div class="verbList">
+            <article class="verbHeader fixedsticky">
+                <span class="verbCol">English</span>
+                <span class="verbCol">infinitiv</span>
+                <span class="verbCol">presens</span>
+                <span class="verbCol">preteritum</span>
+                <span class="verbCol">perfekt</span>
+            </article>
+
+            <article ng-repeat="verb in verbs track by $index" data-index="{{$index}}" class="verbRow verbGroup{{::verb.group}}">
+                <span class="verbCol" ng-bind="::verb.en" data-verbForm="english"></span>
+                <span class="verbCol" ng-bind="::verb.infinitiv" data-verbForm="infinitiv"></span>
+                <span class="verbCol" ng-bind="::verb.presens" data-verbForm="presens"></span>
+                <span class="verbCol" ng-bind="::verb.preteritum" data-verbForm="preteritum"></span>
+                <span class="verbCol" ng-bind="::verb.perfekt" data-verbForm="perfekt"></span>
+            </article>
+        </div>
+
+    </section>
+
+</div>
 

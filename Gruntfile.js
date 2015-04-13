@@ -20,20 +20,46 @@ module.exports = function(grunt) {
             },
         },
         copy: {
-            //bower: {
-            //    expand: true,
-            //    cwd: 'bower_components/',
-            //    src: ['**/*'],
-            //    dest: 'dev/bower_components'
-            //},
+            data: {
+                expand: true,
+                cwd: '<%= config.src %>/views/data/',
+                src: ['svenska.json'],
+                dest: '<%= config.dev %>/'
+            },
+            maps: {
+                expand: true,
+                cwd: 'node_modules/angular/',
+                src: ['*.map'],
+                dest: '<%= config.dev %>/js'
+            },
             assets: {
                 expand: true,
                 cwd: '<%= config.src %>/',
                 src: ['fonts/**/*', 'img/**/*'],
-                dest: '<%= config.dev %>/',
+                dest: '<%= config.dev %>/'
+            },
+            npm: {
+                expand: true,
+                cwd: '<%= config.src %>/',
+                src: ['fonts/**/*', 'img/**/*'],
+                dest: '<%= config.dev %>/'
             }
         },
+        jshint: {
+          files: ['Gruntfile.js', 'root-src/**/*.js'],
+          options: {
+            globals: {
+              jQuery: false
+            }
+          }
+        },
         watch: {
+            data: {
+                files: ['<%= config.src %>/views/data/*.json'],
+                options: {
+                    livereload: true,
+                },
+            },
             sass: {
                 files: ['<%= config.src %>/**/*.scss'],
                 tasks: ['sass'],
@@ -63,7 +89,10 @@ module.exports = function(grunt) {
             },
             dev: {
                 src: [
-                    '<%= config.src %>/js/**/*',
+                    'node_modules/jquery/dist/jquery.js',
+                    'node_modules/angular/angular.js',
+                    'node_modules/fixed-sticky/fixedsticky.js',
+                    '<%= config.src %>/js/*/*',
                 ],
                 dest: '<%= config.dev %>/js/<%= pkg.mainJs %>.js',
             },

@@ -1,0 +1,37 @@
+.verb {
+    &List {
+        width: 100vw;
+        position: relative;
+        overflow: scroll;
+        border-top: 1px solid #eee;
+    }
+    &Header {
+        top: 0;
+        width: 100%;
+        color: #666;
+        text-transform: uppercase;
+        font-weight: bold;
+        white-space: nowrap;
+        &>span {
+            border-bottom: 3px solid #666 !important;
+        }
+    }
+    &Row {
+        clear: both;
+        white-space: nowrap;
+    }
+    &Col {
+        display: inline-block;
+        width: 20vw;
+        min-width: 8em;
+        margin-right: -5px;
+        padding: 0.5em 0.3em;
+        overflow: hidden;
+        background-color: #eee;
+        border-bottom: 1px solid #fff;
+        &:first-child {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+    }
+}

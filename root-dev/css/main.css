@@ -1,3 +1,64 @@
+html {
+  box-sizing: border-box; }
 
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  margin: 0;
+  font-family: avenir;
+  font-size: 16px; }
+
+.fixedsticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky; }
+
+/* When position: sticky is supported but native behavior is ignored */
+.fixedsticky-withoutfixedfixed .fixedsticky-off,
+.fixed-supported .fixedsticky-off {
+  position: inherit; }
+
+.fixedsticky-withoutfixedfixed .fixedsticky-on,
+.fixed-supported .fixedsticky-on {
+  position: fixed; }
+
+.fixedsticky-dummy {
+  display: none; }
+
+.fixedsticky-on + .fixedsticky-dummy {
+  display: block; }
+
+.verbList {
+  width: 100vw;
+  position: relative;
+  overflow: scroll;
+  border-top: 1px solid #eee; }
+.verbHeader {
+  top: 0;
+  width: 100%;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: bold;
+  white-space: nowrap; }
+  .verbHeader > span {
+    border-bottom: 3px solid #666 !important; }
+.verbRow {
+  clear: both;
+  white-space: nowrap; }
+.verbCol {
+  display: inline-block;
+  width: 20vw;
+  min-width: 8em;
+  margin-right: -5px;
+  padding: 0.5em 0.3em;
+  overflow: hidden;
+  background-color: #eee;
+  border-bottom: 1px solid #fff; }
+  .verbCol:first-child {
+    background-color: #fff;
+    border-bottom: 1px solid #eee; }
 
 /*# sourceMappingURL=main.css.map */

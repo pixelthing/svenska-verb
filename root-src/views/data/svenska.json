@@ -1,0 +1,462 @@
+{
+    "data" : {
+        "verbs" : [
+            {
+                "group" : 1,
+                "infinitiv" : "arbeta",
+                "presens" : "arbetar",
+                "preteritum" : "arbetade",
+                "perfekt" : "arbetat",
+                "en" : "work"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "be",
+                "presens" : "ber",
+                "preteritum" : "bad",
+                "perfekt" : "bett",
+                "en" : "prey"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "bjuda",
+                "presens" : "bjuder",
+                "preteritum" : "bjöd",
+                "perfekt" : "bjudit",
+                "en" : "treat"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "bli",
+                "presens" : "blir",
+                "preteritum" : "blev",
+                "perfekt" : "blivit",
+                "en" : "become"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "bryta",
+                "presens" : "bryter",
+                "preteritum" : "bröt",
+                "perfekt" : "brutit",
+                "en" : "break"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "bära",
+                "presens" : "bär",
+                "preteritum" : "bar",
+                "perfekt" : "burit",
+                "en" : "carry"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "dricka",
+                "presens" : "dricker",
+                "preteritum" : "drack",
+                "perfekt" : "druckit",
+                "en" : "drink"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "dö",
+                "presens" : "dör",
+                "preteritum" : "dog",
+                "perfekt" : "dött",
+                "en" : "die"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "falla",
+                "presens" : "faller",
+                "preteritum" : "föll",
+                "perfekt" : "fallit",
+                "en" : "fall"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "finna",
+                "presens" : "finner",
+                "preteritum" : "fann",
+                "perfekt" : "funnit",
+                "en" : "find"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "finnas",
+                "presens" : "finns",
+                "preteritum" : "fanns",
+                "perfekt" : "funnits",
+                "en" : "exists"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "flyga",
+                "presens" : "flyger",
+                "preteritum" : "flög",
+                "perfekt" : "flugit",
+                "en" : "fly"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "fortsätta",
+                "presens" : "fortsätter",
+                "preteritum" : "fortsätte",
+                "perfekt" : "fortsätt",
+                "en" : "fly"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "frysa",
+                "presens" : "fryser",
+                "preteritum" : "frös",
+                "perfekt" : "frusit",
+                "en" : "freeze"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "få",
+                "presens" : "får",
+                "preteritum" : "fick",
+                "perfekt" : "fått",
+                "en" : "recieve"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "förstå",
+                "presens" : "förstå",
+                "preteritum" : "förstod",
+                "perfekt" : "förstått",
+                "en" : "understand"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "ge",
+                "presens" : "ger",
+                "preteritum" : "gav",
+                "perfekt" : "gett (givit)",
+                "en" : "give"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "gråta",
+                "presens" : "gråter",
+                "preteritum" : "grät",
+                "perfekt" : "gråtit",
+                "en" : "cry"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "gå",
+                "presens" : "går",
+                "preteritum" : "gick",
+                "perfekt" : "gått",
+                "en" : "go/walk"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "göra",
+                "presens" : "gör",
+                "preteritum" : "gjorde",
+                "perfekt" : "gjort",
+                "en" : "do/make"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "ha",
+                "presens" : "har",
+                "preteritum" : "hade",
+                "perfekt" : "haft",
+                "en" : "have"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "hinna",
+                "presens" : "hinner",
+                "preteritum" : "hann",
+                "perfekt" : "hunnit",
+                "en" : "made it"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "hålla",
+                "presens" : "håller",
+                "preteritum" : "höll",
+                "perfekt" : "hållit",
+                "en" : "hold"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "knyta",
+                "presens" : "knyter",
+                "preteritum" : "knöt",
+                "perfekt" : "knutit",
+                "en" : "tie"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "komma",
+                "presens" : "kommer",
+                "preteritum" : "kom",
+                "perfekt" : "kommit",
+                "en" : "come"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "krypa",
+                "presens" : "kryper",
+                "preteritum" : "kröp",
+                "perfekt" : "krupit",
+                "en" : "creep/crawl"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "kunna",
+                "presens" : "kunner",
+                "preteritum" : "kunde",
+                "perfekt" : "kunnit",
+                "en" : "could/may"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "le",
+                "presens" : "ler",
+                "preteritum" : "log",
+                "perfekt" : "lett",
+                "en" : "smile"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "ligga",
+                "presens" : "ligger",
+                "preteritum" : "låg",
+                "perfekt" : "legat",
+                "en" : "put down/lays"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "ljuga",
+                "presens" : "ljuger",
+                "preteritum" : "ljög",
+                "perfekt" : "ljugit",
+                "en" : "put down/is"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "låta",
+                "presens" : "låter",
+                "preteritum" : "lät",
+                "perfekt" : "låtit",
+                "en" : "let"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "lägga",
+                "presens" : "lägger",
+                "preteritum" : "lade",
+                "perfekt" : "lagt",
+                "en" : "add"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "-",
+                "presens" : "måste",
+                "preteritum" : "måste",
+                "perfekt" : "har måste",
+                "en" : "must"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "rida",
+                "presens" : "rider",
+                "preteritum" : "red",
+                "perfekt" : "ridit",
+                "en" : "ride"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "se",
+                "presens" : "ser",
+                "preteritum" : "såg",
+                "perfekt" : "sett",
+                "en" : "see"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "sitta",
+                "presens" : "sitter",
+                "preteritum" : "satt",
+                "perfekt" : "suttit",
+                "en" : "sit"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "sjunga",
+                "presens" : "sjunger",
+                "preteritum" : "sjöng",
+                "perfekt" : "sjungit",
+                "en" : "sing"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "skjuta",
+                "presens" : "skjuter",
+                "preteritum" : "sköt",
+                "perfekt" : "skjutit",
+                "en" : "shoot"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "skola",
+                "presens" : "ska",
+                "preteritum" : "skulle",
+                "perfekt" : "-",
+                "en" : "will/would"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "skriva",
+                "presens" : "skriver",
+                "preteritum" : "skrev",
+                "perfekt" : "skrivit",
+                "en" : "write"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "skära",
+                "presens" : "skär",
+                "preteritum" : "skar",
+                "perfekt" : "skutit",
+                "en" : "cut"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "slå",
+                "presens" : "slår",
+                "preteritum" : "slog",
+                "perfekt" : "slagit",
+                "en" : "beat"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "snyta",
+                "presens" : "snyter",
+                "preteritum" : "snöt",
+                "perfekt" : "snutit",
+                "en" : "blow"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "sova",
+                "presens" : "sover",
+                "preteritum" : "sov",
+                "perfekt" : "sovit",
+                "en" : "sleep"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "springa",
+                "presens" : "springer",
+                "preteritum" : "sprang",
+                "perfekt" : "sprungit",
+                "en" : "run"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "stiga",
+                "presens" : "stiger",
+                "preteritum" : "steg",
+                "perfekt" : "stigit",
+                "en" : "rise"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "stjäla",
+                "presens" : "stjäl",
+                "preteritum" : "stal",
+                "perfekt" : "stulit",
+                "en" : "steal"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "stryka",
+                "presens" : "stryker",
+                "preteritum" : "strök",
+                "perfekt" : "strukit",
+                "en" : "emphasise"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "svära",
+                "presens" : "svär",
+                "preteritum" : "svor",
+                "perfekt" : "svurit",
+                "en" : "swear"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "sälja",
+                "presens" : "säljer",
+                "preteritum" : "sålde",
+                "perfekt" : "sålt",
+                "en" : "sell"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "sätta",
+                "presens" : "sätter",
+                "preteritum" : "satte",
+                "perfekt" : "suttit",
+                "en" : "sit"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "ta",
+                "presens" : "tar",
+                "preteritum" : "tog",
+                "perfekt" : "tagit",
+                "en" : "take"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "vara",
+                "presens" : "är",
+                "preteritum" : "var",
+                "perfekt" : "varit",
+                "en" : "be"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "veta",
+                "presens" : "vet",
+                "preteritum" : "visste",
+                "perfekt" : "vetat",
+                "en" : "know"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "vilja",
+                "presens" : "vill",
+                "preteritum" : "ville",
+                "perfekt" : "vetat",
+                "en" : "want"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "vinna",
+                "presens" : "vinner",
+                "preteritum" : "vann",
+                "perfekt" : "vunnit",
+                "en" : "win"
+            },
+            {
+                "group" : 4,
+                "infinitiv" : "äta",
+                "presens" : "äter",
+                "preteritum" : "åt",
+                "perfekt" : "ätit",
+                "en" : "eat"
+            }
+        ]
+    }
+}
