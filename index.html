@@ -23,13 +23,11 @@
     
     <section ng-controller="verbsListController">
 
-        <h1>
-            Sfi Verb
-            <small></small>
-        </h1>
+
 
         <div class="verbList">
             <article class="verbHeader fixedsticky">
+                <input type="text" class="filter" ng-model="search" />
                 <span class="verbCol">English</span>
                 <span class="verbCol">infinitiv</span>
                 <span class="verbCol">presens</span>
@@ -37,7 +35,7 @@
                 <span class="verbCol">perfekt</span>
             </article>
 
-            <article ng-repeat="verb in verbs track by $index" data-index="" class="verbRow verbGroup">
+            <article ng-repeat="verb in verbs track by $index | filter:search:strict" data-index="" class="verbRow verbGroup">
                 <span class="verbCol" ng-bind="::verb.en" data-verbForm="english"></span>
                 <span class="verbCol" ng-bind="::verb.infinitiv" data-verbForm="infinitiv"></span>
                 <span class="verbCol" ng-bind="::verb.presens" data-verbForm="presens"></span>

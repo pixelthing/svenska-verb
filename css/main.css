@@ -31,6 +31,12 @@ body {
 .fixedsticky-on + .fixedsticky-dummy {
   display: block; }
 
+.filter {
+  display: block;
+  width: 92vw;
+  line-height: 2em;
+  margin: 0.5em auto; }
+
 .verbList {
   position: relative;
   width: 96vw;
@@ -40,12 +46,13 @@ body {
   top: 0;
   z-index: 3;
   width: 96vw;
-  height: 2.5em;
   color: #666;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.7em;
-  white-space: nowrap; }
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #eee; }
   .verbHeader > span {
     border-bottom: 3px solid #666 !important;
     z-index: 3; }
@@ -53,7 +60,8 @@ body {
   position: relative;
   clear: both;
   height: 2.5em;
-  white-space: nowrap; }
+  white-space: nowrap;
+  overflow: hidden; }
 .verbCol {
   display: inline-block;
   position: relative;
