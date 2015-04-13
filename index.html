@@ -1,0 +1,56 @@
+    <!doctype html>
+<!--[if lt IE 9 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> ><! <![endif]-->
+<html class="no-js" lang='en'>
+<!-- <![endif] -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Verb</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fc0">
+
+    <link rel="stylesheet" href="css/main.css" />
+
+</head>
+<body>
+
+    
+
+<div ng-app="VerbsApp">
+
+    <h1>Verb</h1>
+    
+    <section ng-controller="verbsListController">
+
+        <div class="verbList">
+            <article class="verbHeader fixedsticky">
+                <span class="verbCol">English</span>
+                <span class="verbCol">infinitiv</span>
+                <span class="verbCol">presens</span>
+                <span class="verbCol">preteritum</span>
+                <span class="verbCol">perfekt</span>
+            </article>
+
+            <article ng-repeat="verb in verbs track by $index" data-index="" class="verbRow verbGroup">
+                <span class="verbCol" ng-bind="::verb.en" data-verbForm="english"></span>
+                <span class="verbCol" ng-bind="::verb.infinitiv" data-verbForm="infinitiv"></span>
+                <span class="verbCol" ng-bind="::verb.presens" data-verbForm="presens"></span>
+                <span class="verbCol" ng-bind="::verb.preteritum" data-verbForm="preteritum"></span>
+                <span class="verbCol" ng-bind="::verb.perfekt" data-verbForm="perfekt"></span>
+            </article>
+        </div>
+
+    </section>
+
+</div>
+
+
+
+        <script src="js/main.js"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+
+</body>
+</html>
