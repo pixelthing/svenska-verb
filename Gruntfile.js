@@ -139,6 +139,12 @@ module.exports = function(grunt) {
                     },
                 ],
             },
+        },
+        'gh-pages': {
+            options: {
+                base: '<%= config.dev %>'
+            },
+            src: ['**']
         }
     });
 
@@ -149,5 +155,7 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['devbuild', 'watch']);
+
+    grunt.registerTask('deploy', ['devbuild', 'gh-pages']);
 
 };
