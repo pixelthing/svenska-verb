@@ -34,7 +34,6 @@ body {
 .verbList {
   width: 100vw;
   position: relative;
-  overflow: scroll;
   border-top: 1px solid #eee; }
 .verbHeader {
   top: 0;
