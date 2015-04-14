@@ -4,3 +4,5 @@ node_modules
 *.scssc
 
 npm-debug.log
+
+root-src/views/pages/index.html
