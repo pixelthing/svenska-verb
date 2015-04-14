@@ -5,4 +5,4 @@ node_modules
 
 npm-debug.log
 
-root-src/views/pages/index.html
+.grunt/grunt-gh-pages/gh-pages/src/
