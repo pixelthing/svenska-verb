@@ -90,7 +90,9 @@ module.exports = function(grunt) {
             dev: {
                 src: [
                     'node_modules/jquery/dist/jquery.js',
+                    'node_modules/hammerjs/hammer.js',
                     'node_modules/angular/angular.js',
+                    'node_modules/angular-hammer/angular.hammer.js',
                     'node_modules/fixed-sticky/fixedsticky.js',
                     '<%= config.src %>/js/*/*',
                 ],

@@ -28,7 +28,6 @@
         <div class="verbList">
             <article class="verbHeader fixedsticky">
                 <input type="search" class="verbFilter" ng-model="search" placeholder="search for a verb" />
-                <span class="verbCol verbColTrans">English</span>
                 <span class="verbCol">infinitiv</span>
                 <span class="verbCol">presens</span>
                 <span class="verbCol">preteritum</span>
@@ -37,10 +36,12 @@
 
             <article ng-repeat="verb in verbs | filter:search" data-index="" class="verbRow verbGroup{{::verb.group}}">
                 <span class="verbCol verbColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
-                <span class="verbCol" ng-bind="::verb.infinitiv" data-verbForm="infinitiv"></span>
-                <span class="verbCol" ng-bind="::verb.presens" data-verbForm="presens"></span>
-                <span class="verbCol" ng-bind="::verb.preteritum" data-verbForm="preteritum"></span>
-                <span class="verbCol" ng-bind="::verb.perfekt" data-verbForm="perfekt"></span>
+                <div class="verbColWrap" hm-panright="panRight" hm-panend="panEnd">
+                    <span class="verbCol" ng-bind="::verb.infinitiv" data-verbForm="infinitiv"></span>
+                    <span class="verbCol" ng-bind="::verb.presens" data-verbForm="presens"></span>
+                    <span class="verbCol" ng-bind="::verb.preteritum" data-verbForm="preteritum"></span>
+                    <span class="verbCol" ng-bind="::verb.perfekt" data-verbForm="perfekt"></span>
+                </div>
             </article>
 
     </section>
