@@ -35773,12 +35773,10 @@ var minlengthDirective = function() {
 	}
 
 })( this, jQuery );
-var verbsApp = angular.module('VerbsApp', []);
-verbsApp.controller('verbsListController', function($scope, verbsFactory) {
+var verbsApp = angular.module('verbsApp', []);
+verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($scope, verbsFactory) {
 
-    $scope.verbs = [{
-        'en' : 'bob'
-    }];
+    $scope.verbs = [];
     $scope.verbsCount = 0;
 
     verbsFactory.getVerbs()
@@ -35787,7 +35785,7 @@ verbsApp.controller('verbsListController', function($scope, verbsFactory) {
             $scope.verbsCount = verbs.length;
         });
 
-});
+}]);
 verbsApp.factory('verbsFactory', ['$http', function verbsFactory($http) {
 
     var verbs = [];
