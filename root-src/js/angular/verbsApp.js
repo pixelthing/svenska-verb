@@ -1,1 +1,1 @@
-var verbsApp = angular.module('VerbsApp', []);
+var verbsApp = angular.module('verbsApp', []);

@@ -4,14 +4,15 @@ layout: _default.hbs
 
 ---
 
-<div ng-app="VerbsApp">
+<div ng-app="verbsApp">
 
-    <h1>{{title}}</h1>
+    <h1 class="verbTitle">{{title}}</h1>
     
-    <section ng-controller="verbsListController">
+    <section ng-controller="VerbsListController">
 
         <div class="verbList">
             <article class="verbHeader fixedsticky">
+                <input type="search" class="verbFilter" ng-model="search" />
                 <span class="verbCol">English</span>
                 <span class="verbCol">infinitiv</span>
                 <span class="verbCol">presens</span>
@@ -19,14 +20,13 @@ layout: _default.hbs
                 <span class="verbCol">perfekt</span>
             </article>
 
-            <article ng-repeat="verb in verbs track by $index" data-index="{{$index}}" class="verbRow verbGroup{{::verb.group}}">
+            <article ng-repeat="verb in verbs | filter:search" data-index="" class="verbRow verbGroup">
                 <span class="verbCol" ng-bind="::verb.en" data-verbForm="english"></span>
                 <span class="verbCol" ng-bind="::verb.infinitiv" data-verbForm="infinitiv"></span>
                 <span class="verbCol" ng-bind="::verb.presens" data-verbForm="presens"></span>
                 <span class="verbCol" ng-bind="::verb.preteritum" data-verbForm="preteritum"></span>
                 <span class="verbCol" ng-bind="::verb.perfekt" data-verbForm="perfekt"></span>
             </article>
-        </div>
 
     </section>
 

@@ -72,7 +72,7 @@ module.exports = function(grunt) {
                 tasks: ['concat'],
             },
             assemble: {
-                files: ['<%= config.src %>/views/{,*/}*.{hbs,json}'],
+                files: ['<%= config.src %>/views/{,*/}*.{html,hbs,json}'],
                 tasks: ['assemble'],
             },
             livereload: {
