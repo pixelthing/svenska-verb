@@ -83,20 +83,21 @@ body {
 .verbRow {
   position: relative;
   clear: both;
-  height: 2.5em;
   white-space: nowrap;
-  overflow: hidden; }
+  overflow: hidden;
+  line-height: 0; }
 .verbCol {
   display: inline-block;
   position: relative;
   z-index: 2;
   width: 25%;
   min-width: 5rem;
-  margin-right: -0.28em;
+  margin: 0 -0.28em 0 0;
   padding: 0.5em 0.3rem;
   overflow: hidden;
   background-color: #eee;
-  border-bottom: 1px solid #fff; }
+  border-bottom: 1px solid #fff;
+  line-height: 2; }
   .verbColTrans {
     display: none;
     position: absolute;
