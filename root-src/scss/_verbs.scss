@@ -1,3 +1,5 @@
+$header-height: 124px;
+
 .filter {
     display: block;
     width: 92vw;
@@ -6,13 +8,22 @@
 }
 
 .verb {
+    &Header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        height: $header-height;
+        background-color: #fff;
+        overflow: hidden;
+    }
     &Title {
         position: relative;
         margin: 0;
         padding: 0.3em 2vw;
         color: #fff;
         background-color: #005B99;
-        border-bottom: 0.5em solid #fff;
         font-size: 1rem;
         &:after {
             content: '';
@@ -27,7 +38,8 @@
     &Filter {
         -webkit-appearance: none;
         display: block;
-        width: 92vw;
+        width: 96vw;
+        max-width: 980px;
         margin: 0.5em auto;
         border: 1px solid #ddd;
         font-size: 1rem;
@@ -36,21 +48,22 @@
     &List {
         position: relative;
         width: 96vw;
-        margin: 0 auto;
+        max-width: 980px;
+        margin: $header-height auto 0;
         border-top: 1px solid #eee;
         overflow: hidden;
     }
-    &Header {
-        top: 0;
-        z-index: 3;
+    &ListHeader {
         width: 96vw;
+        max-width: 980px;
+        margin: 0 auto;
         color: #666;
+        background-color: #eee;
         text-transform: uppercase;
         font-weight: bold;
         font-size: 0.7em;
         white-space: nowrap;
         overflow: hidden;
-        background-color: #eee;
         &>span {
             border-bottom: 3px solid #666 !important;
             z-index: 3;

@@ -19,32 +19,32 @@
 
     
 
-<div ng-app="verbsApp">
+<div ng-app="verbsApp" ng-controller="VerbsListController">
 
-    <h1 class="verbTitle">Sfi Verb</h1>
-    
-    <section ng-controller="VerbsListController">
+    <article class="verbHeader fixedsticky">
+        <h1 class="verbTitle">Sfi Verb</h1>
+        <input type="search" class="verbFilter" ng-model="search" placeholder="search for a verb" />
+        <div class="verbListHeader">
+            <span class="verbCol">infinitiv</span>
+            <span class="verbCol">presens</span>
+            <span class="verbCol">preteritum</span>
+            <span class="verbCol">perfekt</span>
+        </div>
+    </article>
 
-        <div class="verbList">
-            <article class="verbHeader fixedsticky">
-                <input type="search" class="verbFilter" ng-model="search" placeholder="search for a verb" />
-                <span class="verbCol">infinitiv</span>
-                <span class="verbCol">presens</span>
-                <span class="verbCol">preteritum</span>
-                <span class="verbCol">perfekt</span>
-            </article>
+    <div class="verbList">
 
-            <article ng-repeat="verb in verbs | filter:search" data-index="" class="verbRow verbGroup{{::verb.group}}">
-                <span class="verbCol verbColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
-                <div class="verbColWrap" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":30}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
-                    <span class="verbCol" ng-bind="::verb.infinitiv" data-verbForm="infinitiv"></span>
-                    <span class="verbCol" ng-bind="::verb.presens" data-verbForm="presens"></span>
-                    <span class="verbCol" ng-bind="::verb.preteritum" data-verbForm="preteritum"></span>
-                    <span class="verbCol" ng-bind="::verb.perfekt" data-verbForm="perfekt"></span>
-                </div>
-            </article>
+        <article ng-repeat="verb in verbs | filter:search" data-index="" class="verbRow verbGroup{{::verb.group}}">
+            <span class="verbCol verbColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
+            <div class="verbColWrap" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":30}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
+                <span class="verbCol" ng-bind="::verb.infinitiv" data-verbForm="infinitiv"></span>
+                <span class="verbCol" ng-bind="::verb.presens" data-verbForm="presens"></span>
+                <span class="verbCol" ng-bind="::verb.preteritum" data-verbForm="preteritum"></span>
+                <span class="verbCol" ng-bind="::verb.perfekt" data-verbForm="perfekt"></span>
+            </div>
+        </article>
 
-    </section>
+    </div>
 
 </div>
 

@@ -34,18 +34,18 @@ verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($
         var deltaX = event.deltaX;
         var deltaY = event.deltaY;
         if (Math.abs(deltaY)/3 > Math.abs(deltaX) || deltaY > 20 ) {
-            event.element.context.style[prefix.transform] = 'translate(0,0)';
+            event.element['0'].style[prefix.transform] = 'translate(0,0)';
             return;
         }
         if (deltaX > 0) {
-            event.element.context.style[prefix.transform] = 'translate(' + deltaX + 'px,0)';
+            event.element['0'].style[prefix.transform] = 'translate(' + deltaX + 'px,0)';
         }
     }
     $scope.panEnd = function(event) {
-        event.element.context.style[prefix.transition] = prefix.css + 'transform 200ms';
-        event.element.context.style[prefix.transform] = 'translate(0,0)';
+        event.element['0'].style[prefix.transition] = prefix.css + 'transform 200ms';
+        event.element['0'].style[prefix.transform] = 'translate(0,0)';
         setTimeout(function() {
-            event.element.context.style[prefix.transition] = 'none';
+            event.element['0'].style[prefix.transition] = 'none';
         },200)
     }
 

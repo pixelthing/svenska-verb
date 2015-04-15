@@ -9,7 +9,7 @@ It's build with json/Angular 1.x to:
 - allow me to extend the data model later with translations, meta info, etc
 - allow me to explore Angular alternatives, against a simple Angular baseline.
 
-It does also have jquery (mainly to get my fixed/sticky positioning emulation up and running quickly), and it's use will hopefully be paired back in future. It's also built with grunt and assemble.
+It's also built with grunt and assemble.
 
 It's going to be built pretty iteratively, so it's starting as little more than a filtered list, and I'll add functionality as I find I need it to do more stuff.
 

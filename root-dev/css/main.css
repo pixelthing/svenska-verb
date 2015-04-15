@@ -9,41 +9,27 @@ body {
   font-family: avenir;
   font-size: 16px; }
 
-.fixedsticky {
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky; }
-
-/* When position: sticky is supported but native behavior is ignored */
-.fixedsticky-withoutfixedfixed .fixedsticky-off,
-.fixed-supported .fixedsticky-off {
-  position: inherit; }
-
-.fixedsticky-withoutfixedfixed .fixedsticky-on,
-.fixed-supported .fixedsticky-on {
-  position: fixed; }
-
-.fixedsticky-dummy {
-  display: none; }
-
-.fixedsticky-on + .fixedsticky-dummy {
-  display: block; }
-
 .filter {
   display: block;
   width: 92vw;
   line-height: 2em;
   margin: 0.5em auto; }
 
+.verbHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  height: 124px;
+  background-color: #fff;
+  overflow: hidden; }
 .verbTitle {
   position: relative;
   margin: 0;
   padding: 0.3em 2vw;
   color: #fff;
   background-color: #005B99;
-  border-bottom: 0.5em solid #fff;
   font-size: 1rem; }
   .verbTitle:after {
     content: '';
@@ -56,7 +42,8 @@ body {
 .verbFilter {
   -webkit-appearance: none;
   display: block;
-  width: 92vw;
+  width: 96vw;
+  max-width: 980px;
   margin: 0.5em auto;
   border: 1px solid #ddd;
   font-size: 1rem;
@@ -64,21 +51,22 @@ body {
 .verbList {
   position: relative;
   width: 96vw;
-  margin: 0 auto;
+  max-width: 980px;
+  margin: 124px auto 0;
   border-top: 1px solid #eee;
   overflow: hidden; }
-.verbHeader {
-  top: 0;
-  z-index: 3;
+.verbListHeader {
   width: 96vw;
+  max-width: 980px;
+  margin: 0 auto;
   color: #666;
+  background-color: #eee;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.7em;
   white-space: nowrap;
-  overflow: hidden;
-  background-color: #eee; }
-  .verbHeader > span {
+  overflow: hidden; }
+  .verbListHeader > span {
     border-bottom: 3px solid #666 !important;
     z-index: 3; }
 .verbRow {
