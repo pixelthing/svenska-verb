@@ -1,5 +1,11 @@
 $header-height: 124px;
 
+$color-group1:     #D92B8B;
+$color-group2a:    #F22F1D;
+$color-group2b:    #F26E22;
+$color-group3:     #739F2C;
+$color-group4:     #345AB2;
+
 .filter {
     display: block;
     width: 92vw;
@@ -52,21 +58,20 @@ $header-height: 124px;
         margin: $header-height auto 0;
         border-top: 1px solid #eee;
         overflow: hidden;
-    }
-    &ListHeader {
-        width: 96vw;
-        max-width: 980px;
-        margin: 0 auto;
-        color: #666;
-        background-color: #eee;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 0.7em;
-        white-space: nowrap;
-        overflow: hidden;
-        &>span {
-            border-bottom: 3px solid #666 !important;
-            z-index: 3;
+        &Header {
+            width: 96vw;
+            max-width: 980px;
+            margin: 0 auto;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 0.7em;
+            white-space: nowrap;
+            overflow: hidden;
+            &>span {
+                border-bottom: 3px solid #666 !important;
+                z-index: 3;
+            }
         }
     }
     &Row {
@@ -83,26 +88,65 @@ $header-height: 124px;
         margin: 0 -0.28em 0 0;
         padding: 0.5em 0.3rem;
         overflow: hidden;
-        background-color: #eee;
-        border-bottom: 1px solid #fff;
+        background-color: #fff;
         line-height: 2;
+        .verbRow:nth-child(odd) & {
+            background-color: #f6f6f6;
+        }
         &Wrap {
             position: relative;
             z-index: 2;
             -webkit-transform: translate3d(0,0,0);
             -moz-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
+            &:before {
+                content: attr(data-verbGroup);
+                position: absolute;
+                left: 2px;
+                top: 53%;
+                z-index: 1;
+                margin-top: -0.5em;
+                color: #fff !important;
+                font-size: 0.5em;
+                line-height: 1;
+            }
         }
         &Trans {
             position: absolute;
             top: 0;
             left: 0;
+            right: 0;
             width: auto;
             z-index: 1;
-            background-color: #fff;
-            border-bottom: 1px solid #eee;
+            color: #fff;
+            background-color: #000 !important;
             font-weight: bold;
             text-transform: uppercase;
+        }
+        &Infinitiv {
+            position: relative;
+            font-weight: 600;
+            border-left: 10px solid #999;
+            .verbGroup1 & {
+                border-color:  $color-group1;
+                color:         $color-group1;
+            }
+            .verbGroup2a & {
+                border-color:  $color-group2a;
+                color:         $color-group2a;
+            }
+            .verbGroup2b & {
+                border-color:  $color-group2b;
+                color:         $color-group2b;
+            }
+            .verbGroup3 & {
+                border-color:  $color-group3;
+                color:         $color-group3;
+            }
+            .verbGroup4 & {
+                border-color:  $color-group4;
+                color:         $color-group4;
+            }
         }
     }
 }

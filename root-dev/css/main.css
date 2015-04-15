@@ -55,20 +55,19 @@ body {
   margin: 124px auto 0;
   border-top: 1px solid #eee;
   overflow: hidden; }
-.verbListHeader {
-  width: 96vw;
-  max-width: 980px;
-  margin: 0 auto;
-  color: #666;
-  background-color: #eee;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.7em;
-  white-space: nowrap;
-  overflow: hidden; }
-  .verbListHeader > span {
-    border-bottom: 3px solid #666 !important;
-    z-index: 3; }
+  .verbListHeader {
+    width: 96vw;
+    max-width: 980px;
+    margin: 0 auto;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.7em;
+    white-space: nowrap;
+    overflow: hidden; }
+    .verbListHeader > span {
+      border-bottom: 3px solid #666 !important;
+      z-index: 3; }
 .verbRow {
   position: relative;
   clear: both;
@@ -82,24 +81,55 @@ body {
   margin: 0 -0.28em 0 0;
   padding: 0.5em 0.3rem;
   overflow: hidden;
-  background-color: #eee;
-  border-bottom: 1px solid #fff;
+  background-color: #fff;
   line-height: 2; }
+  .verbRow:nth-child(odd) .verbCol {
+    background-color: #f6f6f6; }
   .verbColWrap {
     position: relative;
     z-index: 2;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
+    .verbColWrap:before {
+      content: attr(data-verbGroup);
+      position: absolute;
+      left: 2px;
+      top: 53%;
+      z-index: 1;
+      margin-top: -0.5em;
+      color: #fff !important;
+      font-size: 0.5em;
+      line-height: 1; }
   .verbColTrans {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     width: auto;
     z-index: 1;
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
+    color: #fff;
+    background-color: #000 !important;
     font-weight: bold;
     text-transform: uppercase; }
+  .verbColInfinitiv {
+    position: relative;
+    font-weight: 600;
+    border-left: 10px solid #999; }
+    .verbGroup1 .verbColInfinitiv {
+      border-color: #D92B8B;
+      color: #D92B8B; }
+    .verbGroup2a .verbColInfinitiv {
+      border-color: #F22F1D;
+      color: #F22F1D; }
+    .verbGroup2b .verbColInfinitiv {
+      border-color: #F26E22;
+      color: #F26E22; }
+    .verbGroup3 .verbColInfinitiv {
+      border-color: #739F2C;
+      color: #739F2C; }
+    .verbGroup4 .verbColInfinitiv {
+      border-color: #345AB2;
+      color: #345AB2; }
 
 /*# sourceMappingURL=main.css.map */

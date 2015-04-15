@@ -21,11 +21,11 @@ layout: _default.hbs
 
         <article ng-repeat="verb in verbs | filter:search" data-index="" class="verbRow verbGroup\{{::verb.group}}">
             <span class="verbCol verbColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
-            <div class="verbColWrap" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":20}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
-                <span class="verbCol" ng-bind="::verb.infinitiv" data-verbForm="infinitiv"></span>
-                <span class="verbCol" ng-bind="::verb.presens" data-verbForm="presens"></span>
-                <span class="verbCol" ng-bind="::verb.preteritum" data-verbForm="preteritum"></span>
-                <span class="verbCol" ng-bind="::verb.perfekt" data-verbForm="perfekt"></span>
+            <div class="verbColWrap" data-verbGroup="\{{::verb.group}}" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":20}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
+                <span class="verbCol verbColInfinitiv" ng-bind="::verb.infinitiv"></span>
+                <span class="verbCol" ng-bind="::verb.presens"></span>
+                <span class="verbCol" ng-bind="::verb.preteritum"></span>
+                <span class="verbCol" ng-bind="::verb.perfekt"></span>
             </div>
         </article>
 
