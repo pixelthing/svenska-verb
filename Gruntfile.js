@@ -56,6 +56,7 @@ module.exports = function(grunt) {
         watch: {
             data: {
                 files: ['<%= config.src %>/views/data/*.json'],
+                tasks: ['copy'],
                 options: {
                     livereload: true,
                 },

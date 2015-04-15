@@ -2,7 +2,8 @@ verbsApp.factory('verbsFactory', ['$http', function verbsFactory($http) {
 
     var verbs = [];
     var state = {
-        'isLoading': false
+        'isLoading': false,
+        'filterGroup': false
     };
 
     var getData = function() {

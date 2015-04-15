@@ -2,6 +2,7 @@ verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($
 
     $scope.verbs = [];
     $scope.verbsCount = 0;
+    $scope.filterCurrentGroup = null;
 
     var prefix = (function () {
         var styles = window.getComputedStyle(document.documentElement, ''),
@@ -47,6 +48,20 @@ verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($
         setTimeout(function() {
             event.element['0'].style[prefix.transition] = 'none';
         },200)
+    }
+
+    $scope.filterGroup = function(group) {
+        $scope.filterCurrentGroup = ( $scope.filterCurrentGroup === group ? null : group );
+    }
+
+    $scope.filterGroupFilter = function(value, index) {
+        if ($scope.filterCurrentGroup != null) {
+            if ('' + value.group === '' + $scope.filterCurrentGroup) {
+                return value;
+            }
+        } else {
+            return value;
+        }
     }
 
     verbsFactory

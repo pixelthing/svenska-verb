@@ -10,6 +10,31 @@
                 "en" : "work"
             },
             {
+                "group" : "2a",
+                "infinitiv" : "anmäla",
+                "presens" : "anmäler",
+                "preteritum" : "anmälde",
+                "perfekt" : "anmält",
+                "reflexive" : true,
+                "en" : "notify"
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "besöka",
+                "presens" : "besöker",
+                "preteritum" : "besökte",
+                "perfekt" : "besökt",
+                "en" : "visit"
+            },
+            {
+                "group" : "3",
+                "infinitiv" : "bero på",
+                "presens" : "beror på",
+                "preteritum" : "berodde på",
+                "perfekt" : "berott på",
+                "en" : "depend on"
+            },
+            {
                 "group" : 4,
                 "infinitiv" : "be",
                 "presens" : "ber",

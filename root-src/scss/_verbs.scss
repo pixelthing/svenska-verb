@@ -1,17 +1,12 @@
-$header-height: 124px;
+$header-height: 100px;
 
-$color-group1:     #D92B8B;
+$color-flag-blue:  #005B99;
+$color-flag-yellow:#ffcc00;
+$color-group1:     #67009A;
 $color-group2a:    #F22F1D;
 $color-group2b:    #F26E22;
 $color-group3:     #739F2C;
-$color-group4:     #345AB2;
-
-.filter {
-    display: block;
-    width: 92vw;
-    line-height: 2em;
-    margin: 0.5em auto;
-}
+$color-group4:     #6D95D8;
 
 .verb {
     &Header {
@@ -20,36 +15,88 @@ $color-group4:     #345AB2;
         left: 0;
         right: 0;
         z-index: 3;
-        height: $header-height;
         background-color: #fff;
         overflow: hidden;
     }
     &Title {
         position: relative;
         margin: 0;
-        padding: 0.3em 2vw;
+        padding: 0.3em 4.4em;
         color: #fff;
-        background-color: #005B99;
+        background-color: $color-flag-blue;
         font-size: 1rem;
         &:after {
             content: '';
             position: absolute;
-            right: 2em;
-            width: 2em;
+            left: 1.45em;
+            width: 1.45em;
             top: 0;
             bottom: 0;
-            background-color: #fc0;
+            background-color: $color-flag-yellow;
         }
     }
     &Filter {
         -webkit-appearance: none;
         display: block;
-        width: 96vw;
+        float: left;
+        width: 47vw;
         max-width: 980px;
-        margin: 0.5em auto;
+        margin: 0.5em 0 0.5em 2vw;
+        padding: 1px;
         border: 1px solid #ddd;
+        border-radius: 4px;
         font-size: 1rem;
         line-height: 2em;
+        outline: none;
+        &:focus {
+            border-color: #666;
+        }
+    }
+    &FilterGroup {
+        margin: 0.5em 2vw 0.5em 51vw;
+        overflow: hidden;
+        &Option {
+            -webkit-appearance: none;
+            display: block;
+            float: left;
+            width: 20%;
+            padding: 1px;
+            color: #fff;
+            background-color: #999;
+            border: none;
+            font-size: 0.75rem;
+            line-height: 2.9em;
+            opacity: 0.3;
+            outline: none;
+            cursor: pointer;
+            @include transition(opacity 300ms);
+            &:first-child {
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+            &:last-child {
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+            &1 {
+                background-color:  $color-group1;
+            }
+            &2a {
+                background-color:  $color-group2a;
+            }
+            &2b {
+                background-color:  $color-group2b;
+            }
+            &3 {
+                background-color:  $color-group3;
+            }
+            &4 {
+                background-color:  $color-group4;
+            }
+            &Active {
+                opacity: 1;
+            }
+        }
     }
     &List {
         position: relative;
@@ -85,7 +132,7 @@ $color-group4:     #345AB2;
         display: inline-block;
         width: 25%;
         min-width: 5rem;
-        margin: 0 -0.28em 0 0;
+        margin: 0 -0.285em 0 0;
         padding: 0.5em 0.3rem;
         overflow: hidden;
         background-color: #fff;
@@ -105,17 +152,25 @@ $color-group4:     #345AB2;
                 left: 2px;
                 top: 53%;
                 z-index: 1;
+                width: 0.5em;
                 margin-top: -0.5em;
                 color: #fff !important;
                 font-size: 0.5em;
                 line-height: 1;
+                .verbGroup2a &,.verbGroup2b & {
+                    margin-top: -1em;
+                    border-color:  $color-group2a;
+                    color:         $color-group2a;
+                    word-break: break-word;
+                    white-space: pre-wrap;
+                }
             }
         }
         &Trans {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
+            right: 10px;
             width: auto;
             z-index: 1;
             color: #fff;
@@ -129,23 +184,18 @@ $color-group4:     #345AB2;
             border-left: 10px solid #999;
             .verbGroup1 & {
                 border-color:  $color-group1;
-                color:         $color-group1;
             }
             .verbGroup2a & {
                 border-color:  $color-group2a;
-                color:         $color-group2a;
             }
             .verbGroup2b & {
                 border-color:  $color-group2b;
-                color:         $color-group2b;
             }
             .verbGroup3 & {
                 border-color:  $color-group3;
-                color:         $color-group3;
             }
             .verbGroup4 & {
                 border-color:  $color-group4;
-                color:         $color-group4;
             }
         }
     }
