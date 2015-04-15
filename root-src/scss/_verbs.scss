@@ -89,8 +89,9 @@ $header-height: 124px;
         &Wrap {
             position: relative;
             z-index: 2;
-            -webkit-transform: translate(0,0);
-            transform: translate(0,0);
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
         }
         &Trans {
             position: absolute;
