@@ -55,20 +55,19 @@ body {
   margin: 124px auto 0;
   border-top: 1px solid #eee;
   overflow: hidden; }
-.verbListHeader {
-  width: 96vw;
-  max-width: 980px;
-  margin: 0 auto;
-  color: #666;
-  background-color: #eee;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.7em;
-  white-space: nowrap;
-  overflow: hidden; }
-  .verbListHeader > span {
-    border-bottom: 3px solid #666 !important;
-    z-index: 3; }
+  .verbListHeader {
+    width: 96vw;
+    max-width: 980px;
+    margin: 0 auto;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.7em;
+    white-space: nowrap;
+    overflow: hidden; }
+    .verbListHeader > span {
+      border-bottom: 3px solid #666 !important;
+      z-index: 3; }
 .verbRow {
   position: relative;
   clear: both;
@@ -82,22 +81,25 @@ body {
   margin: 0 -0.28em 0 0;
   padding: 0.5em 0.3rem;
   overflow: hidden;
-  background-color: #eee;
-  border-bottom: 1px solid #fff;
+  background-color: #fff;
   line-height: 2; }
+  .verbRow:nth-child(odd) .verbCol {
+    background-color: #f6f6f6; }
   .verbColWrap {
     position: relative;
     z-index: 2;
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0); }
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
   .verbColTrans {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     width: auto;
     z-index: 1;
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
+    color: #fff;
+    background-color: #000 !important;
     font-weight: bold;
     text-transform: uppercase; }
 
