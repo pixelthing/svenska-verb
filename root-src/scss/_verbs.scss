@@ -76,14 +76,19 @@
         &Wrap {
             position: relative;
             z-index: 2;
+            -webkit-transform: translate(0,0);
+            transform: translate(0,0);
         }
         &Trans {
             position: absolute;
             top: 0;
             left: 0;
+            width: auto;
             z-index: 1;
             background-color: #fff;
             border-bottom: 1px solid #eee;
+            font-weight: bold;
+            text-transform: uppercase;
         }
     }
 }
