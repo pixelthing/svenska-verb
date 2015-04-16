@@ -236,6 +236,7 @@ body {
   position: relative;
   width: 96vw;
   max-width: 980px;
+  min-height: calc( 100vh - 100px );
   margin: 100px auto 0;
   border-top: 1px solid #eee;
   overflow: hidden; }
@@ -360,5 +361,13 @@ body {
       border-color: #92BF11; }
     .vGroup4 .vColInfinitiv {
       border-color: #1EA5D8; }
+.vFooter {
+  margin-top: 15px;
+  padding: 0.5em 2vw;
+  color: #D6D5E8;
+  background: #818593;
+  font-size: 12px; }
+  .vFooter a {
+    color: #fff; }
 
 /*# sourceMappingURL=main.css.map */
