@@ -36,16 +36,20 @@ $color-group4:     #1EA5D8;
         }
     }
     &Filter {
-        position: relative;
         max-width: calc( 980px + 4vw );
         margin: 0 auto;
         padding: 0.5em 2vw;
         line-height: 0;
-        &Input {
-            -webkit-appearance: none;
+        &Form {
             float: left;
             display: block;
+            position: relative;
             width: 47%;
+        }
+        &Input {
+            -webkit-appearance: none;
+            display: block;
+            width: 100%;
             padding: 1px 0.5em;
             border: 1px solid #ddd;
             border-radius: 4px;
@@ -62,7 +66,7 @@ $color-group4:     #1EA5D8;
             }
             &Clear {
                 position: absolute;
-                right: 55%;
+                right: 0.5em;
                 top: 50%;
                 z-index: 1;
                 width: 1.2em;

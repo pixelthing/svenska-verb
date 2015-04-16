@@ -9,9 +9,9 @@ layout: _default.hbs
     <article class="vHeader fixedsticky">
         <div class="vTitle"></div>
         <div class="vFilter">
-            <form ng-submit="searchSubmit()">
+            <form class="vFilterForm" ng-submit="searchSubmit()">
                 <input type="search" class="vFilterInput" ng-model="search" placeholder="sök" ng-class="{vFilterInputActive : search.length}" />
-                <div class="vFilterInputClear" ng-if="search.length" ng-click="searchClear()">x</div>
+                <div class="vFilterInputClear ng-cloak" ng-if="search.length" ng-click="searchClear()">x</div>
             </form>
             <a href="javascript:void(0)" class="vFilterFocusTarget js-vFilterFocusTarget"></a>
             <div class="vFilterGroup">
