@@ -326,11 +326,12 @@ body {
       left: 2px;
       top: 53%;
       z-index: 1;
-      width: 0.5em;
+      width: 6px;
       margin-top: -0.5em;
       color: #fff !important;
       font-size: 0.5em;
-      line-height: 1; }
+      line-height: 1;
+      text-align: center; }
       .vGroup2a .vColWrap:before, .vGroup2b .vColWrap:before {
         margin-top: -1em;
         border-color: #F22F1D;
