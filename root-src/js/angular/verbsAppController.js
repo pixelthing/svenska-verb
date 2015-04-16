@@ -1,9 +1,14 @@
-verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($scope, verbsFactory) {
+verbsApp.controller('VerbsListController', ['$rootScope', '$scope', 'verbsFactory', function($rootScope, $scope, verbsFactory) {
 
     $scope.isLoading = true;
     $scope.verbs = [];
     $scope.verbsCount = 0;
+    $scope.verbsFiltered = [];
     $scope.filterCurrentGroup = null;
+    $scope.detailIsOpen = false;
+    $scope.detailData = {};
+
+    // PREFIX HELPER
 
     var prefix = (function () {
         var styles = window.getComputedStyle(document.documentElement, ''),
@@ -32,6 +37,8 @@ verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($
         };
     })();
 
+    // TOUCH SLIDE
+
     $scope.panRight = function(event) {
         var deltaX = event.deltaX;
         var deltaY = event.deltaY;
@@ -50,6 +57,8 @@ verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($
             event.element['0'].style[prefix.transition] = 'none';
         },200)
     }
+
+    // SEARCH/FILTER
 
     $scope.searchFocus = function() {
         document.querySelector('.js-vFilterInput').focus();
@@ -81,6 +90,32 @@ verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($
             return value;
         }
     }
+
+    // DETAIL
+
+    $scope.backgroundClick = function() {
+        $rootScope.$broadcast('backgroundClick');
+    }
+
+    $scope.detailOpen = function(index) {
+        console.log(index);
+        $scope.detailIsOpen = true;
+        $scope.detailFill(index);
+    }
+
+    $scope.detailClose = function() {
+        $scope.detailData = {};
+        $scope.detailIsOpen = false;
+    }
+
+
+    $scope.detailFill = function(index) {
+        $scope.detailData = $scope.verbsFiltered[index];
+    }
+
+    $rootScope.$on('backgroundClick', function () {
+        $scope.detailClose();
+    });
 
     verbsFactory
         .getVerbs()
