@@ -92,6 +92,7 @@ module.exports = function(grunt) {
                 src: [
                     'node_modules/hammerjs/hammer.js',
                     'node_modules/angular/angular.js',
+                    'node_modules/angular-animate/angular-animate.js',
                     'node_modules/angular-hammer/angular.hammer.js',
                     '<%= config.src %>/js/*/*',
                 ],

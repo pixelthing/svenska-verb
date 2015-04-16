@@ -3,10 +3,14 @@
           transition: $transition;
 }
 @mixin transition-delay($delay...) {
-  -webkit-transition: $delay;
-          transition: $delay;
+  -webkit-transition-delay: $delay;
+          transition-delay: $delay;
 }
 @mixin transform($transform...) {
   -webkit-transform: $transform;
           transform: $transform;
+}
+@mixin transform-origin($origin...) {
+  -webkit-transform-origin: $origin;
+          transform-origin: $origin;
 }

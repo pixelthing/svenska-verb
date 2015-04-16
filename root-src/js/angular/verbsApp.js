@@ -1,1 +1,1 @@
-var verbsApp = angular.module('verbsApp', ['hmTouchEvents']);
+var verbsApp = angular.module('verbsApp', ['ngAnimate','hmTouchEvents']);
