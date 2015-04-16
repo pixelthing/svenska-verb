@@ -205,8 +205,8 @@
         position: relative;
         width: 96vw;
         max-width: 980px;
-        margin: 0 auto 15px;
-        padding-top: $header-height;
+        margin: 0 auto;
+        padding: $header-height 0 15px;
         background-color: #fff;
         border-top: 1px solid #eee;
         overflow: hidden;
