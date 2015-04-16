@@ -368,6 +368,146 @@ body {
       border-color: #92BF11; }
     .vGroup4 .vColInfinitiv {
       border-color: #1EA5D8; }
+.vDetailBed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 200ms;
+  transition: all 200ms; }
+  .vDetailBed.ng-leave, .vDetailBed.ng-move.ng-move-active, .vDetailBed.ng-enter.ng-enter-active {
+    opacity: 1; }
+  .vDetailBed.ng-leave {
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+    -webkit-transition-delay: 300ms;
+    transition-delay: 300ms; }
+  .vDetailBed.ng-leave.ng-leave-active {
+    opacity: 0; }
+.vDetailTitle {
+  position: fixed;
+  left: 10px;
+  top: 15px;
+  right: 25px;
+  z-index: 12;
+  margin: 0;
+  padding: 10px 0 10px 10px;
+  background-color: #fff;
+  font-size: 24px; }
+  .vDetailTitle.ng-enter {
+    opacity: 0;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+    -webkit-transition-delay: 300ms;
+    transition-delay: 300ms; }
+  .vDetailTitle.ng-enter-active {
+    opacity: 1; }
+  .vDetailTitle.ng-leave {
+    opacity: 1;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+    -webkit-transition-delay: 0;
+    transition-delay: 0; }
+  .vDetailTitle.ng-leave-active {
+    opacity: 0; }
+.vDetailModal {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  z-index: 10;
+  width: 300px;
+  max-width: calc(100% - 20px);
+  min-height: 300px;
+  max-height: calc(100% - 30px);
+  margin-left: -150px;
+  padding: 16px;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  -webkit-transform-origin: 50% -1000px;
+  transform-origin: 50% -1000px; }
+  .vDetailModal.ng-enter {
+    opacity: 0;
+    -webkit-transform: rotate(10deg) translateY(-200px);
+    transform: rotate(10deg) translateY(-200px);
+    -webkit-transition: all 0;
+    transition: all 0; }
+  .vDetailModal.ng-enter-active {
+    opacity: 1;
+    -webkit-transform: rotate(0) translateY(0);
+    transform: rotate(0) translateY(0);
+    -webkit-transition: all 300ms;
+    transition: all 300ms; }
+  .vDetailModal.ng-leave {
+    opacity: 1;
+    -webkit-transform: rotate(0) translateY(0);
+    transform: rotate(0) translateY(0);
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+    -webkit-transition-delay: 300ms;
+    transition-delay: 300ms;
+    -webkit-transform-origin: 50% 1000px;
+    transform-origin: 50% 1000px; }
+  .vDetailModal.ng-leave-active {
+    opacity: 0;
+    -webkit-transform: rotate(10deg) translateY(200px);
+    transform: rotate(10deg) translateY(200px); }
+  .vDetailModalClose {
+    position: fixed;
+    right: 10px;
+    top: 15px;
+    z-index: 15;
+    padding: 16px;
+    font-size: 1.5em;
+    cursor: pointer; }
+    .vDetailModalClose.ng-enter {
+      opacity: 0;
+      -webkit-transition: all 300ms;
+      transition: all 300ms;
+      -webkit-transition-delay: 300ms;
+      transition-delay: 300ms; }
+    .vDetailModalClose.ng-enter-active {
+      opacity: 1; }
+    .vDetailModalClose.ng-leave {
+      opacity: 1;
+      -webkit-transition: all 300ms;
+      transition: all 300ms;
+      -webkit-transition-delay: 300ms;
+      transition-delay: 300ms; }
+    .vDetailModalClose.ng-leave-active {
+      opacity: 0; }
+.vDetailTranslation {
+  display: inline-block;
+  padding: 0 0.2em;
+  background: #ffc;
+  font-size: 0.8em;
+  font-weight: 300; }
+.vDetailBody {
+  margin-top: 50px; }
+.vDetailFokus {
+  margin: 10px 0 0;
+  padding: 10px;
+  background: #E5DCC7; }
+  .vDetailFokusTitle {
+    margin: 0;
+    color: #A63F38;
+    font-size: 12px;
+    text-align: right;
+    text-transform: uppercase; }
+  .vDetailFokusSub {
+    margin: 0 0 1em; }
+    .vDetailFokusSubTitle {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase; }
+    .vDetailFokusSubExample {
+      margin: 0; }
 .vFooter {
   padding: 0.5em 2vw;
   color: #D6D5E8;

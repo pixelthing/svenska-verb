@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="css/main.css" />
 
 </head>
-<body>
+<body ng-app="verbsApp">
 
     
 
-<div class="vContainer" ng-app="verbsApp" ng-controller="VerbsListController">
+<div class="vContainer" ng-controller="VerbsListController" ng-click="backgroundClick()">
 
     <article class="vHeader fixedsticky">
         <div class="vTitle"></div>
@@ -54,7 +54,7 @@
             <div class="bounce3"></div>
         </div>
 
-        <article class="vRow" ng-class="{vGroup{{::verb.group}} : true}" ng-repeat="verb in filteredVerbs = ( verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' )">
+        <article class="vRow" ng-class="{vGroup{{::verb.group}} : true}" ng-repeat="verb in verbsFiltered = ( verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' )" ng-click="detailOpen($index)" stop-event='click'>
             <span class="vCol vColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
             <div class="vColWrap ng-cloak" data-verbGroup="{{::verb.group}}" ng-if="!isLoading" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":20}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
                 <span class="vCol vColInfinitiv" ng-bind="::verb.infinitiv">    </span>
@@ -64,7 +64,7 @@
             </div>
         </article>
 
-        <div class="vListEmpty ng-cloak" ng-if="filteredVerbs.length < 1 && !isLoading">
+        <div class="vListEmpty ng-cloak" ng-if="verbsFiltered.length < 1 && !isLoading">
             <span class="icon icon-warning"></span> 
             <div>Hittade ingenting!</div>
             <button class="vListEmptyButton" ng-click="filterClear()">
@@ -73,6 +73,54 @@
             </button>
         </div>
 
+
+    </div>
+
+    <div class="vDetailBed ng-cloak" ng-if="detailIsOpen">
+    </div>
+    <h1 class="vDetailTitle ng-cloak" ng-if="detailIsOpen" stop-event='click'>
+        <span class="vDetailInfinitiv" ng-bind="detailData.infinitiv"></span>
+        (<abbrev class="vDetailTranslation" ng-bind="detailData.en"></abbrev>)
+    </h1>
+    <span class="vDetailModalClose icon icon-cross ng-cloak" ng-if="detailIsOpen" ng-click="detailClose()"></span>
+    <div class="vDetailModal ng-cloak" ng-if="detailIsOpen" stop-event='click'>
+
+
+        <div class="vDetailBody">
+
+            <section class="vDetailFokus">
+                <h3 class="vDetailFokusTitle">Nu Fokus</h3>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Perfekt</dt>
+                    <dd class="vDetailFokusSubExample">Jag har <strong class="vDetailFokusLabel" ng-bind="detailData.perfekt"></strong> på min läxa</dd>
+                </dl>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Presens</dt>
+                    <dd class="vDetailFokusSubExample">Jag <strong class="vDetailFokusLabel" ng-bind="detailData.presens"></strong> på min läxa</dd>
+                </dl>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-forward"></span> Futurum 1</dt>
+                    <dd class="vDetailFokusSubExample">Jag ska <strong class="vDetailFokusLabel" ng-bind="detailData.infinitiv"></strong> på min läxa</dd>
+                </dl>
+            </section>
+
+            <section class="vDetailFokus">
+                <h3 class="vDetailFokusTitle">Då Fokus</h3>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Plukamperfekt</dt>
+                    <dd class="vDetailFokusSubExample">Jag hade <strong class="vDetailFokusLabel" ng-bind="detailData.perfekt"></strong> på min läxa</dd>
+                </dl>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Preteritum</dt>
+                    <dd class="vDetailFokusSubExample">Jag <strong class="vDetailFokusLabel" ng-bind="detailData.preteritum"></strong> på min läxa</dd>
+                </dl>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-forward"></span> Futurum 2</dt>
+                    <dd class="vDetailFokusSubExample">Jag skulle <strong class="vDetailFokusLabel" ng-bind="detailData.infinitiv"></strong> på min läxa</dd>
+                </dl>
+            </section>
+
+        </div>
 
     </div>
 
