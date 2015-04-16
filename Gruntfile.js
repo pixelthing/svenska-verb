@@ -90,6 +90,7 @@ module.exports = function(grunt) {
             },
             dev: {
                 src: [
+                    'node_modules/fastclick/lib/fastclick.js',
                     'node_modules/hammerjs/hammer.js',
                     'node_modules/angular/angular.js',
                     'node_modules/angular-animate/angular-animate.js',
