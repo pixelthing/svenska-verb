@@ -377,31 +377,15 @@
             }
         }
         &Title {
-            position: fixed;
-            left: 10px;
-            top: 15px;
-            right: 25px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 16px;
             z-index: 12;
             margin: 0;
-            padding: 10px 0 10px 10px;
+            padding: 10px 0 8px 15px;
             background-color: #fff;
             font-size: 24px;
-            &.ng-enter {
-                opacity: 0;
-                @include transition(all 300ms);
-                @include transition-delay(300ms);
-            }
-            &.ng-enter-active {
-                opacity: 1;
-            }
-            &.ng-leave {
-                opacity: 1;
-                @include transition(all 300ms);
-                @include transition-delay(0);
-            }
-            &.ng-leave-active {
-                opacity: 0;
-            }
         }
         &Modal {
             position: fixed;
@@ -415,7 +399,7 @@
             margin-left: -150px;
             padding: 16px;
             background: #fff;
-            overflow: auto;
+            overflow: hidden;
             -webkit-overflow-scrolling: touch;
             @include transition(all 300ms);
             @include transform-origin(50% -1000px);
@@ -441,29 +425,13 @@
                 @include transform(rotate(10deg) translateY(200px));
             }
             &Close {
-                position: fixed;
-                right: 10px;
-                top: 15px;
+                position: absolute;
+                right: 0;
+                top: 0;
                 z-index: 15;
                 padding: 16px;
                 font-size: 1.5em;
                 cursor: pointer;
-                &.ng-enter {
-                    opacity: 0;
-                    @include transition(all 300ms);
-                    @include transition-delay(300ms);
-                }
-                &.ng-enter-active {
-                    opacity: 1;
-                }
-                &.ng-leave {
-                    opacity: 1;
-                    @include transition(all 300ms);
-                    @include transition-delay(300ms);
-                }
-                &.ng-leave-active {
-                    opacity: 0;
-                }
             }
         }
         &Translation {
@@ -474,7 +442,12 @@
             font-weight: 300;
         }
         &Body {
-            margin-top: 50px;
+            position: absolute;
+            left: 15px;
+            top: 50px;
+            right: 16px;
+            bottom: 10px;
+            overflow: auto;
         }
         &Fokus {
             margin: 10px 0 0;
@@ -498,6 +471,11 @@
                 &Example {
                     margin: 0;
                 }
+            }
+            &Label {
+                background: #ffc;
+                display: inline-block;
+                padding: 0 0.2em;
             }
         }
     }

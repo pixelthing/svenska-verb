@@ -78,13 +78,14 @@
 
     <div class="vDetailBed ng-cloak" ng-if="detailIsOpen">
     </div>
-    <h1 class="vDetailTitle ng-cloak" ng-if="detailIsOpen" stop-event='click'>
-        <span class="vDetailInfinitiv" ng-bind="detailData.infinitiv"></span>
-        (<abbrev class="vDetailTranslation" ng-bind="detailData.en"></abbrev>)
-    </h1>
-    <span class="vDetailModalClose icon icon-cross ng-cloak" ng-if="detailIsOpen" ng-click="detailClose()"></span>
     <div class="vDetailModal ng-cloak" ng-if="detailIsOpen" stop-event='click'>
 
+        <h1 class="vDetailTitle ng-cloak" stop-event='click'>
+            <span class="vDetailInfinitiv" ng-bind="detailData.infinitiv"></span>
+            (<abbrev class="vDetailTranslation" ng-bind="detailData.en"></abbrev>)
+        </h1>
+
+        <span class="vDetailModalClose icon icon-cross ng-cloak" ng-click="detailClose()"></span>
 
         <div class="vDetailBody">
 
@@ -92,15 +93,15 @@
                 <h3 class="vDetailFokusTitle">Nu Fokus</h3>
                 <dl class="vDetailFokusSub">
                     <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Perfekt</dt>
-                    <dd class="vDetailFokusSubExample">Jag har <strong class="vDetailFokusLabel" ng-bind="detailData.perfekt"></strong> på min läxa</dd>
+                    <dd class="vDetailFokusSubExample">Jag har <strong class="vDetailFokusLabel" ng-bind="detailData.perfekt"></strong> <span ng-bind="detailData.meningen"></span></dd>
                 </dl>
                 <dl class="vDetailFokusSub">
                     <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Presens</dt>
-                    <dd class="vDetailFokusSubExample">Jag <strong class="vDetailFokusLabel" ng-bind="detailData.presens"></strong> på min läxa</dd>
+                    <dd class="vDetailFokusSubExample">Jag <strong class="vDetailFokusLabel" ng-bind="detailData.presens"></strong> <span ng-bind="detailData.meningen"></span></dd>
                 </dl>
                 <dl class="vDetailFokusSub">
                     <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-forward"></span> Futurum 1</dt>
-                    <dd class="vDetailFokusSubExample">Jag ska <strong class="vDetailFokusLabel" ng-bind="detailData.infinitiv"></strong> på min läxa</dd>
+                    <dd class="vDetailFokusSubExample">Jag ska <strong class="vDetailFokusLabel" ng-bind="detailData.infinitiv"></strong> <span ng-bind="detailData.meningen"></span></dd>
                 </dl>
             </section>
 
@@ -108,15 +109,15 @@
                 <h3 class="vDetailFokusTitle">Då Fokus</h3>
                 <dl class="vDetailFokusSub">
                     <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Plukamperfekt</dt>
-                    <dd class="vDetailFokusSubExample">Jag hade <strong class="vDetailFokusLabel" ng-bind="detailData.perfekt"></strong> på min läxa</dd>
+                    <dd class="vDetailFokusSubExample">Jag hade <strong class="vDetailFokusLabel" ng-bind="detailData.perfekt"></strong> <span ng-bind="detailData.meningen"></span></dd>
                 </dl>
                 <dl class="vDetailFokusSub">
                     <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Preteritum</dt>
-                    <dd class="vDetailFokusSubExample">Jag <strong class="vDetailFokusLabel" ng-bind="detailData.preteritum"></strong> på min läxa</dd>
+                    <dd class="vDetailFokusSubExample">Jag <strong class="vDetailFokusLabel" ng-bind="detailData.preteritum"></strong> <span ng-bind="detailData.meningen"></span></dd>
                 </dl>
                 <dl class="vDetailFokusSub">
                     <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-forward"></span> Futurum 2</dt>
-                    <dd class="vDetailFokusSubExample">Jag skulle <strong class="vDetailFokusLabel" ng-bind="detailData.infinitiv"></strong> på min läxa</dd>
+                    <dd class="vDetailFokusSubExample">Jag skulle <strong class="vDetailFokusLabel" ng-bind="detailData.infinitiv"></strong> <span ng-bind="detailData.meningen"></span></dd>
                 </dl>
             </section>
 
