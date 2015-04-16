@@ -54,6 +54,7 @@ body {
     -webkit-appearance: none;
     display: block;
     float: left;
+    position: relative;
     width: 20%;
     padding: 1px;
     color: #fff;
@@ -67,6 +68,16 @@ body {
     -webkit-transition: opacity 300ms;
     -o-transition: opacity 300ms;
     transition: opacity 300ms; }
+    .verbFilterGroupOption:before {
+      content: 'x';
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      opacity: 0;
+      -webkit-transition: opacity 300ms;
+      -o-transition: opacity 300ms;
+      transition: opacity 300ms; }
     .verbFilterGroupOption:first-child {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px; }
@@ -80,11 +91,15 @@ body {
     .verbFilterGroupOption2b {
       background-color: #F26E22; }
     .verbFilterGroupOption3 {
-      background-color: #739F2C; }
+      background-color: #92BF11; }
     .verbFilterGroupOption4 {
-      background-color: #6D95D8; }
+      background-color: #1EA5D8; }
     .verbFilterGroupOptionActive {
-      opacity: 1; }
+      opacity: 1;
+      color: transparent; }
+      .verbFilterGroupOptionActive:before {
+        color: #fff;
+        opacity: 1; }
 .verbList {
   position: relative;
   width: 96vw;
@@ -167,8 +182,8 @@ body {
     .verbGroup2b .verbColInfinitiv {
       border-color: #F26E22; }
     .verbGroup3 .verbColInfinitiv {
-      border-color: #739F2C; }
+      border-color: #92BF11; }
     .verbGroup4 .verbColInfinitiv {
-      border-color: #6D95D8; }
+      border-color: #1EA5D8; }
 
 /*# sourceMappingURL=main.css.map */
