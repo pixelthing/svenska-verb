@@ -23,9 +23,9 @@
 
     <article class="vHeader fixedsticky">
         <div class="vTitle"></div>
-        <input type="search" class="vFilter" ng-model="search" placeholder="sök" />
+        <input type="search" class="vFilter" ng-model="search" placeholder="sök" ng-submit="searchSubmit()" />
         <div class="vFilterGroup">
-            <button class="vFilterGroupOption vFilterGroupOption1"  ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '1'}"  ng-click="filterGroup('1')" ><span>1</span></button>
+            <button class="vFilterGroupOption vFilterGroupOption1 js-vFilterFocusTarget"  ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '1'}"  ng-click="filterGroup('1')" ><span>1</span></button>
             <button class="vFilterGroupOption vFilterGroupOption2a" ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '2a'}" ng-click="filterGroup('2a')"><span>2a</span></button>
             <button class="vFilterGroupOption vFilterGroupOption2b" ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '2b'}" ng-click="filterGroup('2b')"><span>2b</span></button>
             <button class="vFilterGroupOption vFilterGroupOption3"  ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '3'}"  ng-click="filterGroup('3')" ><span>3</span></button>
