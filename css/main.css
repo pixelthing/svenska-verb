@@ -76,8 +76,8 @@ body {
       opacity: 0;
       -webkit-transform: rotate(-720deg);
       transform: rotate(-720deg);
-      -webkit-transition: all 300ms;
-      transition: all 300ms; }
+      -webkit-transition: all 500ms;
+      transition: all 500ms; }
     .vFilterGroupOption:first-child {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px; }
@@ -137,7 +137,21 @@ body {
   clear: both;
   white-space: nowrap;
   overflow: hidden;
-  line-height: 0; }
+  line-height: 0;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0; }
+  .vRow.ng-leave, .vRow.ng-move, .vRow.ng-enter {
+    opacity: 1;
+    max-height: 3em;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  .vRow.ng-leave.ng-leave-active, .vRow.ng-move, .vRow.ng-enter {
+    opacity: 0;
+    max-height: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
 .vCol {
   display: inline-block;
   width: 25%;
