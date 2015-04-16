@@ -25,7 +25,8 @@
         <div class="vTitle"></div>
         <div class="vFilter">
             <form class="vFilterForm" ng-submit="searchSubmit()">
-                <input type="search" class="vFilterInput" ng-model="search" placeholder="sök" ng-class="{vFilterInputActive : search.length}" />
+                <div class="vFilterInputIcon icon icon-zoom" ng-click="searchFocus()" ng-class="{vFilterInputIconActive : search.length}"></div>
+                <input type="search" class="vFilterInput js-vFilterInput" ng-model="search" placeholder="sök" ng-class="{vFilterInputActive : search.length}" />
                 <div class="vFilterInputClear ng-cloak icon icon-cross" ng-if="search.length" ng-click="searchClear()"></div>
             </form>
             <a href="javascript:void(0)" class="vFilterFocusTarget js-vFilterFocusTarget"></a>
