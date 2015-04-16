@@ -241,8 +241,8 @@ body {
   position: relative;
   width: 96vw;
   max-width: 980px;
-  margin: 0 auto 15px;
-  padding-top: 100px;
+  margin: 0 auto;
+  padding: 100px 0 15px;
   background-color: #fff;
   border-top: 1px solid #eee;
   overflow: hidden; }
