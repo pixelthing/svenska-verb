@@ -118,10 +118,14 @@ body {
         position: absolute;
         left: 0;
         right: 0;
+        top: 50%;
+        margin-top: -0.6em;
         text-align: center;
         opacity: 0;
         font-size: 1.33em;
-        line-height: 1.9;
+        line-height: 1.2;
+        background-color: #fff;
+        border-radius: 100%;
         -webkit-transform: rotate(-720deg);
         transform: rotate(-720deg);
         -webkit-transition: all 500ms, line-height 0;
