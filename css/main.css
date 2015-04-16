@@ -88,6 +88,10 @@ body {
       display: none !important; }
     .vFilterInput::-ms-clear {
       display: none !important; }
+  .vFilterFocusTarget {
+    width: 0;
+    height: 0;
+    overflow: hidden; }
   .vFilterGroup {
     display: inline-block;
     width: 50%;
