@@ -33,15 +33,22 @@ layout: _default.hbs
 
     <div class="vList">
 
-        <article class="vRow vGroup\{{::verb.group}}" ng-repeat="verb in filteredVerbs = ( verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' )">
+        <div class="spinner ng-cloak" ng-if="isLoading">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+
+        <article class="vRow" ng-class="{vGroup\{{::verb.group}} : true}" ng-repeat="verb in filteredVerbs = ( verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' )">
             <span class="vCol vColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
-            <div class="vColWrap" data-verbGroup="\{{::verb.group}}" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":20}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
+            <div class="vColWrap ng-cloak" data-verbGroup="\{{::verb.group}}" ng-if="!isLoading" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":20}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
                 <span class="vCol vColInfinitiv" ng-bind="::verb.infinitiv">    </span>
                 <span class="vCol" ng-bind="::verb.presens">                    </span>
                 <span class="vCol" ng-bind="::verb.preteritum">                 </span>
                 <span class="vCol" ng-bind="::verb.perfekt">                    </span>
             </div>
         </article>
+
         <div class="vListEmpty ng-cloak" ng-if="filteredVerbs.length < 1 && !isLoading">
             <span class="icon icon-warning"></span> 
             <div>Hittade ingenting!</div>
@@ -51,6 +58,13 @@ layout: _default.hbs
             </button>
         </div>
 
+
+    </div>
+
+    <div class="vFooter">
+        <strong>SfI Svenska verb verktyg 2015</strong>
+        <br />
+        Free to use and fork. Code on <a href="https://github.com/pixelthing/svenska-sfi-verb">GitHub</a>. Made by <a href="http://craigmorey.co.uk">Craig Morey</a>. I can't promise any support or updates, but let me know if I can help, or if there's something wrong.
     </div>
 
 </div>
