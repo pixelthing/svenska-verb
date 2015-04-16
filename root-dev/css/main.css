@@ -54,6 +54,7 @@ body {
     -webkit-appearance: none;
     display: block;
     float: left;
+    position: relative;
     width: 20%;
     padding: 1px;
     color: #fff;
@@ -67,6 +68,16 @@ body {
     -webkit-transition: opacity 300ms;
     -o-transition: opacity 300ms;
     transition: opacity 300ms; }
+    .verbFilterGroupOption:before {
+      content: 'x';
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      opacity: 0;
+      -webkit-transition: opacity 300ms;
+      -o-transition: opacity 300ms;
+      transition: opacity 300ms; }
     .verbFilterGroupOption:first-child {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px; }
@@ -84,7 +95,11 @@ body {
     .verbFilterGroupOption4 {
       background-color: #1EA5D8; }
     .verbFilterGroupOptionActive {
-      opacity: 1; }
+      opacity: 1;
+      color: transparent; }
+      .verbFilterGroupOptionActive:before {
+        color: #fff;
+        opacity: 1; }
 .verbList {
   position: relative;
   width: 96vw;
