@@ -26,7 +26,7 @@
         <form class="vFilter" ng-submit="searchSubmit()">
             <input type="search" class="vFilterInput" ng-model="search" placeholder="sök" ng-class="{vFilterInputActive : search.length}" />
             <div class="vFilterInputClear" ng-if="search.length" ng-click="searchClear()">x</div>
-            <a href="#" class="vFilterFocusTarget js-vFilterFocusTarget"></a>
+            <a href="javascript:void(0)" class="vFilterFocusTarget js-vFilterFocusTarget"></a>
             <div class="vFilterGroup">
                 <button class="vFilterGroupOption vFilterGroupOption1"  ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '1'}"  ng-click="filterGroup('1')" ><span>1</span></button>
                 <button class="vFilterGroupOption vFilterGroupOption2a" ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '2a'}" ng-click="filterGroup('2a')"><span>2a</span></button>
