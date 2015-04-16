@@ -31422,6 +31422,7 @@ angular.module('ngAnimate', ['ng'])
 var verbsApp = angular.module('verbsApp', ['ngAnimate','hmTouchEvents']);
 verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($scope, verbsFactory) {
 
+    $scope.isLoading = true;
     $scope.verbs = [];
     $scope.verbsCount = 0;
     $scope.filterCurrentGroup = null;
@@ -31472,6 +31473,10 @@ verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($
         },200)
     }
 
+    $scope.searchFocus = function() {
+        document.querySelector('.js-vFilterInput').focus();
+    }
+
     $scope.searchSubmit = function() {
         document.querySelector('.js-vFilterFocusTarget').focus();
     }
@@ -31482,6 +31487,11 @@ verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($
 
     $scope.filterGroup = function(group) {
         $scope.filterCurrentGroup = ( $scope.filterCurrentGroup === group ? null : group );
+    }
+
+    $scope.filterClear = function() {
+        $scope.search = '';
+        $scope.filterCurrentGroup = null;
     }
 
     $scope.filterGroupFilter = function(value, index) {
@@ -31499,36 +31509,25 @@ verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($
         .then(function(verbs) {
             $scope.verbs = verbs;
             $scope.verbsCount = verbs.length;
+            $scope.isLoading = false;
         });
 
 }]);
 verbsApp.factory('verbsFactory', ['$http', function verbsFactory($http) {
 
-    var verbs = [];
-    var state = {
-        'isLoading': false,
-        'filterGroup': false
-    };
-
     var getData = function() {
 
         //return the promise directly.
-        state.isLoading = true;
         return $http.get('svenska.json')
             .then(function(result) {
                 //resolve the promise as the data
-                state.isLoading = false;
                 return result.data.data.verbs;
             }, function() {
-                state.isLoading = false;
                 alert('error loading data - sorry!');
             });
     }
 
     return {
-        getState : function() {
-            return state;
-        },
         getVerbs : getData
     };
 

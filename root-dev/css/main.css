@@ -1,3 +1,47 @@
+@font-face {
+  font-family: 'icons';
+  src: url("../fonts/icons.eot"); }
+@font-face {
+  font-family: 'icons';
+  src: url(data:application/x-font-ttf;charset=utf-8;base64,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) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+.icon {
+  font-family: 'icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-cross:before {
+  content: "\e601"; }
+
+.icon-tick:before {
+  content: "\e602"; }
+
+.icon-arrow-here:before {
+  content: "\e600"; }
+
+.icon-arrow-forward:before {
+  content: "\e603"; }
+
+.icon-arrow-back:before {
+  content: "\e604"; }
+
+.icon-warning:before {
+  content: "\e605"; }
+
+.icon-cog:before {
+  content: "\e606"; }
+
+.icon-zoom:before {
+  content: "\e607"; }
+
 html {
   box-sizing: border-box; }
 
@@ -49,8 +93,9 @@ body {
     -webkit-appearance: none;
     display: block;
     width: 100%;
-    padding: 1px 0.5em;
+    padding: 1px 0.5em 1px 1.5em;
     border: 1px solid #ddd;
+    color: #999;
     border-radius: 4px;
     font-size: 1rem;
     line-height: 2em;
@@ -61,7 +106,20 @@ body {
       border-color: #ffcc00; }
     .vFilterInputActive {
       border-color: #ffcc00;
-      background: #ffcc00; }
+      background: #ffcc00;
+      color: #997a00; }
+    .vFilterInputIcon {
+      position: absolute;
+      left: 0.1em;
+      top: 50%;
+      z-index: 1;
+      margin-top: -0.5em;
+      color: #ccc;
+      font-size: 1.5em;
+      -webkit-transition: all 500ms;
+      transition: all 500ms; }
+      .vFilterInputIconActive {
+        color: #997a00; }
     .vFilterInputClear {
       position: absolute;
       right: 0.5em;
@@ -120,7 +178,7 @@ body {
       -webkit-transition: opacity 300ms;
       transition: opacity 300ms; }
       .vFilterGroupOption:before {
-        content: 'x';
+        content: '\e601';
         position: absolute;
         left: 50%;
         top: 50%;
@@ -129,10 +187,13 @@ body {
         margin: -0.6em 0 0 -0.6em;
         text-align: center;
         opacity: 0;
+        font-family: icons;
         font-size: 1.33em;
-        line-height: 0.9;
+        line-height: 1;
         border: 1px solid #fff;
         border-radius: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         -webkit-transform: rotate(-720deg);
         transform: rotate(-720deg);
         -webkit-transition: all 500ms, line-height 0;
@@ -191,6 +252,35 @@ body {
     .vListHeader > span {
       border-bottom: 3px solid #666 !important;
       z-index: 3; }
+  .vListEmpty {
+    width: 15em;
+    margin: 0 auto;
+    padding: 15px;
+    color: #F22F1D;
+    border-radius: 4px;
+    text-align: center;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+    -webkit-transition-delay: 600ms;
+    transition-delay: 600ms; }
+    .vListEmpty.ng-leave, .vListEmpty.ng-move.ng-move-active, .vListEmpty.ng-enter.ng-enter-active {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0); }
+    .vListEmpty.ng-leave.ng-leave-active, .vListEmpty.ng-move, .vListEmpty.ng-enter {
+      opacity: 0;
+      -webkit-transform: translateY(3em);
+      transform: translateY(3em); }
+    .vListEmptyButton {
+      -webkit-appearance: none;
+      margin: 15px 0 0;
+      padding: 1em 2em;
+      color: #fff;
+      background-color: #92BF11;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.8em;
+      text-transform: uppercase; }
 .vRow {
   position: relative;
   clear: both;
