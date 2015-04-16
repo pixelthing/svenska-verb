@@ -34,9 +34,9 @@ body {
     background-color: #ffcc00; }
 .vFilter {
   position: relative;
-  max-width: 980px;
+  max-width: calc( 980px + 4vw );
   margin: 0 auto;
-  padding: 2vw;
+  padding: 0.5em 2vw;
   line-height: 0; }
   .vFilterInput {
     -webkit-appearance: none;

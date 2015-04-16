@@ -37,9 +37,9 @@ $color-group4:     #1EA5D8;
     }
     &Filter {
         position: relative;
-        max-width: 980px;
+        max-width: calc( 980px + 4vw );
         margin: 0 auto;
-        padding: 2vw;
+        padding: 0.5em 2vw;
         line-height: 0;
         &Input {
             -webkit-appearance: none;
