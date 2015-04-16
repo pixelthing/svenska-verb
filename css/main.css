@@ -139,12 +139,12 @@ body {
   overflow: hidden;
   line-height: 0;
   -webkit-transform-origin: 0 0;
-  transform-origin: 0 0; }
+  transform-origin: 0 0;
+  -webkit-transition: all 300ms, max-height 0;
+  transition: all 300ms, max-height 0; }
   .vRow.ng-leave, .vRow.ng-move.ng-move-active, .vRow.ng-enter.ng-enter-active {
     opacity: 1;
     max-height: 3.2em;
-    -webkit-transition: all 300ms, max-height 0;
-    transition: all 300ms, max-height 0;
     -webkit-transition-delay: 0, 0;
     transition-delay: 0, 0;
     -webkit-transform: translateY(0);
@@ -152,8 +152,6 @@ body {
   .vRow.ng-leave.ng-leave-active, .vRow.ng-move, .vRow.ng-enter {
     opacity: 0;
     max-height: 0;
-    -webkit-transition: all 300ms, max-height 200ms;
-    transition: all 300ms, max-height 200ms;
     -webkit-transition-delay: 0, 300ms;
     transition-delay: 0, 300ms;
     -webkit-transform: translateY(-3em);
