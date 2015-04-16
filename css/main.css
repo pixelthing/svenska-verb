@@ -1,3 +1,17 @@
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  margin: 0;
+  font-family: avenir;
+  font-size: 16px; }
+
+.ng-cloak {
+  display: none; }
+
 @font-face {
   font-family: 'icons';
   src: url("../fonts/icons.eot"); }
@@ -41,20 +55,6 @@
 
 .icon-zoom:before {
   content: "\e607"; }
-
-html {
-  box-sizing: border-box; }
-
-*, *:before, *:after {
-  box-sizing: inherit; }
-
-body {
-  margin: 0;
-  font-family: avenir;
-  font-size: 16px; }
-
-.ng-cloak {
-  display: none; }
 
 .vHeader {
   position: fixed;
@@ -369,5 +369,56 @@ body {
   font-size: 12px; }
   .vFooter a {
     color: #fff; }
+
+.spinner {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 70px;
+  margin-left: -35px;
+  text-align: center;
+  -webkit-transition: all 300ms;
+  transition: all 300ms; }
+  .spinner.ng-leave, .spinner.ng-move.ng-move-active, .spinner.ng-enter.ng-enter-active {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  .spinner.ng-leave.ng-leave-active, .spinner.ng-move, .spinner.ng-enter {
+    opacity: 0;
+    -webkit-transform: translateY(3em);
+    transform: translateY(3em); }
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #666;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s; }
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s; }
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0); }
+  40% {
+    -webkit-transform: scale(1); } }
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0); }
+  40% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } }
 
 /*# sourceMappingURL=main.css.map */
