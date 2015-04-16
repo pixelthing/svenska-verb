@@ -116,15 +116,16 @@ body {
       .vFilterGroupOption:before {
         content: 'x';
         position: absolute;
-        left: 0;
-        right: 0;
+        left: 50%;
         top: 50%;
-        margin-top: -0.6em;
+        width: 1.2em;
+        height: 1.2em;
+        margin: -0.6em 0 0 -0.6em;
         text-align: center;
         opacity: 0;
         font-size: 1.33em;
-        line-height: 1.2;
-        background-color: #fff;
+        line-height: 0.9;
+        border: 1px solid #fff;
         border-radius: 100%;
         -webkit-transform: rotate(-720deg);
         transform: rotate(-720deg);
