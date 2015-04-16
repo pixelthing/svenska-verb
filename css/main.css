@@ -61,13 +61,12 @@ body {
       right: 55%;
       top: 50%;
       z-index: 1;
-      width: 1em;
-      height: 1em;
+      width: 1.2em;
+      height: 1.2em;
       margin-top: -0.5em;
-      line-height: 1;
+      line-height: 1.2;
       text-align: center;
       color: #fff;
-      font-size: 1.2em;
       background-color: #997a00;
       border-radius: 100%;
       cursor: pointer;
