@@ -54,6 +54,10 @@ verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($
         document.querySelector('.js-vFilterFocusTarget').focus();
     }
 
+    $scope.searchClear = function() {
+        $scope.search = '';
+    }
+
     $scope.filterGroup = function(group) {
         $scope.filterCurrentGroup = ( $scope.filterCurrentGroup === group ? null : group );
     }
