@@ -43,7 +43,7 @@ body {
     float: left;
     display: block;
     width: 47%;
-    padding: 1px;
+    padding: 1px 0.5em;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
