@@ -138,18 +138,20 @@ body {
   white-space: nowrap;
   overflow: hidden;
   line-height: 0;
-  -webkit-transition: all 300ms;
-  transition: all 300ms;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0; }
   .vRow.ng-leave, .vRow.ng-move, .vRow.ng-enter {
     opacity: 1;
     height: 3em;
     -webkit-transform: translateY(-20px);
-    transform: translateY(-20px); }
+    transform: translateY(-20px);
+    -webkit-transition: opacity 300ms, height 0;
+    transition: opacity 300ms, height 0; }
   .vRow.ng-leave.ng-leave-active, .vRow.ng-move, .vRow.ng-enter {
     opacity: 0;
     height: 0;
+    -webkit-transition: opacity 0, height 300ms;
+    transition: opacity 0, height 300ms;
     -webkit-transform: translateY(0);
     transform: translateY(0); }
 .vCol {
