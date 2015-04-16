@@ -270,7 +270,9 @@ body {
     .vListEmpty.ng-leave.ng-leave-active, .vListEmpty.ng-move, .vListEmpty.ng-enter {
       opacity: 0;
       -webkit-transform: translateY(3em);
-      transform: translateY(3em); }
+      transform: translateY(3em);
+      -webkit-transition-delay: 0;
+      transition-delay: 0; }
     .vListEmptyButton {
       -webkit-appearance: none;
       margin: 5px 0 0;
