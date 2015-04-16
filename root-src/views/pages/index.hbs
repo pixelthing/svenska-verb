@@ -1,38 +1,38 @@
 ---
-title: SfI Verb Revision
+title: SfI v Revision
 layout: _default.hbs
 
 ---
 
 <div ng-app="verbsApp" ng-controller="VerbsListController">
 
-    <article class="verbHeader fixedsticky">
-        <div class="verbTitle"></div>
-        <input type="search" class="verbFilter" ng-model="search" placeholder="search for a verb" />
-        <div class="verbFilterGroup">
-            <button class="verbFilterGroupOption verbFilterGroupOption1"  ng-click="filterGroup('1')"  ng-class="{verbFilterGroupOptionActive : filterCurrentGroup === '1'}" >1 </button>
-            <button class="verbFilterGroupOption verbFilterGroupOption2a" ng-class="{verbFilterGroupOptionActive : filterCurrentGroup === '2a'}" ng-click="filterGroup('2a')">2a</button>
-            <button class="verbFilterGroupOption verbFilterGroupOption2b" ng-class="{verbFilterGroupOptionActive : filterCurrentGroup === '2b'}" ng-click="filterGroup('2b')">2b</button>
-            <button class="verbFilterGroupOption verbFilterGroupOption3" ng-class="{verbFilterGroupOptionActive : filterCurrentGroup === '3'}"  ng-click="filterGroup('3')" >3 </button>
-            <button class="verbFilterGroupOption verbFilterGroupOption4" ng-class="{verbFilterGroupOptionActive : filterCurrentGroup === '4'}"  ng-click="filterGroup('4')" >4 </button>
+    <article class="vHeader fixedsticky">
+        <div class="vTitle"></div>
+        <input type="search" class="vFilter" ng-model="search" placeholder="sök" />
+        <div class="vFilterGroup">
+            <button class="vFilterGroupOption vFilterGroupOption1"  ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '1'}"  ng-click="filterGroup('1')" ><span>1</span></button>
+            <button class="vFilterGroupOption vFilterGroupOption2a" ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '2a'}" ng-click="filterGroup('2a')"><span>2a</span></button>
+            <button class="vFilterGroupOption vFilterGroupOption2b" ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '2b'}" ng-click="filterGroup('2b')"><span>2b</span></button>
+            <button class="vFilterGroupOption vFilterGroupOption3"  ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '3'}"  ng-click="filterGroup('3')" ><span>3</span></button>
+            <button class="vFilterGroupOption vFilterGroupOption4"  ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '4'}"  ng-click="filterGroup('4')" ><span>4</span></button>
         </div>
-        <div class="verbListHeader">
-            <span class="verbCol">infinitiv  </span>
-            <span class="verbCol">presens    </span>
-            <span class="verbCol">preteritum </span>
-            <span class="verbCol">perfekt    </span>
+        <div class="vListHeader">
+            <span class="vCol">infinitiv  </span>
+            <span class="vCol">presens    </span>
+            <span class="vCol">preteritum </span>
+            <span class="vCol">perfekt    </span>
         </div>
     </article>
 
-    <div class="verbList">
+    <div class="vList">
 
-        <article ng-repeat="verb in verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' " data-index="" class="verbRow verbGroup\{{::verb.group}}">
-            <span class="verbCol verbColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
-            <div class="verbColWrap" data-verbGroup="\{{::verb.group}}" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":20}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
-                <span class="verbCol verbColInfinitiv" ng-bind="::verb.infinitiv"> </span>
-                <span class="verbCol" ng-bind="::verb.presens">                    </span>
-                <span class="verbCol" ng-bind="::verb.preteritum">                 </span>
-                <span class="verbCol" ng-bind="::verb.perfekt">                    </span>
+        <article ng-repeat="verb in verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' " data-index="" class="vRow vGroup\{{::verb.group}}">
+            <span class="vCol vColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
+            <div class="vColWrap" data-verbGroup="\{{::verb.group}}" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":20}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
+                <span class="vCol vColInfinitiv" ng-bind="::verb.infinitiv">    </span>
+                <span class="vCol" ng-bind="::verb.presens">                    </span>
+                <span class="vCol" ng-bind="::verb.preteritum">                 </span>
+                <span class="vCol" ng-bind="::verb.perfekt">                    </span>
             </div>
         </article>
 

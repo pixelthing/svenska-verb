@@ -9,7 +9,7 @@ body {
   font-family: avenir;
   font-size: 16px; }
 
-.verbHeader {
+.vHeader {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,14 +17,14 @@ body {
   z-index: 3;
   background-color: #fff;
   overflow: hidden; }
-.verbTitle {
+.vTitle {
   position: relative;
   margin: 0;
   padding: 0.3em 4.4em;
   color: #fff;
   background-color: #005B99;
   font-size: 1rem; }
-  .verbTitle:after {
+  .vTitle:after {
     content: '';
     position: absolute;
     left: 1.45em;
@@ -32,7 +32,7 @@ body {
     top: 0;
     bottom: 0;
     background-color: #ffcc00; }
-.verbFilter {
+.vFilter {
   -webkit-appearance: none;
   display: block;
   float: left;
@@ -45,12 +45,12 @@ body {
   font-size: 1rem;
   line-height: 2em;
   outline: none; }
-  .verbFilter:focus {
+  .vFilter:focus {
     border-color: #666; }
-.verbFilterGroup {
+.vFilterGroup {
   margin: 0.5em 2vw 0.5em 51vw;
   overflow: hidden; }
-  .verbFilterGroupOption {
+  .vFilterGroupOption {
     -webkit-appearance: none;
     display: block;
     float: left;
@@ -66,48 +66,60 @@ body {
     outline: none;
     cursor: pointer;
     -webkit-transition: opacity 300ms;
-    -o-transition: opacity 300ms;
     transition: opacity 300ms; }
-    .verbFilterGroupOption:before {
+    .vFilterGroupOption:before {
       content: 'x';
       position: absolute;
       left: 0;
       right: 0;
       text-align: center;
       opacity: 0;
-      -webkit-transition: opacity 300ms;
-      -o-transition: opacity 300ms;
-      transition: opacity 300ms; }
-    .verbFilterGroupOption:first-child {
+      -webkit-transform: rotate(-720deg);
+      transform: rotate(-720deg);
+      -webkit-transition: all 300ms;
+      transition: all 300ms; }
+    .vFilterGroupOption:first-child {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px; }
-    .verbFilterGroupOption:last-child {
+    .vFilterGroupOption:last-child {
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px; }
-    .verbFilterGroupOption1 {
+    .vFilterGroupOption1 {
       background-color: #67009A; }
-    .verbFilterGroupOption2a {
+    .vFilterGroupOption2a {
       background-color: #F22F1D; }
-    .verbFilterGroupOption2b {
+    .vFilterGroupOption2b {
       background-color: #F26E22; }
-    .verbFilterGroupOption3 {
+    .vFilterGroupOption3 {
       background-color: #92BF11; }
-    .verbFilterGroupOption4 {
+    .vFilterGroupOption4 {
       background-color: #1EA5D8; }
-    .verbFilterGroupOptionActive {
+    .vFilterGroupOption span {
+      display: block;
       opacity: 1;
-      color: transparent; }
-      .verbFilterGroupOptionActive:before {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+      -webkit-transition: all 300ms;
+      transition: all 300ms; }
+    .vFilterGroupOptionActive {
+      opacity: 1; }
+      .vFilterGroupOptionActive:before {
         color: #fff;
-        opacity: 1; }
-.verbList {
+        opacity: 1;
+        -webkit-transform: rotate(0);
+        transform: rotate(0); }
+      .vFilterGroupOptionActive span {
+        opacity: 0;
+        -webkit-transform: rotate(720deg);
+        transform: rotate(720deg); }
+.vList {
   position: relative;
   width: 96vw;
   max-width: 980px;
   margin: 100px auto 0;
   border-top: 1px solid #eee;
   overflow: hidden; }
-  .verbListHeader {
+  .vListHeader {
     width: 96vw;
     max-width: 980px;
     margin: 0 auto;
@@ -117,16 +129,16 @@ body {
     font-size: 0.7em;
     white-space: nowrap;
     overflow: hidden; }
-    .verbListHeader > span {
+    .vListHeader > span {
       border-bottom: 3px solid #666 !important;
       z-index: 3; }
-.verbRow {
+.vRow {
   position: relative;
   clear: both;
   white-space: nowrap;
   overflow: hidden;
   line-height: 0; }
-.verbCol {
+.vCol {
   display: inline-block;
   width: 25%;
   min-width: 5rem;
@@ -135,15 +147,15 @@ body {
   overflow: hidden;
   background-color: #fff;
   line-height: 2; }
-  .verbRow:nth-child(odd) .verbCol {
+  .vRow:nth-child(odd) .vCol {
     background-color: #f6f6f6; }
-  .verbColWrap {
+  .vColWrap {
     position: relative;
     z-index: 2;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
-    .verbColWrap:before {
+    .vColWrap:before {
       content: attr(data-verbGroup);
       position: absolute;
       left: 2px;
@@ -154,13 +166,13 @@ body {
       color: #fff !important;
       font-size: 0.5em;
       line-height: 1; }
-      .verbGroup2a .verbColWrap:before, .verbGroup2b .verbColWrap:before {
+      .vGroup2a .vColWrap:before, .vGroup2b .vColWrap:before {
         margin-top: -1em;
         border-color: #F22F1D;
         color: #F22F1D;
         word-break: break-word;
         white-space: pre-wrap; }
-  .verbColTrans {
+  .vColTrans {
     position: absolute;
     top: 0;
     left: 0;
@@ -171,19 +183,19 @@ body {
     background-color: #000 !important;
     font-weight: bold;
     text-transform: uppercase; }
-  .verbColInfinitiv {
+  .vColInfinitiv {
     position: relative;
     font-weight: 600;
     border-left: 10px solid #999; }
-    .verbGroup1 .verbColInfinitiv {
+    .vGroup1 .vColInfinitiv {
       border-color: #67009A; }
-    .verbGroup2a .verbColInfinitiv {
+    .vGroup2a .vColInfinitiv {
       border-color: #F22F1D; }
-    .verbGroup2b .verbColInfinitiv {
+    .vGroup2b .vColInfinitiv {
       border-color: #F26E22; }
-    .verbGroup3 .verbColInfinitiv {
+    .vGroup3 .vColInfinitiv {
       border-color: #92BF11; }
-    .verbGroup4 .verbColInfinitiv {
+    .vGroup4 .vColInfinitiv {
       border-color: #1EA5D8; }
 
 /*# sourceMappingURL=main.css.map */

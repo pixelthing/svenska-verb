@@ -8,7 +8,7 @@ $color-group2b:    #F26E22;
 $color-group3:     #92BF11;
 $color-group4:     #1EA5D8;
 
-.verb {
+.v {
     &Header {
         position: fixed;
         top: 0;
@@ -78,7 +78,8 @@ $color-group4:     #1EA5D8;
                 right: 0;
                 text-align: center;
                 opacity: 0;
-                @include transition(opacity 300ms);
+                @include transform(rotate(-720deg));
+                @include transition(all 300ms);
             }
             &:first-child {
                 border-top-left-radius: 4px;
@@ -103,12 +104,22 @@ $color-group4:     #1EA5D8;
             &4 {
                 background-color:  $color-group4;
             }
+            span {
+                display: block;
+                opacity: 1;
+                @include transform(rotate(0));
+                @include transition(all 300ms);
+            }
             &Active {
                 opacity: 1;
-                color: transparent;
                 &:before {
                     color: #fff;
                     opacity: 1;
+                    @include transform(rotate(0));
+                }
+                span {
+                    opacity: 0;
+                    @include transform(rotate(720deg));
                 }
             }
         }
@@ -152,7 +163,7 @@ $color-group4:     #1EA5D8;
         overflow: hidden;
         background-color: #fff;
         line-height: 2;
-        .verbRow:nth-child(odd) & {
+        .vRow:nth-child(odd) & {
             background-color: #f6f6f6;
         }
         &Wrap {
@@ -172,7 +183,7 @@ $color-group4:     #1EA5D8;
                 color: #fff !important;
                 font-size: 0.5em;
                 line-height: 1;
-                .verbGroup2a &,.verbGroup2b & {
+                .vGroup2a &,.vGroup2b & {
                     margin-top: -1em;
                     border-color:  $color-group2a;
                     color:         $color-group2a;
@@ -197,19 +208,19 @@ $color-group4:     #1EA5D8;
             position: relative;
             font-weight: 600;
             border-left: 10px solid #999;
-            .verbGroup1 & {
+            .vGroup1 & {
                 border-color:  $color-group1;
             }
-            .verbGroup2a & {
+            .vGroup2a & {
                 border-color:  $color-group2a;
             }
-            .verbGroup2b & {
+            .vGroup2b & {
                 border-color:  $color-group2b;
             }
-            .verbGroup3 & {
+            .vGroup3 & {
                 border-color:  $color-group3;
             }
-            .verbGroup4 & {
+            .vGroup4 & {
                 border-color:  $color-group4;
             }
         }
