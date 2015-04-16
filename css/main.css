@@ -144,10 +144,12 @@ body {
   transform-origin: 0 0; }
   .vRow.ng-leave, .vRow.ng-move, .vRow.ng-enter {
     opacity: 1;
-    height: 3em; }
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
   .vRow.ng-leave.ng-leave-active, .vRow.ng-move, .vRow.ng-enter {
     opacity: 0;
-    height: 0; }
+    -webkit-transform: translateY(-3em);
+    transform: translateY(-3em); }
 .vCol {
   display: inline-block;
   width: 25%;
