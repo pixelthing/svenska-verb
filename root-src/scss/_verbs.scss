@@ -210,6 +210,7 @@ $color-group4:     #1EA5D8;
         position: relative;
         width: 96vw;
         max-width: 980px;
+        min-height: 600px;
         min-height: calc( 100vh - 100px );
         margin: $header-height auto 0;
         border-top: 1px solid #eee;
@@ -292,17 +293,17 @@ $color-group4:     #1EA5D8;
         margin: 0 -0.285em 0 0;
         padding: 0.5em 0.3rem;
         overflow: hidden;
-        background-color: #fff;
         line-height: 2;
-        .vRow:nth-child(odd) & {
-            background-color: #f6f6f6;
-        }
         &Wrap {
             position: relative;
             z-index: 2;
             -webkit-transform: translate3d(0,0,0);
             -moz-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
+            background: #fff;
+            .vRow:nth-child(odd) & {
+                background-color: #f6f6f6;
+            }
             &:before {
                 content: attr(data-verbGroup);
                 position: absolute;
