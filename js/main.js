@@ -31473,8 +31473,8 @@ verbsApp.controller('VerbsListController', ['$scope', 'verbsFactory', function($
     }
 
     $scope.searchSubmit = function() {
-        
         document.querySelector('.js-vFilterFocusTarget').focus();
+        console.log('x')
     }
 
     $scope.filterGroup = function(group) {
