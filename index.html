@@ -48,7 +48,7 @@
 
     <div class="vList">
 
-        <article class="vRow vGroup{{::verb.group}}" ng-repeat="verb in verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' ">
+        <article class="vRow vGroup{{::verb.group}}" ng-repeat="verb in filteredVerbs = ( verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' )">
             <span class="vCol vColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
             <div class="vColWrap" data-verbGroup="{{::verb.group}}" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":20}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
                 <span class="vCol vColInfinitiv" ng-bind="::verb.infinitiv">    </span>
@@ -57,6 +57,14 @@
                 <span class="vCol" ng-bind="::verb.perfekt">                    </span>
             </div>
         </article>
+        <div class="vListEmpty ng-cloak" ng-if="filteredVerbs.length < 1 && !isLoading">
+            <span class="icon icon-warning"></span> 
+            <div>Hittade ingenting!</div>
+            <button class="vListEmptyButton" ng-click="filterClear()">
+                <span class="icon icon-cross"></span>
+                Rensa
+            </button>
+        </div>
 
     </div>
 
