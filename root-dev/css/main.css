@@ -7,7 +7,8 @@ html {
 body {
   margin: 0;
   font-family: avenir;
-  font-size: 16px; }
+  font-size: 16px;
+  background: #818593; }
 
 .ng-cloak {
   display: none; }
@@ -56,13 +57,17 @@ body {
 .icon-zoom:before {
   content: "\e607"; }
 
+.vContainer {
+  min-height: 600px;
+  min-height: calc( 100vh );
+  background-color: #fff; }
 .vHeader {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 3;
-  background-color: #fff;
+  background: #fff;
   overflow: hidden; }
 .vTitle {
   position: relative;
@@ -236,9 +241,9 @@ body {
   position: relative;
   width: 96vw;
   max-width: 980px;
-  min-height: 600px;
-  min-height: calc( 100vh - 100px );
-  margin: 100px auto 0;
+  margin: 0 auto 15px;
+  padding-top: 100px;
+  background-color: #fff;
   border-top: 1px solid #eee;
   overflow: hidden; }
   .vListHeader {
@@ -364,7 +369,6 @@ body {
     .vGroup4 .vColInfinitiv {
       border-color: #1EA5D8; }
 .vFooter {
-  margin-top: 15px;
   padding: 0.5em 2vw;
   color: #D6D5E8;
   background: #818593;
