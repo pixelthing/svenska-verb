@@ -13,6 +13,16 @@ body {
 .ng-cloak {
   display: none; }
 
+.modal {
+  overflow-y: hidden; }
+  .modal body {
+    position: relative; }
+  .modal.safari {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: inherit; }
+
 @font-face {
   font-family: 'icons';
   src: url("../fonts/icons.eot"); }
@@ -388,31 +398,15 @@ body {
   .vDetailBed.ng-leave.ng-leave-active {
     opacity: 0; }
 .vDetailTitle {
-  position: fixed;
-  left: 10px;
-  top: 15px;
-  right: 25px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 16px;
   z-index: 12;
   margin: 0;
-  padding: 10px 0 10px 10px;
+  padding: 10px 0 8px 15px;
   background-color: #fff;
   font-size: 24px; }
-  .vDetailTitle.ng-enter {
-    opacity: 0;
-    -webkit-transition: all 300ms;
-    transition: all 300ms;
-    -webkit-transition-delay: 300ms;
-    transition-delay: 300ms; }
-  .vDetailTitle.ng-enter-active {
-    opacity: 1; }
-  .vDetailTitle.ng-leave {
-    opacity: 1;
-    -webkit-transition: all 300ms;
-    transition: all 300ms;
-    -webkit-transition-delay: 0;
-    transition-delay: 0; }
-  .vDetailTitle.ng-leave-active {
-    opacity: 0; }
 .vDetailModal {
   position: fixed;
   top: 15px;
@@ -425,7 +419,7 @@ body {
   margin-left: -150px;
   padding: 16px;
   background: #fff;
-  overflow: auto;
+  overflow: hidden;
   -webkit-overflow-scrolling: touch;
   -webkit-transition: all 300ms;
   transition: all 300ms;
@@ -458,29 +452,13 @@ body {
     -webkit-transform: rotate(10deg) translateY(200px);
     transform: rotate(10deg) translateY(200px); }
   .vDetailModalClose {
-    position: fixed;
-    right: 10px;
-    top: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
     z-index: 15;
     padding: 16px;
     font-size: 1.5em;
     cursor: pointer; }
-    .vDetailModalClose.ng-enter {
-      opacity: 0;
-      -webkit-transition: all 300ms;
-      transition: all 300ms;
-      -webkit-transition-delay: 300ms;
-      transition-delay: 300ms; }
-    .vDetailModalClose.ng-enter-active {
-      opacity: 1; }
-    .vDetailModalClose.ng-leave {
-      opacity: 1;
-      -webkit-transition: all 300ms;
-      transition: all 300ms;
-      -webkit-transition-delay: 300ms;
-      transition-delay: 300ms; }
-    .vDetailModalClose.ng-leave-active {
-      opacity: 0; }
 .vDetailTranslation {
   display: inline-block;
   padding: 0 0.2em;
@@ -488,7 +466,12 @@ body {
   font-size: 0.8em;
   font-weight: 300; }
 .vDetailBody {
-  margin-top: 50px; }
+  position: absolute;
+  left: 15px;
+  top: 50px;
+  right: 16px;
+  bottom: 10px;
+  overflow: auto; }
 .vDetailFokus {
   margin: 10px 0 0;
   padding: 10px;
@@ -508,6 +491,10 @@ body {
       text-transform: uppercase; }
     .vDetailFokusSubExample {
       margin: 0; }
+  .vDetailFokusLabel {
+    background: #ffc;
+    display: inline-block;
+    padding: 0 0.2em; }
 .vFooter {
   padding: 0.5em 2vw;
   color: #D6D5E8;

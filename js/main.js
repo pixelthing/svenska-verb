@@ -32362,12 +32362,13 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', 'verbsFactor
     }
 
     $scope.detailOpen = function(index) {
-        console.log(index);
+        document.querySelector('html').classList.add('modal');
         $scope.detailIsOpen = true;
         $scope.detailFill(index);
     }
 
     $scope.detailClose = function() {
+        document.querySelector('html').classList.remove('modal');
         $scope.detailData = {};
         $scope.detailIsOpen = false;
     }
@@ -32422,4 +32423,9 @@ if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);
     }, false);
+}
+var isSafari = /constructor/i.test(window.HTMLElement);
+console.log(isSafari)
+if (isSafari) {
+    document.querySelector('html').classList.add('safari');
 }
