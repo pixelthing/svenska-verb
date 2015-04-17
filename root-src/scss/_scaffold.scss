@@ -13,3 +13,11 @@ body {
 .ng-cloak {
     display: none;
 }
+
+
+.modal {
+    overflow-y: hidden;
+    body {
+        position: relative;
+    }
+}

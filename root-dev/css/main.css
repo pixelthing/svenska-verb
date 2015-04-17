@@ -13,6 +13,11 @@ body {
 .ng-cloak {
   display: none; }
 
+.modal {
+  overflow-y: hidden; }
+  .modal body {
+    position: relative; }
+
 @font-face {
   font-family: 'icons';
   src: url("../fonts/icons.eot"); }
