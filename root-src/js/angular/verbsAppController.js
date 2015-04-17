@@ -98,7 +98,6 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', 'verbsFactor
     }
 
     $scope.detailOpen = function(index) {
-        console.log(index);
         document.querySelector('html').classList.add('modal');
         $scope.detailIsOpen = true;
         $scope.detailFill(index);
