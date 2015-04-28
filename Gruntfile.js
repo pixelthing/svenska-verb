@@ -148,13 +148,23 @@ module.exports = function(grunt) {
                 base: '<%= config.dev %>'
             },
             src: ['**']
+        },
+        connect: {
+          server: {
+            options: {
+              port: 8000,
+              hostname: '*',
+              base: '<%= config.dev %>'
+            }
+          }
         }
     });
 
     require('load-grunt-tasks')(grunt);
     grunt.loadNpmTasks('assemble');
+    grunt.loadNpmTasks('grunt-contrib-connect');
 
-    grunt.registerTask('devbuild', ['clean', 'copy', 'assemble', 'sass', 'concat']);
+    grunt.registerTask('devbuild', ['clean', 'copy', 'assemble', 'sass', 'concat', 'connect']);
 
     // Default task(s).
     grunt.registerTask('default', ['devbuild', 'watch']);
