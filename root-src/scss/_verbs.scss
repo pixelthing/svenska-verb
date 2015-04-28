@@ -398,7 +398,7 @@
             @include respond-to(sm-min) {
                 top: 30px;
                 width: 700px;
-                height: 370px;
+                height: 20em;
                 margin-left: -350px;
             }
             &.ng-enter{

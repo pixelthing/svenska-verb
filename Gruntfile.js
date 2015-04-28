@@ -35,13 +35,13 @@ module.exports = function(grunt) {
             assets: {
                 expand: true,
                 cwd: '<%= config.src %>/',
-                src: ['fonts/**/*', 'img/**/*'],
+                src: ['fonts/*', 'img/*'],
                 dest: '<%= config.dev %>/'
             },
-            npm: {
+            manifest: {
                 expand: true,
-                cwd: '<%= config.src %>/',
-                src: ['fonts/**/*', 'img/**/*'],
+                cwd: '<%= config.src %>/views/pages/',
+                src: ['manifest.json'],
                 dest: '<%= config.dev %>/'
             }
         },
