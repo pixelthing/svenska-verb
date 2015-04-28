@@ -1,4 +1,4 @@
-verbsApp.controller('VerbsListController', ['$rootScope', '$scope', 'verbsFactory', function($rootScope, $scope, verbsFactory) {
+verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 'verbsFactory', function($rootScope, $scope, $timeout, verbsFactory) {
 
     $scope.isLoading = true;
     $scope.verbs = [];
@@ -55,7 +55,7 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', 'verbsFactor
         event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
         setTimeout(function() {
             event.element['0'].style[prefix.transition] = 'none';
-        },200)
+        },200);
     }
 
     // SEARCH/FILTER
@@ -73,7 +73,12 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', 'verbsFactor
     }
 
     $scope.filterGroup = function(group) {
+        scroll(0,0);
+        $scope.isLoading = true;
         $scope.filterCurrentGroup = ( $scope.filterCurrentGroup === group ? null : group );
+        $timeout(function() {
+            $scope.isLoading = false;
+        },1100);
     }
 
     $scope.filterClear = function() {
