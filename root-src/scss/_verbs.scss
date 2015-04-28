@@ -3,6 +3,12 @@
         min-height: 600px;
         min-height: calc( 100vh );
         background-color: #fff;
+        @include respond-to(xs-min) {
+            font-size: 20px;
+        }
+        @include respond-to(md-min) {
+            font-size: 24px;
+        }
     }
     &Header {
         position: fixed;
@@ -49,7 +55,7 @@
             border: 1px solid #ddd;
             color: #999;
             border-radius: $border-radius;
-            font-size: 1rem;
+            font-size: 1em;
             line-height: 2em;
             outline: none;
             @include transition(all 500ms);
@@ -131,7 +137,7 @@
                 color: #fff;
                 background-color: #999;
                 border: none;
-                font-size: 0.75rem;
+                font-size: 0.72em;
                 line-height: 2.9em;
                 opacity: 0.3;
                 outline: none;
@@ -155,7 +161,7 @@
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
                     @include transform(rotate(-720deg));
-                    @include transition(all 500ms,line-height 0);
+                    @include transition(all 500ms);
                 }
                 &:first-child {
                     border-top-left-radius: $border-radius;
@@ -206,7 +212,7 @@
         width: 96vw;
         max-width: 980px;
         margin: 0 auto;
-        padding: $header-height 0 15px;
+        padding: 6em 0 15px;
         background-color: #fff;
         border-top: 1px solid #eee;
         overflow: hidden;
@@ -302,7 +308,7 @@
             &:before {
                 content: attr(data-verbGroup);
                 position: absolute;
-                left: 2px;
+                left: 0.25em;
                 top: 53%;
                 z-index: 1;
                 width: 6px;
@@ -335,7 +341,7 @@
         &Infinitiv {
             position: relative;
             font-weight: 600;
-            border-left: 10px solid #999;
+            border-left: 0.6em solid #999;
             .vGroup1 & {
                 border-color:  $color-group1;
             }
@@ -394,10 +400,9 @@
             z-index: 10;
             width: 300px;
             max-width: calc(100% - 20px);
-            min-height: 300px;
-            max-height: calc(100% - 30px);
+            height: calc(100% - 40px);
+            max-height: 500px;
             margin-left: -150px;
-            padding: 16px;
             background: #fff;
             overflow: hidden;
             -webkit-overflow-scrolling: touch;
@@ -443,10 +448,11 @@
         }
         &Body {
             position: absolute;
-            left: 15px;
+            left: 0;
             top: 50px;
-            right: 16px;
-            bottom: 10px;
+            right: 0;
+            bottom: 0;
+            padding: 0 15px 15px;
             overflow: auto;
         }
         &Fokus {
