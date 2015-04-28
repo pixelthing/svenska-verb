@@ -32319,7 +32319,7 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
         event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
         setTimeout(function() {
             event.element['0'].style[prefix.transition] = 'none';
-        },200)
+        },200);
     }
 
     // SEARCH/FILTER
