@@ -32262,7 +32262,7 @@ angular.module('ngAnimate', ['ng'])
 })(window, window.angular, window.Hammer);
 
 var verbsApp = angular.module('verbsApp', ['ngAnimate','hmTouchEvents']);
-verbsApp.controller('VerbsListController', ['$rootScope', '$scope', 'verbsFactory', function($rootScope, $scope, verbsFactory) {
+verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 'verbsFactory', function($rootScope, $scope, $timeout, verbsFactory) {
 
     $scope.isLoading = true;
     $scope.verbs = [];
@@ -32337,7 +32337,11 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', 'verbsFactor
     }
 
     $scope.filterGroup = function(group) {
+        $scope.isLoading = true;
         $scope.filterCurrentGroup = ( $scope.filterCurrentGroup === group ? null : group );
+        $timeout(function() {
+            $scope.isLoading = false;
+        },0);
     }
 
     $scope.filterClear = function() {
