@@ -517,8 +517,8 @@ body {
     transform: translateY(0); }
   .spinner.ng-leave.ng-leave-active, .spinner.ng-move, .spinner.ng-enter {
     opacity: 0;
-    -webkit-transform: translateY(3em);
-    transform: translateY(3em); }
+    -webkit-transform: translateY(1em);
+    transform: translateY(1em); }
 
 .spinner > div {
   width: 18px;
