@@ -52,7 +52,7 @@
         <div class="bounce3"></div>
     </div>
 
-    <div class="vList" ng-if="!isLoading">
+    <div class="vList">
 
         <article class="vRow" ng-class="{vGroup{{::verb.group}} : true}" ng-repeat="verb in verbsFiltered = ( verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' )" ng-click="detailOpen($index)" stop-event='click'>
             <span class="vCol vColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
@@ -64,7 +64,7 @@
             </div>
         </article>
 
-        <div class="vListEmpty ng-cloak" ng-if="verbsFiltered.length < 1">
+        <div class="vListEmpty ng-cloak" ng-if="verbsFiltered.length < 1 && !isLoading">
             <span class="icon icon-warning"></span> 
             <div>Hittade ingenting!</div>
             <button class="vListEmptyButton" ng-click="filterClear()">
