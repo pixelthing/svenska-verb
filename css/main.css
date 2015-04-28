@@ -149,7 +149,7 @@ body {
       width: 1.2em;
       height: 1.2em;
       margin-top: -0.6em;
-      line-height: 1.2;
+      line-height: 1.1;
       text-align: center;
       color: #fff;
       background-color: #997a00;
@@ -502,9 +502,10 @@ body {
     color: #fff; }
 
 .spinner {
-  position: absolute;
-  top: 40px;
+  position: fixed;
+  top: 8em;
   left: 50%;
+  z-index: 100;
   width: 70px;
   margin-left: -35px;
   text-align: center;
