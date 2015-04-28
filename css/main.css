@@ -275,8 +275,6 @@ body {
     .vListHeader > span {
       border-bottom: 3px solid #666 !important;
       z-index: 3; }
-  .vListLoading {
-    opacity: 0.2; }
   .vListEmpty {
     width: 15em;
     margin: 0 auto;
