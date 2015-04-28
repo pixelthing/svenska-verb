@@ -32341,7 +32341,7 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
         $scope.filterCurrentGroup = ( $scope.filterCurrentGroup === group ? null : group );
         $timeout(function() {
             $scope.isLoading = false;
-        },0);
+        },900);
     }
 
     $scope.filterClear = function() {
