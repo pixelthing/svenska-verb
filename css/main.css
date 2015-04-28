@@ -261,9 +261,7 @@ body {
   padding: 6em 0 15px;
   background-color: #fff;
   border-top: 1px solid #eee;
-  overflow: hidden;
-  -webkit-transition: opacity 150ms;
-  transition: opacity 150ms; }
+  overflow: hidden; }
   .vListHeader {
     width: 96vw;
     max-width: 980px;
