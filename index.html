@@ -46,9 +46,15 @@
         </div>
     </article>
 
-    <div class="vList">
+    <div class="spinner ng-cloak" ng-if="isLoading" ng-class="{spinnerRun : isLoading}">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
 
-        <article class="vRow" ng-class="{vGroup{{::verb.group}} : true}" ng-repeat="verb in verbsFiltered = ( verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' )" ng-if="!isLoading" ng-click="detailOpen($index)" stop-event='click'>
+    <div class="vList" ng-class="{vListLoading : isLoading}">
+
+        <article class="vRow" ng-class="{vGroup{{::verb.group}} : true}" ng-repeat="verb in verbsFiltered = ( verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' )" ng-click="detailOpen($index)" stop-event='click'>
             <span class="vCol vColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
             <div class="vColWrap ng-cloak" data-verbGroup="{{::verb.group}}" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":20}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
                 <span class="vCol vColInfinitiv" ng-bind="::verb.infinitiv">    </span>
@@ -57,12 +63,6 @@
                 <span class="vCol" ng-bind="::verb.perfekt">                    </span>
             </div>
         </article>
-
-        <div class="spinner ng-cloak" ng-if="isLoading" ng-class="{spinnerRun : isLoading}">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
-        </div>
 
         <div class="vListEmpty ng-cloak" ng-if="verbsFiltered.length < 1 && !isLoading">
             <span class="icon icon-warning"></span> 
