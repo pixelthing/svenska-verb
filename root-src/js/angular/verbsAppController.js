@@ -72,6 +72,10 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
         $scope.search = '';
     }
 
+    $scope.searchLoading = function() {
+        scroll(0,0);
+    }
+
     $scope.filterGroup = function(group) {
         scroll(0,0);
         $scope.isLoading = true;
