@@ -8,7 +8,7 @@ body {
   margin: 0;
   font-family: avenir;
   font-size: 16px;
-  background: #818593; }
+  background: #000; }
 
 .ng-cloak {
   display: none; }
@@ -510,7 +510,7 @@ body {
 .vFooter {
   padding: 0.5em 2vw;
   color: #D6D5E8;
-  background: #818593;
+  background: #000;
   font-size: 12px; }
   .vFooter a {
     color: #fff; }
