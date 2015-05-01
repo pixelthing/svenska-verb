@@ -5,3 +5,7 @@
 @import "_fontIcon.scss";
 @import "_verbs.scss";
 @import "_spinner.scss";
+
+@media (media: print) {
+  @import "_print.scss";
+}
