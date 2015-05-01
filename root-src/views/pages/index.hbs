@@ -27,7 +27,7 @@ layout: _default.hbs
             <span class="vCol">infinitiv  </span>
             <span class="vCol">presens    </span>
             <span class="vCol">preteritum </span>
-            <span class="vCol">perfekt <span class="vListCount" ng-bind="verbsFiltered.length"></span></span>
+            <span class="vCol">perfekt    </span>
         </div>
     </article>
 
@@ -48,6 +48,8 @@ layout: _default.hbs
                 <span class="vCol" ng-bind="::verb.perfekt">                    </span>
             </div>
         </article>
+
+        <div class="vListCount" ng-bind="verbsFiltered.length + ' verb'" ng-if="verbsFiltered.length >= 1 && !isLoading"></div>
 
         <div class="vListEmpty ng-cloak" ng-if="verbsFiltered.length < 1 && !isLoading">
             <span class="icon icon-warning"></span> 

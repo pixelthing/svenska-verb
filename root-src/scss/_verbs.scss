@@ -266,8 +266,10 @@
             }
         }
         &Count {
-            float: right;
-            color: #ccc;
+            margin: 1em;
+            text-align: center;
+            font-weight: bold;
+            color: #999;
         }
     }
     &Row {
