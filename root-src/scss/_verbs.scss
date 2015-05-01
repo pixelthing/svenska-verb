@@ -265,6 +265,10 @@
                 text-transform: uppercase;
             }
         }
+        &Count {
+            float: right;
+            color: #ccc;
+        }
     }
     &Row {
         position: relative;

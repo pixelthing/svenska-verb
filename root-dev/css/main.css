@@ -306,6 +306,9 @@ body {
       border-radius: 4px;
       font-size: 0.8em;
       text-transform: uppercase; }
+  .vListCount {
+    float: right;
+    color: #ccc; }
 .vRow {
   position: relative;
   clear: both;
