@@ -4,180 +4,120 @@
             {
                 "group" : 1,
                 "infinitiv" : "arbeta",
-                "presens" : "arbetar",
-                "preteritum" : "arbetade",
-                "perfekt" : "arbetat",
                 "en" : "work",
                 "meningen" : "på denna app"
             },
             {
                 "group" : 1,
                 "infinitiv" : "bada",
-                "presens" : "badar",
-                "preteritum" : "badade",
-                "perfekt" : "badat",
                 "en" : "swim",
                 "meningen" : "i havet"
             },
             {
                 "group" : 1,
                 "infinitiv" : "baka",
-                "presens" : "bakar",
-                "preteritum" : "bakade",
-                "perfekt" : "bakat",
                 "en" : "bake",
                 "meningen" : "en tårta"
             },
             {
                 "group" : 1,
                 "infinitiv" : "berätta",
-                "presens" : "berättar",
-                "preteritum" : "berättade",
-                "perfekt" : "berättat",
                 "en" : "tell",
                 "meningen" : "henne"
             },
             {
                 "group" : 1,
                 "infinitiv" : "betala",
-                "presens" : "betalar",
-                "preteritum" : "betalade",
-                "perfekt" : "betalat",
                 "en" : "pay",
                 "meningen" : "i kassan"
             },
             {
                 "group" : 1,
                 "infinitiv" : "borra",
-                "presens" : "borrar",
-                "preteritum" : "borrade",
-                "perfekt" : "borrat",
                 "en" : "drill",
                 "meningen" : "ett hål"
             },
             {
                 "group" : 1,
                 "infinitiv" : "bruka",
-                "presens" : "brukar",
-                "preteritum" : "brukade",
-                "perfekt" : "brukat",
                 "en" : "usually",
                 "meningen" : "säga"
             },
             {
                 "group" : 1,
                 "infinitiv" : "bädda",
-                "presens" : "bäddar",
-                "preteritum" : "bäddade",
-                "perfekt" : "bäddat",
                 "en" : "make/embed",
                 "meningen" : "???"
             },
             {
                 "group" : 1,
                 "infinitiv" : "cyckla",
-                "presens" : "cycklar",
-                "preteritum" : "cycklade",
-                "perfekt" : "cycklat",
                 "en" : "cycle",
                 "meningen" : "hem"
             },
             {
                 "group" : 1,
                 "infinitiv" : "dansa",
-                "presens" : "dansar",
-                "preteritum" : "dansade",
-                "perfekt" : "dansat",
                 "en" : "dance",
                 "meningen" : "varje fredag"
             },
             {
                 "group" : 1,
                 "infinitiv" : "diska",
-                "presens" : "diskar",
-                "preteritum" : "diskade",
-                "perfekt" : "diskat",
                 "en" : "wash (up)",
                 "meningen" : "all plåtar"
             },
             {
                 "group" : 1,
                 "infinitiv" : "duka",
-                "presens" : "dukar",
-                "preteritum" : "dukade",
-                "perfekt" : "dukat",
                 "en" : "decorate",
                 "meningen" : "???"
             },
             {
                 "group" : 1,
                 "infinitiv" : "duscha",
-                "presens" : "duschar",
-                "preteritum" : "duschade",
-                "perfekt" : "duschat",
                 "en" : "shower",
                 "meningen" : "varje dag"
             },
             {
                 "group" : 1,
                 "infinitiv" : "döda",
-                "presens" : "dödar",
-                "preteritum" : "dödade",
-                "perfekt" : "dödat",
                 "en" : "kill",
                 "meningen" : "en flyg"
             },
             {
                 "group" : 1,
                 "infinitiv" : "fiska",
-                "presens" : "fiskar",
-                "preteritum" : "fiskade",
-                "perfekt" : "fiskat",
                 "en" : "fish",
                 "meningen" : "i havet"
             },
             {
                 "group" : 1,
                 "infinitiv" : "flytta",
-                "presens" : "flyttar",
-                "preteritum" : "flyttade",
-                "perfekt" : "flyttat",
                 "en" : "move",
                 "meningen" : "långsamt"
             },
             {
                 "group" : 1,
                 "infinitiv" : "fotografera",
-                "presens" : "fotograferar",
-                "preteritum" : "fotograferade",
-                "perfekt" : "fotograferat",
                 "en" : "mobe",
                 "meningen" : "månger saker"
             },
             {
                 "group" : 1,
                 "infinitiv" : "fuska",
-                "presens" : "fuskar",
-                "preteritum" : "fuskade",
-                "perfekt" : "fuskat",
                 "en" : "cheat",
                 "meningen" : "på kort"
             },
             {
                 "group" : 1,
                 "infinitiv" : "färga",
-                "presens" : "färgar",
-                "preteritum" : "färgade",
-                "perfekt" : "färgat",
                 "en" : "colour",
                 "meningen" : "i bilden"
             },
             {
                 "group" : 1,
                 "infinitiv" : "förlova",
-                "presens" : "förlovar",
-                "preteritum" : "förlovade",
-                "perfekt" : "förlovat",
                 "en" : "promise/engage",
                 "reflexive" : true,
                 "meningen" : "att berättar sanningen"
@@ -185,135 +125,90 @@
             {
                 "group" : 1,
                 "infinitiv" : "gapa",
-                "presens" : "gapar",
-                "preteritum" : "gapade",
-                "perfekt" : "gapat",
                 "en" : "gape",
                 "meningen" : " - otroligt!"
             },
             {
                 "group" : 1,
                 "infinitiv" : "gilla",
-                "presens" : "gillar",
-                "preteritum" : "gillade",
-                "perfekt" : "gillat",
                 "en" : "like",
                 "meningen" : "att åka home"
             },
             {
                 "group" : 1,
                 "infinitiv" : "gissa",
-                "presens" : "gissar",
-                "preteritum" : "gissade",
-                "perfekt" : "gissat",
                 "en" : "guess",
                 "meningen" : "fel hela tiden"
             },
             {
                 "group" : 1,
                 "infinitiv" : "gäspa",
-                "presens" : "gäspar",
-                "preteritum" : "gäspade",
-                "perfekt" : "gäspat",
                 "en" : "yawn",
                 "meningen" : "när jag är trot"
             },
             {
                 "group" : 1,
                 "infinitiv" : "halka",
-                "presens" : "halkar",
-                "preteritum" : "halkade",
-                "perfekt" : "halkat",
                 "en" : "slip",
                 "meningen" : "harifrån"
             },
             {
                 "group" : 1,
                 "infinitiv" : "hata",
-                "presens" : "hatar",
-                "preteritum" : "hatade",
-                "perfekt" : "hatat",
                 "en" : "hate",
                 "meningen" : "läxa"
             },
             {
                 "group" : 1,
                 "infinitiv" : "hitta",
-                "presens" : "hittar",
-                "preteritum" : "hittade",
-                "perfekt" : "hittat",
                 "en" : "find",
                 "meningen" : "det igen!"
             },
             {
                 "group" : 1,
                 "infinitiv" : "hoppas",
-                "presens" : "hoppas",
-                "preteritum" : "hoppades",
-                "perfekt" : "hoppats",
                 "en" : "hope",
                 "meningen" : "du är rätt"
             },
             {
                 "group" : 1,
                 "infinitiv" : "hosta",
-                "presens" : "hostar",
-                "preteritum" : "hostade",
-                "perfekt" : "hostat",
                 "en" : "cough",
                 "meningen" : "till högt"
             },
             {
                 "group" : 1,
                 "infinitiv" : "hoppa",
-                "presens" : "hoppar",
-                "preteritum" : "hoppade",
-                "perfekt" : "hoppat",
                 "en" : "jump/hop",
                 "meningen" : "på spårvagnen"
             },
             {
                 "group" : 1,
                 "infinitiv" : "hälsa",
-                "presens" : "hälsar",
-                "preteritum" : "hälsade",
-                "perfekt" : "hälsat",
                 "en" : "greet",
                 "meningen" : "honom från båtet"
             },
             {
                 "group" : 1,
                 "infinitiv" : "handla",
-                "presens" : "handlar",
-                "preteritum" : "handlade",
-                "perfekt" : "handlat",
                 "en" : "shop",
                 "meningen" : "i Coop"
             },
             {
                 "group" : 1,
                 "infinitiv" : "hämta",
-                "presens" : "hämtar",
-                "preteritum" : "hämtade",
-                "perfekt" : "hämtat",
                 "en" : "retrieve",
                 "meningen" : "Iris från dagis"
             },
             {
                 "group" : 1,
                 "infinitiv" : "jobba",
-                "presens" : "jobbar",
-                "preteritum" : "jobbade",
-                "perfekt" : "jobbat",
                 "en" : "work",
                 "meningen" : "i Vasagatan"
             },
             {
                 "group" : 1,
                 "infinitiv" : "kamma",
-                "presens" : "kammar",
-                "preteritum" : "kammade",
-                "perfekt" : "kammat",
                 "en" : "comb",
                 "reflexive" : true,
                 "meningen" : "i badrummet"
@@ -321,182 +216,885 @@
             {
                 "group" : 1,
                 "infinitiv" : "klappa",
-                "presens" : "klappar",
-                "preteritum" : "klappade",
-                "perfekt" : "klappat",
                 "en" : "pat",
                 "meningen" : "hunden"
             },
             {
                 "group" : 1,
                 "infinitiv" : "klättra",
-                "presens" : "klättrar",
-                "preteritum" : "klättrade",
-                "perfekt" : "klättrat",
                 "en" : "climb",
                 "meningen" : "up trappen"
             },
             {
                 "group" : 1,
                 "infinitiv" : "knacka",
-                "presens" : "knackar",
-                "preteritum" : "knackade",
-                "perfekt" : "knackat",
                 "en" : "tap",
                 "meningen" : "på fönstret"
             },
             {
                 "group" : 1,
                 "infinitiv" : "knarka",
-                "presens" : "knarkar",
-                "preteritum" : "knarkade",
-                "perfekt" : "knarkat",
                 "en" : "take drugs",
                 "meningen" : "länge sedan"
             },
             {
                 "group" : 1,
                 "infinitiv" : "kosta",
-                "presens" : "kostar",
-                "preteritum" : "kostade",
-                "perfekt" : "kostat",
                 "en" : "cost",
                 "meningen" : "mer en du tror"
             },
             {
                 "group" : 1,
                 "infinitiv" : "krama",
-                "presens" : "kramar",
-                "preteritum" : "kramade",
-                "perfekt" : "kramat",
                 "en" : "hug",
                 "meningen" : "min dotter"
             },
             {
                 "group" : 1,
                 "infinitiv" : "laga",
-                "presens" : "lagar",
-                "preteritum" : "lagade",
-                "perfekt" : "lagat",
                 "en" : "make (food)",
                 "meningen" : "mat"
             },
             {
                 "group" : 1,
                 "infinitiv" : "leta",
-                "presens" : "letar",
-                "preteritum" : "letade",
-                "perfekt" : "letat",
                 "en" : "browse",
                 "meningen" : "i affären"
             },
             {
                 "group" : 1,
                 "infinitiv" : "lova",
-                "presens" : "lovar",
-                "preteritum" : "lovade",
-                "perfekt" : "lovat",
                 "en" : "promise",
                 "meningen" : "jag ska"
             },
             {
                 "group" : 1,
                 "infinitiv" : "lova",
-                "presens" : "lovar",
-                "preteritum" : "lovade",
-                "perfekt" : "lovat",
                 "en" : "promise",
                 "meningen" : "jag kommer"
             },
             {
                 "group" : 1,
                 "infinitiv" : "lukta",
-                "presens" : "luktar",
-                "preteritum" : "luktade",
-                "perfekt" : "luktat",
                 "en" : "smell",
                 "meningen" : "ganske daligt"
             },
             {
                 "group" : 1,
                 "infinitiv" : "lyssna",
-                "presens" : "lyssnar",
-                "preteritum" : "lyssnade",
-                "perfekt" : "lyssnat",
                 "en" : "listen",
                 "meningen" : "till musiken"
             },
             {
                 "group" : 1,
                 "infinitiv" : "låna",
-                "presens" : "lånar",
-                "preteritum" : "lånade",
-                "perfekt" : "lånat",
                 "en" : "loan",
                 "meningen" : "pengar"
             },
             {
                 "group" : 1,
                 "infinitiv" : "lämna",
-                "presens" : "lämnar",
-                "preteritum" : "lämnade",
-                "perfekt" : "lämnat",
                 "en" : "leave",
                 "meningen" : "tidigt varje dag"
             },
             {
                 "group" : 1,
                 "infinitiv" : "längta",
-                "presens" : "längtar",
-                "preteritum" : "längtade",
-                "perfekt" : "längtat",
                 "en" : "yearn",
                 "meningen" : "att lämna"
             },
             {
                 "group" : 1,
                 "infinitiv" : "måla",
-                "presens" : "målar",
-                "preteritum" : "målade",
-                "perfekt" : "målat",
                 "en" : "paint",
                 "meningen" : "väggen"
             },
             {
                 "group" : 1,
                 "infinitiv" : "kissa",
-                "presens" : "kissar",
-                "preteritum" : "kissade",
-                "perfekt" : "kissat",
                 "en" : "pee (yes, really)",
                 "meningen" : "äfter en öl"
             },
             {
                 "group" : 1,
                 "infinitiv" : "kasta",
-                "presens" : "kastar",
-                "preteritum" : "kastade",
-                "perfekt" : "kastat",
                 "en" : "throw",
                 "meningen" : "bort"
             },
             {
+                "group" : 1,
+                "infinitiv" : "passa",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "plugga",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "prata",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "promenera",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "prova",
+                "en" : "test/try",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "pussa",
+                "en" : "kiss",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "raka",
+                "reflexive" : true,
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "regna",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "resparera",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "rita",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "ropa",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "rädda",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "räkna",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "sakna",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "salta",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "simma",
+                "en" : "swim",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "skala",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "skicka",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "skoja",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "skratta",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "skynda",
+                "reflexive" : true,
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "skåla",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "skämta",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "slicka",
+                "en" : "lick",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "sluta",
+                "en" : "finish",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "smaka",
+                "en" : "taste",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "snöa",
+                "en" : "snow",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "somna",
+                "en" : "snow",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "sparka",
+                "en" : "kick",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "spegla",
+                "reflexive" : true,
+                "en" : "kick",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "spela",
+                "en" : "play",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "stanna",
+                "en" : "stay",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "starta",
+                "en" : "start",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "stirra",
+                "en" : "stir",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "stoppa",
+                "en" : "stop",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "studera",
+                "en" : "study",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "städa",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "städa",
+                "en" : "clean",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "sucka",
+                "en" : "sigh",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "svara",
+                "en" : "answer",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "svimma",
+                "en" : "faint",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "tacka",
+                "en" : "thank",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "tala",
+                "en" : "tell",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "tappa",
+                "en" : "drop",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "titta",
+                "en" : "look/watch",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "tjäna",
+                "en" : "earn",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "torka",
+                "en" : "dry",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "träffa",
+                "en" : "meet",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "tugga",
+                "en" : "chew",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "tvätta",
+                "reflexive" : true,
+                "en" : "wash",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "tävla",
+                "en" : "compete",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "vakna",
+                "en" : "wake",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "vattna",
+                "en" : "water",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "vila",
+                "en" : "rest",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "vinka",
+                "en" : "wave",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "visa",
+                "en" : "show",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "viska",
+                "en" : "whisper",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "vispa",
+                "en" : "whisk",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "vissla",
+                "en" : "whistle",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "våga",
+                "en" : "dare",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "vänta",
+                "en" : "wait",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "växla",
+                "en" : "change",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "älska",
+                "en" : "love",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "önska",
+                "en" : "desire",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "öppna",
+                "en" : "open",
+                "meningen" : ""
+            },
+            {
+                "group" : 1,
+                "infinitiv" : "öva",
+                "en" : "exercise",
+                "meningen" : ""
+            },
+
+
+
+
+
+            {
                 "group" : "2a",
                 "infinitiv" : "anmäla",
-                "presens" : "anmäler",
-                "preteritum" : "anmälde",
-                "perfekt" : "anmält",
                 "reflexive" : true,
-                "en" : "notify"
+                "en" : "notify",
+                "meningen" : ""
             },
+            {
+                "group" : "2a",
+                "infinitiv" : "använda",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "behöva",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "beställa",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "betyda",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "bygga",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "böja",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "drömma",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "fylla",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "föda",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "följa",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "glömma",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "gräva",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "gömma",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "hyra",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "hälla",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "hända",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "hänga",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "höra",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "känna",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "köra",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "leva",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "lära",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "minnas",
+                "presens" : "minns",
+                "preteritun" : "mindes",
+                "perfekt" : "mints",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "ringa",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "slänga",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "spilla",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "ställa",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "stänga",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "svänga",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "sända",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "trivas",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "tända",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "väga",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "vända",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "2a",
+                "infinitiv" : "drömma",
+                "en" : "",
+                "meningen" : ""
+            },
+
+
+
+
+
             {
                 "group" : "2b",
                 "infinitiv" : "besöka",
-                "presens" : "besöker",
-                "preteritum" : "besökte",
-                "perfekt" : "besökt",
                 "en" : "visit"
             },
+            {
+                "group" : "2b",
+                "infinitiv" : "blåsa",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "byta",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "dyka",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "försöka",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "gifta",
+                "refrexive" : true,
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "heta",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "hjälper",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "klippa",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "knäppa",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "kyssa",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "köpa",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "leka",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "låsa",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "märka",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "möta",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "resa",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "röka",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "sköta",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "släcka",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "steka",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "tycka (om)",
+                "presens" : "tycker (om)",
+                "preteritum" : "tyckte (om)",
+                "perfekt" : "tyckt (om)",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "tänka",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "upptäcka",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "väcka",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "växa",
+                "en" : ""
+            },
+            {
+                "group" : "2b",
+                "infinitiv" : "åka",
+                "en" : ""
+            },
+
+
+
+
+
             {
                 "group" : "3",
                 "infinitiv" : "bero på",
@@ -505,6 +1103,46 @@
                 "perfekt" : "berott på",
                 "en" : "depend on"
             },
+            {
+                "group" : "3",
+                "infinitiv" : "bo",
+                "en" : "live (in)",
+                "meningen" : ""
+            },
+            {
+                "group" : "3",
+                "infinitiv" : "klä",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "3",
+                "infinitiv" : "må",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "3",
+                "infinitiv" : "ro",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "3",
+                "infinitiv" : "sy",
+                "en" : "",
+                "meningen" : ""
+            },
+            {
+                "group" : "3",
+                "infinitiv" : "tro",
+                "en" : "",
+                "meningen" : ""
+            },
+
+
+
+
             {
                 "group" : 4,
                 "infinitiv" : "be",

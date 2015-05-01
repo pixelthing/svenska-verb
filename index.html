@@ -20,7 +20,6 @@
     <link rel="apple-touch-icon" sizes="144x144" href="img/icon-3x.png">
     <link rel="apple-touch-icon" sizes="192x192" href="img/icon-4x.png">
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/print.css" media="print" />
 </head>
 <body ng-app="verbsApp">
 
@@ -70,6 +69,8 @@
                 <span class="vCol" ng-bind="::verb.perfekt">                    </span>
             </div>
         </article>
+
+        <div class="vListCount" ng-bind="verbsFiltered.length + ' verb'" ng-if="verbsFiltered.length >= 1 && !isLoading"></div>
 
         <div class="vListEmpty ng-cloak" ng-if="verbsFiltered.length < 1 && !isLoading">
             <span class="icon icon-warning"></span> 
