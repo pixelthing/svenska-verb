@@ -6,11 +6,10 @@
   top: 8em;
   left: 50%;
   z-index: 100;
-  width: 70px;
-  margin-left: -35px;
+  margin-left: -50px;
   padding: 20px;
   text-align: center;  
-  background: rgba(255,255,255,0.8);
+  background: rgba(0,0,0,0.5);
   border-radius: 100px;
   &.ng-enter,
   &.ng-leave,
@@ -23,14 +22,14 @@
   &.ng-leave.ng-leave-active,
   &.ng-move {
       opacity: 0;
-      @include transform(scale(0.1));
+      @include transform(scale(0.8));
   }
 }
 
 .spinnerRun > div {
   width: 18px;
   height: 18px;
-  background-color: #666;
+  background-color: #fff;
 
   border-radius: 100%;
   display: inline-block;

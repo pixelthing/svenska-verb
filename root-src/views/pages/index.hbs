@@ -11,16 +11,27 @@ layout: _default.hbs
         <div class="vFilter">
             <form class="vFilterForm" ng-submit="searchSubmit()">
                 <div class="vFilterInputIcon icon icon-zoom" ng-click="searchFocus()" ng-class="{vFilterInputIconActive : search.length}"></div>
-                <input type="search" class="vFilterInput js-vFilterInput" ng-model="search" placeholder="sök" ng-class="{vFilterInputActive : search.length}" ng-keyup="searchLoading()" />
-                <div class="vFilterInputClear ng-cloak icon icon-cross" ng-if="search.length" ng-click="searchClear()"></div>
+                <input type="search" 
+                    class="vFilterInput js-vFilterInput" 
+                    placeholder="sök" 
+                    autocomplete="off"
+                    autocorrect="off" 
+                    autocapitalize="off"
+                    ng-model="search" 
+                    ng-model-options="{ updateOn: 'default blur', debounce: {'default': 300, 'blur': 0} }"
+                    ng-class="{vFilterInputActive : search.length}" 
+                    ng-keyup="searchLoading()" />
+                <div class="vFilterInputClear" ng-if="filterInputButton" ng-click="searchClear()">
+                    <div class="vFilterInputClearButton icon icon-cross"></div>
+                </div>
             </form>
             <a href="javascript:void(0)" class="vFilterFocusTarget js-vFilterFocusTarget"></a>
             <div class="vFilterGroup">
-                <button class="vFilterGroupOption vFilterGroupOption1"  ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '1'}"  ng-click="filterGroup('1')" ><span>1</span></button>
-                <button class="vFilterGroupOption vFilterGroupOption2a" ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '2a'}" ng-click="filterGroup('2a')"><span>2a</span></button>
-                <button class="vFilterGroupOption vFilterGroupOption2b" ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '2b'}" ng-click="filterGroup('2b')"><span>2b</span></button>
-                <button class="vFilterGroupOption vFilterGroupOption3"  ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '3'}"  ng-click="filterGroup('3')" ><span>3</span></button>
-                <button class="vFilterGroupOption vFilterGroupOption4"  ng-class="{vFilterGroupOptionActive : filterCurrentGroup === '4'}"  ng-click="filterGroup('4')" ><span>4</span></button>
+                <button class="vFilterGroupOption vFilterGroupOption1"  ng-class="{vFilterGroupOptionActive : filterCurrentGroupButton === '1'}"  ng-click="filterGroup('1')" ><span>1</span></button>
+                <button class="vFilterGroupOption vFilterGroupOption2a" ng-class="{vFilterGroupOptionActive : filterCurrentGroupButton === '2a'}" ng-click="filterGroup('2a')"><span>2a</span></button>
+                <button class="vFilterGroupOption vFilterGroupOption2b" ng-class="{vFilterGroupOptionActive : filterCurrentGroupButton === '2b'}" ng-click="filterGroup('2b')"><span>2b</span></button>
+                <button class="vFilterGroupOption vFilterGroupOption3"  ng-class="{vFilterGroupOptionActive : filterCurrentGroupButton === '3'}"  ng-click="filterGroup('3')" ><span>3</span></button>
+                <button class="vFilterGroupOption vFilterGroupOption4"  ng-class="{vFilterGroupOptionActive : filterCurrentGroupButton === '4'}"  ng-click="filterGroup('4')" ><span>4</span></button>
             </div>
         </div>
         <div class="vListHeader">

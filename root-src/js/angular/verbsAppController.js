@@ -5,6 +5,8 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
     $scope.verbsCount = 0;
     $scope.verbsFiltered = [];
     $scope.filterCurrentGroup = null;
+    $scope.filterCurrentGroupButton = null;
+    $scope.filterInputButton = false;
     $scope.detailIsOpen = false;
     $scope.detailData = {};
 
@@ -69,25 +71,40 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
     }
 
     $scope.searchClear = function() {
-        $scope.search = '';
+        $scope.filterInputButton = false;
+        $scope.isLoading = true;
+        $timeout(function() {
+            $scope.isLoading = false;
+            $scope.search = '';
+        },200);
     }
 
     $scope.searchLoading = function() {
-        scroll(0,0);
+        $timeout(function() {
+            if ($scope.search && $scope.search.length) {
+                $scope.filterInputButton = true;
+                return;
+            }
+            $scope.filterInputButton = false;
+            scroll(0,0);
+        },301); // needs to match the debounce value
     }
 
     $scope.filterGroup = function(group) {
         scroll(0,0);
         $scope.isLoading = true;
-        $scope.filterCurrentGroup = ( $scope.filterCurrentGroup === group ? null : group );
+        $scope.filterCurrentGroupButton = ( $scope.filterCurrentGroup === group ? null : group );
         $timeout(function() {
+            $scope.filterCurrentGroup = $scope.filterCurrentGroupButton;
             $scope.isLoading = false;
-        },1100);
+        },200);
     }
 
     $scope.filterClear = function() {
         $scope.search = '';
+        $scope.filterCurrentGroupButton = null;
         $scope.filterCurrentGroup = null;
+        $scope.filterInputButton = null;
     }
 
     $scope.filterGroupFilter = function(value, index) {
