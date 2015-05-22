@@ -71,9 +71,21 @@
 
     <div class="vList">
 
-        <article class="vRow" ng-class="{vGroup{{::verb.group}} : true}" ng-repeat="verb in verbsFiltered = ( verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' )" ng-click="detailOpen($index)" stop-event='click'>
-            <span class="vCol vColTrans" ng-bind="::verb.en" data-verbForm="english"></span>
-            <div class="vColWrap ng-cloak" data-verbGroup="{{::verb.group}}" hm-panright="panRight" hm-panright="panLeft" hm-panend="panEnd" hm-manager-options='{"threshold":20}' hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
+        <article class="vRow" 
+            ng-class="{vGroup{{::verb.group}} : true}" 
+            ng-repeat="verb in verbsFiltered = ( verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' )" 
+            ng-click="detailAudioOpen($index)" 
+            stop-event='click'>
+            <span class="vCol vColTrans" 
+                ng-bind="::verb.en" 
+                data-verbForm="english"></span>
+            <div class="vColWrap ng-cloak" 
+                data-verbGroup="{{::verb.group}}" 
+                hm-panright="panRight" 
+                hm-panright="panLeft" 
+                hm-panend="panEnd" 
+                hm-manager-options='{"threshold":20}' 
+                hm-recognizer-options='[{"type":"panright","enabled": true},{"type":"panleft","enabled": false}]'>
                 <span class="vCol vColInfinitiv" ng-bind="::verb.infinitiv">    </span>
                 <span class="vCol" ng-bind="::verb.presens">                    </span>
                 <span class="vCol" ng-bind="::verb.preteritum">                 </span>
@@ -94,6 +106,8 @@
 
 
     </div>
+
+    <!-- DETAIL -->
 
     <div class="vDetailBed ng-cloak" ng-if="detailIsOpen">
     </div>
@@ -139,6 +153,30 @@
                     <dd class="vDetailFokusSubExample">Jag skulle <strong class="vDetailFokusLabel" ng-bind="detailData.infinitiv"></strong> <span ng-bind="detailData.meningen"></span></dd>
                 </dl>
             </section>
+
+        </div>
+
+    </div>
+    <!-- DETAIL -->
+
+    <div class="vDetailBed ng-cloak" ng-if="audioIsOpen">
+    </div>
+    <div class="vDetailModal vDetailModalAudio ng-cloak" stop-event='click' ng-if="audioIsOpen">
+
+        <h1 class="vDetailTitle vDetailTitleAudio ng-cloak" stop-event='click'>
+            <span class="vDetailInfinitiv" ng-bind="detailData.infinitiv"></span>
+        </h1>
+
+        <span class="vDetailModalClose vDetailModalCloseAudio icon icon-cross ng-cloak" ng-click="detailAudioClose()"></span>
+
+        <div class="vDetailBody vDetailBodyAudio">
+
+            <div><b class="vDetailBodyAudioLabel">Infinitiv</b> <span class="vDetailBodyAudioValue" ng-bind="::detailData.infinitiv"></span></div>
+            <div><b class="vDetailBodyAudioLabel">Presens</b> <span class="vDetailBodyAudioValue" ng-bind="::detailData.presens"></span></div>
+            <div><b class="vDetailBodyAudioLabel">Preteritum</b> <span class="vDetailBodyAudioValue" ng-bind="::detailData.preteritum"></span></div>
+            <div><b class="vDetailBodyAudioLabel">Perfekt</b> <span class="vDetailBodyAudioValue" ng-bind="::detailData.perfekt"></span></div>
+
+            <iframe class="vDetailBodyAudioIframe" ng-src="{{detailData.audio}}" ng-if="detailData.audio"></iframe>
 
         </div>
 

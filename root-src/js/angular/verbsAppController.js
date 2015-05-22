@@ -138,11 +138,30 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
 
     $scope.detailFill = function(index) {
         $scope.detailData = $scope.verbsFiltered[index];
+        $scope.detailData.audio = 'http://translate.google.com/translate_tts?ie=UTF-8&q=' + $scope.detailData.infinitiv 
+        + ',' + $scope.detailData.presens 
+        + ',' + $scope.detailData.preteritum 
+        + ',' + $scope.detailData.perfekt 
+        + '&tl=sv-se';
     }
 
     $rootScope.$on('backgroundClick', function () {
         $scope.detailClose();
     });
+
+    // AUDIO
+
+    $scope.detailAudioOpen = function(index) {
+        document.querySelector('html').classList.add('modal');
+        $scope.detailFill(index);
+        $scope.audioIsOpen = true;
+    }
+
+    $scope.detailAudioClose = function() {
+        document.querySelector('html').classList.remove('modal');
+        $scope.detailData = {};
+        $scope.audioIsOpen = false;
+    }
 
     verbsFactory
         .getVerbs()

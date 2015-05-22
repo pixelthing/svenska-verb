@@ -419,12 +419,16 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  right: 16px;
+  right: 0;
   z-index: 12;
   margin: 0;
   padding: 10px 0 8px 15px;
+  color: #000;
   background-color: #fff;
   font-size: 24px; }
+  .vDetailTitleAudio {
+    color: #fff;
+    background-color: #000; }
 .vDetailModal {
   position: fixed;
   top: 15px;
@@ -475,6 +479,10 @@ body {
     opacity: 0;
     -webkit-transform: translateY(200px);
     transform: translateY(200px); }
+  .vDetailModalAudio {
+    color: #fff;
+    background-color: #000;
+    height: 15em; }
   .vDetailModalClose {
     position: absolute;
     right: 0;
@@ -483,6 +491,8 @@ body {
     padding: 16px;
     font-size: 1.5em;
     cursor: pointer; }
+    .vDetailModalCloseAudio {
+      color: #fff; }
 .vDetailTranslation {
   display: inline-block;
   padding: 0 0.2em;
@@ -497,6 +507,23 @@ body {
   bottom: 0;
   padding: 0 15px 15px;
   overflow: auto; }
+  .vDetailBodyAudio {
+    padding: 10px 0;
+    text-align: center; }
+    .vDetailBodyAudioIframe {
+      width: 320px;
+      max-width: 100%;
+      height: 150px;
+      border: none; }
+    .vDetailBodyAudioLabel {
+      display: inline-block;
+      width: 5.5em;
+      text-align: left;
+      color: #999; }
+    .vDetailBodyAudioValue {
+      display: inline-block;
+      width: 8em;
+      text-align: left; }
 .vDetailFokus {
   margin: 10px 0 0;
   padding: 10px;

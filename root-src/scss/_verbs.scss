@@ -406,12 +406,17 @@
             position: absolute;
             left: 0;
             top: 0;
-            right: 16px;
+            right: 0;
             z-index: 12;
             margin: 0;
             padding: 10px 0 8px 15px;
+            color: #000;
             background-color: #fff;
             font-size: 24px;
+            &Audio {
+                color: #fff;
+                background-color: #000;
+            }
         }
         &Modal {
             position: fixed;
@@ -456,6 +461,11 @@
                 opacity: 0;
                 @include transform(translateY(200px));
             }
+            &Audio {
+                color: #fff;
+                background-color: #000;
+                height: 15em;
+            }
             &Close {
                 position: absolute;
                 right: 0;
@@ -464,6 +474,9 @@
                 padding: 16px;
                 font-size: 1.5em;
                 cursor: pointer;
+                &Audio {
+                    color: #fff;
+                }
             }
         }
         &Translation {
@@ -481,6 +494,27 @@
             bottom: 0;
             padding: 0 15px 15px;
             overflow: auto;
+            &Audio {
+                padding: 10px 0;
+                text-align: center;
+                &Iframe {
+                    width: 320px;
+                    max-width: 100%;
+                    height: 150px;
+                    border: none;
+                }
+                &Label {
+                    display: inline-block;
+                    width: 5.5em;
+                    text-align: left;
+                    color: #999;
+                }
+                &Value {
+                    display: inline-block;
+                    width: 8em;
+                    text-align: left;
+                }
+            }
         }
         &Fokus {
             margin: 10px 0 0;
