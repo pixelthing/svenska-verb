@@ -403,7 +403,7 @@ body {
   right: 0;
   bottom: 0;
   z-index: 9;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.9);
   -webkit-transition: all 200ms;
   transition: all 200ms; }
   .vDetailBed.ng-leave, .vDetailBed.ng-move.ng-move-active, .vDetailBed.ng-enter.ng-enter-active {
@@ -411,8 +411,8 @@ body {
   .vDetailBed.ng-leave {
     -webkit-transition: all 500ms;
     transition: all 500ms;
-    -webkit-transition-delay: 300ms;
-    transition-delay: 300ms; }
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms; }
   .vDetailBed.ng-leave.ng-leave-active {
     opacity: 0; }
 .vDetailTitle {
@@ -438,10 +438,11 @@ body {
   background: #fff;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   -webkit-transition: all 300ms;
   transition: all 300ms;
-  -webkit-transform-origin: 50% -1000px;
-  transform-origin: 50% -1000px; }
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%; }
   @media (min-width: 768px) {
     .vDetailModal {
       top: 30px;
@@ -450,30 +451,30 @@ body {
       margin-left: -350px; } }
   .vDetailModal.ng-enter {
     opacity: 0;
-    -webkit-transform: rotate(10deg) translateY(-200px);
-    transform: rotate(10deg) translateY(-200px);
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
     -webkit-transition: all 0;
     transition: all 0; }
   .vDetailModal.ng-enter-active {
     opacity: 1;
-    -webkit-transform: rotate(0) translateY(0);
-    transform: rotate(0) translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
     -webkit-transition: all 300ms;
     transition: all 300ms; }
   .vDetailModal.ng-leave {
     opacity: 1;
-    -webkit-transform: rotate(0) translateY(0);
-    transform: rotate(0) translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
     -webkit-transition: all 500ms;
     transition: all 500ms;
-    -webkit-transition-delay: 300ms;
-    transition-delay: 300ms;
-    -webkit-transform-origin: 50% 1000px;
-    transform-origin: 50% 1000px; }
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%; }
   .vDetailModal.ng-leave-active {
     opacity: 0;
-    -webkit-transform: rotate(10deg) translateY(200px);
-    transform: rotate(10deg) translateY(200px); }
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px); }
   .vDetailModalClose {
     position: absolute;
     right: 0;
@@ -526,6 +527,9 @@ body {
       text-transform: uppercase; }
     .vDetailFokusSubExample {
       margin: 0; }
+      @media (min-width: 768px) {
+        .vDetailFokusSubExample {
+          font-size: 0.9em; } }
   .vDetailFokusLabel {
     background: #ffc;
     display: inline-block;
