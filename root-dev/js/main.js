@@ -32484,7 +32484,7 @@ verbsApp.factory('verbsFactory', ['$http', function verbsFactory($http) {
     }
 
     var conjugateReflexive = function(verb) {
-        return ( verb.reflexive ? ' (sig)' : '' );
+        return ( verb.reflexive ? ' sig' : '' );
     }
 
     var getData = function() {
