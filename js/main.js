@@ -32261,7 +32261,14 @@ angular.module('ngAnimate', ['ng'])
   }
 })(window, window.angular, window.Hammer);
 
-var verbsApp = angular.module('verbsApp', ['ngAnimate','hmTouchEvents']);
+var verbsApp = angular.module('verbsApp', ['ngAnimate','hmTouchEvents']).config(function($sceDelegateProvider) {
+ $sceDelegateProvider.resourceUrlWhitelist([
+   // Allow same origin resource loads.
+   'self',
+   // Allow loading from our assets domain.  Notice the difference between * and **.
+   'http://translate.google.com/**']);
+
+});
 verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 'verbsFactory', function($rootScope, $scope, $timeout, verbsFactory) {
 
     $scope.isLoading = true;
@@ -32269,6 +32276,8 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
     $scope.verbsCount = 0;
     $scope.verbsFiltered = [];
     $scope.filterCurrentGroup = null;
+    $scope.filterCurrentGroupButton = null;
+    $scope.filterInputButton = false;
     $scope.detailIsOpen = false;
     $scope.detailData = {};
 
@@ -32333,25 +32342,40 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
     }
 
     $scope.searchClear = function() {
-        $scope.search = '';
+        $scope.filterInputButton = false;
+        $scope.isLoading = true;
+        $timeout(function() {
+            $scope.isLoading = false;
+            $scope.search = '';
+        },200);
     }
 
     $scope.searchLoading = function() {
-        scroll(0,0);
+        $timeout(function() {
+            if ($scope.search && $scope.search.length) {
+                $scope.filterInputButton = true;
+                return;
+            }
+            $scope.filterInputButton = false;
+            scroll(0,0);
+        },301); // needs to match the debounce value
     }
 
     $scope.filterGroup = function(group) {
         scroll(0,0);
         $scope.isLoading = true;
-        $scope.filterCurrentGroup = ( $scope.filterCurrentGroup === group ? null : group );
+        $scope.filterCurrentGroupButton = ( $scope.filterCurrentGroup === group ? null : group );
         $timeout(function() {
+            $scope.filterCurrentGroup = $scope.filterCurrentGroupButton;
             $scope.isLoading = false;
-        },1100);
+        },200);
     }
 
     $scope.filterClear = function() {
         $scope.search = '';
+        $scope.filterCurrentGroupButton = null;
         $scope.filterCurrentGroup = null;
+        $scope.filterInputButton = null;
     }
 
     $scope.filterGroupFilter = function(value, index) {
@@ -32385,11 +32409,30 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
 
     $scope.detailFill = function(index) {
         $scope.detailData = $scope.verbsFiltered[index];
+        $scope.detailData.audio = 'http://translate.google.com/translate_tts?ie=UTF-8&q=' + $scope.detailData.infinitiv 
+        + ',' + $scope.detailData.presens 
+        + ',' + $scope.detailData.preteritum 
+        + ',' + $scope.detailData.perfekt 
+        + '&tl=sv-se';
     }
 
     $rootScope.$on('backgroundClick', function () {
         $scope.detailClose();
     });
+
+    // AUDIO
+
+    $scope.detailAudioOpen = function(index) {
+        document.querySelector('html').classList.add('modal');
+        $scope.detailFill(index);
+        $scope.audioIsOpen = true;
+    }
+
+    $scope.detailAudioClose = function() {
+        document.querySelector('html').classList.remove('modal');
+        $scope.detailData = {};
+        $scope.audioIsOpen = false;
+    }
 
     verbsFactory
         .getVerbs()
@@ -32467,7 +32510,7 @@ verbsApp.factory('verbsFactory', ['$http', function verbsFactory($http) {
     }
 
     var conjugateReflexive = function(verb) {
-        return ( verb.reflexive ? ' (sig)' : '' );
+        return ( verb.reflexive ? ' sig' : '' );
     }
 
     var getData = function() {
