@@ -101,8 +101,10 @@ body {
     bottom: 0;
     background-color: #ffcc00; }
 .vFilter {
+  max-width: calc( 980px + 4% );
   max-width: calc( 980px + 4vw );
   margin: 0 auto;
+  padding: 0.5em 2%;
   padding: 0.5em 2vw;
   line-height: 0; }
   .vFilterForm {
@@ -263,6 +265,7 @@ body {
           transform: rotate(720deg); }
 .vList {
   position: relative;
+  width: 96%;
   width: 96vw;
   max-width: 980px;
   margin: 0 auto;
@@ -271,6 +274,7 @@ body {
   border-top: 1px solid #eee;
   overflow: hidden; }
   .vListHeader {
+    width: 96%;
     width: 96vw;
     max-width: 980px;
     margin: 0 auto;
@@ -360,17 +364,27 @@ body {
   .vColTrans {
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 10px;
     width: auto;
     z-index: 1;
     color: #fff;
-    background-color: #000 !important;
     font-weight: bold;
     text-transform: uppercase; }
+    .vGroup1 .vColTrans {
+      background-color: #67009A; }
+    .vGroup2a .vColTrans {
+      background-color: #F22F1D; }
+    .vGroup2b .vColTrans {
+      background-color: #F26E22; }
+    .vGroup3 .vColTrans {
+      background-color: #92BF11; }
+    .vGroup4 .vColTrans {
+      background-color: #1EA5D8; }
   .vColInfinitiv {
     position: relative;
-    font-weight: 600;
+    font-weight: bold;
     border-left: 0.6em solid #999; }
     .vGroup1 .vColInfinitiv {
       border-color: #67009A; }
@@ -517,6 +531,7 @@ body {
     display: inline-block;
     padding: 0 0.2em; }
 .vFooter {
+  padding: 0.5em 2%;
   padding: 0.5em 2vw;
   color: #D6D5E8;
   background: #818593;

@@ -37,8 +37,10 @@
         }
     }
     &Filter {
+        max-width: calc( 980px + 4% );
         max-width: calc( 980px + 4vw );
         margin: 0 auto;
+        padding: 0.5em 2%;
         padding: 0.5em 2vw;
         line-height: 0;
         &Form {
@@ -219,6 +221,7 @@
     }
     &List {
         position: relative;
+        width: 96%;
         width: 96vw;
         max-width: 980px;
         margin: 0 auto;
@@ -227,6 +230,7 @@
         border-top: 1px solid #eee;
         overflow: hidden;
         &Header {
+            width: 96%;
             width: 96vw;
             max-width: 980px;
             margin: 0 auto;
@@ -330,18 +334,33 @@
         &Trans {
             position: absolute;
             top: 0;
+            bottom: 0;
             left: 0;
             right: 10px;
             width: auto;
             z-index: 1;
             color: #fff;
-            background-color: #000 !important;
             font-weight: bold;
             text-transform: uppercase;
+            .vGroup1 & {
+                background-color:  $color-group1;
+            }
+            .vGroup2a & {
+                background-color:  $color-group2a;
+            }
+            .vGroup2b & {
+                background-color:  $color-group2b;
+            }
+            .vGroup3 & {
+                background-color:  $color-group3;
+            }
+            .vGroup4 & {
+                background-color:  $color-group4;
+            }
         }
         &Infinitiv {
             position: relative;
-            font-weight: 600;
+            font-weight: bold;
             border-left: 0.6em solid #999;
             .vGroup1 & {
                 border-color:  $color-group1;
@@ -505,6 +524,7 @@
         }
     }
     &Footer {
+        padding: 0.5em 2%;
         padding: 0.5em 2vw;
         color: $color-footer-fore;
         background: $color-footer-back;
