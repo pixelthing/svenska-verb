@@ -41,20 +41,42 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
 
     // TOUCH SLIDE
 
+    var panning = false;
+
     $scope.panRight = function(event) {
         var deltaX = event.deltaX;
         var deltaY = event.deltaY;
         if (Math.abs(deltaY)/3 > Math.abs(deltaX) || deltaY > 20 ) {
             event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+            panning = false;
             return;
         }
         if (deltaX > 0) {
             event.element['0'].style[prefix.transform] = 'translate3d(' + deltaX + 'px,0,0)';
+            panning = 'right';
+        }
+    }
+    $scope.panLeft = function(event) {
+        var deltaX = event.deltaX;
+        var deltaY = event.deltaY;
+        if (Math.abs(deltaY)/3 > Math.abs(deltaX) || deltaY > 20 ) {
+            event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+            panning = false;
+            return;
+        }
+        if (deltaX < 0) {
+            event.element['0'].style[prefix.transform] = 'translate3d(' + deltaX + 'px,0,0)';
+            panning = 'left';
+        }
+        var index = event.element['0'].getAttribute('data-index');
+        if (deltaX < -100) {
+            $scope.detailAudioOpen(index);
         }
     }
     $scope.panEnd = function(event) {
         event.element['0'].style[prefix.transition] = prefix.css + 'transform 200ms';
         event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+        panning = false;
         setTimeout(function() {
             event.element['0'].style[prefix.transition] = 'none';
         },200);
@@ -147,6 +169,7 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
 
     $rootScope.$on('backgroundClick', function () {
         $scope.detailClose();
+        $scope.detailAudioClose();
     });
 
     // AUDIO
