@@ -413,10 +413,6 @@
             color: #000;
             background-color: #fff;
             font-size: 24px;
-            &Audio {
-                color: #fff;
-                background-color: #000;
-            }
         }
         &Modal {
             position: fixed;
@@ -469,13 +465,13 @@
             &Close {
                 position: absolute;
                 right: 0;
-                top: 0;
+                top: -0.2em;
                 z-index: 15;
                 padding: 16px;
                 font-size: 1.5em;
                 cursor: pointer;
                 &Audio {
-                    color: #fff;
+                    color: #000;
                 }
             }
         }
@@ -513,6 +509,66 @@
                     display: inline-block;
                     width: 8em;
                     text-align: left;
+                }
+                &Button {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    position: relative;
+                    display: block;
+                    width: 8em;
+                    height: 8em;
+                    margin: 1em auto;
+                    cursor: pointer;
+                    outline: none;
+                    color: #fff;
+                    background-color: #333;
+                    border: 3px dotted #999;
+                    border-radius: 10em;
+                    @include transition(all 300ms);
+                    &Ready {
+                        border: 3px solid #999;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 0;
+                            height: 0;
+                            margin: -1.3em 0 0 -0.75em;
+                            border-left: 2em solid #999;
+                            border-top: 1.3em solid transparent;
+                            border-bottom: 1.3em solid transparent;
+                            @include transition(-webkit-transform 300ms,border-color 300ms);
+                        }
+                        &:hover {
+                            border-color: #fff;
+                            &:before {
+                                border-left: 2em solid #fff;
+                            }
+                        }
+                    }
+                    &Playing {
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 2.5em;
+                            height: 2.5em;
+                            margin: -1.25em 0 0 -1.25em;
+                            border-left: 0.75em solid #999;
+                            border-top: none;
+                            border-bottom: none;
+                            border-right: 0.75em solid #999;
+                            @include transform(rotate(360deg))
+                        }
+                        &:hover {
+                            &:before {
+                                border-left: 0.75em solid #fff;
+                                border-right: 0.75em solid #fff;
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -155,7 +155,7 @@ layout: _default.hbs
             <div><b class="vDetailBodyAudioLabel">Preteritum</b> <span class="vDetailBodyAudioValue" ng-bind="::detailData.preteritum"></span></div>
             <div><b class="vDetailBodyAudioLabel">Perfekt</b> <span class="vDetailBodyAudioValue" ng-bind="::detailData.perfekt"></span></div>
 
-            <iframe class="vDetailBodyAudioIframe" ng-src="\{{detailData.audio}}" ng-if="detailData.audio"></iframe>
+            <button class="vDetailBodyAudioButton" ng-click="audioButton()" ng-class="{vDetailBodyAudioButtonReady : detailAudioButtonReady, vDetailBodyAudioButtonPlaying : detailAudioButtonPlaying, vDetailBodyAudioButtonLoading : detailAudioButtonLoading}"></button>
 
         </div>
 

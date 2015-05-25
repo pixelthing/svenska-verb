@@ -7,6 +7,8 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
     $scope.filterCurrentGroup = null;
     $scope.filterCurrentGroupButton = null;
     $scope.filterInputButton = false;
+    $scope.detailAudioButtonReady = false;
+    $scope.detailAudioButtonPlaying = false;
     $scope.detailIsOpen = false;
     $scope.detailData = {};
 
@@ -138,6 +140,7 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
 
     $scope.detailFill = function(index) {
         $scope.detailData = $scope.verbsFiltered[index];
+        //$scope.detailData.audio = '/img/01.wav';
         $scope.detailData.audio = 'http://translate.google.com/translate_tts?ie=UTF-8&q=' + $scope.detailData.infinitiv 
         + ',' + $scope.detailData.presens 
         + ',' + $scope.detailData.preteritum 
@@ -147,14 +150,51 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
 
     $rootScope.$on('backgroundClick', function () {
         $scope.detailClose();
+        $scope.detailAudioClose();
     });
 
     // AUDIO
+
+    $scope.detailAudioButtonLoading = true;
+    $scope.audioLoad = function() {
+        var audio5js = new Audio5js({
+          swf_path: '/audio5js.swf',
+          throw_errors: false,
+          ready: function (player) {
+              console.log('1')
+            this.one('error', function() {
+                console.log('oops');
+            }, this);
+            this.one('canplay', function() {
+                $scope.detailAudioButtonLoading = false;
+                $scope.detailAudioButtonReady = true;
+            },this);
+            // progress event passes load_percent to callback
+            this.one('progress', function (load_percent) {
+              console.log(load_percent);
+            }, this);
+
+              console.log('8')
+            this.load($scope.detailData.audio);
+              console.log('9')
+          }
+        });
+        $scope.audioButton = function() {
+            if (audio5js.playing) {
+                //audio5js.pause();
+                $scope.detailAudioButtonPlaying = false;
+            } else {
+                //audio5js.play();
+                $scope.detailAudioButtonPlaying = true;
+            }
+        }
+    }
 
     $scope.detailAudioOpen = function(index) {
         document.querySelector('html').classList.add('modal');
         $scope.detailFill(index);
         $scope.audioIsOpen = true;
+        $scope.audioLoad();
     }
 
     $scope.detailAudioClose = function() {

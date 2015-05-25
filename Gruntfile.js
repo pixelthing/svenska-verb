@@ -45,6 +45,18 @@ module.exports = function(grunt) {
         cwd: '<%= config.src %>/views/pages/',
         src: ['manifest.json'],
         dest: '<%= config.dev %>/'
+      },
+      audio5swf: {
+        expand: true,
+        cwd: '<%= config.src %>/js/audio5js/',
+        src: ['audio5js.swf'],
+        dest: '<%= config.dev %>/'
+      },
+      temp: {
+        expand: true,
+        cwd: '<%= config.src %>/img/',
+        src: ['01.wav'],
+        dest: '<%= config.dev %>/img/'
       }
     },
     jshint: {
@@ -97,7 +109,7 @@ module.exports = function(grunt) {
           'node_modules/angular/angular.js',
           'node_modules/angular-animate/angular-animate.js',
           'node_modules/angular-hammer/angular.hammer.js',
-          '<%= config.src %>/js/*/*',
+          '<%= config.src %>/js/*/*.js',
         ],
         dest: '<%= config.dev %>/js/<%= pkg.mainJs %>.js',
       },
