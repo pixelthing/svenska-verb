@@ -369,7 +369,7 @@ body {
     top: 0;
     bottom: 0;
     left: 0;
-    right: 50%;
+    right: 120px;
     width: auto;
     z-index: 1;
     color: #fff;
@@ -389,9 +389,8 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 50%;
     right: 0;
-    width: auto;
+    width: 120px;
     padding: 0.2em 1em;
     z-index: 1;
     color: #fff;
