@@ -63,7 +63,8 @@ layout: _default.hbs
                 hm-panleft="panLeft" 
                 hm-panright="panRight"
                 hm-panend="panEnd" 
-                hm-manager-options='{"threshold":20}'
+                hm-manager-options='{"threshold":20}' 
+                hm-recognizer-options='[{"type":"pan","directions":"DIRECTION_HORIZONTAL"}]'
                 data-index="\{{$index}}" >
                 <span class="vCol vColInfinitiv" ng-bind="::verb.infinitiv">    </span>
                 <span class="vCol" ng-bind="::verb.presens">                    </span>
