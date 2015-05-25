@@ -16,13 +16,13 @@ body {
 
 .modal {
     overflow-y: hidden;
-    body {
-        position: relative;
-    }
-    &.safari {
         position: fixed;
         right:0;
         left:0;
         top: inherit;
+    body {
+        position: relative;
+    }
+    &.safari {
     }
 }

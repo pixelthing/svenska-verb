@@ -32281,6 +32281,8 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
     $scope.detailIsOpen = false;
     $scope.detailData = {};
 
+    var modalOffset = null;
+
     // PREFIX HELPER
 
     var prefix = (function () {
@@ -32342,6 +32344,8 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
         var index = event.element['0'].getAttribute('data-index');
         if (deltaX < -100) {
             $scope.detailAudioOpen(index);
+            event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+            panning = false;
         }
     }
     $scope.panEnd = function(event) {
@@ -32417,15 +32421,24 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
     }
 
     $scope.detailOpen = function(index) {
-        document.querySelector('html').classList.add('modal');
-        $scope.detailIsOpen = true;
         $scope.detailFill(index);
+        modalOffset = document.body.scrollTop;
+        $timeout(function() {
+            $scope.detailIsOpen = true;
+            document.querySelector('.vList').style.top = '-' + modalOffset + 'px';
+            document.querySelector('html').classList.add('modal');
+        });
     }
 
     $scope.detailClose = function() {
-        document.querySelector('html').classList.remove('modal');
-        $scope.detailData = {};
         $scope.detailIsOpen = false;
+        $timeout(function() {
+            $scope.detailData = {};
+            document.querySelector('html').classList.remove('modal');
+            document.body.scrollTop = modalOffset;
+            document.querySelector('.vList').style.top = 'auto';
+            modalOffset = null;
+        });
     }
 
 
