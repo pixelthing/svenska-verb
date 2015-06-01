@@ -1,7 +1,8 @@
-verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 'verbsFactory', function($rootScope, $scope, $timeout, verbsFactory) {
+verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$filter', '$timeout', 'verbsFactory', function($rootScope, $scope, $filter, $timeout, verbsFactory) {
 
     $scope.isLoading = true;
     $scope.verbs = [];
+    $scope.verbsFiltered = [];
     $scope.verbsCount = 0;
     $scope.verbsFiltered = [];
     $scope.filterCurrentGroup = null;
@@ -88,6 +89,10 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
 
     // SEARCH/FILTER
 
+    $scope.$watch('search', function() {
+        $scope.verbsFiltered = $filter('VerbsFilter')($scope.verbs, $scope.filterCurrentGroup, $scope.search);
+    });
+
     $scope.searchFocus = function() {
         document.querySelector('.js-vFilterInput').focus();
     }
@@ -123,6 +128,7 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
         $timeout(function() {
             $scope.filterCurrentGroup = $scope.filterCurrentGroupButton;
             $scope.isLoading = false;
+            $scope.verbsFiltered = $filter('VerbsFilter')($scope.verbs, $scope.filterCurrentGroup, $scope.search);
         },200);
     }
 
@@ -199,10 +205,13 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
         $scope.audioIsOpen = false;
     }
 
+    // LOAD DATA
+
     verbsFactory
         .getVerbs()
         .then(function(verbs) {
             $scope.verbs = verbs;
+            $scope.verbsFiltered = $filter('VerbsFilter')($scope.verbs);
             $scope.verbsCount = verbs.length;
             $scope.isLoading = false;
         });

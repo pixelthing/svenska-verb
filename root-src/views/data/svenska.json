@@ -2,721 +2,721 @@
     "data" : {
         "verbs" : [
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "arbeta",
                 "en" : "work",
                 "meningen" : "på denna app"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "bada",
                 "en" : "swim",
                 "meningen" : "i havet"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "baka",
                 "en" : "bake",
                 "meningen" : "en tårta"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "berätta",
                 "en" : "tell",
                 "meningen" : "henne"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "betala",
                 "en" : "pay",
                 "meningen" : "i kassan"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "borra",
                 "en" : "drill",
                 "meningen" : "ett hål"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "bruka",
                 "en" : "usually",
                 "meningen" : "säga"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "bädda",
                 "en" : "make/embed",
                 "meningen" : "???"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "cyckla",
                 "en" : "cycle",
                 "meningen" : "hem"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "dansa",
                 "en" : "dance",
                 "meningen" : "varje fredag"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "diska",
                 "en" : "wash (up)",
                 "meningen" : "all plåtar"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "duka",
                 "en" : "decorate",
                 "meningen" : "???"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "duscha",
                 "en" : "shower",
                 "meningen" : "varje dag"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "döda",
                 "en" : "kill",
                 "meningen" : "en flyg"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "fiska",
                 "en" : "fish",
                 "meningen" : "i havet"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "flytta",
                 "en" : "move",
                 "meningen" : "långsamt"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "fotografera",
                 "en" : "mobe",
                 "meningen" : "månger saker"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "fuska",
                 "en" : "cheat",
                 "meningen" : "på kort"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "färga",
                 "en" : "colour",
                 "meningen" : "i bilden"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "förlova",
                 "en" : "promise/engage",
                 "reflexive" : true,
                 "meningen" : "att berättar sanningen"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "gapa",
                 "en" : "gape",
                 "meningen" : " - otroligt!"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "gilla",
                 "en" : "like",
                 "meningen" : "att åka home"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "gissa",
                 "en" : "guess",
                 "meningen" : "fel hela tiden"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "gäspa",
                 "en" : "yawn",
                 "meningen" : "när jag är trot"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "halka",
                 "en" : "slip",
                 "meningen" : "harifrån"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "hata",
                 "en" : "hate",
                 "meningen" : "läxa"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "hitta",
                 "en" : "find",
                 "meningen" : "det igen!"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "hoppas",
                 "en" : "hope",
                 "meningen" : "du är rätt"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "hosta",
                 "en" : "cough",
                 "meningen" : "till högt"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "hoppa",
                 "en" : "jump/hop",
                 "meningen" : "på spårvagnen"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "hälsa",
                 "en" : "greet",
                 "meningen" : "honom från båtet"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "handla",
                 "en" : "shop",
                 "meningen" : "i Coop"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "hämta",
                 "en" : "retrieve",
                 "meningen" : "Iris från dagis"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "jobba",
                 "en" : "work",
                 "meningen" : "i Vasagatan"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "kamma",
                 "en" : "comb",
                 "reflexive" : true,
                 "meningen" : "i badrummet"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "klappa",
                 "en" : "pat",
                 "meningen" : "hunden"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "klättra",
                 "en" : "climb",
                 "meningen" : "up trappen"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "knacka",
                 "en" : "tap",
                 "meningen" : "på fönstret"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "knarka",
                 "en" : "take drugs",
                 "meningen" : "länge sedan"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "kosta",
                 "en" : "cost",
                 "meningen" : "mer en du tror"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "krama",
                 "en" : "hug",
                 "meningen" : "min dotter"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "laga",
                 "en" : "make (food)",
                 "meningen" : "mat"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "leta",
                 "en" : "browse",
                 "meningen" : "i affären"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "lova",
                 "en" : "promise",
                 "meningen" : "jag ska"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "lova",
                 "en" : "promise",
                 "meningen" : "jag kommer"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "lukta",
                 "en" : "smell",
                 "meningen" : "ganske daligt"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "lyssna",
                 "en" : "listen",
                 "meningen" : "till musiken"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "låna",
                 "en" : "loan",
                 "meningen" : "pengar"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "lämna",
                 "en" : "leave",
                 "meningen" : "tidigt varje dag"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "längta",
                 "en" : "yearn",
                 "meningen" : "att lämna"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "måla",
                 "en" : "paint",
                 "meningen" : "väggen"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "kissa",
                 "en" : "pee (yes, really)",
                 "meningen" : "äfter en öl"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "kasta",
                 "en" : "throw",
                 "meningen" : "bort"
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "passa",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "plugga",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "prata",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "promenera",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "prova",
                 "en" : "test/try",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "pussa",
                 "en" : "kiss",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "raka",
                 "reflexive" : true,
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "regna",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "resparera",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "rita",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "ropa",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "rädda",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "räkna",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "sakna",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "salta",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "simma",
                 "en" : "swim",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "skala",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "skicka",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "skoja",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "skratta",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "skynda",
                 "reflexive" : true,
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "skåla",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "skämta",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "slicka",
                 "en" : "lick",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "sluta",
                 "en" : "finish",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "smaka",
                 "en" : "taste",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "snöa",
                 "en" : "snow",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "somna",
                 "en" : "snow",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "sparka",
                 "en" : "kick",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "spegla",
                 "reflexive" : true,
                 "en" : "kick",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "spela",
                 "en" : "play",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "stanna",
                 "en" : "stay",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "starta",
                 "en" : "start",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "stirra",
                 "en" : "stir",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "stoppa",
                 "en" : "stop",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "studera",
                 "en" : "study",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "städa",
                 "en" : "",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "städa",
                 "en" : "clean",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "sucka",
                 "en" : "sigh",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "svara",
                 "en" : "answer",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "svimma",
                 "en" : "faint",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "tacka",
                 "en" : "thank",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "tala",
                 "en" : "tell",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "tappa",
                 "en" : "drop",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "titta",
                 "en" : "look/watch",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "tjäna",
                 "en" : "earn",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "torka",
                 "en" : "dry",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "träffa",
                 "en" : "meet",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "tugga",
                 "en" : "chew",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "tvätta",
                 "reflexive" : true,
                 "en" : "wash",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "tävla",
                 "en" : "compete",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "vakna",
                 "en" : "wake",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "vattna",
                 "en" : "water",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "vila",
                 "en" : "rest",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "vinka",
                 "en" : "wave",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "visa",
                 "en" : "show",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "viska",
                 "en" : "whisper",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "vispa",
                 "en" : "whisk",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "vissla",
                 "en" : "whistle",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "våga",
                 "en" : "dare",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "vänta",
                 "en" : "wait",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "växla",
                 "en" : "change",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "älska",
                 "en" : "love",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "önska",
                 "en" : "desire",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "öppna",
                 "en" : "open",
                 "meningen" : ""
             },
             {
-                "group" : 1,
+                "group" : "1",
                 "infinitiv" : "öva",
                 "en" : "exercise",
                 "meningen" : ""
@@ -1138,7 +1138,7 @@
 
 
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "be",
                 "presens" : "ber",
                 "preteritum" : "bad",
@@ -1146,7 +1146,7 @@
                 "en" : "prey"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "bjuda",
                 "presens" : "bjuder",
                 "preteritum" : "bjöd",
@@ -1154,7 +1154,7 @@
                 "en" : "treat"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "bli",
                 "presens" : "blir",
                 "preteritum" : "blev",
@@ -1162,7 +1162,7 @@
                 "en" : "become"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "bryta",
                 "presens" : "bryter",
                 "preteritum" : "bröt",
@@ -1170,7 +1170,7 @@
                 "en" : "break"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "bära",
                 "presens" : "bär",
                 "preteritum" : "bar",
@@ -1178,7 +1178,7 @@
                 "en" : "carry"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "dricka",
                 "presens" : "dricker",
                 "preteritum" : "drack",
@@ -1186,7 +1186,7 @@
                 "en" : "drink"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "dö",
                 "presens" : "dör",
                 "preteritum" : "dog",
@@ -1194,7 +1194,7 @@
                 "en" : "die"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "falla",
                 "presens" : "faller",
                 "preteritum" : "föll",
@@ -1202,7 +1202,7 @@
                 "en" : "fall"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "finna",
                 "presens" : "finner",
                 "preteritum" : "fann",
@@ -1210,7 +1210,7 @@
                 "en" : "find"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "finnas",
                 "presens" : "finns",
                 "preteritum" : "fanns",
@@ -1218,7 +1218,7 @@
                 "en" : "exists"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "flyga",
                 "presens" : "flyger",
                 "preteritum" : "flög",
@@ -1226,7 +1226,7 @@
                 "en" : "fly"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "fortsätta",
                 "presens" : "fortsätter",
                 "preteritum" : "fortsätte",
@@ -1234,7 +1234,7 @@
                 "en" : "continue"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "frysa",
                 "presens" : "fryser",
                 "preteritum" : "frös",
@@ -1242,7 +1242,7 @@
                 "en" : "freeze"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "få",
                 "presens" : "får",
                 "preteritum" : "fick",
@@ -1250,7 +1250,7 @@
                 "en" : "recieve"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "förstå",
                 "presens" : "förstå",
                 "preteritum" : "förstod",
@@ -1258,7 +1258,7 @@
                 "en" : "understand"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "ge",
                 "presens" : "ger",
                 "preteritum" : "gav",
@@ -1266,7 +1266,7 @@
                 "en" : "give"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "gråta",
                 "presens" : "gråter",
                 "preteritum" : "grät",
@@ -1274,7 +1274,7 @@
                 "en" : "cry"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "gå",
                 "presens" : "går",
                 "preteritum" : "gick",
@@ -1282,7 +1282,7 @@
                 "en" : "go/walk"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "göra",
                 "presens" : "gör",
                 "preteritum" : "gjorde",
@@ -1290,7 +1290,7 @@
                 "en" : "do/make"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "ha",
                 "presens" : "har",
                 "preteritum" : "hade",
@@ -1298,7 +1298,7 @@
                 "en" : "have"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "hinna",
                 "presens" : "hinner",
                 "preteritum" : "hann",
@@ -1306,7 +1306,7 @@
                 "en" : "made it"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "hålla",
                 "presens" : "håller",
                 "preteritum" : "höll",
@@ -1314,7 +1314,7 @@
                 "en" : "hold"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "knyta",
                 "presens" : "knyter",
                 "preteritum" : "knöt",
@@ -1322,7 +1322,7 @@
                 "en" : "tie"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "komma",
                 "presens" : "kommer",
                 "preteritum" : "kom",
@@ -1330,7 +1330,7 @@
                 "en" : "come"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "krypa",
                 "presens" : "kryper",
                 "preteritum" : "kröp",
@@ -1338,7 +1338,7 @@
                 "en" : "creep/crawl"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "kunna",
                 "presens" : "kunner",
                 "preteritum" : "kunde",
@@ -1346,7 +1346,7 @@
                 "en" : "could/may"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "le",
                 "presens" : "ler",
                 "preteritum" : "log",
@@ -1354,7 +1354,7 @@
                 "en" : "smile"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "ligga",
                 "presens" : "ligger",
                 "preteritum" : "låg",
@@ -1362,7 +1362,7 @@
                 "en" : "put down/lays"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "ljuga",
                 "presens" : "ljuger",
                 "preteritum" : "ljög",
@@ -1370,7 +1370,7 @@
                 "en" : "put down/is"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "låta",
                 "presens" : "låter",
                 "preteritum" : "lät",
@@ -1378,7 +1378,7 @@
                 "en" : "let"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "lägga",
                 "presens" : "lägger",
                 "preteritum" : "lade",
@@ -1386,7 +1386,7 @@
                 "en" : "add"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "-",
                 "presens" : "måste",
                 "preteritum" : "måste",
@@ -1394,7 +1394,7 @@
                 "en" : "must"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "rida",
                 "presens" : "rider",
                 "preteritum" : "red",
@@ -1402,7 +1402,7 @@
                 "en" : "ride"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "se",
                 "presens" : "ser",
                 "preteritum" : "såg",
@@ -1410,7 +1410,7 @@
                 "en" : "see"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "sitta",
                 "presens" : "sitter",
                 "preteritum" : "satt",
@@ -1418,7 +1418,7 @@
                 "en" : "sit"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "sjunga",
                 "presens" : "sjunger",
                 "preteritum" : "sjöng",
@@ -1426,7 +1426,7 @@
                 "en" : "sing"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "skjuta",
                 "presens" : "skjuter",
                 "preteritum" : "sköt",
@@ -1434,7 +1434,7 @@
                 "en" : "shoot"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "skola",
                 "presens" : "ska",
                 "preteritum" : "skulle",
@@ -1442,7 +1442,7 @@
                 "en" : "will/would"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "skriva",
                 "presens" : "skriver",
                 "preteritum" : "skrev",
@@ -1450,7 +1450,7 @@
                 "en" : "write"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "skära",
                 "presens" : "skär",
                 "preteritum" : "skar",
@@ -1458,7 +1458,7 @@
                 "en" : "cut"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "slå",
                 "presens" : "slår",
                 "preteritum" : "slog",
@@ -1466,7 +1466,7 @@
                 "en" : "beat"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "snyta",
                 "presens" : "snyter",
                 "preteritum" : "snöt",
@@ -1474,7 +1474,7 @@
                 "en" : "blow"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "sova",
                 "presens" : "sover",
                 "preteritum" : "sov",
@@ -1482,7 +1482,7 @@
                 "en" : "sleep"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "springa",
                 "presens" : "springer",
                 "preteritum" : "sprang",
@@ -1490,7 +1490,7 @@
                 "en" : "run"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "stiga",
                 "presens" : "stiger",
                 "preteritum" : "steg",
@@ -1498,7 +1498,7 @@
                 "en" : "rise"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "stjäla",
                 "presens" : "stjäl",
                 "preteritum" : "stal",
@@ -1506,7 +1506,7 @@
                 "en" : "steal"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "stryka",
                 "presens" : "stryker",
                 "preteritum" : "strök",
@@ -1514,7 +1514,7 @@
                 "en" : "emphasise"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "svära",
                 "presens" : "svär",
                 "preteritum" : "svor",
@@ -1522,7 +1522,7 @@
                 "en" : "swear"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "sälja",
                 "presens" : "säljer",
                 "preteritum" : "sålde",
@@ -1530,7 +1530,7 @@
                 "en" : "sell"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "sätta",
                 "presens" : "sätter",
                 "preteritum" : "satte",
@@ -1538,7 +1538,7 @@
                 "en" : "sit"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "ta",
                 "presens" : "tar",
                 "preteritum" : "tog",
@@ -1546,7 +1546,7 @@
                 "en" : "take"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "vara",
                 "presens" : "är",
                 "preteritum" : "var",
@@ -1554,7 +1554,7 @@
                 "en" : "be"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "veta",
                 "presens" : "vet",
                 "preteritum" : "visste",
@@ -1562,7 +1562,7 @@
                 "en" : "know"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "vilja",
                 "presens" : "vill",
                 "preteritum" : "ville",
@@ -1570,7 +1570,7 @@
                 "en" : "want"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "vinna",
                 "presens" : "vinner",
                 "preteritum" : "vann",
@@ -1578,7 +1578,7 @@
                 "en" : "win"
             },
             {
-                "group" : 4,
+                "group" : "4",
                 "infinitiv" : "äta",
                 "presens" : "äter",
                 "preteritum" : "åt",

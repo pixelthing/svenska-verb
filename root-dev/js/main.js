@@ -32269,10 +32269,11 @@ var verbsApp = angular.module('verbsApp', ['ngAnimate','hmTouchEvents']).config(
    'http://translate.google.com/**']);
 
 });
-verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 'verbsFactory', function($rootScope, $scope, $timeout, verbsFactory) {
+verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$filter', '$timeout', 'verbsFactory', function($rootScope, $scope, $filter, $timeout, verbsFactory) {
 
     $scope.isLoading = true;
     $scope.verbs = [];
+    $scope.verbsFiltered = [];
     $scope.verbsCount = 0;
     $scope.verbsFiltered = [];
     $scope.filterCurrentGroup = null;
@@ -32359,6 +32360,10 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
 
     // SEARCH/FILTER
 
+    $scope.$watch('search', function() {
+        $scope.verbsFiltered = $filter('VerbsFilter')($scope.verbs, $scope.filterCurrentGroup, $scope.search);
+    });
+
     $scope.searchFocus = function() {
         document.querySelector('.js-vFilterInput').focus();
     }
@@ -32394,6 +32399,7 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
         $timeout(function() {
             $scope.filterCurrentGroup = $scope.filterCurrentGroupButton;
             $scope.isLoading = false;
+            $scope.verbsFiltered = $filter('VerbsFilter')($scope.verbs, $scope.filterCurrentGroup, $scope.search);
         },200);
     }
 
@@ -32470,10 +32476,13 @@ verbsApp.controller('VerbsListController', ['$rootScope', '$scope', '$timeout', 
         $scope.audioIsOpen = false;
     }
 
+    // LOAD DATA
+
     verbsFactory
         .getVerbs()
         .then(function(verbs) {
             $scope.verbs = verbs;
+            $scope.verbsFiltered = $filter('VerbsFilter')($scope.verbs);
             $scope.verbsCount = verbs.length;
             $scope.isLoading = false;
         });
@@ -32579,6 +32588,49 @@ verbsApp.directive('stopEvent', function () {
         }
     };
 });
+verbsApp.filter('VerbsFilter', ['$filter', function ($filter) {
+  return function (items,group,keyword) {
+    var filtered = [];
+    var wordMatch = new RegExp(keyword, 'i');
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      if (group && !keyword) {
+        if (item.group === group) {
+          filtered.push(item);
+        }
+      } else if (!group && keyword) {
+        if (wordMatch.test(item.infinitiv)) {
+          filtered.push(item);
+        }
+      } else if (group && keyword) {
+        if (item.group === group && wordMatch.test(item.infinitiv)) {
+          filtered.push(item);
+        }
+      } else {
+        filtered.push(item);
+      }
+    }
+    var ordered = $filter('orderBy')(filtered, 'infinitiv');
+    var unique = uniq_fast(ordered);
+    return unique;
+  };
+
+  function uniq_fast(a) {
+    var seen = {};
+    var out = [];
+    var len = a.length;
+    var j = 0;
+    for(var i = 0; i < len; i++) {
+         var item = a[i];
+         if(seen[item.infinitiv] !== 1) {
+               seen[item.infinitiv] = 1;
+               out[j++] = item;
+         }
+    }
+    return out;
+}
+
+}]);
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);

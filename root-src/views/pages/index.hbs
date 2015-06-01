@@ -52,7 +52,7 @@ layout: _default.hbs
 
         <article class="vRow" 
             ng-class="{vGroup\{{::verb.group}} : true}" 
-            ng-repeat="verb in verbsFiltered = ( verbs | filter : search | filter : filterGroupFilter | orderBy : 'infinitiv' )" 
+            ng-repeat="verb in verbsFiltered track by verb.infinitiv" 
             hm-tap="detailOpen($index)" 
             stop-event="click">
             <span class="vCol vColTrans" 
