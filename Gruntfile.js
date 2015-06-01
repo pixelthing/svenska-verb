@@ -18,33 +18,63 @@ module.exports = function(grunt) {
         files: {
           '<%= config.dev %>/css/<%= pkg.mainCss %>.css': '<%= config.src %>/scss/<%= pkg.mainCss %>.scss',
           '<%= config.dev %>/css/print.css': '<%= config.src %>/scss/print.scss',
-        },
+        }
       },
+      prod: {
+        files: {
+          '<%= config.prod %>/css/<%= pkg.mainCss %>.css': '<%= config.src %>/scss/<%= pkg.mainCss %>.scss',
+          '<%= config.prod %>/css/print.css': '<%= config.src %>/scss/print.scss',
+        }
+      }
     },
     copy: {
-      data: {
+      devData: {
         expand: true,
         cwd: '<%= config.src %>/views/data/',
         src: ['svenska.json'],
         dest: '<%= config.dev %>/'
       },
-      maps: {
+      devJs: {
         expand: true,
         cwd: 'node_modules/angular/',
         src: ['*.map'],
         dest: '<%= config.dev %>/js'
       },
-      assets: {
+      devAssets: {
         expand: true,
         cwd: '<%= config.src %>/',
         src: ['fonts/*', 'img/*'],
         dest: '<%= config.dev %>/'
       },
-      manifest: {
+      devManifest: {
         expand: true,
         cwd: '<%= config.src %>/views/pages/',
         src: ['manifest.json'],
         dest: '<%= config.dev %>/'
+      },
+      prodData: {
+        expand: true,
+        cwd: '<%= config.src %>/views/data/',
+        src: ['svenska.json'],
+        dest: '<%= config.prod %>/'
+      },
+      prodJs: {
+        expand: true,
+        cwd: 'node_modules/angular/',
+        src: ['*.map'],
+        dest: '<%= config.prod %>/js'
+      },
+      prodAssets: {
+        expand: true,
+        cwd: '<%= config.src %>/',
+        src: ['fonts/*', 'img/*'],
+        dest: '<%= config.prod %>/'
+      },
+      prodManifest: {
+        expand: true,
+        cwd: '<%= config.src %>/views/pages/',
+        src: ['manifest.json'],
+        dest: '<%= config.prod %>/'
       }
     },
     jshint: {
@@ -101,6 +131,17 @@ module.exports = function(grunt) {
         ],
         dest: '<%= config.dev %>/js/<%= pkg.mainJs %>.js',
       },
+      prod: {
+        src: [
+          'node_modules/fastclick/lib/fastclick.js',
+          'node_modules/hammerjs/hammer.js',
+          'node_modules/angular/angular.js',
+          'node_modules/angular-animate/angular-animate.js',
+          'node_modules/angular-hammer/angular.hammer.js',
+          '<%= config.src %>/js/*/*',
+        ],
+        dest: '<%= config.prod %>/js/<%= pkg.mainJs %>.js',
+      },
     },
     clean: {
       tmp: {
@@ -120,21 +161,28 @@ module.exports = function(grunt) {
             src: '**/*',
           },
         ],
+      },
+      prod: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= config.prod %>/',
+            src: '**/*',
+          },
+        ],
       }
     },
     assemble: {
       options: {
+        partials: [
+          '<%= config.src %>/views/partials/**/*.hbs',
+        ],
         helpers: '<%= config.src %>/views/helpers/**/*.js',
         layoutdir: '<%= config.src %>/views/layouts/',
         data: '<%= config.src %>/views/**/*.{json,yml}',
+        layout: "_default.hbs",
       },
       dev: {
-        options: {
-          layout: "_default.hbs",
-          partials: [
-            '<%= config.src %>/views/partials/**/*.hbs',
-          ]
-        },
         files: [
           {
             expand: true,
@@ -144,17 +192,48 @@ module.exports = function(grunt) {
           },
         ],
       },
-    },
-    'gh-pages': {
-      options: {
-        base: '<%= config.dev %>'
+      prod: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= config.src %>/views/pages',
+            src: ['*.hbs'],
+            dest: '<%= config.prod %>/',
+          },
+        ],
       },
-      src: ['**']
+    },
+    ngAnnotate: {
+        options: {
+            singleQuotes: true,
+        },
+        prod: {
+          files: {
+              '<%= config.prod %>/js/main.js': ['<%= config.prod %>/js/main.js'],
+          },
+        },
     },
     uglify: {
-      my_target: {
+      prod: {
         files: {
-          '<%= config.prod %>/js/main.js': ['<%= config.dev %>/js/main.js']
+          '<%= config.prod %>/js/main.js': ['<%= config.prod %>/js/main.js']
+        }
+      }
+    },
+    'json-minify': {
+      prod: {
+        files: '<%= config.prod %>/*.json'
+      }
+    },
+    cssmin: {
+      options: {
+        shorthandCompacting: false,
+        roundingPrecision: -1
+      },
+      target: {
+        files: {
+          '<%= config.prod %>/css/<%= pkg.mainCss %>.css': ['<%= config.prod %>/css/<%= pkg.mainCss %>.css'],
+          '<%= config.prod %>/css/print.css': ['<%= config.prod %>/css/print.css'],
         }
       }
     },
@@ -166,7 +245,8 @@ module.exports = function(grunt) {
         files: [
           // Each of the files in the src/ folder will be output to
           // the dist/ folder each with the extension .gz.js
-          {expand: true, src: ['src/*.js'], dest: '<%= config.prod %>/', ext: '.gz.js'}
+          {expand: true, src: ['<%= config.prod %>/js/*.js'], dest: '', ext: '.gz.js'},
+          {expand: true, src: ['<%= config.prod %>/css/*.css'], dest: '', ext: '.gz.css'}
         ]
       }
     },
@@ -174,26 +254,44 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 8000,
-          hostname: '*',
+          hostname: '*'
+        }
+      },
+      dev : {
+        options: {
           base: '<%= config.dev %>'
         }
+      },
+      prod : {
+        options: {
+          base: '<%= config.prod %>'
+        }
       }
+    },
+    'gh-pages': {
+      options: {
+        base: '<%= config.prod %>'
+      },
+      src: ['**']
     }
   });
 
   require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('assemble');
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-json-minify');
+  grunt.loadNpmTasks('grunt-ng-annotate');
   grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('devbuild', ['clean', 'copy', 'assemble', 'sass', 'concat', 'connect']);
+  grunt.registerTask('devbuild', ['clean:dev', 'copy', 'assemble:dev', 'sass:dev', 'concat:dev', 'connect:dev']);
 
-  grunt.registerTask('prodbuild', ['clean', 'copy', 'assemble', 'sass', 'concat', 'connect', 'uglify', 'compress']);
+  grunt.registerTask('prodbuild', ['clean:prod', 'copy', 'assemble:prod', 'sass:prod', 'concat:prod', 'cssmin', 'ngAnnotate', 'uglify', 'json-minify', 'compress', 'connect:prod']);
 
   // Default task(s).
   grunt.registerTask('default', ['devbuild', 'watch']);
-
+  grunt.registerTask('prod', ['prodbuild', 'watch']);
   grunt.registerTask('deploy', ['prodbuild', 'gh-pages']);
 
 };

@@ -1,0 +1,203 @@
+    <!doctype html>
+<!--[if lt IE 9 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> ><! <![endif]-->
+<html class="no-js" lang='en'>
+<!-- <![endif] -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SfI Verb</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#005B99">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon"                             href="img/icon-tiny.png" type="image/png" >
+    <link rel="icon"             sizes="192x192" href="img/icon-4x.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/icon-3x.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="img/icon-4x.png">
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body ng-app="verbsApp">
+
+    
+
+<div class="vContainer" ng-controller="VerbsListController" ng-click="backgroundClick()">
+
+    <article class="vHeader fixedsticky">
+        <div class="vTitle"></div>
+        <div class="vFilter">
+            <form class="vFilterForm" ng-submit="searchSubmit()">
+                <div class="vFilterInputIcon icon icon-zoom" ng-click="searchFocus()" ng-class="{vFilterInputIconActive : search.length}"></div>
+                <input type="search" 
+                    class="vFilterInput js-vFilterInput" 
+                    placeholder="sök" 
+                    autocomplete="off"
+                    autocorrect="off" 
+                    autocapitalize="off"
+                    ng-model="search" 
+                    ng-model-options="{ updateOn: 'default blur', debounce: {'default': 300, 'blur': 0} }"
+                    ng-class="{vFilterInputActive : search.length}" 
+                    ng-keyup="searchLoading()" />
+                <div class="vFilterInputClear ng-cloak" ng-if="filterInputButton" ng-click="searchClear()">
+                    <div class="vFilterInputClearButton icon icon-cross"></div>
+                </div>
+            </form>
+            <a href="javascript:void(0)" class="vFilterFocusTarget js-vFilterFocusTarget"></a>
+            <div class="vFilterGroup">
+                <button class="vFilterGroupOption vFilterGroupOption1"  ng-class="{vFilterGroupOptionActive : filterCurrentGroupButton === '1'}"  ng-click="filterGroup('1')" ><span>1</span></button>
+                <button class="vFilterGroupOption vFilterGroupOption2a" ng-class="{vFilterGroupOptionActive : filterCurrentGroupButton === '2a'}" ng-click="filterGroup('2a')"><span>2a</span></button>
+                <button class="vFilterGroupOption vFilterGroupOption2b" ng-class="{vFilterGroupOptionActive : filterCurrentGroupButton === '2b'}" ng-click="filterGroup('2b')"><span>2b</span></button>
+                <button class="vFilterGroupOption vFilterGroupOption3"  ng-class="{vFilterGroupOptionActive : filterCurrentGroupButton === '3'}"  ng-click="filterGroup('3')" ><span>3</span></button>
+                <button class="vFilterGroupOption vFilterGroupOption4"  ng-class="{vFilterGroupOptionActive : filterCurrentGroupButton === '4'}"  ng-click="filterGroup('4')" ><span>4</span></button>
+            </div>
+        </div>
+        <div class="vListHeader">
+            <span class="vCol">infinitiv  </span>
+            <span class="vCol">presens    </span>
+            <span class="vCol">preteritum </span>
+            <span class="vCol">perfekt    </span>
+        </div>
+    </article>
+
+    <div class="spinner ng-cloak" ng-if="isLoading" ng-class="{spinnerRun : isLoading}">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+
+    <div class="vList">
+
+        <article class="vRow" 
+            ng-class="{vGroup{{::verb.group}} : true}" 
+            ng-repeat="verb in verbsFiltered track by verb.infinitiv" 
+            hm-tap="detailOpen($index)" 
+            stop-event="click">
+            <span class="vCol vColTrans" 
+                ng-bind="::verb.en" 
+                data-verbForm="english"></span>
+            <div class="vColWrap ng-cloak" 
+                data-verbGroup="{{::verb.group}}" 
+                hm-panleft="panLeft" 
+                hm-panright="panRight"
+                hm-panend="panEnd" 
+                hm-manager-options='{"threshold":20}' 
+                hm-recognizer-options='[{"type":"pan","directions":"DIRECTION_HORIZONTAL"}]'
+                data-index="{{$index}}" >
+                <span class="vCol vColInfinitiv" ng-bind="::verb.infinitiv">    </span>
+                <span class="vCol" ng-bind="::verb.presens">                    </span>
+                <span class="vCol" ng-bind="::verb.preteritum">                 </span>
+                <span class="vCol" ng-bind="::verb.perfekt">                    </span>
+            </div>
+            <span class="vCol vColAudio">
+                <span class="icon icon-volume-up"></span>
+            </span>
+        </article>
+
+        <div class="vListCount" ng-bind="verbsFiltered.length + ' verb'" ng-if="verbsFiltered.length >= 1 && !isLoading"></div>
+
+        <div class="vListEmpty ng-cloak" ng-if="verbsFiltered.length < 1 && !isLoading">
+            <span class="icon icon-warning"></span> 
+            <div>Hittade ingenting!</div>
+            <button class="vListEmptyButton" ng-click="filterClear()">
+                <span class="icon icon-cross"></span>
+                Rensa
+            </button>
+        </div>
+
+
+    </div>
+
+    <!-- DETAIL -->
+
+    <div class="vDetailBed ng-cloak" ng-if="detailIsOpen">
+    </div>
+    <div class="vDetailModal ng-cloak" ng-if="detailIsOpen" stop-event='click'>
+
+        <h1 class="vDetailTitle ng-cloak" stop-event='click'>
+            <span class="vDetailInfinitiv" ng-bind="detailData.infinitiv"></span>
+            (<abbrev class="vDetailTranslation" ng-bind="detailData.en"></abbrev>)
+        </h1>
+
+        <span class="vDetailModalClose icon icon-cross ng-cloak" ng-click="detailClose()"></span>
+
+        <div class="vDetailBody">
+
+            <section class="vDetailFokus">
+                <h3 class="vDetailFokusTitle">Nu Fokus</h3>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Perfekt</dt>
+                    <dd class="vDetailFokusSubExample">Jag har <strong class="vDetailFokusLabel" ng-bind="detailData.perfekt"></strong> <span ng-bind="detailData.meningen"></span></dd>
+                </dl>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Presens</dt>
+                    <dd class="vDetailFokusSubExample">Jag <strong class="vDetailFokusLabel" ng-bind="detailData.presens"></strong> <span ng-bind="detailData.meningen"></span></dd>
+                </dl>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-forward"></span> Futurum 1</dt>
+                    <dd class="vDetailFokusSubExample">Jag ska <strong class="vDetailFokusLabel" ng-bind="detailData.infinitiv"></strong> <span ng-bind="detailData.meningen"></span></dd>
+                </dl>
+            </section>
+
+            <section class="vDetailFokus">
+                <h3 class="vDetailFokusTitle">Då Fokus</h3>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Plukamperfekt</dt>
+                    <dd class="vDetailFokusSubExample">Jag hade <strong class="vDetailFokusLabel" ng-bind="detailData.perfekt"></strong> <span ng-bind="detailData.meningen"></span></dd>
+                </dl>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Preteritum</dt>
+                    <dd class="vDetailFokusSubExample">Jag <strong class="vDetailFokusLabel" ng-bind="detailData.preteritum"></strong> <span ng-bind="detailData.meningen"></span></dd>
+                </dl>
+                <dl class="vDetailFokusSub">
+                    <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-forward"></span> Futurum 2</dt>
+                    <dd class="vDetailFokusSubExample">Jag skulle <strong class="vDetailFokusLabel" ng-bind="detailData.infinitiv"></strong> <span ng-bind="detailData.meningen"></span></dd>
+                </dl>
+            </section>
+
+        </div>
+
+    </div>
+    <!-- DETAIL -->
+
+    <div class="vDetailBed ng-cloak" ng-if="audioIsOpen">
+    </div>
+    <div class="vDetailModal vDetailModalAudio ng-cloak" stop-event='click' ng-if="audioIsOpen">
+
+        <h1 class="vDetailTitle vDetailTitleAudio ng-cloak" stop-event='click'>
+            <span class="icon icon-volume-up"></span>
+            <span class="vDetailInfinitiv" ng-bind="detailData.infinitiv"></span>
+        </h1>
+
+        <span class="vDetailModalClose vDetailModalCloseAudio icon icon-cross ng-cloak" ng-click="detailAudioClose()"></span>
+
+        <div class="vDetailBody vDetailBodyAudio">
+
+            <div><b class="vDetailBodyAudioLabel">Infinitiv</b> <span class="vDetailBodyAudioValue" ng-bind="::detailData.infinitiv"></span></div>
+            <div><b class="vDetailBodyAudioLabel">Presens</b> <span class="vDetailBodyAudioValue" ng-bind="::detailData.presens"></span></div>
+            <div><b class="vDetailBodyAudioLabel">Preteritum</b> <span class="vDetailBodyAudioValue" ng-bind="::detailData.preteritum"></span></div>
+            <div><b class="vDetailBodyAudioLabel">Perfekt</b> <span class="vDetailBodyAudioValue" ng-bind="::detailData.perfekt"></span></div>
+
+            <iframe class="vDetailBodyAudioIframe" ng-src="{{detailData.audio}}" ng-if="detailData.audio" size="80" frameborder="none"></iframe>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="vFooter">
+    <strong>SfI Svenska verb verktyg 2015</strong>
+    <br />
+    Free to use and fork for non-commercial use. Code on <a href="https://github.com/pixelthing/svenska-sfi-verb">GitHub</a>. Made by <a href="http://craigmorey.co.uk">Craig Morey</a>. I can't promise any support or updates, but let me know if I can help, or if there's something wrong.
+</div>
+
+
+
+        <script src="js/main.js"></script>
+
+</body>
+</html>
