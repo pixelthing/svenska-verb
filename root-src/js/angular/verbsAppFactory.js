@@ -1,11 +1,12 @@
 verbsApp.factory('verbsFactory', ['$http', function verbsFactory($http) {
 
-    var conjugate = function(array) {
+    var process = function(array) {
         return array.map(function(verb) {
             verb.presens     = conjugatePresens(verb)     + conjugateReflexive(verb);
             verb.preteritum  = conjugatePreteritum(verb)  + conjugateReflexive(verb);
             verb.perfekt     = conjugatePerfekt(verb)     + conjugateReflexive(verb);
             verb.infinitiv   = verb.infinitiv             + conjugateReflexive(verb);
+            verb.search      = verb.presens + ' ' + verb.preteritum + ' ' + verb.perfekt + ' ' + verb.infinitiv;
             return verb;
         });
     }
@@ -76,7 +77,7 @@ verbsApp.factory('verbsFactory', ['$http', function verbsFactory($http) {
                 //resolve the promise as the data
                 var raw = result.data.data.verbs;
                 // process the presens/preteritum/perfekt
-                var processed = conjugate(raw);
+                var processed = process(raw);
                 // return the processed data
                 return processed;
             }, function() {

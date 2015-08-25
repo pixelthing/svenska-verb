@@ -1,7 +1,9 @@
 verbsApp.filter('VerbsFilter', ['$filter', function ($filter) {
   return function (items,group,keyword) {
     var filtered = [];
-    var wordMatch = new RegExp(keyword, 'i');
+    if (keyword && keyword.length < 2) {
+      keyword = false;
+    }
     for (var i = 0; i < items.length; i++) {
       var item = items[i];
       if (group && !keyword) {
@@ -9,11 +11,11 @@ verbsApp.filter('VerbsFilter', ['$filter', function ($filter) {
           filtered.push(item);
         }
       } else if (!group && keyword) {
-        if (wordMatch.test(item.infinitiv)) {
+        if (item.search.indexOf(keyword) >= 0) {
           filtered.push(item);
         }
       } else if (group && keyword) {
-        if (item.group === group && wordMatch.test(item.infinitiv)) {
+        if (item.group === group && item.search.indexOf(keyword) >= 0) {
           filtered.push(item);
         }
       } else {
