@@ -116,6 +116,7 @@ body {
     width: 47%; }
   .vFilterInput {
     -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
     display: block;
     width: 100%;
     padding: 1px 0.5em 1px 1.5em;
