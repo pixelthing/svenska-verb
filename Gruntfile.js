@@ -95,7 +95,7 @@ module.exports = function(grunt) {
       },
       sass: {
         files: ['<%= config.src %>/**/*.scss'],
-        tasks: ['sass'],
+        tasks: ['sass','postcss'],
         options: {
           livereload: true,
         },
@@ -124,10 +124,9 @@ module.exports = function(grunt) {
         src: [
           'node_modules/fastclick/lib/fastclick.js',
           'node_modules/hammerjs/hammer.js',
-          'node_modules/angular/angular.js',
-          'node_modules/angular-animate/angular-animate.js',
-          'node_modules/angular-hammer/angular.hammer.js',
-          '<%= config.src %>/js/*/*',
+          'node_modules/es6-promise/dist/es6-promise.js',
+          '<%= config.src %>/js/*/*.js',
+          '<%= config.src %>/js/*.js',
         ],
         dest: '<%= config.dev %>/js/<%= pkg.mainJs %>.js',
       },
@@ -135,10 +134,9 @@ module.exports = function(grunt) {
         src: [
           'node_modules/fastclick/lib/fastclick.js',
           'node_modules/hammerjs/hammer.js',
-          'node_modules/angular/angular.js',
-          'node_modules/angular-animate/angular-animate.js',
-          'node_modules/angular-hammer/angular.hammer.js',
-          '<%= config.src %>/js/*/*',
+          'node_modules/es6-promise/dist/es6-promise.js',
+          '<%= config.src %>/js/*/*.js',
+          '<%= config.src %>/js/*.js',
         ],
         dest: '<%= config.prod %>/js/<%= pkg.mainJs %>.js',
       },
@@ -203,51 +201,23 @@ module.exports = function(grunt) {
         ],
       },
     },
-    ngAnnotate: {
+    postcss: {
         options: {
-            singleQuotes: true,
+            map: true,
+            processors: [
+                require('autoprefixer')({
+                    browsers: ['last 3 versions']
+                }),
+                require('csswring')
+            ]
         },
-        prod: {
-          files: {
-              '<%= config.prod %>/js/main.js': ['<%= config.prod %>/js/main.js'],
-          },
-        },
-    },
-    uglify: {
-      prod: {
-        files: {
-          '<%= config.prod %>/js/main.js': ['<%= config.prod %>/js/main.js']
+        dev: {
+            src: '<%= config.dev %>/css/*.css'
         }
-      }
     },
     'json-minify': {
       prod: {
         files: '<%= config.prod %>/*.json'
-      }
-    },
-    cssmin: {
-      options: {
-        shorthandCompacting: false,
-        roundingPrecision: -1
-      },
-      target: {
-        files: {
-          '<%= config.prod %>/css/<%= pkg.mainCss %>.css': ['<%= config.prod %>/css/<%= pkg.mainCss %>.css'],
-          '<%= config.prod %>/css/print.css': ['<%= config.prod %>/css/print.css'],
-        }
-      }
-    },
-    compress: {
-      main: {
-        options: {
-          mode: 'gzip'
-        },
-        files: [
-          // Each of the files in the src/ folder will be output to
-          // the dist/ folder each with the extension .gz.js
-          {expand: true, src: ['<%= config.prod %>/js/*.js'], dest: '', ext: '.gz.js'},
-          {expand: true, src: ['<%= config.prod %>/css/*.css'], dest: '', ext: '.gz.css'}
-        ]
       }
     },
     connect: {
@@ -278,16 +248,13 @@ module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('assemble');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-json-minify');
-  grunt.loadNpmTasks('grunt-ng-annotate');
-  grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('devbuild', ['clean:dev', 'copy', 'assemble:dev', 'sass:dev', 'concat:dev', 'connect:dev']);
+  grunt.registerTask('devbuild', ['clean:dev', 'copy', 'assemble:dev', 'sass:dev', 'concat:dev', 'postcss', 'connect:dev']);
 
-  grunt.registerTask('prodbuild', ['clean:prod', 'copy', 'assemble:prod', 'sass:prod', 'concat:prod', 'cssmin', 'ngAnnotate', 'uglify', 'json-minify', 'compress', 'connect:prod']);
+  grunt.registerTask('prodbuild', ['clean:prod', 'copy', 'assemble:prod', 'sass:prod', 'concat:prod', 'postcss', 'json-minify', 'connect:prod']);
 
   // Default task(s).
   grunt.registerTask('default', ['devbuild', 'watch']);

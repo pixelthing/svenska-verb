@@ -1,4 +1,4 @@
-verbsApp.factory('verbsFactory', ['$http', function verbsFactory($http) {
+var verbsFactory = function () {
 
     var process = function(array) {
         return array.map(function(verb) {
@@ -6,7 +6,7 @@ verbsApp.factory('verbsFactory', ['$http', function verbsFactory($http) {
             verb.preteritum  = conjugatePreteritum(verb)  + conjugateReflexive(verb);
             verb.perfekt     = conjugatePerfekt(verb)     + conjugateReflexive(verb);
             verb.infinitiv   = verb.infinitiv             + conjugateReflexive(verb);
-            verb.search      = verb.presens + ' ' + verb.preteritum + ' ' + verb.perfekt + ' ' + verb.infinitiv;
+            verb.search      = verb.presens + ' ' + verb.preteritum + ' ' + verb.perfekt + ' ' + verb.infinitiv + ' ' + verb.trans.en;
             return verb;
         });
     }
@@ -71,22 +71,25 @@ verbsApp.factory('verbsFactory', ['$http', function verbsFactory($http) {
 
     var getData = function() {
 
-        //return the promise directly.
-        return $http.get('svenska.json')
-            .then(function(result) {
+        return new Promise(function (resolve, reject) {
+            //return the promise directly.
+            get('svenska.json').then(function(response) {
                 //resolve the promise as the data
-                var raw = result.data.data.verbs;
+                var raw = JSON.parse(response).verbs;
                 // process the presens/preteritum/perfekt
                 var processed = process(raw);
                 // return the processed data
-                return processed;
-            }, function() {
+                resolve(processed);
+            }, function(error) {
+                reject();
                 alert('error loading data - sorry!');
             });
+        });
+
     }
 
     return {
-        getVerbs : getData
+        getData : getData
     };
 
-}]);
+}();

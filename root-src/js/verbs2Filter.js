@@ -1,4 +1,5 @@
-verbsApp.filter('VerbsFilter', ['$filter', function ($filter) {
+var verbsFilter = function () {
+
   return function (items,group,keyword) {
     var filtered = [];
     if (keyword && keyword.length < 2) {
@@ -22,24 +23,35 @@ verbsApp.filter('VerbsFilter', ['$filter', function ($filter) {
         filtered.push(item);
       }
     }
-    var ordered = $filter('orderBy')(filtered, 'infinitiv');
-    var unique = uniq_fast(ordered);
+    var ordered = verbsSort(filtered);
+    var unique = verbsUnique(ordered);
     return unique;
   };
 
-  function uniq_fast(a) {
+  function verbsSort (array) {
+      function compare(a, b) {
+          if (a.infinitiv < b.infinitiv)
+              return -1;
+          if (a.infinitiv > b.infinitiv)
+              return 1;
+          return 0;
+      }
+      return array.sort(compare);
+  }
+
+  function verbsUnique(a) {
     var seen = {};
     var out = [];
     var len = a.length;
     var j = 0;
     for(var i = 0; i < len; i++) {
-         var item = a[i];
-         if(seen[item.infinitiv] !== 1) {
-               seen[item.infinitiv] = 1;
-               out[j++] = item;
-         }
+       var item = a[i];
+       if(seen[item.infinitiv] !== 1) {
+           seen[item.infinitiv] = 1;
+           out[j++] = item;
+       }
     }
     return out;
-}
+  }
 
-}]);
+}();
