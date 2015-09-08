@@ -4347,7 +4347,7 @@ var verbsFactory = function () {
             verb.preteritum  = conjugatePreteritum(verb)  + conjugateReflexive(verb);
             verb.perfekt     = conjugatePerfekt(verb)     + conjugateReflexive(verb);
             verb.infinitiv   = verb.infinitiv             + conjugateReflexive(verb);
-            verb.search      = verb.presens + ' ' + verb.preteritum + ' ' + verb.perfekt + ' ' + verb.infinitiv;
+            verb.search      = verb.presens + ' ' + verb.preteritum + ' ' + verb.perfekt + ' ' + verb.infinitiv + ' ' + verb.trans.en;
             return verb;
         });
     }
@@ -4568,7 +4568,7 @@ var verbsController = function () {
                 hm-tap=\"detailOpen(" + index + ")\"> \
                 <span class=\"vCol vColTrans\" \
                     data-verbForm=\"english\"> \
-                        " + verb.en + " \
+                        " + verb.trans.en + " \
                     </span> \
                 <div class=\"vColWrap\" \
                     data-verbGroup=\"" + verb.group + "\" \
