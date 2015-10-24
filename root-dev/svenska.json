@@ -969,6 +969,7 @@
         {
             "group" : "2a",
             "infinitiv" : "betyda",
+            "perfekt" : "betytt",
             "meningen" : "",
             "trans" : {
                 "en" : "mean/convey"
@@ -993,6 +994,8 @@
         {
             "group" : "2a",
             "infinitiv" : "drömma",
+            "preteritum" : "drömde",
+            "perfekt" : "drömt",
             "meningen" : "",
             "trans" : {
                 "en" : "dream"
@@ -1009,6 +1012,7 @@
         {
             "group" : "2a",
             "infinitiv" : "föda",
+            "perfekt" : "fött",
             "meningen" : "",
             "trans" : {
                 "en" : "feed/give birth to"
@@ -1025,6 +1029,8 @@
         {
             "group" : "2a",
             "infinitiv" : "glömma",
+            "preteritum" : "glömde",
+            "perfekt" : "glömt",
             "meningen" : "",
             "trans" : {
                 "en" : "dig"
@@ -1041,6 +1047,8 @@
         {
             "group" : "2a",
             "infinitiv" : "gömma",
+            "preteritum" : "gömde",
+            "perfekt" : "gömt",
             "meningen" : "",
             "trans" : {
                 "en" : "hide"
@@ -1065,6 +1073,8 @@
         {
             "group" : "2a",
             "infinitiv" : "hända",
+            "preteritum" : "hände",
+            "perfekt" : "hänt",
             "meningen" : "",
             "trans" : {
                 "en" : "happen"
@@ -1089,6 +1099,8 @@
         {
             "group" : "2a",
             "infinitiv" : "känna",
+            "preteritum" : "kände",
+            "perfekt" : "känt",
             "meningen" : "",
             "trans" : {
                 "en" : "feel/know a person"
@@ -1180,6 +1192,8 @@
         {
             "group" : "2a",
             "infinitiv" : "sända",
+            "preteritun" : "sände",
+            "perfekt" : "sänt",
             "meningen" : "",
             "trans" : {
                 "en" : "send/broadcast"
@@ -1188,6 +1202,8 @@
         {
             "group" : "2a",
             "infinitiv" : "trivas",
+            "preteritun" : "trivdes",
+            "perfekt" : "trivts",
             "meningen" : "",
             "trans" : {
                 "en" : "feel comfortable"
@@ -1196,6 +1212,8 @@
         {
             "group" : "2a",
             "infinitiv" : "tända",
+            "preteritun" : "tände",
+            "perfekt" : "tänt",
             "meningen" : "",
             "trans" : {
                 "en" : "light/ignite"
@@ -1212,6 +1230,8 @@
         {
             "group" : "2a",
             "infinitiv" : "vända",
+            "preteritun" : "vände",
+            "perfekt" : "vänt",
             "meningen" : "",
             "trans" : {
                 "en" : "turn"
@@ -1261,7 +1281,9 @@
         {
             "group" : "2b",
             "infinitiv" : "gifta",
-            "refrexive" : true,
+            "preteritun" : "gifte",
+            "perfekt" : "gift",
+            "reflexive" : true,
             "trans" : {
                 "en" : "marry"
             }
@@ -1269,13 +1291,15 @@
         {
             "group" : "2b",
             "infinitiv" : "heta",
+            "preteritun" : "hette",
+            "perfekt" : "hetat",
             "trans" : {
                 "en" : "called"
             }
         },
         {
             "group" : "2b",
-            "infinitiv" : "hjälper",
+            "infinitiv" : "hjälpa",
             "trans" : {
                 "en" : "help"
             }
@@ -1879,7 +1903,7 @@
             "infinitiv" : "skära",
             "presens" : "skär",
             "preteritum" : "skar",
-            "perfekt" : "skutit",
+            "perfekt" : "skurit",
             "trans" : {
                 "en" : "cut"
             }
@@ -1986,6 +2010,16 @@
         },
         {
             "group" : "4",
+            "infinitiv" : "säga",
+            "presens" : "säger",
+            "preteritum" : "sa (sade)",
+            "perfekt" : "sagt",
+            "trans" : {
+                "en" : "say"
+            }
+        },
+        {
+            "group" : "4",
             "infinitiv" : "ta",
             "presens" : "tar",
             "preteritum" : "tog",
@@ -2019,7 +2053,7 @@
             "infinitiv" : "vilja",
             "presens" : "vill",
             "preteritum" : "ville",
-            "perfekt" : "vetat",
+            "perfekt" : "velat",
             "trans" : {
                 "en" : "want"
             }
