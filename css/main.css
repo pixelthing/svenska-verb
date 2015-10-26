@@ -464,17 +464,15 @@ body {
     max-height: 500px;
     margin-left: -150px;
     background: #fff;
-    overflow: hidden;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     backface-visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 300ms, transform 200ms; }
+    transition: opacity 300ms; }
     .vDetail--active .vDetailModal {
       opacity: 1;
-      transform: translateY(0);
-      transition-delay: 300ms, 300ms; }
+      transition-delay: 300ms; }
       @media (min-width: 768px) {
         .vDetail--active .vDetailModal {
           top: 30px;
