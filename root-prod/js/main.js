@@ -4339,6 +4339,52 @@ function get(url) {
     req.send();
   });
 }
+
+/**
+ http://gomakethings.com/climbing-up-and-down-the-dom-tree-with-vanilla-javascript/
+ * Get closest DOM element up the tree that contains a class, ID, or data attribute
+ * @param  {Node} elem The base element
+ * @param  {String} selector The class, id, data attribute, or tag to look for
+ * @return {Node} Null if no match
+ */
+var getClosest = function (elem, selector) {
+
+    var firstChar = selector.charAt(0);
+
+    // Get closest match
+    for ( ; elem && elem !== document; elem = elem.parentNode ) {
+
+        // If selector is a class
+        if ( firstChar === '.' ) {
+            if ( elem.classList.contains( selector.substr(1) ) ) {
+                return elem;
+            }
+        }
+
+        // If selector is an ID
+        if ( firstChar === '#' ) {
+            if ( elem.id === selector.substr(1) ) {
+                return elem;
+            }
+        } 
+
+        // If selector is a data attribute
+        if ( firstChar === '[' ) {
+            if ( elem.hasAttribute( selector.substr(1, selector.length - 2) ) ) {
+                return elem;
+            }
+        }
+
+        // If selector is a tag
+        if ( elem.tagName.toLowerCase() === selector ) {
+            return elem;
+        }
+
+    }
+
+    return false;
+
+};
 var verbsFactory = function () {
 
     var process = function(array) {
@@ -4548,6 +4594,9 @@ var verbsController = function () {
         document.querySelector('.js-vFilterInputIcon').addEventListener('click', searchFocus);
         document.querySelector('.js-vFilterInput').addEventListener('keyup', search);
         document.querySelector('.js-vFilterInputClear').addEventListener('click', searchClear);
+        document.querySelector('.js-vListContainer').addEventListener('click', detailOpen);
+        document.querySelector('.js-vDetailBed').addEventListener('click', detailClose);
+        document.querySelector('.js-vDetailModalClose').addEventListener('click', detailClose);
     }
 
     // PRINT
@@ -4557,18 +4606,12 @@ var verbsController = function () {
         verbs.forEach(function(verb, index){
             buffer += " \
             <article class=\"vRow vGroup" + verb.group + "\" \
-                hm-tap=\"detailOpen(" + index + ")\"> \
                 <span class=\"vCol vColTrans\" \
                     data-verbForm=\"english\"> \
                         " + verb.trans.en + " \
                     </span> \
-                <div class=\"vColWrap\" \
+                <div class=\"vColWrap js-vColWrap\" \
                     data-verbGroup=\"" + verb.group + "\" \
-                    hm-panleft=\"panLeft\" \
-                    hm-panright=\"panRight\" \
-                    hm-panend=\"panEnd\" \
-                    hm-manager-options='{\"threshold\":20}' \
-                    hm-recognizer-options='[{\"type\":\"pan\",\"directions\":\"DIRECTION_HORIZONTAL\"}]'\
                     data-index=\"" + index + "\" > \
                     <span class=\"vCol vColInfinitiv\">" + verb.infinitiv + "</span> \
                     <span class=\"vCol\">" + verb.presens + "</span> \
@@ -4666,6 +4709,7 @@ var verbsController = function () {
             button.classList.remove('vFilterGroupOptionActive');
         });
 
+        // clear the overall control CSS
         document.querySelector('.js-vListContainer').setAttribute('class','js-vListContainer');
 
         // set the new group (and turn the button on)
@@ -4691,35 +4735,50 @@ var verbsController = function () {
         $rootScope.$broadcast('backgroundClick');
     }
 
-    var detailOpen = function(index) {
-        $scope.detailFill(index);
+    var lockPage = function() {
         modalOffset = document.body.scrollTop;
-        $timeout(function() {
-            $scope.detailIsOpen = true;
-            document.querySelector('.vList').style.top = '-' + modalOffset + 'px';
-            document.querySelector('html').classList.add('modal');
-        });
+        document.querySelector('html').classList.add('modal');
+        document.querySelector('.vList').style.top = '-' + modalOffset + 'px';
     }
 
-    var detailClose = function() {
-        $scope.detailIsOpen = false;
-        $timeout(function() {
-            $scope.detailData = {};
-            document.querySelector('html').classList.remove('modal');
-            document.body.scrollTop = modalOffset;
-            document.querySelector('.vList').style.top = 'auto';
-            modalOffset = null;
-        });
+    var unLockPage = function() {
+        document.body.scrollTop = modalOffset;
+        document.querySelector('.vList').style.top = 'auto';
+        document.querySelector('html').classList.remove('modal');
+        modalOffset = null;
+    }
+
+    var detailOpen = function(ev) {
+        ev.preventDefault();
+        // if the event has a target
+        if(ev.target) {
+            // if the target is part of a row
+            var wrap = getClosest(ev.target,'.js-vColWrap');
+            if (wrap) {
+                var index = wrap.getAttribute('data-index');
+                detailFill(index);
+                document.querySelector('.js-vDetail').classList.add('vDetail--active');
+                lockPage();
+            }
+
+        }
+    }
+
+    var detailClose = function(ev) {
+        ev.preventDefault();
+        document.querySelector('.js-vDetail').classList.remove('vDetail--active');
+        unLockPage();
     }
 
 
     var detailFill = function(index) {
-        $scope.detailData = $scope.verbsFiltered[index];
-        $scope.detailData.audio = 'http://translate.google.com/translate_tts?ie=UTF-8&q=' + $scope.detailData.infinitiv 
-        + ',' + $scope.detailData.presens 
-        + ',' + $scope.detailData.preteritum 
-        + ',' + $scope.detailData.perfekt 
-        + '&tl=sv-se';
+        index = parseInt(index);
+        var verbData = verbsFiltered[index];
+        document.querySelectorAll('.js-vDetailInfinitiv').map(function(obj) {obj.innerHTML = verbData.infinitiv;});
+        document.querySelectorAll('.js-vDetailTranslation').map(function(obj) {obj.innerHTML = verbData.trans['en'];});
+        document.querySelectorAll('.js-vDetailPresens').map(function(obj) {obj.innerHTML = verbData.presens;});
+        document.querySelectorAll('.js-vDetailPreteritum').map(function(obj) {obj.innerHTML = verbData.preteritum;});
+        document.querySelectorAll('.js-vDetailPerfekt').map(function(obj) {obj.innerHTML = verbData.perfekt;});
     }
 
     // TOUCH SLIDE
