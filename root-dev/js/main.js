@@ -4436,23 +4436,15 @@ var verbsFactory = function () {
 }();
 var verbsFilter = function () {
 
-  return function (items,group,keyword) {
+  return function (items,keyword) {
     var filtered = [];
     if (keyword && keyword.length < 2) {
       keyword = false;
     }
     for (var i = 0; i < items.length; i++) {
       var item = items[i];
-      if (group && !keyword) {
-        if (item.group === group) {
-          filtered.push(item);
-        }
-      } else if (!group && keyword) {
+      if (keyword) {
         if (item.search.indexOf(keyword) >= 0) {
-          filtered.push(item);
-        }
-      } else if (group && keyword) {
-        if (item.group === group && item.search.indexOf(keyword) >= 0) {
           filtered.push(item);
         }
       } else {
@@ -4583,9 +4575,6 @@ var verbsController = function () {
                     <span class=\"vCol\">" + verb.preteritum + "</span> \
                     <span class=\"vCol\">" + verb.perfekt + "</span> \
                 </div> \
-                <span class=\"vCol vColAudio\"> \
-                    <span class=\"icon icon-volume-up\"></span> \
-                </span> \
             </article>";
         });
         document.querySelector('.js-vListContainer').innerHTML = buffer;
@@ -4604,8 +4593,7 @@ var verbsController = function () {
             clearTimeout(searchTimeout);
         }
         searchTimeout = setTimeout(function() {
-            searchSubmit()
-
+            searchSubmit();
         },100);
     }
 
@@ -4633,7 +4621,7 @@ var verbsController = function () {
             document.querySelector('.vFilterForm').classList.add('vFilterFormActive');
         }
 
-        verbsFiltered = verbsFilter(verbsOriginal,filterCurrentGroup,filterCurrentSearch);
+        verbsFiltered = verbsFilter(verbsOriginal,filterCurrentSearch);
         verbsPrint(verbsFiltered);
         searchTimeout = null;
     }
@@ -4671,7 +4659,6 @@ var verbsController = function () {
 
     var filterGroup = function() {
         scroll(0,0);
-        searchLoading()
         var buttonGroup = this.getAttribute('data-group');
 
         // turn all group filter buttons off
@@ -4679,20 +4666,16 @@ var verbsController = function () {
             button.classList.remove('vFilterGroupOptionActive');
         });
 
+        document.querySelector('.js-vListContainer').setAttribute('class','js-vListContainer');
+
         // set the new group (and turn the button on)
-        if (filterCurrentGroup === buttonGroup) {
-            filterCurrentGroup = null;
-        } else {
+        if (filterCurrentGroup !== buttonGroup) {
+            document.querySelector('.js-vListContainer').classList.add('vListContainer--group' + buttonGroup);
             filterCurrentGroup = buttonGroup;
             this.classList.add('vFilterGroupOptionActive');
+        } else {
+            filterCurrentGroup = null;
         }
-
-        // delay the  filtering of the list a tiny bit to not delay the button UI interaction
-        setTimeout(function() {
-            verbsFiltered = verbsFilter(verbsOriginal,filterCurrentGroup,filterCurrentSearch);
-            verbsPrint(verbsFiltered);
-            searchLoaded()
-        },20)
     }
 
     var filterClear = function() {

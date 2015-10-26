@@ -1,22 +1,14 @@
 var verbsFilter = function () {
 
-  return function (items,group,keyword) {
+  return function (items,keyword) {
     var filtered = [];
     if (keyword && keyword.length < 2) {
       keyword = false;
     }
     for (var i = 0; i < items.length; i++) {
       var item = items[i];
-      if (group && !keyword) {
-        if (item.group === group) {
-          filtered.push(item);
-        }
-      } else if (!group && keyword) {
+      if (keyword) {
         if (item.search.indexOf(keyword) >= 0) {
-          filtered.push(item);
-        }
-      } else if (group && keyword) {
-        if (item.group === group && item.search.indexOf(keyword) >= 0) {
           filtered.push(item);
         }
       } else {

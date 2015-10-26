@@ -133,6 +133,7 @@
             width: 50%;
             margin-left: 3%;
             overflow: hidden;
+              
             &Option {
                 -webkit-tap-highlight-color: transparent;
                 -webkit-appearance: none;
@@ -291,6 +292,48 @@
         line-height: 0;
         cursor: pointer;
     }
+    &Group {
+        &1 {
+            .vListContainer--group2a &,
+            .vListContainer--group2b &,
+            .vListContainer--group3 &,
+            .vListContainer--group4 & {
+                display: none;
+            }
+        }
+        &2a {
+            .vListContainer--group1 &,
+            .vListContainer--group2b &,
+            .vListContainer--group3 &,
+            .vListContainer--group4 & {
+                display: none;
+            }
+        }
+        &2b {
+            .vListContainer--group1 &,
+            .vListContainer--group2a &,
+            .vListContainer--group3 &,
+            .vListContainer--group4 & {
+                display: none;
+            }
+        }
+        &3 {
+            .vListContainer--group1 &,
+            .vListContainer--group2a &,
+            .vListContainer--group2b &,
+            .vListContainer--group4 & {
+                display: none;
+            }
+        }
+        &4 {
+            .vListContainer--group1 &,
+            .vListContainer--group2a &,
+            .vListContainer--group2b &,
+            .vListContainer--group3 & {
+                display: none;
+            }
+        }
+    }
     &Col {
         display: inline-block;
         width: 25%;
@@ -303,9 +346,7 @@
         &Wrap {
             position: relative;
             z-index: 2;
-            -webkit-transform: translate3d(0,0,0);
-            -moz-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+            //transform: translate3d(0,0,0);
             background: #fff;
             .vRow:nth-child(odd) & {
                 background-color: #f6f6f6;
@@ -332,11 +373,12 @@
             }
         }
         &Trans {
+            display: none;
             position: absolute;
             top: 0;
             bottom: 0;
             left: 0;
-            right: 120px;
+            right: 0;
             width: auto;
             z-index: 1;
             color: #fff;
