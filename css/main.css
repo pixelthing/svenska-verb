@@ -1,5 +1,6 @@
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 16px; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -8,7 +9,7 @@ body {
   margin: 0;
   font-family: avenir;
   font-size: 16px;
-  background: #818593; }
+  background: #fff; }
 
 .ng-cloak {
   display: none; }
@@ -317,6 +318,16 @@ body {
   font-size: 0;
   line-height: 0;
   cursor: pointer; }
+.vListContainer--group2a .vGroup1, .vListContainer--group2b .vGroup1, .vListContainer--group3 .vGroup1, .vListContainer--group4 .vGroup1 {
+  display: none; }
+.vListContainer--group1 .vGroup2a, .vListContainer--group2b .vGroup2a, .vListContainer--group3 .vGroup2a, .vListContainer--group4 .vGroup2a {
+  display: none; }
+.vListContainer--group1 .vGroup2b, .vListContainer--group2a .vGroup2b, .vListContainer--group3 .vGroup2b, .vListContainer--group4 .vGroup2b {
+  display: none; }
+.vListContainer--group1 .vGroup3, .vListContainer--group2a .vGroup3, .vListContainer--group2b .vGroup3, .vListContainer--group4 .vGroup3 {
+  display: none; }
+.vListContainer--group1 .vGroup4, .vListContainer--group2a .vGroup4, .vListContainer--group2b .vGroup4, .vListContainer--group3 .vGroup4 {
+  display: none; }
 .vCol {
   display: inline-block;
   width: 25%;
@@ -329,9 +340,6 @@ body {
   .vColWrap {
     position: relative;
     z-index: 2;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
     background: #fff; }
     .vRow:nth-child(odd) .vColWrap {
       background-color: #f6f6f6; }
@@ -354,11 +362,12 @@ body {
         word-break: break-word;
         white-space: pre-wrap; }
   .vColTrans {
+    display: none;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    right: 120px;
+    right: 0;
     width: auto;
     z-index: 1;
     color: #fff;
