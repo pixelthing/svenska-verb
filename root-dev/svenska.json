@@ -220,6 +220,9 @@
         {
             "group" : "1",
             "infinitiv" : "hoppas",
+            "presens" : "hoppas",
+            "preteritum" : "hoppades",
+            "perfekt" : "hoppats",
             "meningen" : "du är rätt",
             "trans" : {
                 "en" : "hope"
