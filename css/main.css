@@ -566,20 +566,14 @@ body {
   .vDetailFokus {
     margin: 0 0 10px;
     padding: 10px;
-    background: #ccc;
-    text-align: center; }
-    @media (min-width: 568px) {
-      .vDetailFokus {
-        text-align: left; } }
+    background: #ccc; }
     .vDetailFokusTitle {
       margin: 0 0 0.5em;
       color: #999;
       font-size: 12px;
       text-transform: uppercase;
+      text-align: right;
       -webkit-text-size-adjust: none; }
-      @media (min-width: 568px) {
-        .vDetailFokusTitle {
-          text-align: right; } }
       @media (min-width: 768px) {
         .vDetailFokusTitle {
           margin: 0 0 15px; } }
