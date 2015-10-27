@@ -7,7 +7,7 @@ html {
 
 body {
   margin: 0;
-  font-family: avenir;
+  font-family: avenir, sans-serif;
   font-size: 16px;
   background: #fff; }
 
@@ -19,9 +19,11 @@ body {
   position: fixed;
   right: 0;
   left: 0;
-  top: inherit; }
+  top: inherit;
+  height: 100%; }
   .modal body {
-    position: relative; }
+    position: relative;
+    height: 100%; }
 
 @font-face {
   font-family: 'icons';
@@ -71,15 +73,9 @@ body {
   content: "\e608"; }
 
 .vContainer {
-  min-height: 600px;
-  min-height: calc( 100vh );
   background-color: #fff; }
-  @media (min-width: 600px) {
-    .vContainer {
-      font-size: 20px; } }
-  @media (min-width: 992px) {
-    .vContainer {
-      font-size: 24px; } }
+  .modal .vContainer {
+    height: 100%; }
 .vHeader {
   position: fixed;
   top: 0;
@@ -88,6 +84,12 @@ body {
   z-index: 3;
   background: #fff;
   overflow: hidden; }
+  @media (min-width: 600px) {
+    .vHeader {
+      font-size: 20px; } }
+  @media (min-width: 992px) {
+    .vHeader {
+      font-size: 24px; } }
 .vTitle {
   position: relative;
   margin: 0;
@@ -124,6 +126,7 @@ body {
     border: 1px solid #ddd;
     color: #000;
     border-radius: 4px;
+    font-family: avenir, sans-serif;
     font-size: 1em;
     line-height: 2em;
     outline: none;
@@ -199,6 +202,7 @@ body {
       color: #fff;
       background-color: #999;
       border: none;
+      font-family: avenir, sans-serif;
       font-size: 0.72em;
       line-height: 2.9em;
       opacity: 0.3;
@@ -259,6 +263,7 @@ body {
   width: 96%;
   width: 96vw;
   max-width: 980px;
+  min-height: 500px;
   margin: 0 auto;
   padding: 5.05em 0 15px;
   background-color: #fff;
@@ -266,10 +271,10 @@ body {
   overflow: hidden; }
   @media (min-width: 600px) {
     .vList {
-      padding-top: 4.8em; } }
+      padding-top: 5.7em; } }
   @media (min-width: 992px) {
     .vList {
-      padding-top: 4.5em; } }
+      padding-top: 6.4em; } }
   .vListHeader {
     width: 96%;
     width: 96vw;
@@ -340,14 +345,14 @@ body {
   margin: 0;
   padding: 0.3em 0 0.3em 0.3em;
   overflow: hidden;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 2;
   white-space: nowrap;
   text-overflow: ellipsis; }
-  @media (max-width: 320px) {
+  @media (min-width: 360px) {
     .vCol {
-      font-size: 0.9rem; } }
-  @media (min-width: 992px) {
+      font-size: 1rem; } }
+  @media (min-width: 500px) {
     .vCol {
       font-size: 1.1rem; } }
   @media (min-width: 1200px) {
@@ -399,20 +404,6 @@ body {
       background-color: #92BF11; }
     .vGroup4 .vColTrans {
       background-color: #1EA5D8; }
-  .vColAudio {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 120px;
-    padding: 0.2em 1em;
-    z-index: 1;
-    color: #fff;
-    background-color: #000;
-    font-size: 2em;
-    line-height: 1;
-    text-transform: uppercase;
-    text-align: right; }
   .vColInfinitiv {
     position: relative;
     width: 28%;
@@ -438,12 +429,17 @@ body {
   right: 0;
   bottom: 100%;
   overflow: hidden;
-  max-height: 0;
+  font-size: 18px;
   transition: bottom 0ms;
   transition-delay: 300ms; }
+  @media (min-width: 768px) {
+    .vDetail {
+      font-size: 18px; } }
+  @media (min-width: 992px) {
+    .vDetail {
+      font-size: 22px; } }
   .vDetail--active {
     bottom: 0;
-    max-height: 999em;
     transition-delay: 0ms; }
   .vDetailBed {
     position: absolute;
@@ -452,32 +448,54 @@ body {
     right: 0;
     bottom: 0;
     z-index: 9;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     opacity: 0;
     backface-visibility: hidden;
-    transition: opacity 300ms; }
+    transition: opacity 500ms; }
     .vDetail--active .vDetailBed {
-      opacity: 1;
-      transition-delay: 200ms; }
+      opacity: 1; }
   .vDetailTitle {
     z-index: 12;
+    min-height: 2.3em;
     margin: 0;
-    padding: 10px 2em 8px 15px;
+    padding: 10px 2em 8px 2.5em;
     color: #000;
     background-color: #fff;
     font-size: 24px; }
-    .vDetailTitleAudio {
+    .vDetailTitleGrp {
+      display: inline-block;
+      position: absolute;
+      left: 15px;
+      top: 8px;
+      width: 2em;
+      height: 2em;
       color: #fff;
-      background-color: #000; }
+      background-color: #ccc;
+      border-radius: 2em;
+      font-size: 0.8em;
+      font-weight: normal;
+      font-weight: 300;
+      text-align: center;
+      line-height: 2em; }
+      .vDetailTitleGrp1 {
+        background-color: #67009A; }
+      .vDetailTitleGrp2a {
+        background-color: #F22F1D; }
+      .vDetailTitleGrp2b {
+        background-color: #F26E22; }
+      .vDetailTitleGrp3 {
+        background-color: #92BF11; }
+      .vDetailTitleGrp4 {
+        background-color: #1EA5D8; }
   .vDetailModal {
     position: absolute;
-    top: 15px;
+    top: 5px;
     left: 50%;
+    bottom: 5px;
     z-index: 10;
-    width: 300px;
-    max-width: calc(100% - 20px);
-    max-height: calc(100vh - 20px);
-    margin-left: -150px;
+    width: 310px;
+    max-width: calc(100% - 10px);
+    margin-left: -155px;
     background: #fff;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
@@ -485,15 +503,25 @@ body {
     opacity: 0;
     backface-visibility: hidden;
     transition: opacity 300ms; }
+    @media (min-height: 470px) {
+      .vDetailModal {
+        top: 15px; } }
+    @media (min-height: 800px) {
+      .vDetailModal {
+        top: 15px;
+        bottom: auto;
+        max-height: calc(100vh - 20px); } }
+    @media (min-width: 568px) {
+      .vDetailModal {
+        width: 558px;
+        margin-left: -279px; } }
+    @media (min-width: 768px) {
+      .vDetailModal {
+        top: 30px;
+        width: 740px;
+        margin-left: -370px; } }
     .vDetail--active .vDetailModal {
-      opacity: 1;
-      transition-delay: 300ms; }
-      @media (min-width: 768px) {
-        .vDetail--active .vDetailModal {
-          top: 30px;
-          width: 700px;
-          height: 20em;
-          margin-left: -350px; } }
+      opacity: 1; }
     .vDetailModalClose {
       position: absolute;
       right: 0;
@@ -506,8 +534,6 @@ body {
         color: #fff; }
   .vDetailTranslation {
     display: inline-block;
-    padding: 0 0.2em;
-    background: #ffc;
     font-size: 0.8em;
     font-weight: 300; }
     .vDetailTranslationWrap {
@@ -534,21 +560,28 @@ body {
         width: 8em;
         text-align: left; }
   .vDetailFokus {
-    margin: 10px 0 0;
+    margin: 0 0 10px;
     padding: 10px;
-    background: #E5DCC7; }
+    background: #ccc;
+    text-align: center; }
+    @media (min-width: 568px) {
+      .vDetailFokus {
+        text-align: left; } }
     .vDetailFokusTitle {
-      margin: 0;
-      color: #A63F38;
+      margin: 0 0 0.5em;
+      color: #999;
       font-size: 12px;
-      text-align: right;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      -webkit-text-size-adjust: none; }
+      @media (min-width: 568px) {
+        .vDetailFokusTitle {
+          text-align: right; } }
       @media (min-width: 768px) {
         .vDetailFokusTitle {
           margin: 0 0 15px; } }
     .vDetailFokusSub {
       margin: 0 0 1em; }
-      @media (min-width: 768px) {
+      @media (min-width: 568px) {
         .vDetailFokusSub {
           display: inline-block;
           vertical-align: top;
@@ -562,8 +595,9 @@ body {
         font-weight: 700;
         text-transform: uppercase; }
       .vDetailFokusSubExample {
-        margin: 0; }
-        @media (min-width: 768px) {
+        margin: 0;
+        font-size: 1.1em; }
+        @media (min-width: 568px) {
           .vDetailFokusSubExample {
             font-size: 0.9em; } }
     .vDetailFokusLabel {
