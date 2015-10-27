@@ -57,3 +57,7 @@ $screen-md-max:              ($screen-lg-min - 1);
 @mixin respond-to-span($min, $max) {
   @media (min-width: $min) and (max-width: $max) { @content; }
 }
+
+@mixin respond-to-min-height($screenHeight) {
+  @media (min-height: $screenHeight) { @content; }
+}
