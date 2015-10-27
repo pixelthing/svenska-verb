@@ -40,8 +40,8 @@
         max-width: calc( 980px + 4% );
         max-width: calc( 980px + 4vw );
         margin: 0 auto;
-        padding: 0.5em 2%;
-        padding: 0.5em 2vw;
+        padding: 0.5em 2% 0.2em;
+        padding: 0.5em 2vw 0.2em;
         line-height: 0;
         &Form {
             float: left;
@@ -221,10 +221,16 @@
         width: 96vw;
         max-width: 980px;
         margin: 0 auto;
-        padding: 5.3em 0 15px;
+        padding: 5.05em 0 15px;
         background-color: #fff;
         border-top: 1px solid #eee;
         overflow: hidden;
+        @include respond-to(xs-min) {
+            padding-top: 4.8em;
+        }
+        @include respond-to(md-min) {
+            padding-top: 4.5em;
+        }
         &Header {
             width: 96%;
             width: 96vw;
@@ -336,13 +342,17 @@
     }
     &Col {
         display: inline-block;
-        width: 25%;
-        min-width: 5rem;
+        width: 24%;
         margin: 0;
-        padding: 0.3em 0.3rem;
+        padding: .3em 0 0.3em.3em;
         overflow: hidden;
         font-size: 1rem;
         line-height: 2;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @include respond-to-max(320px) {
+            font-size: 0.9rem;
+        }
         @include respond-to(md-min) {
             font-size: 1.1rem;
         }
@@ -423,8 +433,13 @@
         }
         &Infinitiv {
             position: relative;
-            font-weight: bold;
+            width: 28%;
             border-left: 0.6em solid #999;
+            font-weight: bold;
+            text-overflow: initial;
+            .vListHeader & {
+                border-left: none;
+            }
             .vGroup1 & {
                 border-color:  $color-group1;
             }
@@ -474,13 +489,9 @@
             }
         }
         &Title {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
             z-index: 12;
             margin: 0;
-            padding: 10px 0 8px 15px;
+            padding: 10px 2em 8px 15px;
             color: #000;
             background-color: #fff;
             font-size: 24px;
@@ -495,9 +506,8 @@
             left: 50%;
             z-index: 10;
             width: 300px;
-            height: calc(100% - 40px);
             max-width: calc(100% - 20px);
-            max-height: 500px;
+            max-height: calc(100vh - 40px);
             margin-left: -150px;
             background: #fff;
             overflow: auto;
@@ -535,13 +545,11 @@
             background: #ffc;
             font-size: 0.8em;
             font-weight: 300;
+            &Wrap {
+                display: inline-block;
+            }
         }
         &Body {
-            position: absolute;
-            left: 0;
-            top: 50px;
-            right: 0;
-            bottom: 0;
             padding: 0 15px 15px;
             overflow: auto;
             &Audio {
