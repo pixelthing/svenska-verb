@@ -362,8 +362,6 @@ body {
     position: relative;
     z-index: 2;
     background: #fff; }
-    .vRow:nth-child(odd) .vColWrap {
-      background-color: #f6f6f6; }
     .vColWrap:before {
       content: attr(data-verbGroup);
       position: absolute;
@@ -462,6 +460,9 @@ body {
     color: #000;
     background-color: #fff;
     font-size: 24px; }
+    @media (min-width: 992px) {
+      .vDetailTitle {
+        padding: 15px 2em 12px 2.5em; } }
     .vDetailTitleGrp {
       display: inline-block;
       position: absolute;
@@ -477,6 +478,9 @@ body {
       font-weight: 300;
       text-align: center;
       line-height: 2em; }
+      @media (min-width: 992px) {
+        .vDetailTitleGrp {
+          top: 12px; } }
       .vDetailTitleGrp1 {
         background-color: #67009A; }
       .vDetailTitleGrp2a {

@@ -370,9 +370,9 @@
             z-index: 2;
             //transform: translate3d(0,0,0);
             background: #fff;
-            .vRow:nth-child(odd) & {
-                background-color: #f6f6f6;
-            }
+            //.vRow:nth-child(odd) & {
+            //    background-color: #f6f6f6;
+            //}
             &:before {
                 content: attr(data-verbGroup);
                 position: absolute;
@@ -491,6 +491,9 @@
             color: #000;
             background-color: #fff;
             font-size: 24px;
+            @include respond-to(md-min) {
+                padding: 15px 2em 12px 2.5em
+            }
             &Grp {
                 display: inline-block;
                 position: absolute;
@@ -506,6 +509,9 @@
                 font-weight: 300;
                 text-align: center;
                 line-height: 2em;
+                @include respond-to(md-min) {
+                    top: 12px;
+                }
                 &1 {
                     background-color:  $color-group1;
                 }
