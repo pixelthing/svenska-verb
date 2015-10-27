@@ -245,6 +245,9 @@ var verbsController = function () {
         document.querySelectorAll('.js-vDetailPresens').map(function(obj) {obj.innerHTML = verbData.presens;});
         document.querySelectorAll('.js-vDetailPreteritum').map(function(obj) {obj.innerHTML = verbData.preteritum;});
         document.querySelectorAll('.js-vDetailPerfekt').map(function(obj) {obj.innerHTML = verbData.perfekt;});
+        document.querySelector('.js-vDetailTitleGrp').setAttribute('class','vDetailTitleGrp js-vDetailTitleGrp');
+        document.querySelector('.js-vDetailTitleGrp').classList.add('vDetailTitleGrp' + verbData.group);
+        document.querySelector('.js-vDetailTitleGrp').innerHTML = verbData.group;
     }
 
     // TOUCH SLIDE
