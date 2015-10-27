@@ -4722,7 +4722,8 @@ var verbsController = function () {
         }
     }
 
-    var filterClear = function() {
+    var filterClear = function(ev) {
+        ev.preventDefault();
         $scope.search = '';
         $scope.filterCurrentGroupButton = null;
         $scope.filterCurrentGroup = null;
@@ -4731,10 +4732,6 @@ var verbsController = function () {
 
     // DETAIL
 
-    var backgroundClick = function() {
-        $rootScope.$broadcast('backgroundClick');
-    }
-
     var lockPage = function() {
         modalOffset = document.body.scrollTop;
         document.querySelector('html').classList.add('modal');
@@ -4742,9 +4739,9 @@ var verbsController = function () {
     }
 
     var unLockPage = function() {
-        document.body.scrollTop = modalOffset;
-        document.querySelector('.vList').style.top = 'auto';
         document.querySelector('html').classList.remove('modal');
+        document.querySelector('.vList').style.top = 'auto';
+        document.body.scrollTop = modalOffset;
         modalOffset = null;
     }
 
