@@ -85,7 +85,7 @@
             "infinitiv" : "diska",
             "meningen" : "all plåtar",
             "trans" : {
-                "en" : "wash (up)"
+                "en" : "wash - up"
             }
         },
         {
@@ -338,7 +338,7 @@
             "infinitiv" : "laga",
             "meningen" : "mat",
             "trans" : {
-                "en" : "make (food)"
+                "en" : "make - food"
             }
         },
         {
@@ -362,7 +362,7 @@
             "infinitiv" : "lukta",
             "meningen" : "ganske daligt",
             "trans" : {
-                "en" : "smell (of)"
+                "en" : "smell - of"
             }
         },
         {
@@ -410,7 +410,7 @@
             "infinitiv" : "kissa",
             "meningen" : "äfter en öl",
             "trans" : {
-                "en" : "pee (yes, really)"
+                "en" : "pee - yes, really"
             }
         },
         {
@@ -590,7 +590,7 @@
             "infinitiv" : "skåla",
             "meningen" : "",
             "trans" : {
-                "en" : "toast (salutation)"
+                "en" : "toast - salutation"
             }
         },
         {
@@ -1325,7 +1325,7 @@
             "group" : "2b",
             "infinitiv" : "kyssa",
             "trans" : {
-                "en" : "kiss (pasionately!)"
+                "en" : "kiss - passionately!"
             }
         },
         {
@@ -1461,10 +1461,9 @@
         {
             "group" : "3",
             "infinitiv" : "bo",
-            "en" : "live (in)",
             "meningen" : "",
             "trans" : {
-                "en" : "live"
+                "en" : "live - in"
             }
         },
         {
@@ -1480,7 +1479,7 @@
             "infinitiv" : "må",
             "meningen" : "",
             "trans" : {
-                "en" : "feel (good), be (ill)"
+                "en" : "feel - good, be - ill"
             }
         },
         {
@@ -1718,7 +1717,7 @@
             "preteritum" : "hann",
             "perfekt" : "hunnit",
             "trans" : {
-                "en" : "make it (in time)"
+                "en" : "make it - in time"
             }
         },
         {
