@@ -510,7 +510,7 @@ body {
     @media (min-height: 470px) {
       .vDetailModal {
         top: 15px; } }
-    @media (min-height: 800px) {
+    @media (min-height: 600px) {
       .vDetailModal {
         top: 15px;
         bottom: auto;
