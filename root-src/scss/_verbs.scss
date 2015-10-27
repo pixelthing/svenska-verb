@@ -343,6 +343,12 @@
         overflow: hidden;
         font-size: 1rem;
         line-height: 2;
+        @include respond-to(md-min) {
+            font-size: 1.1rem;
+        }
+        @include respond-to(lg-min) {
+            font-size: 1.3rem;
+        }
         &Wrap {
             position: relative;
             z-index: 2;
