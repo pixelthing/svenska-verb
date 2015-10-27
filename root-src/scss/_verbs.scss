@@ -618,19 +618,13 @@
             margin: 0 0 10px;
             padding: 10px;
             background: #ccc;
-            text-align: center;
-            @include respond-to-min(568px) {
-                text-align: left;
-            }
             &Title {
                 margin: 0 0 0.5em;
                 color: #999;
                 font-size: 12px;
                 text-transform: uppercase;
+                text-align: right;
                 -webkit-text-size-adjust:none;
-                @include respond-to-min(568px) {
-                    text-align: right;
-                }
                 @include respond-to(sm-min) {
                     margin: 0 0 15px;
                 }
