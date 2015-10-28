@@ -26,6 +26,13 @@
         },
         {
             "group" : "1",
+            "infinitiv" : "bekräfta",
+            "trans" : {
+                "en" : "confirm"
+            }
+        },
+        {
+            "group" : "1",
             "infinitiv" : "berätta",
             "meningen" : "henne",
             "trans" : {
@@ -150,6 +157,13 @@
             "meningen" : "i bilden",
             "trans" : {
                 "en" : "colour"
+            }
+        },
+        {
+            "group" : "1",
+            "infinitiv" : "förlora",
+            "trans" : {
+                "en" : "Lose"
             }
         },
         {
@@ -319,6 +333,13 @@
         },
         {
             "group" : "1",
+            "infinitiv" : "kolla",
+            "trans" : {
+                "en" : "Check"
+            }
+        },
+        {
+            "group" : "1",
             "infinitiv" : "kosta",
             "meningen" : "mer en du tror",
             "trans" : {
@@ -427,6 +448,13 @@
             "meningen" : "",
             "trans" : {
                 "en" : "fit/suit/pass"
+            }
+        },
+        {
+            "group" : "1",
+            "infinitiv" : "planera",
+            "trans" : {
+                "en" : "plan"
             }
         },
         {
@@ -1658,6 +1686,16 @@
             "perfekt" : "förstått",
             "trans" : {
                 "en" : "understand"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "försvinna",
+            "presens" : "försvinner",
+            "preteritum" : "försvann",
+            "perfekt" : "försvunnit",
+            "trans" : {
+                "en" : "disappear/vanish"
             }
         },
         {

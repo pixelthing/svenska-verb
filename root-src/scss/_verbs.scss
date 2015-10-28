@@ -546,7 +546,7 @@
             @include respond-to-min-height(470px) {
                 top: 15px;
             }
-            @include respond-to-min-height(800px) {
+            @include respond-to-min-height(600px) {
                 top: 15px;
                 bottom: auto;
                 max-height: calc(100vh - 20px);

@@ -26,6 +26,13 @@
         },
         {
             "group" : "1",
+            "infinitiv" : "bekräfta",
+            "trans" : {
+                "en" : "confirm"
+            }
+        },
+        {
+            "group" : "1",
             "infinitiv" : "berätta",
             "meningen" : "henne",
             "trans" : {
@@ -427,6 +434,13 @@
             "meningen" : "",
             "trans" : {
                 "en" : "fit/suit/pass"
+            }
+        },
+        {
+            "group" : "1",
+            "infinitiv" : "planera",
+            "trans" : {
+                "en" : "plan"
             }
         },
         {
