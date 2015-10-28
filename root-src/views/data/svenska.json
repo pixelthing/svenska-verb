@@ -1545,7 +1545,7 @@
             "preteritum" : "bad",
             "perfekt" : "bett",
             "trans" : {
-                "en" : "prey"
+                "en" : "ask/prey"
             }
         },
         {
@@ -1570,6 +1570,16 @@
         },
         {
             "group" : "4",
+            "infinitiv" : "brinna",
+            "presens" : "brinner",
+            "preteritum" : "brann",
+            "perfekt" : "brunnit",
+            "trans" : {
+                "en" : "burn"
+            }
+        },
+        {
+            "group" : "4",
             "infinitiv" : "bryta",
             "presens" : "bryter",
             "preteritum" : "bröt",
@@ -1590,12 +1600,42 @@
         },
         {
             "group" : "4",
+            "infinitiv" : "(böra)",
+            "presens" : "bör",
+            "preteritum" : "borde",
+            "perfekt" : "bort",
+            "trans" : {
+                "en" : "should"
+            }
+        },
+        {
+            "group" : "4",
             "infinitiv" : "dricka",
             "presens" : "dricker",
             "preteritum" : "drack",
             "perfekt" : "druckit",
             "trans" : {
                 "en" : "drink"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "driva",
+            "presens" : "driver",
+            "preteritum" : "drev",
+            "perfekt" : "drivit",
+            "trans" : {
+                "en" : "propel, drive"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "duga",
+            "presens" : "duger",
+            "preteritum" : "dög",
+            "perfekt" : "dugit",
+            "trans" : {
+                "en" : "be adequate, be suitable"
             }
         },
         {
@@ -1610,12 +1650,42 @@
         },
         {
             "group" : "4",
+            "infinitiv" : "dölja",
+            "presens" : "döljer",
+            "preteritum" : "dolde",
+            "perfekt" : "dolt",
+            "trans" : {
+                "en" : "hide"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "dra",
+            "presens" : "drar",
+            "preteritum" : "drog",
+            "perfekt" : "dragit",
+            "trans" : {
+                "en" : "draw, drag, pull"
+            }
+        },
+        {
+            "group" : "4",
             "infinitiv" : "falla",
             "presens" : "faller",
             "preteritum" : "föll",
             "perfekt" : "fallit",
             "trans" : {
                 "en" : "fall"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "fara",
+            "presens" : "far",
+            "preteritum" : "for",
+            "perfekt" : "farit",
+            "trans" : {
+                "en" : "move, travel"
             }
         },
         {
@@ -1650,6 +1720,16 @@
         },
         {
             "group" : "4",
+            "infinitiv" : "flyta",
+            "presens" : "flyter",
+            "preteritum" : "flöt",
+            "perfekt" : "flutit",
+            "trans" : {
+                "en" : "float"
+            }
+        },
+        {
+            "group" : "4",
             "infinitiv" : "fortsätta",
             "presens" : "fortsätter",
             "preteritum" : "fortsätte",
@@ -1675,7 +1755,7 @@
             "preteritum" : "fick",
             "perfekt" : "fått",
             "trans" : {
-                "en" : "recieve/get"
+                "en" : "get/receive"
             }
         },
         {
@@ -1706,6 +1786,16 @@
             "perfekt" : "gett (givit)",
             "trans" : {
                 "en" : "give"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "gripa",
+            "presens" : "griper",
+            "preteritum" : "grep",
+            "perfekt" : "gripit",
+            "trans" : {
+                "en" : "grip"
             }
         },
         {
@@ -1750,6 +1840,16 @@
         },
         {
             "group" : "4",
+            "infinitiv" : "heta",
+            "presens" : "heter",
+            "preteritum" : "hette",
+            "perfekt" : "hetat",
+            "trans" : {
+                "en" : "be called"
+            }
+        },
+        {
+            "group" : "4",
             "infinitiv" : "hinna",
             "presens" : "hinner",
             "preteritum" : "hann",
@@ -1760,12 +1860,32 @@
         },
         {
             "group" : "4",
+            "infinitiv" : "hugga",
+            "presens" : "hugger",
+            "preteritum" : "högg",
+            "perfekt" : "huggit",
+            "trans" : {
+                "en" : "chop, slash"
+            }
+        },
+        {
+            "group" : "4",
             "infinitiv" : "hålla",
             "presens" : "håller",
             "preteritum" : "höll",
             "perfekt" : "hållit",
             "trans" : {
                 "en" : "hold"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "kliva",
+            "presens" : "kliver",
+            "preteritum" : "klev",
+            "perfekt" : "klivit",
+            "trans" : {
+                "en" : "step"
             }
         },
         {
@@ -1840,6 +1960,16 @@
         },
         {
             "group" : "4",
+            "infinitiv" : "lyda",
+            "presens" : "lyder",
+            "preteritum" : "löd/lydde",
+            "perfekt" : "lydit/lytt",
+            "trans" : {
+                "en" : "obey"
+            }
+        },
+        {
+            "group" : "4",
             "infinitiv" : "låta",
             "presens" : "låter",
             "preteritum" : "lät",
@@ -1860,12 +1990,32 @@
         },
         {
             "group" : "4",
-            "infinitiv" : "-",
+            "infinitiv" : "(måsta)",
             "presens" : "måste",
             "preteritum" : "måste",
             "perfekt" : "har måste",
             "trans" : {
                 "en" : "must"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "njuta",
+            "presens" : "njuter",
+            "preteritum" : "njöt",
+            "perfekt" : "njutit",
+            "trans" : {
+                "en" : "enjoy, take pleasure in"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "nysa",
+            "presens" : "nyser",
+            "preteritum" : "nös/nyste",
+            "perfekt" : "nysit/nyst",
+            "trans" : {
+                "en" : "sneeze"
             }
         },
         {
@@ -1876,6 +2026,36 @@
             "perfekt" : "ridit",
             "trans" : {
                 "en" : "ride"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "rinna",
+            "presens" : "rinner",
+            "preteritum" : "rann",
+            "perfekt" : "runnit",
+            "trans" : {
+                "en" : "run, flow"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "riva",
+            "presens" : "river",
+            "preteritum" : "rev",
+            "perfekt" : "rivit",
+            "trans" : {
+                "en" : "scratch hard"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "ryta",
+            "presens" : "ryter",
+            "preteritum" : "röt",
+            "perfekt" : "rutit",
+            "trans" : {
+                "en" : "roar"
             }
         },
         {
@@ -1910,6 +2090,26 @@
         },
         {
             "group" : "4",
+            "infinitiv" : "sjunka",
+            "presens" : "sjunker",
+            "preteritum" : "sjönk",
+            "perfekt" : "sjunkit",
+            "trans" : {
+                "en" : "sink"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "skina",
+            "presens" : "skiner",
+            "preteritum" : "sken",
+            "perfekt" : "skinit",
+            "trans" : {
+                "en" : "shine"
+            }
+        },
+        {
+            "group" : "4",
             "infinitiv" : "skjuta",
             "presens" : "skjuter",
             "preteritum" : "sköt",
@@ -1920,12 +2120,22 @@
         },
         {
             "group" : "4",
-            "infinitiv" : "skola",
+            "infinitiv" : "(skola)",
             "presens" : "ska",
             "preteritum" : "skulle",
             "perfekt" : "-",
             "trans" : {
-                "en" : "will/would"
+                "en" : "will, shall"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "skrika",
+            "presens" : "skriker",
+            "preteritum" : "skrek",
+            "perfekt" : "skrikit",
+            "trans" : {
+                "en" : "scream"
             }
         },
         {
@@ -1950,12 +2160,72 @@
         },
         {
             "group" : "4",
+            "infinitiv" : "slippa",
+            "presens" : "slipper",
+            "preteritum" : "slapp",
+            "perfekt" : "sluppit",
+            "trans" : {
+                "en" : "be excused from, avoid"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "slita",
+            "presens" : "sliter",
+            "preteritum" : "slet",
+            "perfekt" : "slitit",
+            "trans" : {
+                "en" : "tear"
+            }
+        },
+        {
+            "group" : "4",
             "infinitiv" : "slå",
             "presens" : "slår",
             "preteritum" : "slog",
             "perfekt" : "slagit",
             "trans" : {
-                "en" : "beat/hit"
+                "en" : "beat/punch"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "slåss",
+            "presens" : "slåss",
+            "preteritum" : "slogs",
+            "perfekt" : "slagits",
+            "trans" : {
+                "en" : "fight"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "smyga",
+            "presens" : "smyger",
+            "preteritum" : "smög",
+            "perfekt" : "smugit",
+            "trans" : {
+                "en" : "sneak"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "smälta",
+            "presens" : "smälter",
+            "preteritum" : "smälte/smalt",
+            "perfekt" : "smält",
+            "trans" : {
+                "en" : "melt"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "smörja",
+            "presens" : "smörjer",
+            "preteritum" : "smorde",
+            "perfekt" : "smort",
+            "trans" : {
+                "en" : "grease, smear"
             }
         },
         {
@@ -1965,7 +2235,7 @@
             "preteritum" : "snöt",
             "perfekt" : "snutit",
             "trans" : {
-                "en" : "blow"
+                "en" : "blow one's nose"
             }
         },
         {
@@ -1976,6 +2246,36 @@
             "perfekt" : "sovit",
             "trans" : {
                 "en" : "sleep"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "spinna",
+            "presens" : "spinner",
+            "preteritum" : "spann",
+            "perfekt" : "spunnit",
+            "trans" : {
+                "en" : "spin, purr"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "spricka",
+            "presens" : "spricker",
+            "preteritum" : "sprack",
+            "perfekt" : "spruckit",
+            "trans" : {
+                "en" : "crack"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "sprida",
+            "presens" : "sprider",
+            "preteritum" : "spred/spridde",
+            "perfekt" : "spridit/spritt",
+            "trans" : {
+                "en" : "spread"
             }
         },
         {
@@ -1995,7 +2295,7 @@
             "preteritum" : "steg",
             "perfekt" : "stigit",
             "trans" : {
-                "en" : "step"
+                "en" : "arise, step"
             }
         },
         {
@@ -2016,6 +2316,96 @@
             "perfekt" : "strukit",
             "trans" : {
                 "en" : "emphasise"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "strida",
+            "presens" : "strider",
+            "preteritum" : "stred",
+            "perfekt" : "stridit",
+            "trans" : {
+                "en" : "battle"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "stryka",
+            "presens" : "stryker",
+            "preteritum" : "strök",
+            "perfekt" : "strukit",
+            "trans" : {
+                "en" : "stroke, rub"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "stå",
+            "presens" : "står",
+            "preteritum" : "stod",
+            "perfekt" : "stått",
+            "trans" : {
+                "en" : "stand"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "suga",
+            "presens" : "suger",
+            "preteritum" : "sög",
+            "perfekt" : "sugit",
+            "trans" : {
+                "en" : "suck"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "supa",
+            "presens" : "super",
+            "preteritum" : "söp",
+            "perfekt" : "supit",
+            "trans" : {
+                "en" : "drink alcohol"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "svida",
+            "presens" : "svider",
+            "preteritum" : "sved",
+            "perfekt" : "svidit",
+            "trans" : {
+                "en" : "smart, sting"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "svika",
+            "presens" : "sviker",
+            "preteritum" : "svek",
+            "perfekt" : "svikit",
+            "trans" : {
+                "en" : "let down, fail"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "svälja",
+            "presens" : "sväljer",
+            "preteritum" : "svalde",
+            "perfekt" : "svalt",
+            "trans" : {
+                "en" : "swallow"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "svälta",
+            "presens" : "svälter",
+            "preteritum" : "svalt/svälte",
+            "perfekt" : "svultit/svält",
+            "trans" : {
+                "en" : "starve"
             }
         },
         {
@@ -2070,6 +2460,26 @@
         },
         {
             "group" : "4",
+            "infinitiv" : "tiga",
+            "presens" : "tiger",
+            "preteritum" : "teg",
+            "perfekt" : "tigit",
+            "trans" : {
+                "en" : "keep silent"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "tvinga",
+            "presens" : "tvinger/tvingar",
+            "preteritum" : "tvang/tvingade",
+            "perfekt" : "tvungit/tvingat",
+            "trans" : {
+                "en" : "force, compel"
+            }
+        },
+        {
+            "group" : "4",
             "infinitiv" : "vara",
             "presens" : "är",
             "preteritum" : "var",
@@ -2106,6 +2516,46 @@
             "perfekt" : "vunnit",
             "trans" : {
                 "en" : "win"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "vrida",
+            "presens" : "vrider",
+            "preteritum" : "vred",
+            "perfekt" : "vridit",
+            "trans" : {
+                "en" : "turn"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "välja",
+            "presens" : "väljer",
+            "preteritum" : "valde",
+            "perfekt" : "valt",
+            "trans" : {
+                "en" : "choose"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "vänja",
+            "presens" : "vänjer",
+            "preteritum" : "vande/vänjde",
+            "perfekt" : "vant/vänjt",
+            "trans" : {
+                "en" : "adapt, accustom"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "växa",
+            "presens" : "växer",
+            "preteritum" : "växte",
+            "perfekt" : "växt/vuxit",
+            "trans" : {
+                "en" : "grow"
             }
         },
         {

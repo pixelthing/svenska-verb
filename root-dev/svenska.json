@@ -161,6 +161,13 @@
         },
         {
             "group" : "1",
+            "infinitiv" : "förlora",
+            "trans" : {
+                "en" : "Lose"
+            }
+        },
+        {
+            "group" : "1",
             "infinitiv" : "förlova",
             "reflexive" : true,
             "meningen" : "att berättar sanningen",
@@ -322,6 +329,13 @@
             "meningen" : "länge sedan",
             "trans" : {
                 "en" : "take drugs"
+            }
+        },
+        {
+            "group" : "1",
+            "infinitiv" : "kolla",
+            "trans" : {
+                "en" : "Check"
             }
         },
         {
@@ -1672,6 +1686,16 @@
             "perfekt" : "förstått",
             "trans" : {
                 "en" : "understand"
+            }
+        },
+        {
+            "group" : "4",
+            "infinitiv" : "försvinna",
+            "presens" : "försvinner",
+            "preteritum" : "försvann",
+            "perfekt" : "försvunnit",
+            "trans" : {
+                "en" : "disappear/vanish"
             }
         },
         {
