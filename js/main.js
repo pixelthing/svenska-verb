@@ -4740,8 +4740,8 @@ var verbsController = function () {
 
     var unLockPage = function() {
         document.querySelector('html').classList.remove('modal');
-        document.querySelector('.vList').style.top = 'auto';
         document.body.scrollTop = modalOffset;
+        document.querySelector('.vList').style.top = 'auto';
         modalOffset = null;
     }
 
