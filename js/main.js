@@ -4655,6 +4655,7 @@ var verbsController = function () {
 
     var verbsPrint = function(verbs) {
         var buffer = '';
+        document.querySelector('[data-js-empty]').classList.remove('vListEmpty--active');
         verbs.forEach(function verbsPrintEach(verb, index){
             buffer += " \
             <article class=\"vRow vGroup" + verb.group + "\"> \
@@ -4673,9 +4674,12 @@ var verbsController = function () {
             </article>";
         });
         document.querySelector('[data-js-target]').innerHTML = buffer;
-        onAnimationFrame(function() {
-            document.querySelector('[data-js-empty]').classList.add('vListEmpty--active');
-        });
+        // empty?
+        if (!verbs.length) {
+            onAnimationFrame(function verbsPrintAnimationFrame () {
+                document.querySelector('[data-js-empty]').classList.add('vListEmpty--active');
+            });
+        }
     }
 
     // SEARCH/FILTER
@@ -4741,10 +4745,11 @@ var verbsController = function () {
         filterCurrentGroup = null;
         filterCurrentSearch = null;
         // delay the  filtering of the list a tiny bit to not delay the UI interaction
-        setTimeout(function searchClearTimeout() {
+        onAnimationFrame(function searchClearAnimationFrame () {
             verbsFiltered = verbsFilter(verbsOriginal,filterCurrentGroup,filterCurrentSearch);
             verbsPrint(verbsFiltered);
-        },50);
+            document.querySelector('[data-js-empty]').classList.remove('vListEmpty--active');
+        });
     }
 
     var searchLoading = function() {
@@ -4758,6 +4763,7 @@ var verbsController = function () {
     var filterGroup = function() {
         scroll(0,0);
         var buttonGroup = this.getAttribute('data-group');
+        document.querySelector('[data-js-empty]').classList.remove('vListEmpty--active');
 
         // turn all group filter buttons off
         document.querySelectorAll('[data-js-filter-group-option]').forEach(function filterGroupEach( button ){
@@ -4774,6 +4780,13 @@ var verbsController = function () {
             this.classList.add('vFilterGroupOptionActive');
         } else {
             filterCurrentGroup = null;
+        }
+        // empty?
+        var verbsFiltered = document.querySelectorAll('[data-verbgroup="' + buttonGroup + '"]');
+        if (!verbsFiltered.length) {
+            onAnimationFrame(function verbsPrintAnimationFrame () {
+                document.querySelector('[data-js-empty]').classList.add('vListEmpty--active');
+            });
         }
     }
 

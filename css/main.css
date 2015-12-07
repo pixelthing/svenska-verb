@@ -320,12 +320,12 @@ body:after {
     border-radius: 4px;
     text-align: center;
     overflow: hidden;
-    transition: opacity 600ms;
-    transition-delay: 400ms; }
+    transition: opacity 500ms;
+    transition-delay: 500ms; }
     .vListEmpty--active {
       opacity: 1;
       max-height: 200px;
-      transition-delay: 1500ms; }
+      transition-delay: 200ms; }
     .vListEmptyButton {
       -webkit-appearance: none;
       margin: 5px 0 0;
