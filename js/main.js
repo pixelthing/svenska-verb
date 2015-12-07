@@ -4605,11 +4605,11 @@ var verbsController = function () {
         var buffer = '';
         verbs.forEach(function(verb, index){
             buffer += " \
-            <article class=\"vRow vGroup" + verb.group + "\" \
+            <article class=\"vRow vGroup" + verb.group + "\"> \
                 <span class=\"vCol vColTrans\" \
                     data-verbForm=\"english\"> \
-                        " + verb.trans.en + " \
-                    </span> \
+                    " + verb.trans.en + " \
+                </span> \
                 <div class=\"vColWrap js-vColWrap\" \
                     data-verbGroup=\"" + verb.group + "\" \
                     data-index=\"" + index + "\" > \
@@ -4735,13 +4735,13 @@ var verbsController = function () {
     var lockPage = function() {
         modalOffset = document.body.scrollTop;
         document.querySelector('html').classList.add('modal');
-        document.querySelector('.vList').style.top = '-' + modalOffset + 'px';
+        document.querySelector('body').style.top = '-' + modalOffset + 'px';
     }
 
     var unLockPage = function() {
         document.querySelector('html').classList.remove('modal');
         document.body.scrollTop = modalOffset;
-        document.querySelector('.vList').style.top = 'auto';
+        document.querySelector('body').style.top = 'auto';
         modalOffset = null;
     }
 
@@ -4783,48 +4783,51 @@ var verbsController = function () {
 
     // TOUCH SLIDE
 
-    var panning = false;
-
-    var panRight = function(event) {
-        var deltaX = event.deltaX;
-        var deltaY = event.deltaY;
-        if (Math.abs(deltaY)/3 > Math.abs(deltaX) || deltaY > 20 ) {
-            event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
-            panning = false;
-            return;
-        }
-        if (deltaX > 0) {
-            event.element['0'].style[prefix.transform] = 'translate3d(' + deltaX + 'px,0,0)';
-            panning = 'right';
-        }
-    }
-    var panLeft = function(event) {
-        var deltaX = event.deltaX;
-        var deltaY = event.deltaY;
-        if (Math.abs(deltaY)/3 > Math.abs(deltaX) || deltaY > 20 ) {
-            event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
-            panning = false;
-            return;
-        }
-        if (deltaX < 0) {
-            event.element['0'].style[prefix.transform] = 'translate3d(' + deltaX + 'px,0,0)';
-            panning = 'left';
-        }
-        var index = event.element['0'].getAttribute('data-index');
-        if (deltaX < -100) {
-            $scope.detailAudioOpen(index);
-            event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
-            panning = false;
-        }
-    }
-    var panEnd = function(event) {
-        event.element['0'].style[prefix.transition] = prefix.css + 'transform 200ms';
-        event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
-        panning = false;
-        setTimeout(function() {
-            event.element['0'].style[prefix.transition] = 'none';
-        },200);
-    }
+ //   var panning = false;
+//
+ //   var hammertime = new Hammer(document.querySelector('.vRow'));
+ //   hammertime.on('panright', panRight);
+//
+ //   var panRight = function(event) {
+ //       var deltaX = event.deltaX;
+ //       var deltaY = event.deltaY;
+ //       if (Math.abs(deltaY)/3 > Math.abs(deltaX) || deltaY > 20 ) {
+ //           event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+ //           panning = false;
+ //           return;
+ //       }
+ //       if (deltaX > 0) {
+ //           event.element['0'].style[prefix.transform] = 'translate3d(' + deltaX + 'px,0,0)';
+ //           panning = 'right';
+ //       }
+ //   }
+ //   var panLeft = function(event) {
+ //       var deltaX = event.deltaX;
+ //       var deltaY = event.deltaY;
+ //       if (Math.abs(deltaY)/3 > Math.abs(deltaX) || deltaY > 20 ) {
+ //           event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+ //           panning = false;
+ //           return;
+ //       }
+ //       if (deltaX < 0) {
+ //           event.element['0'].style[prefix.transform] = 'translate3d(' + deltaX + 'px,0,0)';
+ //           panning = 'left';
+ //       }
+ //       var index = event.element['0'].getAttribute('data-index');
+ //       if (deltaX < -100) {
+ //           $scope.detailAudioOpen(index);
+ //           event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+ //           panning = false;
+ //       }
+ //   }
+ //   var panEnd = function(event) {
+ //       event.element['0'].style[prefix.transition] = prefix.css + 'transform 200ms';
+ //       event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+ //       panning = false;
+ //       setTimeout(function() {
+ //           event.element['0'].style[prefix.transition] = 'none';
+ //       },200);
+ //   }
 
     // CLOSURE
 

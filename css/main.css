@@ -7,7 +7,7 @@ html {
 
 body {
   margin: 0;
-  font-family: avenir, sans-serif;
+  font-family: "AvenirNextCondensed-Medium", sans-serif-condensed, sans-serif;
   font-size: 16px;
   background: #fff; }
 
@@ -73,7 +73,8 @@ body {
   content: "\e608"; }
 
 .vContainer {
-  background-color: #fff; }
+  background-color: #fff;
+  min-height: 100vh; }
   .modal .vContainer {
     height: 100%; }
 .vHeader {
@@ -126,7 +127,7 @@ body {
     border: 1px solid #ddd;
     color: #000;
     border-radius: 4px;
-    font-family: avenir, sans-serif;
+    font-family: "AvenirNextCondensed-Medium", sans-serif-condensed, sans-serif;
     font-size: 1em;
     line-height: 2em;
     outline: none;
@@ -202,7 +203,7 @@ body {
       color: #fff;
       background-color: #999;
       border: none;
-      font-family: avenir, sans-serif;
+      font-family: "AvenirNextCondensed-Medium", sans-serif-condensed, sans-serif;
       font-size: 0.72em;
       line-height: 2.9em;
       opacity: 0.3;
@@ -345,13 +346,10 @@ body {
   margin: 0;
   padding: 0.3em 0 0.3em 0.3em;
   overflow: hidden;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 2;
   white-space: nowrap;
   text-overflow: ellipsis; }
-  @media (min-width: 360px) {
-    .vCol {
-      font-size: 1rem; } }
   @media (min-width: 500px) {
     .vCol {
       font-size: 1.1rem; } }
