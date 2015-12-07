@@ -278,7 +278,7 @@ body {
   background-color: #fff;
   border-top: 1px solid #eee;
   overflow: hidden;
-  transition: transform 300ms; }
+  transition: transform 300ms, opacity 300ms; }
   @media (min-width: 600px) {
     .vList {
       padding-top: 5.7em; } }
@@ -286,7 +286,8 @@ body {
     .vList {
       padding-top: 6.4em; } }
   .vContainer--active .vList {
-    transform: translateX(-100%); }
+    transform: translateX(-100%);
+    opacity: 0; }
   .vListHeader {
     width: 96%;
     width: 96vw;
