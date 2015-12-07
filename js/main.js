@@ -4311,7 +4311,7 @@ function attachArrayMethodsToNodeList(methodName)
 
 function get(url) {
   // Return a new promise.
-  return new Promise(function(resolve, reject) {
+  return new Promise(function getPromise (resolve, reject) {
     // Do the usual XHR stuff
     var req = new XMLHttpRequest();
     req.open('GET', url);
@@ -4385,6 +4385,19 @@ var getClosest = function (elem, selector) {
     return false;
 
 };
+
+// polyfill for using requestAnimationFrame with a fallback
+onAnimationFrame = function(callback) {
+
+    if (typeof window.requestAnimationFrame === 'function') {
+        callback();
+    } else {
+        setTimeout(function webfontUpdateMenuTimeout () {
+            callback();
+        },300);
+    }
+
+}
 var pageLockController = function () {
 
     var modalOffset = null;
@@ -4427,7 +4440,7 @@ var pageLockController = function () {
 var verbsFactory = function () {
 
     var process = function(array) {
-        return array.map(function(verb) {
+        return array.map(function verbsFactoryProcessMap (verb) {
             verb.presens     = conjugatePresens(verb)     + conjugateReflexive(verb);
             verb.preteritum  = conjugatePreteritum(verb)  + conjugateReflexive(verb);
             verb.perfekt     = conjugatePerfekt(verb)     + conjugateReflexive(verb);
@@ -4497,16 +4510,16 @@ var verbsFactory = function () {
 
     var getData = function() {
 
-        return new Promise(function (resolve, reject) {
+        return new Promise(function verbsFactoryGetDataPromise (resolve, reject) {
             //return the promise directly.
-            get('svenska.json').then(function(response) {
+            get('svenska.json').then(function verbsFactoryGetDataPromiseThen (response) {
                 //resolve the promise as the data
                 var raw = JSON.parse(response).verbs;
                 // process the presens/preteritum/perfekt
                 var processed = process(raw);
                 // return the processed data
                 resolve(processed);
-            }, function(error) {
+            }, function verbsFactoryGetDataPromiseError (error) {
                 reject();
                 alert('error loading data - sorry!');
             });
@@ -4521,7 +4534,7 @@ var verbsFactory = function () {
 }();
 var verbsFilter = function () {
 
-  return function (items,keyword) {
+  return function verbsFilterReturn (items,keyword) {
     var filtered = [];
     if (keyword && keyword.length < 2) {
       keyword = false;
@@ -4585,7 +4598,7 @@ var verbsController = function () {
 
     // PREFIX HELPER
 
-    var prefix = (function () {
+    var prefix = (function verbsPrefixHelper () {
         var styles = window.getComputedStyle(document.documentElement, ''),
             pre = (Array.prototype.slice
                 .call(styles)
@@ -4619,7 +4632,7 @@ var verbsController = function () {
         // pull in data 
         verbsFactory
             .getData()
-            .then(function(verbs) {
+            .then(function verbInitThen (verbs) {
                 verbsOriginal = verbs;
                 verbsFiltered = verbsFilter(verbsOriginal);
                 verbsCount = verbsFiltered.length;
@@ -4627,21 +4640,22 @@ var verbsController = function () {
             });
 
         // set up events
-        document.querySelectorAll('.js-vFilterGroupOption').forEach(function( button ){
+        document.querySelectorAll('[data-js-filter-group-option]').forEach(function verbInitButtonClick( button ){
             button.addEventListener('click', filterGroup);
         });
-        document.querySelector('.js-vFilterInputIcon').addEventListener('click', searchFocus);
-        document.querySelector('.js-vFilterInput').addEventListener('keyup', search);
-        document.querySelector('.js-vFilterInputClear').addEventListener('click', searchClear);
-        document.querySelector('.js-vListContainer').addEventListener('click', detailOpen);
-        document.querySelector('.js-vDetailModalClose').addEventListener('click', detailClose);
+        document.querySelector('[data-js-filter-icon]').addEventListener('click', searchFocus);
+        document.querySelector('[data-js-filter-input]').addEventListener('keyup', search);
+        document.querySelector('[data-js-filter-clear]').addEventListener('click', searchClear);
+        document.querySelector('[data-js-target]').addEventListener('click', detailOpen);
+        document.querySelector('[data-js-detail-close]').addEventListener('click', detailClose);
+        document.querySelector('[data-js-empty-click]').addEventListener('click', searchClear);
     }
 
     // PRINT
 
     var verbsPrint = function(verbs) {
         var buffer = '';
-        verbs.forEach(function(verb, index){
+        verbs.forEach(function verbsPrintEach(verb, index){
             buffer += " \
             <article class=\"vRow vGroup" + verb.group + "\"> \
                 <span class=\"vCol vColTrans\" \
@@ -4658,7 +4672,10 @@ var verbsController = function () {
                 </div> \
             </article>";
         });
-        document.querySelector('.js-vListContainer').innerHTML = buffer;
+        document.querySelector('[data-js-target]').innerHTML = buffer;
+        onAnimationFrame(function() {
+            document.querySelector('[data-js-empty]').classList.add('vListEmpty--active');
+        });
     }
 
     // SEARCH/FILTER
@@ -4673,18 +4690,18 @@ var verbsController = function () {
         if (searchTimeout !== null) {
             clearTimeout(searchTimeout);
         }
-        searchTimeout = setTimeout(function() {
+        searchTimeout = setTimeout(function searchTimeout() {
             searchSubmit();
         },100);
     }
 
     var searchFocus = function() {
-        document.querySelector('.js-vFilterInput').focus();
+        document.querySelector('[data-js-filter-input]').focus();
     }
 
     var searchSubmit = function() {
         scroll(0,0);
-        var input = document.querySelector('.js-vFilterInput');
+        var input = document.querySelector('[data-js-filter-input]');
         var inputKeyword = input.value;
 
         // set the new search keyword (and turn the input on)
@@ -4708,7 +4725,7 @@ var verbsController = function () {
     }
 
     var searchClear = function() {
-        var input = document.querySelector('.js-vFilterInput');
+        var input = document.querySelector('[data-js-filter-input]');
         scroll(0,0);
         // blur the field to clear the keyboard on mobile devices
         input.value = '';
@@ -4717,14 +4734,14 @@ var verbsController = function () {
         document.querySelector('.vFilterForm').value = '';
         document.querySelector('.vFilterForm').classList.remove('vFilterFormActive');
         // turn all group filter buttons off
-        document.querySelectorAll('.js-vFilterGroupOption').forEach(function( button ){
+        document.querySelectorAll('[data-js-filter-group-option]').forEach(function( button ){
             button.classList.remove('vFilterGroupOptionActive');
         });
         // reset filters
         filterCurrentGroup = null;
         filterCurrentSearch = null;
         // delay the  filtering of the list a tiny bit to not delay the UI interaction
-        setTimeout(function() {
+        setTimeout(function searchClearTimeout() {
             verbsFiltered = verbsFilter(verbsOriginal,filterCurrentGroup,filterCurrentSearch);
             verbsPrint(verbsFiltered);
         },50);
@@ -4743,16 +4760,16 @@ var verbsController = function () {
         var buttonGroup = this.getAttribute('data-group');
 
         // turn all group filter buttons off
-        document.querySelectorAll('.js-vFilterGroupOption').forEach(function( button ){
+        document.querySelectorAll('[data-js-filter-group-option]').forEach(function filterGroupEach( button ){
             button.classList.remove('vFilterGroupOptionActive');
         });
 
         // clear the overall control CSS
-        document.querySelector('.js-vListContainer').setAttribute('class','js-vListContainer');
+        document.querySelector('[data-js-target]').setAttribute('class','');
 
         // set the new group (and turn the button on)
         if (filterCurrentGroup !== buttonGroup) {
-            document.querySelector('.js-vListContainer').classList.add('vListContainer--group' + buttonGroup);
+            document.querySelector('[data-js-target]').classList.add('vListContainer--group' + buttonGroup);
             filterCurrentGroup = buttonGroup;
             this.classList.add('vFilterGroupOptionActive');
         } else {
@@ -4779,7 +4796,7 @@ var verbsController = function () {
             if (wrap) {
                 var index = wrap.getAttribute('data-index');
                 detailFill(index);
-                document.querySelector('.js-vDetail').classList.add('vDetail--active');
+                document.querySelector('[data-js-detail]').classList.add('vDetail--active');
                 pageLockController.lockPage();
             }
 
@@ -4788,7 +4805,7 @@ var verbsController = function () {
 
     var detailClose = function(ev) {
         ev.preventDefault();
-        document.querySelector('.js-vDetail').classList.remove('vDetail--active');
+        document.querySelector('[data-js-detail]').classList.remove('vDetail--active');
         pageLockController.unLockPage();
     }
 
@@ -4796,14 +4813,14 @@ var verbsController = function () {
     var detailFill = function(index) {
         index = parseInt(index);
         var verbData = verbsFiltered[index];
-        document.querySelectorAll('.js-vDetailInfinitiv').map(function(obj) {obj.innerHTML = verbData.infinitiv;});
-        document.querySelectorAll('.js-vDetailTranslation').map(function(obj) {obj.innerHTML = verbData.trans['en'];});
-        document.querySelectorAll('.js-vDetailPresens').map(function(obj) {obj.innerHTML = verbData.presens;});
-        document.querySelectorAll('.js-vDetailPreteritum').map(function(obj) {obj.innerHTML = verbData.preteritum;});
-        document.querySelectorAll('.js-vDetailPerfekt').map(function(obj) {obj.innerHTML = verbData.perfekt;});
-        document.querySelector('.js-vDetailTitleGrp').setAttribute('class','vDetailTitleGrp js-vDetailTitleGrp');
-        document.querySelector('.js-vDetailTitleGrp').classList.add('vDetailTitleGrp' + verbData.group);
-        document.querySelector('.js-vDetailTitleGrp').innerHTML = verbData.group;
+        document.querySelectorAll('[data-js-detail-infinitiv]').map(function detailFillMap1(obj) {obj.innerHTML = verbData.infinitiv;});
+        document.querySelectorAll('[data-js-detail-translation]').map(function detailFillMap2(obj) {obj.innerHTML = verbData.trans['en'];});
+        document.querySelectorAll('[data-js-detail-presens]').map(function detailFillMap3(obj) {obj.innerHTML = verbData.presens;});
+        document.querySelectorAll('[data-js-detail-preterium]').map(function detailFillMap4(obj) {obj.innerHTML = verbData.preteritum;});
+        document.querySelectorAll('[data-js-detail-perfekt]').map(function detailFillMap5(obj) {obj.innerHTML = verbData.perfekt;});
+        document.querySelector('[data-js-detail-title-group]').setAttribute('class','vDetailTitleGrp');
+        document.querySelector('[data-js-detail-title-group]').classList.add('vDetailTitleGrp' + verbData.group);
+        document.querySelector('[data-js-detail-title-group]').innerHTML = verbData.group;
     }
 
     // TOUCH SLIDE
@@ -4856,7 +4873,7 @@ var verbsController = function () {
 
     // CLOSURE
 
-    ready(function(){
+    ready(function verbReady(){
         init();
     })
 

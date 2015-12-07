@@ -27,36 +27,42 @@
     
 
 
-<div class="vContainer" ng-click="backgroundClick()">
+<div class="vContainer">
 
     <!-- HEADER -->
 
     <article class="vHeader fixedsticky">
         <div class="vTitle"></div>
         <div class="vFilter">
-            <form class="vFilterForm js-vFilterForm" ng-submit="verbsController.searchSubmit()">
-                <div class="vFilterInputIcon js-vFilterInputIcon icon icon-zoom" ng-click="searchFocus()"></div>
+            <form class="vFilterForm" data-js-filter-form>
+                <div class="vFilterInputIcon icon icon-zoom" data-js-filter-icon></div>
                 <input type="search" 
-                    class="vFilterInput js-vFilterInput" 
+                    class="vFilterInput" 
                     placeholder="sök" 
                     autocomplete="off"
                     autocorrect="off" 
-                    autocapitalize="off"/>
-                <div class="vFilterInputClear js-vFilterInputClear">
+                    autocapitalize="off"
+                    data-js-filter-input/>
+                <div class="vFilterInputClear" data-js-filter-clear>
                     <div class="vFilterInputClearButton icon icon-cross"></div>
                 </div>
             </form>
-            <a href="javascript:void(0)" class="vFilterFocusTarget js-vFilterFocusTarget"></a>
+            <a href="javascript:void(0)" class="vFilterFocusTarget" data-js-filter-focus></a>
             <div class="vFilterGroup">
-                <button class="vFilterGroupOption vFilterGroupOption1 js-vFilterGroupOption"
+                <button class="vFilterGroupOption vFilterGroupOption1"
+                    data-js-filter-group-option
                     data-group="1"><span>1</span></button>
-                <button class="vFilterGroupOption vFilterGroupOption2a js-vFilterGroupOption"
+                <button class="vFilterGroupOption vFilterGroupOption2a"
+                    data-js-filter-group-option
                     data-group="2a"><span>2a</span></button>
-                <button class="vFilterGroupOption vFilterGroupOption2b js-vFilterGroupOption"
+                <button class="vFilterGroupOption vFilterGroupOption2b"
+                    data-js-filter-group-option
                     data-group="2b"><span>2b</span></button>
-                <button class="vFilterGroupOption vFilterGroupOption3 js-vFilterGroupOption"
+                <button class="vFilterGroupOption vFilterGroupOption3"
+                    data-js-filter-group-option
                     data-group="3"><span>3</span></button>
-                <button class="vFilterGroupOption vFilterGroupOption4 js-vFilterGroupOption"
+                <button class="vFilterGroupOption vFilterGroupOption4"
+                    data-js-filter-group-option
                     data-group="4"><span>4</span></button>
             </div>
         </div>
@@ -68,24 +74,20 @@
         </div>
     </article>
 
-    <div class="spinner ng-cloak" ng-if="isLoading" ng-class="{spinnerRun : isLoading}">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-    </div>
-
     <!-- LIST -->
 
     <div class="vList">
 
-        <div class="js-vListContainer"></div>
+        <div data-js-target></div>
 
-        <div class="vListCount" ng-bind="verbsFiltered.length + ' verb'" ng-if="verbsFiltered.length >= 1 && !isLoading"></div>
+        <div class="vListCount"></div>
 
-        <div class="vListEmpty ng-cloak" ng-if="verbsFiltered.length < 1 && !isLoading">
+        <!-- empty!! -->
+
+        <div class="vListEmpty" data-js-empty>
             <span class="icon icon-warning"></span> 
             <div>Hittade ingenting!</div>
-            <button class="vListEmptyButton" ng-click="filterClear()">
+            <button class="vListEmptyButton" data-js-empty-click>
                 <span class="icon icon-cross"></span>
                 Rensa
             </button>
@@ -96,17 +98,17 @@
 
     <!-- DETAIL -->
 
-    <div class="vDetail js-vDetail">
+    <div class="vDetail" data-js-detail>
 
         <div class="vDetailModal">
 
             <h1 class="vDetailTitle">
-                <span class="vDetailTitleGrp js-vDetailTitleGrp">0</span>
-                <span class="vDetailInfinitiv js-vDetailInfinitiv"></span>
-                <span class="vDetailTranslationWrap">(<abbrev class="vDetailTranslation js-vDetailTranslation"></abbrev>)</span>
+                <span class="vDetailTitleGrp" data-js-detail-title-group>0</span>
+                <span class="vDetailInfinitiv" data-js-detail-infinitiv></span>
+                <span class="vDetailTranslationWrap">(<abbrev class="vDetailTranslation" data-js-detail-translation></abbrev>)</span>
             </h1>
 
-            <span class="vDetailModalClose js-vDetailModalClose icon icon-cross"></span>
+            <span class="vDetailModalClose icon icon-cross" data-js-detail-close></span>
 
             <div class="vDetailBody">
 
@@ -115,22 +117,19 @@
                     <dl class="vDetailFokusSub">
                         <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Perfekt</dt>
                         <dd class="vDetailFokusSubExample">
-                            Jag har <strong class="vDetailFokusLabel js-vDetailPerfekt"></strong> 
-                            <span ng-bind="detailData.meningen"></span>
+                            Jag har <strong class="vDetailFokusLabel" data-js-detail-perfekt></strong> 
                         </dd>
                     </dl>
                     <dl class="vDetailFokusSub">
                         <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Presens</dt>
                         <dd class="vDetailFokusSubExample">
-                            Jag <strong class="vDetailFokusLabel js-vDetailPresens"></strong> 
-                            <span ng-bind="detailData.meningen"></span>
+                            Jag <strong class="vDetailFokusLabel" data-js-detail-presens></strong> 
                         </dd>
                     </dl>
                     <dl class="vDetailFokusSub">
                         <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-forward"></span> Futurum 1</dt>
                         <dd class="vDetailFokusSubExample">
-                            Jag ska <strong class="vDetailFokusLabel js-vDetailInfinitiv"></strong> 
-                            <span ng-bind="detailData.meningen"></span>
+                            Jag ska <strong class="vDetailFokusLabel" data-js-detail-infinitiv></strong> 
                         </dd>
                     </dl>
                 </section>
@@ -140,22 +139,19 @@
                     <dl class="vDetailFokusSub">
                         <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Plukamperfekt</dt>
                         <dd class="vDetailFokusSubExample">
-                            Jag hade <strong class="vDetailFokusLabel js-vDetailPerfekt"></strong> 
-                            <span ng-bind="detailData.meningen"></span>
+                            Jag hade <strong class="vDetailFokusLabel" data-js-detail-perfekt></strong> 
                         </dd>
                     </dl>
                     <dl class="vDetailFokusSub">
                         <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Preteritum</dt>
                         <dd class="vDetailFokusSubExample">
-                            Jag <strong class="vDetailFokusLabel js-vDetailPreteritum"></strong> 
-                            <span ng-bind="detailData.meningen"></span>
+                            Jag <strong class="vDetailFokusLabel" data-js-detail-preterium></strong> 
                         </dd>
                     </dl>
                     <dl class="vDetailFokusSub">
                         <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-forward"></span> Futurum 2</dt>
                         <dd class="vDetailFokusSubExample">
-                            Jag skulle <strong class="vDetailFokusLabel js-vDetailInfinitiv"></strong> 
-                            <span ng-bind="detailData.meningen"></span>
+                            Jag skulle <strong class="vDetailFokusLabel" data-js-detail-infinitiv></strong> 
                         </dd>
                     </dl>
                 </section>
