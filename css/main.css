@@ -474,7 +474,7 @@ body {
       transition: border-color 500ms;
       cursor: pointer; }
       .vDetailModalClose:active {
-        color: #000;
+        border-color: #000;
         transition: border-color 0s; }
       .vDetailModalCloseAudio {
         color: #fff; }
