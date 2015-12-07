@@ -11,9 +11,6 @@ body {
   font-size: 16px;
   background: #fff; }
 
-.ng-cloak {
-  display: none; }
-
 .modal {
   overflow-y: hidden;
   position: fixed;
@@ -21,9 +18,29 @@ body {
   left: 0;
   top: inherit;
   height: 100%; }
-  .modal body {
-    position: relative;
-    height: 100%; }
+
+body:after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale3d(1, 1, 1);
+  transition: opacity 500ms, bottom 0s;
+  transition-delay: 0s, 500ms; }
+.modal body {
+  position: relative;
+  bottom: 0; }
+  .modal body:after {
+    bottom: 0;
+    opacity: 1;
+    transition-delay: 0s, 0s; }
 
 @font-face {
   font-family: 'icons';
@@ -419,7 +436,7 @@ body {
     .vGroup4 .vColInfinitiv {
       border-color: #1EA5D8; }
 .vDetail {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;
@@ -436,6 +453,7 @@ body {
       font-size: 22px; } }
   .vDetail--active {
     bottom: 0;
+    z-index: 10;
     transition-delay: 0ms; }
   .vDetailBed {
     position: absolute;
