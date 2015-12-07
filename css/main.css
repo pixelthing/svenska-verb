@@ -464,12 +464,18 @@ body {
     transition: opacity 300ms; }
     .vDetailModalClose {
       position: absolute;
-      right: 0;
-      top: 8px;
+      right: 15px;
+      top: 15px;
       z-index: 15;
-      padding: 16px;
+      padding: 5px;
       font-size: 1.5em;
+      border-radius: 50px;
+      border: 1px solid #fff;
+      transition: border-color 500ms;
       cursor: pointer; }
+      .vDetailModalClose:active {
+        color: #000;
+        transition: border-color 0s; }
       .vDetailModalCloseAudio {
         color: #fff; }
   .vDetailTitle {
