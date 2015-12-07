@@ -19,21 +19,6 @@ body {
   top: inherit;
   height: 100%; }
 
-body:after {
-  content: '';
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 100%;
-  z-index: 9;
-  background-color: rgba(0, 0, 0, 0.8);
-  font-size: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: scale3d(1, 1, 1);
-  transition: opacity 500ms, bottom 0s;
-  transition-delay: 0s, 500ms; }
 .modal body {
   position: relative;
   bottom: 0; }
@@ -91,9 +76,10 @@ body:after {
 
 .vContainer {
   background-color: #fff;
-  min-height: 100vh; }
-  .modal .vContainer {
-    height: 100%; }
+  min-height: 100vh;
+  transition: transform 300ms; }
+  .vContainer--active {
+    transform: translateX(-100%); }
 .vHeader {
   position: fixed;
   top: 0;
@@ -439,37 +425,40 @@ body:after {
       border-color: #1EA5D8; }
 .vDetail {
   position: fixed;
-  left: 0;
+  left: 100%;
   top: 0;
-  right: 0;
-  bottom: 100%;
-  overflow: hidden;
-  font-size: 18px;
-  transition: bottom 0ms;
-  transition-delay: 300ms; }
+  bottom: 0;
+  width: 100%;
+  overflow: auto;
+  font-size: 18px; }
   @media (min-width: 768px) {
     .vDetail {
       font-size: 18px; } }
   @media (min-width: 992px) {
     .vDetail {
       font-size: 22px; } }
-  .vDetail--active {
-    bottom: 0;
-    z-index: 10;
-    transition-delay: 0ms; }
-  .vDetailBed {
+  .vDetailModal {
     position: absolute;
-    left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 9;
-    background: rgba(0, 0, 0, 0.8);
-    opacity: 0;
+    left: 0;
+    z-index: 10;
+    background: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
     backface-visibility: hidden;
-    transition: opacity 500ms; }
-    .vDetail--active .vDetailBed {
-      opacity: 1; }
+    transition: opacity 300ms; }
+    .vDetailModalClose {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 15;
+      padding: 16px;
+      font-size: 1.5em;
+      cursor: pointer; }
+      .vDetailModalCloseAudio {
+        color: #fff; }
   .vDetailTitle {
     z-index: 12;
     min-height: 2.3em;
@@ -509,51 +498,6 @@ body:after {
         background-color: #92BF11; }
       .vDetailTitleGrp4 {
         background-color: #1EA5D8; }
-  .vDetailModal {
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    bottom: 5px;
-    z-index: 10;
-    width: 310px;
-    max-width: calc(100% - 10px);
-    margin-left: -155px;
-    background: #fff;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    backface-visibility: hidden;
-    transition: opacity 300ms; }
-    @media (min-height: 470px) {
-      .vDetailModal {
-        top: 15px; } }
-    @media (min-height: 600px) {
-      .vDetailModal {
-        top: 15px;
-        bottom: auto;
-        max-height: calc(100vh - 20px); } }
-    @media (min-width: 568px) {
-      .vDetailModal {
-        width: 558px;
-        margin-left: -279px; } }
-    @media (min-width: 768px) {
-      .vDetailModal {
-        top: 30px;
-        width: 740px;
-        margin-left: -370px; } }
-    .vDetail--active .vDetailModal {
-      opacity: 1; }
-    .vDetailModalClose {
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 15;
-      padding: 16px;
-      font-size: 1.5em;
-      cursor: pointer; }
-      .vDetailModalCloseAudio {
-        color: #fff; }
   .vDetailTranslation {
     display: inline-block;
     font-size: 0.8em;

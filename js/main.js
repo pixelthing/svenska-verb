@@ -4809,7 +4809,7 @@ var verbsController = function () {
             if (wrap) {
                 var index = wrap.getAttribute('data-index');
                 detailFill(index);
-                document.querySelector('[data-js-detail]').classList.add('vDetail--active');
+                document.querySelector('[data-js-verbs]').classList.add('vContainer--active');
                 pageLockController.lockPage();
             }
 
@@ -4818,7 +4818,7 @@ var verbsController = function () {
 
     var detailClose = function(ev) {
         ev.preventDefault();
-        document.querySelector('[data-js-detail]').classList.remove('vDetail--active');
+        document.querySelector('[data-js-verbs]').classList.remove('vContainer--active');
         pageLockController.unLockPage();
     }
 
