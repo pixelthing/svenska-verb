@@ -373,7 +373,11 @@ body {
   .vColWrap {
     position: relative;
     z-index: 2;
-    background: #fff; }
+    background: #fff;
+    transition: background-color 500ms; }
+    .vColWrap:active {
+      background-color: #eee;
+      transition: background-color 0s; }
     .vColWrap:before {
       content: attr(data-verbGroup);
       position: absolute;
