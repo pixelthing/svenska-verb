@@ -76,28 +76,32 @@ body {
 
 .vContainer {
   background-color: #fff;
-  min-height: 100vh;
-  transition: transform 300ms; }
-  .vContainer--active {
-    transform: translateX(-100%); }
+  min-height: 100vh; }
 .vHeader {
   position: fixed;
-  top: 0;
+  top: 0.5em;
   left: 0;
   right: 0;
   z-index: 3;
   background: #fff;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: transform 300ms; }
   @media (min-width: 600px) {
     .vHeader {
       font-size: 20px; } }
   @media (min-width: 992px) {
     .vHeader {
       font-size: 24px; } }
+  .vContainer--active .vHeader {
+    transform: translateX(-100%); }
 .vTitle {
-  position: relative;
+  position: fixed;
+  height: 0.5em;
+  left: 0;
+  right: 0;
+  z-index: 4;
   margin: 0;
-  padding: 0.3em 4.4em;
+  padding: 0;
   color: #fff;
   background-color: #005B99;
   font-size: 1rem; }
@@ -272,13 +276,16 @@ body {
   padding: 5.05em 0 15px;
   background-color: #fff;
   border-top: 1px solid #eee;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: transform 300ms; }
   @media (min-width: 600px) {
     .vList {
       padding-top: 5.7em; } }
   @media (min-width: 992px) {
     .vList {
       padding-top: 6.4em; } }
+  .vContainer--active .vList {
+    transform: translateX(-100%); }
   .vListHeader {
     width: 96%;
     width: 96vw;
@@ -430,13 +437,16 @@ body {
   bottom: 0;
   width: 100%;
   overflow: auto;
-  font-size: 18px; }
+  font-size: 18px;
+  transition: transform 300ms; }
   @media (min-width: 768px) {
     .vDetail {
       font-size: 18px; } }
   @media (min-width: 992px) {
     .vDetail {
       font-size: 22px; } }
+  .vContainer--active .vDetail {
+    transform: translateX(-100%); }
   .vDetailModal {
     position: absolute;
     top: 0;
@@ -444,6 +454,7 @@ body {
     bottom: 0;
     left: 0;
     z-index: 10;
+    padding-top: 0.5em;
     background: #fff;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
@@ -452,7 +463,7 @@ body {
     .vDetailModalClose {
       position: absolute;
       right: 0;
-      top: 0;
+      top: 8px;
       z-index: 15;
       padding: 16px;
       font-size: 1.5em;
@@ -474,7 +485,7 @@ body {
       display: inline-block;
       position: absolute;
       left: 15px;
-      top: 8px;
+      top: 16px;
       width: 2em;
       height: 2em;
       color: #fff;
