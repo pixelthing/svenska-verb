@@ -1,7 +1,7 @@
 .sass-cache
 bower_components
 node_modules
+root-prod
 *.scssc
 npm-debug.log
 .grunt/grunt-gh-pages/gh-pages/src/
-root-prod/
