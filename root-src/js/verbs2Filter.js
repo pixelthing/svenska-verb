@@ -1,6 +1,6 @@
 var verbsFilter = function () {
 
-  return function (items,keyword) {
+  return function verbsFilterReturn (items,keyword) {
     var filtered = [];
     if (keyword && keyword.length < 2) {
       keyword = false;

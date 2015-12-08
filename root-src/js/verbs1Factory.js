@@ -1,7 +1,7 @@
 var verbsFactory = function () {
 
     var process = function(array) {
-        return array.map(function(verb) {
+        return array.map(function verbsFactoryProcessMap (verb) {
             verb.presens     = conjugatePresens(verb)     + conjugateReflexive(verb);
             verb.preteritum  = conjugatePreteritum(verb)  + conjugateReflexive(verb);
             verb.perfekt     = conjugatePerfekt(verb)     + conjugateReflexive(verb);
@@ -71,16 +71,16 @@ var verbsFactory = function () {
 
     var getData = function() {
 
-        return new Promise(function (resolve, reject) {
+        return new Promise(function verbsFactoryGetDataPromise (resolve, reject) {
             //return the promise directly.
-            get('svenska.json').then(function(response) {
+            get('svenska.json').then(function verbsFactoryGetDataPromiseThen (response) {
                 //resolve the promise as the data
                 var raw = JSON.parse(response).verbs;
                 // process the presens/preteritum/perfekt
                 var processed = process(raw);
                 // return the processed data
                 resolve(processed);
-            }, function(error) {
+            }, function verbsFactoryGetDataPromiseError (error) {
                 reject();
                 alert('error loading data - sorry!');
             });
