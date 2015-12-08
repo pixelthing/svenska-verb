@@ -76,25 +76,41 @@ body {
   content: "\e608"; }
 
 .vContainer {
-  background-color: #fff;
-  min-height: 100vh; }
-.vHeader {
-  position: fixed;
-  top: 0.5em;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  background: #fff;
-  overflow: hidden;
+  background-color: #fff; }
+.vInner {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
   transition: transform 300ms; }
+  .vContainer--active .vInner {
+    transform: translate3d(-100%, 0, 0); }
+.vHeader {
+  display: flex;
+  flex-direction: column;
+  order: 99;
+  color: #fff;
+  background: #000; }
   @media (min-width: 600px) {
     .vHeader {
       font-size: 20px; } }
   @media (min-width: 992px) {
     .vHeader {
       font-size: 24px; } }
-  .vContainer--active .vHeader {
-    transform: translateX(-100%); }
+  .vHeaderCells {
+    order: -1;
+    color: #666;
+    background-color: #eee;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0;
+    white-space: nowrap;
+    overflow: hidden; }
+    .vHeaderCells > span {
+      z-index: 3;
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: 0.7rem; }
 .vTitle {
   position: fixed;
   height: 0.5em;
@@ -105,7 +121,8 @@ body {
   padding: 0;
   color: #fff;
   background-color: #005B99;
-  font-size: 1rem; }
+  font-size: 1rem;
+  transform: scale3d(1, 1, 1); }
   .vTitle:after {
     content: '';
     position: absolute;
@@ -115,17 +132,14 @@ body {
     bottom: 0;
     background-color: #ffcc00; }
 .vFilter {
-  max-width: calc( 980px + 4% );
-  max-width: calc( 980px + 4vw );
-  margin: 0 auto;
-  padding: 0.5em 2% 0.2em;
-  padding: 0.5em 2vw 0.2em;
-  line-height: 0; }
+  padding: 10px 5px;
+  font-size: 0; }
   .vFilterForm {
     float: left;
     display: block;
     position: relative;
-    width: 47%; }
+    width: 47%;
+    font-size: 1rem; }
   .vFilterInput {
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
@@ -199,6 +213,9 @@ body {
     display: inline-block;
     width: 50%;
     margin-left: 3%;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 1rem;
     overflow: hidden; }
     .vFilterGroupOption {
       -webkit-tap-highlight-color: transparent;
@@ -224,7 +241,7 @@ body {
         left: 50%;
         top: 50%;
         width: 1.2em;
-        height: 1.2em;
+        height: 1.15em;
         margin: -0.6em 0 0 -0.6em;
         text-align: center;
         opacity: 0;
@@ -232,7 +249,7 @@ body {
         font-size: 1.33em;
         line-height: 1;
         border: 1px solid #fff;
-        border-radius: 100%;
+        border-radius: 1em;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         transform: rotate(-720deg);
@@ -269,42 +286,19 @@ body {
           transform: rotate(720deg); }
 .vList {
   position: relative;
-  width: 96%;
-  width: 96vw;
-  max-width: 980px;
-  min-height: 500px;
-  margin: 0 auto;
-  padding: 5.05em 0 15px;
+  padding: 0;
   background-color: #fff;
   border-top: 1px solid #eee;
-  overflow: hidden;
-  transition: transform 300ms, opacity 300ms; }
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
   @media (min-width: 600px) {
     .vList {
       padding-top: 5.7em; } }
   @media (min-width: 992px) {
     .vList {
       padding-top: 6.4em; } }
-  .vContainer--active .vList {
-    transform: translateX(-100%);
-    opacity: 0; }
-  .vListHeader {
-    width: 96%;
-    width: 96vw;
-    max-width: 980px;
-    margin: 0 auto;
-    color: #666;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0;
-    white-space: nowrap;
-    overflow: hidden; }
-    .vListHeader > span {
-      border-bottom: 3px solid #666 !important;
-      z-index: 3;
-      padding-top: 0;
-      padding-bottom: 0;
-      font-size: 0.7rem; }
+  .vList > div {
+    transform: scale3d(1, 1, 1); }
   .vListEmpty {
     opacity: 0;
     max-height: 0;
@@ -374,6 +368,7 @@ body {
     position: relative;
     z-index: 2;
     background: #fff;
+    webkit-tap-highlight-color: transparent;
     transition: background-color 500ms; }
     .vColWrap:active {
       background-color: #eee;
@@ -421,7 +416,7 @@ body {
   .vColInfinitiv {
     position: relative;
     width: 28%;
-    border-left: 0.6em solid #999;
+    border-left: 0.6rem solid #999;
     font-weight: bold;
     text-overflow: initial; }
     .vListHeader .vColInfinitiv {
@@ -444,6 +439,7 @@ body {
   width: 100%;
   overflow: auto;
   font-size: 18px;
+  transform: scale3d(1, 1, 1);
   transition: transform 300ms; }
   @media (min-width: 768px) {
     .vDetail {
@@ -452,8 +448,10 @@ body {
     .vDetail {
       font-size: 22px; } }
   .vContainer--active .vDetail {
-    transform: translateX(-100%); }
+    transform: translate3d(-100%, 0, 0); }
   .vDetailModal {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 0;
     right: 0;
@@ -466,69 +464,68 @@ body {
     -webkit-overflow-scrolling: touch;
     backface-visibility: hidden;
     transition: opacity 300ms; }
-    .vDetailModalClose {
-      position: absolute;
-      right: 15px;
-      top: 15px;
-      z-index: 15;
-      padding: 5px;
-      font-size: 1.5em;
-      border-radius: 50px;
-      border: 1px solid #fff;
-      transition: border-color 500ms;
-      cursor: pointer; }
-      .vDetailModalClose:active {
-        border-color: #000;
-        transition: border-color 0s; }
-      .vDetailModalCloseAudio {
-        color: #fff; }
   .vDetailTitle {
-    z-index: 12;
-    min-height: 2.3em;
+    position: relative;
+    order: 99;
+    min-height: 2.5em;
     margin: 0;
-    padding: 10px 2em 8px 2.5em;
-    color: #000;
-    background-color: #fff;
-    font-size: 24px; }
+    padding: 15px;
+    padding-left: 4.5em;
+    color: #fff;
+    background-color: #000;
+    font-size: 24px;
+    line-height: 1.1; }
     @media (min-width: 992px) {
       .vDetailTitle {
         padding: 15px 2em 12px 2.5em; } }
-    .vDetailTitleGrp {
+    .vDetailTitleInner {
+      display: block;
+      margin: 0 0 0.2em; }
+    .vDetailTitleClose, .vDetailTitleGrp {
       display: inline-block;
       position: absolute;
-      left: 15px;
-      top: 16px;
+      top: 0.5em;
+      left: 3em;
       width: 2em;
       height: 2em;
       color: #fff;
       background-color: #ccc;
+      border: 2px solid #fff;
       border-radius: 2em;
       font-size: 0.8em;
       font-weight: normal;
       font-weight: 300;
       text-align: center;
-      line-height: 2em; }
+      line-height: 1.8em; }
       @media (min-width: 992px) {
-        .vDetailTitleGrp {
+        .vDetailTitleClose, .vDetailTitleGrp {
           top: 12px; } }
-      .vDetailTitleGrp1 {
+      .vDetailTitleClose1, .vDetailTitleGrp1 {
         background-color: #67009A; }
-      .vDetailTitleGrp2a {
+      .vDetailTitleClose2a, .vDetailTitleGrp2a {
         background-color: #F22F1D; }
-      .vDetailTitleGrp2b {
+      .vDetailTitleClose2b, .vDetailTitleGrp2b {
         background-color: #F26E22; }
-      .vDetailTitleGrp3 {
+      .vDetailTitleClose3, .vDetailTitleGrp3 {
         background-color: #92BF11; }
-      .vDetailTitleGrp4 {
+      .vDetailTitleClose4, .vDetailTitleGrp4 {
         background-color: #1EA5D8; }
-  .vDetailTranslation {
-    display: inline-block;
-    font-size: 0.8em;
-    font-weight: 300; }
-    .vDetailTranslationWrap {
-      display: inline-block; }
+    .vDetailTitleClose {
+      left: 15px;
+      color: #000;
+      background-color: #fff;
+      transition: color 500ms, background-color 500ms;
+      transition-delay: 100ms; }
+      .vDetailTitleClose:active {
+        color: #fff;
+        background-color: #000;
+        transition: background-color 0s; }
+    .vDetailTitleTranslation {
+      display: inline-block;
+      font-size: 0.8em;
+      font-weight: 300; }
   .vDetailBody {
-    padding: 0 15px 15px;
+    padding: 15px;
     overflow: auto; }
     .vDetailBodyAudio {
       padding: 10px 0;
