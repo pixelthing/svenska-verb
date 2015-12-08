@@ -28,7 +28,7 @@ function attachArrayMethodsToNodeList(methodName)
 
 function get(url) {
   // Return a new promise.
-  return new Promise(function(resolve, reject) {
+  return new Promise(function getPromise (resolve, reject) {
     // Do the usual XHR stuff
     var req = new XMLHttpRequest();
     req.open('GET', url);
@@ -102,3 +102,16 @@ var getClosest = function (elem, selector) {
     return false;
 
 };
+
+// polyfill for using requestAnimationFrame with a fallback
+onAnimationFrame = function(callback) {
+
+    if (typeof window.requestAnimationFrame === 'function') {
+        callback();
+    } else {
+        setTimeout(function webfontUpdateMenuTimeout () {
+            callback();
+        },300);
+    }
+
+}
