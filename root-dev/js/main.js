@@ -4311,7 +4311,7 @@ function attachArrayMethodsToNodeList(methodName)
 
 function get(url) {
   // Return a new promise.
-  return new Promise(function(resolve, reject) {
+  return new Promise(function getPromise (resolve, reject) {
     // Do the usual XHR stuff
     var req = new XMLHttpRequest();
     req.open('GET', url);
@@ -4385,10 +4385,62 @@ var getClosest = function (elem, selector) {
     return false;
 
 };
+
+// polyfill for using requestAnimationFrame with a fallback
+onAnimationFrame = function(callback) {
+
+    if (typeof window.requestAnimationFrame === 'function') {
+        callback();
+    } else {
+        setTimeout(function webfontUpdateMenuTimeout () {
+            callback();
+        },300);
+    }
+
+}
+var pageLockController = function () {
+
+    var modalOffset = null;
+
+    // DETAIL
+
+    var lockPage = function() {
+        modalOffset = document.body.scrollTop || document.documentElement.scrollTop;
+        document.querySelector('html').classList.add('modal');
+        document.querySelector('body').style.top = '-' + modalOffset + 'px';
+        document.querySelector('html').addEventListener('click', pageLockController.backgroundClick);
+    }
+
+    var unLockPage = function() {
+        document.querySelector('html').classList.remove('modal');
+        document.body.scrollTop = modalOffset;
+        document.querySelector('body').style.top = 'auto';
+        modalOffset = null;
+        document.querySelector('html').addEventListener('click', pageLockController.backgroundClick);
+    }
+
+    // wehn pageLock is active, a background click (that isn't within the pageLock) will unlock the page and trigger the closure of any modals/menus
+    var backgroundClick = function(ev) {
+        console.log('1111')
+        //var $this = $(ev.target);
+        //if ($this.is('[data-js-pageLock-el]') || $this.closest('[data-js-pageLock-el]').length > 0) {
+        //    return;
+        //}
+        //pageLockController.unLockPage();
+    }
+
+    // CLOSURE
+
+    return {
+        lockPage: lockPage,
+        unLockPage: unLockPage
+    }
+
+}();
 var verbsFactory = function () {
 
     var process = function(array) {
-        return array.map(function(verb) {
+        return array.map(function verbsFactoryProcessMap (verb) {
             verb.presens     = conjugatePresens(verb)     + conjugateReflexive(verb);
             verb.preteritum  = conjugatePreteritum(verb)  + conjugateReflexive(verb);
             verb.perfekt     = conjugatePerfekt(verb)     + conjugateReflexive(verb);
@@ -4458,16 +4510,16 @@ var verbsFactory = function () {
 
     var getData = function() {
 
-        return new Promise(function (resolve, reject) {
+        return new Promise(function verbsFactoryGetDataPromise (resolve, reject) {
             //return the promise directly.
-            get('svenska.json').then(function(response) {
+            get('svenska.json').then(function verbsFactoryGetDataPromiseThen (response) {
                 //resolve the promise as the data
                 var raw = JSON.parse(response).verbs;
                 // process the presens/preteritum/perfekt
                 var processed = process(raw);
                 // return the processed data
                 resolve(processed);
-            }, function(error) {
+            }, function verbsFactoryGetDataPromiseError (error) {
                 reject();
                 alert('error loading data - sorry!');
             });
@@ -4482,7 +4534,7 @@ var verbsFactory = function () {
 }();
 var verbsFilter = function () {
 
-  return function (items,keyword) {
+  return function verbsFilterReturn (items,keyword) {
     var filtered = [];
     if (keyword && keyword.length < 2) {
       keyword = false;
@@ -4546,7 +4598,7 @@ var verbsController = function () {
 
     // PREFIX HELPER
 
-    var prefix = (function () {
+    var prefix = (function verbsPrefixHelper () {
         var styles = window.getComputedStyle(document.documentElement, ''),
             pre = (Array.prototype.slice
                 .call(styles)
@@ -4580,7 +4632,7 @@ var verbsController = function () {
         // pull in data 
         verbsFactory
             .getData()
-            .then(function(verbs) {
+            .then(function verbInitThen (verbs) {
                 verbsOriginal = verbs;
                 verbsFiltered = verbsFilter(verbsOriginal);
                 verbsCount = verbsFiltered.length;
@@ -4588,28 +4640,29 @@ var verbsController = function () {
             });
 
         // set up events
-        document.querySelectorAll('.js-vFilterGroupOption').forEach(function( button ){
+        document.querySelectorAll('[data-js-filter-group-option]').forEach(function verbInitButtonClick( button ){
             button.addEventListener('click', filterGroup);
         });
-        document.querySelector('.js-vFilterInputIcon').addEventListener('click', searchFocus);
-        document.querySelector('.js-vFilterInput').addEventListener('keyup', search);
-        document.querySelector('.js-vFilterInputClear').addEventListener('click', searchClear);
-        document.querySelector('.js-vListContainer').addEventListener('click', detailOpen);
-        document.querySelector('.js-vDetailBed').addEventListener('click', detailClose);
-        document.querySelector('.js-vDetailModalClose').addEventListener('click', detailClose);
+        document.querySelector('[data-js-filter-icon]').addEventListener('click', searchFocus);
+        document.querySelector('[data-js-filter-input]').addEventListener('keyup', search);
+        document.querySelector('[data-js-filter-clear]').addEventListener('click', searchClear);
+        document.querySelector('[data-js-target]').addEventListener('click', detailOpen);
+        document.querySelector('[data-js-detail-close]').addEventListener('click', detailClose);
+        document.querySelector('[data-js-empty-click]').addEventListener('click', searchClear);
     }
 
     // PRINT
 
     var verbsPrint = function(verbs) {
         var buffer = '';
-        verbs.forEach(function(verb, index){
+        document.querySelector('[data-js-empty]').classList.remove('vListEmpty--active');
+        verbs.forEach(function verbsPrintEach(verb, index){
             buffer += " \
-            <article class=\"vRow vGroup" + verb.group + "\" \
+            <article class=\"vRow vGroup" + verb.group + "\"> \
                 <span class=\"vCol vColTrans\" \
                     data-verbForm=\"english\"> \
-                        " + verb.trans.en + " \
-                    </span> \
+                    " + verb.trans.en + " \
+                </span> \
                 <div class=\"vColWrap js-vColWrap\" \
                     data-verbGroup=\"" + verb.group + "\" \
                     data-index=\"" + index + "\" > \
@@ -4620,7 +4673,13 @@ var verbsController = function () {
                 </div> \
             </article>";
         });
-        document.querySelector('.js-vListContainer').innerHTML = buffer;
+        document.querySelector('[data-js-target]').innerHTML = buffer;
+        // empty?
+        if (!verbs.length) {
+            onAnimationFrame(function verbsPrintAnimationFrame () {
+                document.querySelector('[data-js-empty]').classList.add('vListEmpty--active');
+            });
+        }
     }
 
     // SEARCH/FILTER
@@ -4635,18 +4694,18 @@ var verbsController = function () {
         if (searchTimeout !== null) {
             clearTimeout(searchTimeout);
         }
-        searchTimeout = setTimeout(function() {
+        searchTimeout = setTimeout(function searchTimeout() {
             searchSubmit();
         },100);
     }
 
     var searchFocus = function() {
-        document.querySelector('.js-vFilterInput').focus();
+        document.querySelector('[data-js-filter-input]').focus();
     }
 
     var searchSubmit = function() {
         scroll(0,0);
-        var input = document.querySelector('.js-vFilterInput');
+        var input = document.querySelector('[data-js-filter-input]');
         var inputKeyword = input.value;
 
         // set the new search keyword (and turn the input on)
@@ -4670,7 +4729,7 @@ var verbsController = function () {
     }
 
     var searchClear = function() {
-        var input = document.querySelector('.js-vFilterInput');
+        var input = document.querySelector('[data-js-filter-input]');
         scroll(0,0);
         // blur the field to clear the keyboard on mobile devices
         input.value = '';
@@ -4679,17 +4738,18 @@ var verbsController = function () {
         document.querySelector('.vFilterForm').value = '';
         document.querySelector('.vFilterForm').classList.remove('vFilterFormActive');
         // turn all group filter buttons off
-        document.querySelectorAll('.js-vFilterGroupOption').forEach(function( button ){
+        document.querySelectorAll('[data-js-filter-group-option]').forEach(function( button ){
             button.classList.remove('vFilterGroupOptionActive');
         });
         // reset filters
         filterCurrentGroup = null;
         filterCurrentSearch = null;
         // delay the  filtering of the list a tiny bit to not delay the UI interaction
-        setTimeout(function() {
+        onAnimationFrame(function searchClearAnimationFrame () {
             verbsFiltered = verbsFilter(verbsOriginal,filterCurrentGroup,filterCurrentSearch);
             verbsPrint(verbsFiltered);
-        },50);
+            document.querySelector('[data-js-empty]').classList.remove('vListEmpty--active');
+        });
     }
 
     var searchLoading = function() {
@@ -4703,22 +4763,30 @@ var verbsController = function () {
     var filterGroup = function() {
         scroll(0,0);
         var buttonGroup = this.getAttribute('data-group');
+        document.querySelector('[data-js-empty]').classList.remove('vListEmpty--active');
 
         // turn all group filter buttons off
-        document.querySelectorAll('.js-vFilterGroupOption').forEach(function( button ){
+        document.querySelectorAll('[data-js-filter-group-option]').forEach(function filterGroupEach( button ){
             button.classList.remove('vFilterGroupOptionActive');
         });
 
         // clear the overall control CSS
-        document.querySelector('.js-vListContainer').setAttribute('class','js-vListContainer');
+        document.querySelector('[data-js-target]').setAttribute('class','');
 
         // set the new group (and turn the button on)
         if (filterCurrentGroup !== buttonGroup) {
-            document.querySelector('.js-vListContainer').classList.add('vListContainer--group' + buttonGroup);
+            document.querySelector('[data-js-target]').classList.add('vListContainer--group' + buttonGroup);
             filterCurrentGroup = buttonGroup;
             this.classList.add('vFilterGroupOptionActive');
         } else {
             filterCurrentGroup = null;
+        }
+        // empty?
+        var verbsFiltered = document.querySelectorAll('[data-verbgroup="' + buttonGroup + '"]');
+        if (!verbsFiltered.length) {
+            onAnimationFrame(function verbsPrintAnimationFrame () {
+                document.querySelector('[data-js-empty]').classList.add('vListEmpty--active');
+            });
         }
     }
 
@@ -4732,19 +4800,6 @@ var verbsController = function () {
 
     // DETAIL
 
-    var lockPage = function() {
-        modalOffset = document.body.scrollTop;
-        document.querySelector('html').classList.add('modal');
-        document.querySelector('.vList').style.top = '-' + modalOffset + 'px';
-    }
-
-    var unLockPage = function() {
-        document.querySelector('html').classList.remove('modal');
-        document.querySelector('.vList').style.top = 'auto';
-        document.body.scrollTop = modalOffset;
-        modalOffset = null;
-    }
-
     var detailOpen = function(ev) {
         ev.preventDefault();
         // if the event has a target
@@ -4754,8 +4809,8 @@ var verbsController = function () {
             if (wrap) {
                 var index = wrap.getAttribute('data-index');
                 detailFill(index);
-                document.querySelector('.js-vDetail').classList.add('vDetail--active');
-                lockPage();
+                document.querySelector('[data-js-verbs]').classList.add('vContainer--active');
+                pageLockController.lockPage();
             }
 
         }
@@ -4763,72 +4818,75 @@ var verbsController = function () {
 
     var detailClose = function(ev) {
         ev.preventDefault();
-        document.querySelector('.js-vDetail').classList.remove('vDetail--active');
-        unLockPage();
+        document.querySelector('[data-js-verbs]').classList.remove('vContainer--active');
+        pageLockController.unLockPage();
     }
 
 
     var detailFill = function(index) {
         index = parseInt(index);
         var verbData = verbsFiltered[index];
-        document.querySelectorAll('.js-vDetailInfinitiv').map(function(obj) {obj.innerHTML = verbData.infinitiv;});
-        document.querySelectorAll('.js-vDetailTranslation').map(function(obj) {obj.innerHTML = verbData.trans['en'];});
-        document.querySelectorAll('.js-vDetailPresens').map(function(obj) {obj.innerHTML = verbData.presens;});
-        document.querySelectorAll('.js-vDetailPreteritum').map(function(obj) {obj.innerHTML = verbData.preteritum;});
-        document.querySelectorAll('.js-vDetailPerfekt').map(function(obj) {obj.innerHTML = verbData.perfekt;});
-        document.querySelector('.js-vDetailTitleGrp').setAttribute('class','vDetailTitleGrp js-vDetailTitleGrp');
-        document.querySelector('.js-vDetailTitleGrp').classList.add('vDetailTitleGrp' + verbData.group);
-        document.querySelector('.js-vDetailTitleGrp').innerHTML = verbData.group;
+        document.querySelectorAll('[data-js-detail-infinitiv]').map(function detailFillMap1(obj) {obj.innerHTML = verbData.infinitiv;});
+        document.querySelectorAll('[data-js-detail-translation]').map(function detailFillMap2(obj) {obj.innerHTML = verbData.trans['en'];});
+        document.querySelectorAll('[data-js-detail-presens]').map(function detailFillMap3(obj) {obj.innerHTML = verbData.presens;});
+        document.querySelectorAll('[data-js-detail-preterium]').map(function detailFillMap4(obj) {obj.innerHTML = verbData.preteritum;});
+        document.querySelectorAll('[data-js-detail-perfekt]').map(function detailFillMap5(obj) {obj.innerHTML = verbData.perfekt;});
+        document.querySelector('[data-js-detail-title-group]').setAttribute('class','vDetailTitleGrp');
+        document.querySelector('[data-js-detail-title-group]').classList.add('vDetailTitleGrp' + verbData.group);
+        document.querySelector('[data-js-detail-title-group]').innerHTML = verbData.group;
     }
 
     // TOUCH SLIDE
 
-    var panning = false;
-
-    var panRight = function(event) {
-        var deltaX = event.deltaX;
-        var deltaY = event.deltaY;
-        if (Math.abs(deltaY)/3 > Math.abs(deltaX) || deltaY > 20 ) {
-            event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
-            panning = false;
-            return;
-        }
-        if (deltaX > 0) {
-            event.element['0'].style[prefix.transform] = 'translate3d(' + deltaX + 'px,0,0)';
-            panning = 'right';
-        }
-    }
-    var panLeft = function(event) {
-        var deltaX = event.deltaX;
-        var deltaY = event.deltaY;
-        if (Math.abs(deltaY)/3 > Math.abs(deltaX) || deltaY > 20 ) {
-            event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
-            panning = false;
-            return;
-        }
-        if (deltaX < 0) {
-            event.element['0'].style[prefix.transform] = 'translate3d(' + deltaX + 'px,0,0)';
-            panning = 'left';
-        }
-        var index = event.element['0'].getAttribute('data-index');
-        if (deltaX < -100) {
-            $scope.detailAudioOpen(index);
-            event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
-            panning = false;
-        }
-    }
-    var panEnd = function(event) {
-        event.element['0'].style[prefix.transition] = prefix.css + 'transform 200ms';
-        event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
-        panning = false;
-        setTimeout(function() {
-            event.element['0'].style[prefix.transition] = 'none';
-        },200);
-    }
+ //   var panning = false;
+//
+ //   var hammertime = new Hammer(document.querySelector('.vRow'));
+ //   hammertime.on('panright', panRight);
+//
+ //   var panRight = function(event) {
+ //       var deltaX = event.deltaX;
+ //       var deltaY = event.deltaY;
+ //       if (Math.abs(deltaY)/3 > Math.abs(deltaX) || deltaY > 20 ) {
+ //           event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+ //           panning = false;
+ //           return;
+ //       }
+ //       if (deltaX > 0) {
+ //           event.element['0'].style[prefix.transform] = 'translate3d(' + deltaX + 'px,0,0)';
+ //           panning = 'right';
+ //       }
+ //   }
+ //   var panLeft = function(event) {
+ //       var deltaX = event.deltaX;
+ //       var deltaY = event.deltaY;
+ //       if (Math.abs(deltaY)/3 > Math.abs(deltaX) || deltaY > 20 ) {
+ //           event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+ //           panning = false;
+ //           return;
+ //       }
+ //       if (deltaX < 0) {
+ //           event.element['0'].style[prefix.transform] = 'translate3d(' + deltaX + 'px,0,0)';
+ //           panning = 'left';
+ //       }
+ //       var index = event.element['0'].getAttribute('data-index');
+ //       if (deltaX < -100) {
+ //           $scope.detailAudioOpen(index);
+ //           event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+ //           panning = false;
+ //       }
+ //   }
+ //   var panEnd = function(event) {
+ //       event.element['0'].style[prefix.transition] = prefix.css + 'transform 200ms';
+ //       event.element['0'].style[prefix.transform] = 'translate3d(0,0,0)';
+ //       panning = false;
+ //       setTimeout(function() {
+ //           event.element['0'].style[prefix.transition] = 'none';
+ //       },200);
+ //   }
 
     // CLOSURE
 
-    ready(function(){
+    ready(function verbReady(){
         init();
     })
 

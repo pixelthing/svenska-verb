@@ -2,7 +2,6 @@
 bower_components
 node_modules
 *.scssc
-
 npm-debug.log
-
 .grunt/grunt-gh-pages/gh-pages/src/
+root-prod/

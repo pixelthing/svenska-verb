@@ -1,34 +1,58 @@
 .v {
     &Container {
-        //min-height: 600px;
-        //min-height: calc( 100vh );
         background-color: #fff;
-        .modal & {
-            height: 100%;
+    }
+    &Inner {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 300ms;
+        .vContainer--active & {
+            transform: translate3d(-100%,0,0);
         }
     }
     &Header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 3;
-        background: #fff;
-        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        order: 99;
+        color: #fff;
+        background: #000;
         @include respond-to(xs-min) {
             font-size: 20px;
         }
         @include respond-to(md-min) {
             font-size: 24px;
         }
+        &Cells {
+            order: -1;
+            color: #666;
+            background-color: #eee;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            &>span {
+                z-index: 3;
+                padding-top: 0;
+                padding-bottom: 0;
+                font-size: 0.7rem;
+            }
+        }
     }
     &Title {
-        position: relative;
+        position: fixed;
+        height: 0.5em;
+        left: 0;
+        right: 0;
+        z-index: 4;
         margin: 0;
-        padding: 0.3em 4.4em;
+        padding: 0;
         color: #fff;
         background-color: $color-flag-blue;
         font-size: 1rem;
+        transform: scale3d(1,1,1);
         &:after {
             content: '';
             position: absolute;
@@ -40,17 +64,14 @@
         }
     }
     &Filter {
-        max-width: calc( 980px + 4% );
-        max-width: calc( 980px + 4vw );
-        margin: 0 auto;
-        padding: 0.5em 2% 0.2em;
-        padding: 0.5em 2vw 0.2em;
-        line-height: 0;
+        padding: 10px 5px;
+        font-size: 0;
         &Form {
             float: left;
             display: block;
             position: relative;
             width: 47%;
+            font-size: 1rem;
         }
         &Input {
             -webkit-appearance: none;
@@ -136,6 +157,9 @@
             display: inline-block;
             width: 50%;
             margin-left: 3%;
+            background: #fff;
+            border-radius: 4px;
+            font-size: 1rem;
             overflow: hidden;
               
             &Option {
@@ -162,7 +186,7 @@
                     left: 50%;
                     top: 50%;
                     width: 1.2em;
-                    height: 1.2em;
+                    height: 1.15em;
                     margin: -0.6em 0 0 -0.6em;
                     text-align: center;
                     opacity: 0;
@@ -170,7 +194,7 @@
                     font-size: 1.33em;
                     line-height: 1;
                     border: 1px solid #fff;
-                    border-radius: 100%;
+                    border-radius: 1em;
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
                     transform: rotate(-720deg);
@@ -222,59 +246,36 @@
     }
     &List {
         position: relative;
-        width: 96%;
-        width: 96vw;
-        max-width: 980px;
-        min-height: 500px;
-        margin: 0 auto;
-        padding: 5.05em 0 15px;
+        padding: 0;
         background-color: #fff;
         border-top: 1px solid #eee;
-        overflow: hidden;
+        overflow: auto;
+            -webkit-overflow-scrolling: touch;
         @include respond-to(xs-min) {
             padding-top: 5.7em;
         }
         @include respond-to(md-min) {
             padding-top: 6.4em;
         }
-        &Header {
-            width: 96%;
-            width: 96vw;
-            max-width: 980px;
-            margin: 0 auto;
-            color: #666;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            &>span {
-                border-bottom: 3px solid #666 !important;
-                z-index: 3;
-                padding-top: 0;
-                padding-bottom: 0;
-                font-size: 0.7rem;
-            }
+        &>div {
+                transform: scale3d(1,1,1);
         }
         &Empty {
+            opacity: 0;
+            max-height: 0;
             width: 15em;
             margin: 0 auto;
             padding: 10px;
             color: $color-group2a;
             border-radius: $border-radius;
             text-align: center; 
-            transition: all 300ms;
-            &.ng-leave,
-            &.ng-move.ng-move-active,
-            &.ng-enter.ng-enter-active {
+            overflow: hidden;
+            transition: opacity 500ms;
+            transition-delay: 500ms;
+            &--active {
                 opacity: 1;
-                transform: translateY(0);
-            }
-            &.ng-leave.ng-leave-active,
-            &.ng-move,
-            &.ng-enter {
-                opacity: 0;
-                transform: translateY(3em);
+                max-height: 200px;
+                transition-delay: 200ms;
             }
             &Button {
                 -webkit-appearance: none;
@@ -303,6 +304,7 @@
         font-size: 0;
         line-height: 0;
         cursor: pointer;
+
     }
     &Group {
         &1 {
@@ -352,13 +354,10 @@
         margin: 0;
         padding: .3em 0 0.3em.3em;
         overflow: hidden;
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 2;
         white-space: nowrap;
         text-overflow: ellipsis;
-        @include respond-to-min(360px) {
-            font-size: 1rem;
-        }
         @include respond-to-min(500px) {
             font-size: 1.1rem;
         }
@@ -370,9 +369,12 @@
             z-index: 2;
             //transform: translate3d(0,0,0);
             background: #fff;
-            //.vRow:nth-child(odd) & {
-            //    background-color: #f6f6f6;
-            //}
+            webkit-tap-highlight-color: rgba(0,0,0,0);
+            transition: background-color 500ms;
+            &:active {
+                background-color: #eee;
+                transition: background-color 0s;
+            }
             &:before {
                 content: attr(data-verbGroup);
                 position: absolute;
@@ -425,7 +427,7 @@
         &Infinitiv {
             position: relative;
             width: 28%;
-            border-left: 0.6em solid #999;
+            border-left: 0.6rem solid #999;
             font-weight: bold;
             text-overflow: initial;
             .vListHeader & {
@@ -449,66 +451,75 @@
         }
     }
     &Detail {
-        position: absolute;
-        left: 0;
+        position: fixed;
+        left: 100%;
         top: 0;
-        right: 0;
-        bottom: 100%;
-        overflow: hidden;
+        bottom: 0;
+        width: 100%;
+        overflow: auto;
         font-size: 18px;
-        transition: bottom 0ms;
-        transition-delay: 300ms;
+        transform: scale3d(1,1,1);
+        transition: transform 300ms;
         @include respond-to(sm-min) {
             font-size: 18px;
         }
         @include respond-to(md-min) {
             font-size: 22px;
         }
-        &--active {
-            bottom: 0;
-            transition-delay: 0ms;
+        .vContainer--active & {
+            transform: translate3d(-100%,0,0);
         }
-        &Bed {
+        &Modal {
+            display: flex;
+            flex-direction: column;
             position: absolute;
-            left: 0;
             top: 0;
             right: 0;
             bottom: 0;
-            z-index: 9;
-            background: rgba(0,0,0,0.8);
-            opacity: 0;
+            left: 0;
+            z-index: 10;
+            padding-top: 0.5em;
+            background: #fff;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
             backface-visibility: hidden;
-            transition: opacity 500ms;
-            .vDetail--active & {
-                opacity: 1;
-            }
+            transition: opacity 300ms;
         }
         &Title {
-            z-index: 12;
-            min-height: 2.3em;
+            position: relative;
+            order: 99;
+            min-height: 2.5em;
             margin: 0;
-            padding: 10px 2em 8px 2.5em;
-            color: #000;
-            background-color: #fff;
+            padding: 15px;
+            padding-left: 4.5em;
+            color: #fff;
+            background-color: #000;
             font-size: 24px;
+            line-height: 1.1;
             @include respond-to(md-min) {
                 padding: 15px 2em 12px 2.5em
             }
+            &Inner {
+                display: block;
+                margin: 0 0 0.2em;
+            }
+            &Close,
             &Grp {
                 display: inline-block;
                 position: absolute;
-                left: 15px;
-                top: 8px;
+                top: 0.5em;
+                left: 3em;
                 width: 2em;
                 height: 2em;
                 color: #fff;
                 background-color: #ccc;
+                border: 2px solid #fff;
                 border-radius: 2em;
                 font-size: 0.8em;
                 font-weight: normal;
                 font-weight: 300;
                 text-align: center;
-                line-height: 2em;
+                line-height: 1.8em;
                 @include respond-to(md-min) {
                     top: 12px;
                 }
@@ -528,68 +539,26 @@
                     background-color:  $color-group4;
                 }
             }
-        }
-        &Modal {
-            position: absolute;
-            top: 5px;
-            left: 50%;
-            bottom: 5px;
-            z-index: 10;
-            width: 310px;
-            max-width: calc(100% - 10px);
-            margin-left: -155px;
-            background: #fff;
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            opacity: 0;
-            @include respond-to-min-height(470px) {
-                top: 15px;
-            }
-            @include respond-to-min-height(600px) {
-                top: 15px;
-                bottom: auto;
-                max-height: calc(100vh - 20px);
-            }
-            @include respond-to-min(568px) {
-                width: 558px;
-                margin-left: -279px;
-            }
-            @include respond-to(sm-min) {
-                top: 30px;
-                width: 740px;
-                margin-left: -370px;
-            }
-            backface-visibility: hidden;
-            transition: opacity 300ms;
-            .vDetail--active & {
-                opacity: 1;
-            }
             &Close {
-                position: absolute;
-                right: 0;
-                top: 0;
-                z-index: 15;
-                padding: 16px;
-                font-size: 1.5em;
-                cursor: pointer;
-                &Audio {
+                left: 15px;
+                color: #000;
+                background-color: #fff;
+                transition: color 500ms, background-color 500ms;
+                transition-delay: 100ms;
+                &:active {
                     color: #fff;
+                    background-color: #000;
+                    transition: background-color 0s;
                 }
             }
-        }
-        &Translation {
-            display: inline-block;
-            font-size: 0.8em;
-            font-weight: 300;
-            &Wrap {
-                //padding: 0 0.2em;
-                //background: #ffc;
+            &Translation {
                 display: inline-block;
+                font-size: 0.8em;
+                font-weight: 300;
             }
         }
         &Body {
-            padding: 0 15px 15px;
+            padding: 15px;
             overflow: auto;
             &Audio {
                 padding: 10px 0;
