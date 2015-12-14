@@ -380,10 +380,12 @@ body {
     background: #fff;
     webkit-tap-highlight-color: transparent;
     outline: 0;
-    transition: background-color 500ms; }
+    transition: background-color 500ms;
+    transition-delay: 100ms; }
     .vListColWrapActive {
       background-color: #ffcc00;
-      transition: background-color 0s; }
+      transition: background-color 0s;
+      transition-delay: 0s; }
     .vListColWrap:before {
       content: attr(data-verbGroup);
       position: absolute;
