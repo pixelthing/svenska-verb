@@ -12,3 +12,10 @@ var isWM = /iemobile/i.test(navigator.userAgent.toLowerCase());
 if (isWM) {
     document.querySelector('html').classList.add('winMob');
 }
+
+if (
+    ("standalone" in window.navigator) &&
+    !window.navigator.standalone
+){
+    document.querySelector('html').classList.add('standalone');
+}
