@@ -86,8 +86,6 @@ body {
   .vContainer--active .vInner {
     transform: translate3d(-100%, 0, 0); }
 .vHeader {
-  display: flex;
-  flex-direction: column;
   order: 99;
   color: #fff;
   background: #000; }
@@ -97,20 +95,21 @@ body {
   @media (min-width: 992px) {
     .vHeader {
       font-size: 24px; } }
-  .vHeaderCells {
-    order: -1;
-    color: #666;
-    background-color: #eee;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0;
-    white-space: nowrap;
-    overflow: hidden; }
-    .vHeaderCells > span {
-      z-index: 3;
-      padding-top: 0;
-      padding-bottom: 0;
-      font-size: 0.7rem; }
+.vKey {
+  order: -1;
+  height: 1.8rem;
+  padding-top: 0.5rem;
+  color: #666;
+  background-color: #eee;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0;
+  white-space: nowrap; }
+  .vKey > span {
+    z-index: 3;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 0.7rem; }
 .vTitle {
   position: fixed;
   height: 0.5em;
@@ -132,7 +131,7 @@ body {
     bottom: 0;
     background-color: #ffcc00; }
 .vFilter {
-  padding: 10px 5px;
+  padding: 10px;
   font-size: 0; }
   .vFilterForm {
     float: left;
@@ -148,7 +147,6 @@ body {
     padding: 1px 0.5em 1px 1.5em;
     border: 1px solid #ddd;
     color: #000;
-    border-radius: 4px;
     font-family: "AvenirNextCondensed-Medium", sans-serif-condensed, sans-serif;
     font-size: 1em;
     line-height: 2em;
@@ -214,7 +212,6 @@ body {
     width: 50%;
     margin-left: 3%;
     background: #fff;
-    border-radius: 4px;
     font-size: 1rem;
     overflow: hidden; }
     .vFilterGroupOption {
@@ -254,12 +251,6 @@ body {
         -moz-osx-font-smoothing: grayscale;
         transform: rotate(-720deg);
         transition: all 500ms; }
-      .vFilterGroupOption:first-child {
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px; }
-      .vFilterGroupOption:last-child {
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px; }
       .vFilterGroupOption1 {
         background-color: #67009A; }
       .vFilterGroupOption2a {
@@ -285,18 +276,13 @@ body {
           opacity: 0;
           transform: rotate(720deg); }
 .vList {
+  flex: 1;
   position: relative;
   padding: 0;
   background-color: #fff;
   border-top: 1px solid #eee;
   overflow: auto;
   -webkit-overflow-scrolling: touch; }
-  @media (min-width: 600px) {
-    .vList {
-      padding-top: 5.7em; } }
-  @media (min-width: 992px) {
-    .vList {
-      padding-top: 6.4em; } }
   .vList > div {
     transform: scale3d(1, 1, 1); }
   .vListEmpty {
