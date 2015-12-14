@@ -379,6 +379,7 @@ body {
     z-index: 2;
     background: #fff;
     webkit-tap-highlight-color: transparent;
+    outline: 0;
     transition: background-color 500ms; }
     .vListColWrapActive {
       background-color: #ffcc00;
