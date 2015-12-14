@@ -106,7 +106,8 @@ body {
   width: 200%;
   height: 100%;
   display: flex;
-  transition: transform 300ms; }
+  transition: transform 300ms;
+  will-change: transform; }
   .vStage--active {
     transform: translate3d(-50%, 0, 0); }
 .vScene {
@@ -143,11 +144,17 @@ body {
     font-size: 0.7rem; }
 .vListFilter {
   order: 99;
-  color: #fff;
-  background: #000;
+  z-index: 1;
+  color: #000;
+  background: #fff;
   height: 4rem;
-  padding: 13px 10px;
-  font-size: 0; }
+  padding: 14px 10px;
+  font-size: 0;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2); }
+  .android .vListFilter, .winMob .vListFilter {
+    color: #fff;
+    background-color: #000;
+    box-shadow: none; }
   .vListFilterForm {
     display: inline-block;
     vertical-align: middle;
@@ -159,12 +166,12 @@ body {
     -webkit-tap-highlight-color: transparent;
     display: block;
     width: 100%;
-    padding: 1px 0.5em 1px 1.5em;
+    padding: 0 0.5em 0 1.5em;
     border: 1px solid #ddd;
     color: #000;
     font-family: "AvenirNextCondensed-Medium", sans-serif-condensed, sans-serif;
     font-size: 1em;
-    line-height: 2em;
+    line-height: 2.1em;
     outline: none;
     transition: all 500ms;
     transform: scale3d(1, 1, 1); }
@@ -232,11 +239,12 @@ body {
     overflow: hidden; }
     .vListFilterGroupOption {
       -webkit-tap-highlight-color: transparent;
-      -webkit-appearance: none;
+      appearance: none;
       display: block;
       float: left;
       position: relative;
       width: 20%;
+      margin: 0;
       padding: 1px;
       color: #fff;
       background-color: #999;
@@ -373,7 +381,7 @@ body {
     webkit-tap-highlight-color: transparent;
     transition: background-color 500ms; }
     .vListColWrap:active {
-      background-color: #eee;
+      background-color: #ffcc00;
       transition: background-color 0s; }
     .vListColWrap:before {
       content: attr(data-verbGroup);
@@ -449,10 +457,15 @@ body {
     margin: 0;
     padding: 15px;
     padding-left: 2.6em;
-    color: #fff;
-    background-color: #000;
+    color: #000;
+    background-color: #fff;
     font-size: 24px;
-    line-height: 1.1; }
+    line-height: 1.1;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2); }
+    .android .vDetailTitle, .winMob .vDetailTitle {
+      color: #fff;
+      background-color: #000;
+      box-shadow: none; }
     @media (min-width: 992px) {
       .vDetailTitle {
         padding: 15px 2em 12px 2.5em; } }
@@ -496,38 +509,24 @@ body {
       transition: color 500ms, background-color 500ms;
       transition-delay: 100ms; }
       .vDetailTitleClose:active {
-        color: #fff;
-        background-color: #000;
+        background-color: #ffcc00;
         transition: background-color 0s; }
     .vDetailTitleTranslation {
       display: inline-block;
       font-size: 0.8em;
       font-weight: 300; }
   .vDetailBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
     padding: 15px;
     overflow: auto; }
-    .vDetailBodyAudio {
-      padding: 10px 0;
-      text-align: center; }
-      .vDetailBodyAudioIframe {
-        width: 320px;
-        max-width: 100%;
-        height: 80px;
-        margin: 1em 0 0;
-        border: none; }
-      .vDetailBodyAudioLabel {
-        display: inline-block;
-        width: 5.5em;
-        text-align: left;
-        color: #999; }
-      .vDetailBodyAudioValue {
-        display: inline-block;
-        width: 8em;
-        text-align: left; }
   .vDetailFokus {
-    margin: 0 0 10px;
+    flex: 1;
+    margin: 5px 0 5px;
     padding: 10px;
-    background: #ccc; }
+    background: #eee; }
     .vDetailFokusTitle {
       margin: 0 0 0.5em;
       color: #999;
