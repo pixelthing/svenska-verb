@@ -16,13 +16,13 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-          '<%= config.dev %>/css/<%= pkg.mainCss %>.css': '<%= config.src %>/scss/<%= pkg.mainCss %>.scss',
+          '<%= config.dev %>/css/main.css': '<%= config.src %>/scss/main.scss',
           '<%= config.dev %>/css/print.css': '<%= config.src %>/scss/print.scss',
         }
       },
       prod: {
         files: {
-          '<%= config.prod %>/css/<%= pkg.mainCss %>.css': '<%= config.src %>/scss/<%= pkg.mainCss %>.scss',
+          '<%= config.prod %>/css/main.css': '<%= config.src %>/scss/main.scss',
           '<%= config.prod %>/css/print.css': '<%= config.src %>/scss/print.scss',
         }
       }
@@ -120,25 +120,35 @@ module.exports = function(grunt) {
         banner: '',
         stripBanners: false,
       },
-      dev: {
+      devNonBlocking: {
         src: [
           'node_modules/fastclick/lib/fastclick.js',
-          'node_modules/hammerjs/hammer.js',
+          //'node_modules/hammerjs/hammer.js',
           'node_modules/es6-promise/dist/es6-promise.js',
-          '<%= config.src %>/js/*/*.js',
-          '<%= config.src %>/js/*.js',
+          '<%= config.src %>/js/nonblocking/*.js',
         ],
-        dest: '<%= config.dev %>/js/<%= pkg.mainJs %>.js',
+        dest: '<%= config.dev %>/js/nonblocking.js',
       },
-      prod: {
+      devBlocking: {
+        src: [
+          '<%= config.src %>/js/blocking/*.js',
+        ],
+        dest: '<%= config.dev %>/js/blocking.js',
+      },
+      prodNonBlocking: {
         src: [
           'node_modules/fastclick/lib/fastclick.js',
-          'node_modules/hammerjs/hammer.js',
+          //'node_modules/hammerjs/hammer.js',
           'node_modules/es6-promise/dist/es6-promise.js',
-          '<%= config.src %>/js/*/*.js',
-          '<%= config.src %>/js/*.js',
+          '<%= config.src %>/js/nonblocking/*.js',
         ],
-        dest: '<%= config.prod %>/js/<%= pkg.mainJs %>.js',
+        dest: '<%= config.prod %>/js/nonblocking.js',
+      },
+      prodBlocking: {
+        src: [
+          '<%= config.src %>/js/blocking/*.js',
+        ],
+        dest: '<%= config.prod %>/js/blocking.js',
       },
     },
     clean: {
@@ -252,9 +262,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-json-minify');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('devbuild', ['clean:dev', 'copy', 'assemble:dev', 'sass:dev', 'concat:dev', 'postcss', 'connect:dev']);
+  grunt.registerTask('devbuild', ['clean:dev', 'copy', 'assemble:dev', 'sass:dev', 'concat:devBlocking', 'concat:devNonBlocking', 'postcss', 'connect:dev']);
 
-  grunt.registerTask('prodbuild', ['clean:prod', 'copy', 'assemble:prod', 'sass:prod', 'concat:prod', 'postcss', 'json-minify', 'connect:prod']);
+  grunt.registerTask('prodbuild', ['clean:prod', 'copy', 'assemble:prod', 'sass:prod', 'concat:prodBlocking', 'concat:prodNonBlocking', 'postcss', 'json-minify', 'connect:prod']);
 
   // Default task(s).
   grunt.registerTask('default', ['devbuild', 'watch']);

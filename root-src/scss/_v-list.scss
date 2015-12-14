@@ -1,74 +1,39 @@
-.v {
-    &Container {
-        background-color: #fff;
-    }
-    &Inner {
-        display: flex;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: transform 300ms;
-        .vContainer--active & {
-            transform: translate3d(-100%,0,0);
-        }
-    }
-    &Header {
-        display: flex;
-        flex-direction: column;
-        order: 99;
-        color: #fff;
-        background: #000;
-        @include respond-to(xs-min) {
-            font-size: 20px;
-        }
-        @include respond-to(md-min) {
-            font-size: 24px;
-        }
-        &Cells {
-            order: -1;
-            color: #666;
-            background-color: #eee;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            &>span {
-                z-index: 3;
-                padding-top: 0;
-                padding-bottom: 0;
-                font-size: 0.7rem;
-            }
-        }
-    }
-    &Title {
-        position: fixed;
-        height: 0.5em;
-        left: 0;
-        right: 0;
-        z-index: 4;
-        margin: 0;
-        padding: 0;
-        color: #fff;
-        background-color: $color-flag-blue;
-        font-size: 1rem;
-        transform: scale3d(1,1,1);
-        &:after {
-            content: '';
-            position: absolute;
-            left: 1.45em;
-            width: 1.45em;
-            top: 0;
-            bottom: 0;
-            background-color: $color-flag-yellow;
+.vList {
+    &Key {
+        order: -1;
+        height: 1.8rem;
+        padding-top: 0.5rem;
+        color: #666;
+        background-color: #eee;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0;
+        white-space: nowrap;
+        &>span {
+            z-index: 3;
+            padding-top: 0;
+            padding-bottom: 0;
+            font-size: 0.7rem;
         }
     }
     &Filter {
-        padding: 10px 5px;
+        order: 99;
+        z-index: 1;
+        color: #000;
+        background: #fff;
+        height: 4rem;
+        padding: 14px 10px;
         font-size: 0;
+        box-shadow: 0 -1px 5px rgba(0,0,0,0.2);
+        .android &,
+        .winMob & {
+            color: #fff;
+            background-color: #000;
+            box-shadow: none;
+        }
         &Form {
-            float: left;
-            display: block;
+            display: inline-block;
+            vertical-align: middle;
             position: relative;
             width: 47%;
             font-size: 1rem;
@@ -78,20 +43,20 @@
             -webkit-tap-highlight-color: transparent;
             display: block;
             width: 100%;
-            padding: 1px 0.5em 1px 1.5em;
+            padding: 0 0.5em 0 1.5em;
             border: 1px solid #ddd;
             color: #000;
-            border-radius: $border-radius;
+            //border-radius: $border-radius;
             font-family: $font;
             font-size: 1em;
-            line-height: 2em;
+            line-height: 2.1em;
             outline: none;
             transition: all 500ms;
             transform: scale3d(1,1,1);
             &:focus {
                 border-color: $color-flag-yellow;
             }
-            .vFilterFormActive & {
+            .vListFilterFormActive & {
                 border-color: $color-flag-yellow;
                 background: $color-flag-yellow;
                 color: #000;
@@ -105,7 +70,7 @@
                 color: #ccc;
                 font-size: 1.5em;
                 transition: all 500ms;
-                .vFilterFormActive & {
+                .vListFilterFormActive & {
                     color: darken($color-flag-yellow,20%);
                 }
             }
@@ -136,7 +101,7 @@
                     border: 1px solid darken($color-flag-yellow,20%);
                     border-radius: 100%;
                 }
-                .vFilterFormActive & {
+                .vListFilterFormActive & {
                     opacity: 1;
                     transform: rotate(-720deg);
                 }
@@ -155,20 +120,22 @@
         }
         &Group {
             display: inline-block;
+            vertical-align: middle;
             width: 50%;
             margin-left: 3%;
             background: #fff;
-            border-radius: 4px;
+            //border-radius: 4px;
             font-size: 1rem;
             overflow: hidden;
               
             &Option {
                 -webkit-tap-highlight-color: transparent;
-                -webkit-appearance: none;
+                appearance: none;
                 display: block;
                 float: left;
                 position: relative;
                 width: 20%;
+                margin: 0;
                 padding: 1px;
                 color: #fff;
                 background-color: #999;
@@ -200,14 +167,14 @@
                     transform: rotate(-720deg);
                     transition: all 500ms;
                 }
-                &:first-child {
-                    border-top-left-radius: $border-radius;
-                    border-bottom-left-radius: $border-radius;
-                }
-                &:last-child {
-                    border-top-right-radius: $border-radius;
-                    border-bottom-right-radius: $border-radius;
-                }
+                //&:first-child {
+                //    border-top-left-radius: $border-radius;
+                //    border-bottom-left-radius: $border-radius;
+                //}
+                //&:last-child {
+                //    border-top-right-radius: $border-radius;
+                //    border-bottom-right-radius: $border-radius;
+                //}
                 &1 {
                     background-color:  $color-group1;
                 }
@@ -245,18 +212,13 @@
         }
     }
     &List {
+        flex: 1;
         position: relative;
         padding: 0;
         background-color: #fff;
         border-top: 1px solid #eee;
         overflow: auto;
-            -webkit-overflow-scrolling: touch;
-        @include respond-to(xs-min) {
-            padding-top: 5.7em;
-        }
-        @include respond-to(md-min) {
-            padding-top: 6.4em;
-        }
+        -webkit-overflow-scrolling: touch;
         &>div {
                 transform: scale3d(1,1,1);
         }
@@ -272,7 +234,7 @@
             overflow: hidden;
             transition: opacity 500ms;
             transition-delay: 500ms;
-            &--active {
+            &Active {
                 opacity: 1;
                 max-height: 200px;
                 transition-delay: 200ms;
@@ -370,9 +332,10 @@
             //transform: translate3d(0,0,0);
             background: #fff;
             webkit-tap-highlight-color: rgba(0,0,0,0);
+            outline: 0;
             transition: background-color 500ms;
-            &:active {
-                background-color: #eee;
+            &Active {
+                background-color: $color-flag-yellow;
                 transition: background-color 0s;
             }
             &:before {
@@ -408,19 +371,19 @@
             color: #fff;
             font-weight: bold;
             text-transform: uppercase;
-            .vGroup1 & {
+            .vListGroup1 & {
                 background-color:  $color-group1;
             }
-            .vGroup2a & {
+            .vListGroup2a & {
                 background-color:  $color-group2a;
             }
-            .vGroup2b & {
+            .vListGroup2b & {
                 background-color:  $color-group2b;
             }
-            .vGroup3 & {
+            .vListGroup3 & {
                 background-color:  $color-group3;
             }
-            .vGroup4 & {
+            .vListGroup4 & {
                 background-color:  $color-group4;
             }
         }
@@ -433,211 +396,21 @@
             .vListHeader & {
                 border-left: none;
             }
-            .vGroup1 & {
+            .vListGroup1 & {
                 border-color:  $color-group1;
             }
-            .vGroup2a & {
+            .vListGroup2a & {
                 border-color:  $color-group2a;
             }
-            .vGroup2b & {
+            .vListGroup2b & {
                 border-color:  $color-group2b;
             }
-            .vGroup3 & {
+            .vListGroup3 & {
                 border-color:  $color-group3;
             }
-            .vGroup4 & {
+            .vListGroup4 & {
                 border-color:  $color-group4;
             }
-        }
-    }
-    &Detail {
-        position: fixed;
-        left: 100%;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        overflow: auto;
-        font-size: 18px;
-        transform: scale3d(1,1,1);
-        transition: transform 300ms;
-        @include respond-to(sm-min) {
-            font-size: 18px;
-        }
-        @include respond-to(md-min) {
-            font-size: 22px;
-        }
-        .vContainer--active & {
-            transform: translate3d(-100%,0,0);
-        }
-        &Modal {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 10;
-            padding-top: 0.5em;
-            background: #fff;
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
-            backface-visibility: hidden;
-            transition: opacity 300ms;
-        }
-        &Title {
-            position: relative;
-            order: 99;
-            min-height: 2.5em;
-            margin: 0;
-            padding: 15px;
-            padding-left: 4.5em;
-            color: #fff;
-            background-color: #000;
-            font-size: 24px;
-            line-height: 1.1;
-            @include respond-to(md-min) {
-                padding: 15px 2em 12px 2.5em
-            }
-            &Inner {
-                display: block;
-                margin: 0 0 0.2em;
-            }
-            &Close,
-            &Grp {
-                display: inline-block;
-                position: absolute;
-                top: 0.5em;
-                left: 3em;
-                width: 2em;
-                height: 2em;
-                color: #fff;
-                background-color: #ccc;
-                border: 2px solid #fff;
-                border-radius: 2em;
-                font-size: 0.8em;
-                font-weight: normal;
-                font-weight: 300;
-                text-align: center;
-                line-height: 1.8em;
-                @include respond-to(md-min) {
-                    top: 12px;
-                }
-                &1 {
-                    background-color:  $color-group1;
-                }
-                &2a {
-                    background-color:  $color-group2a;
-                }
-                &2b {
-                    background-color:  $color-group2b;
-                }
-                &3 {
-                    background-color:  $color-group3;
-                }
-                &4 {
-                    background-color:  $color-group4;
-                }
-            }
-            &Close {
-                left: 15px;
-                color: #000;
-                background-color: #fff;
-                transition: color 500ms, background-color 500ms;
-                transition-delay: 100ms;
-                &:active {
-                    color: #fff;
-                    background-color: #000;
-                    transition: background-color 0s;
-                }
-            }
-            &Translation {
-                display: inline-block;
-                font-size: 0.8em;
-                font-weight: 300;
-            }
-        }
-        &Body {
-            padding: 15px;
-            overflow: auto;
-            &Audio {
-                padding: 10px 0;
-                text-align: center;
-                &Iframe {
-                    width: 320px;
-                    max-width: 100%;
-                    height: 80px;
-                    margin: 1em 0 0;
-                    border: none;
-                }
-                &Label {
-                    display: inline-block;
-                    width: 5.5em;
-                    text-align: left;
-                    color: #999;
-                }
-                &Value {
-                    display: inline-block;
-                    width: 8em;
-                    text-align: left;
-                }
-            }
-        }
-        &Fokus {
-            margin: 0 0 10px;
-            padding: 10px;
-            background: #ccc;
-            &Title {
-                margin: 0 0 0.5em;
-                color: #999;
-                font-size: 12px;
-                text-transform: uppercase;
-                text-align: right;
-                -webkit-text-size-adjust:none;
-                @include respond-to(sm-min) {
-                    margin: 0 0 15px;
-                }
-            }
-            &Sub {
-                margin: 0 0 1em;
-                @include respond-to-min(568px) {
-                    display: inline-block;
-                    vertical-align: top;
-                    width: 30%;
-                    margin-left: 2%;
-                    &:first-child {
-                        margin-left: 0;
-                    }
-                }
-                &Title {
-                    color: #fff;
-                    font-size: 12px;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                }
-                &Example {
-                    margin: 0;
-                    font-size: 1.1em;
-                    @include respond-to-min(568px) {
-                        font-size: 0.9em;
-                    }
-                }
-            }
-            &Label {
-                background: #ffc;
-                display: inline-block;
-                padding: 0 0.2em;
-            }
-        }
-    }
-    &Footer {
-        padding: 0.5em 2%;
-        padding: 0.5em 2vw;
-        color: $color-footer-fore;
-        background: $color-footer-back;
-        font-size: 12px;
-        a {
-            color: #fff;
         }
     }
 }

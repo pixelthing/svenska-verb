@@ -1,0 +1,144 @@
+.vDetail {
+    font-size: 18px;
+    @include respond-to(sm-min) {
+        font-size: 18px;
+    }
+    @include respond-to(md-min) {
+        font-size: 22px;
+    }
+    &Title {
+        position: relative;
+        order: 99;
+        min-height: 4rem;
+        margin: 0;
+        padding: 15px;
+        padding-left: 2.6em;
+        color: #000;
+        background-color: #fff;
+        font-size: 24px;
+        line-height: 1.1;
+        box-shadow: 0 -1px 5px rgba(0,0,0,0.2);
+        .android &,
+        .winMob & {
+            color: #fff;
+            background-color: #000;
+            box-shadow: none;
+        }
+        @include respond-to(md-min) {
+            padding: 15px 2em 12px 2.5em
+        }
+        &Inner {
+            display: block;
+            margin: 0 0 0.2em;
+        }
+        &Close,
+        &Grp {
+            display: inline-block;
+            position: absolute;
+            top: 0.5em;
+            left: 15px;
+            width: 2em;
+            height: 2em;
+            color: #fff;
+            background-color: #ccc;
+            border: 2px solid #fff;
+            border-radius: 2em;
+            font-size: 0.8em;
+            font-weight: normal;
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.8em;
+            @include respond-to(md-min) {
+                top: 12px;
+            }
+            &1 {
+                background-color:  $color-group1;
+            }
+            &2a {
+                background-color:  $color-group2a;
+            }
+            &2b {
+                background-color:  $color-group2b;
+            }
+            &3 {
+                background-color:  $color-group3;
+            }
+            &4 {
+                background-color:  $color-group4;
+            }
+        }
+        &Close {
+            left: auto;
+            right: 15px;
+            color: #000;
+            background-color: #fff;
+            transition: color 500ms, background-color 500ms;
+            transition-delay: 100ms;
+            &:active {
+                background-color: $color-flag-yellow;
+                transition: background-color 0s;
+            }
+        }
+        &Translation {
+            display: inline-block;
+            font-size: 0.8em;
+            font-weight: 300;
+        }
+    }
+    &Body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.5rem;
+        padding: 15px;
+        background-color: $color-flag-yellow;
+        overflow: auto;
+    }
+    &Fokus {
+        flex: 1;
+        margin: 5px 0 5px;
+        padding: 10px;
+        background: rgba(255,255,255,0.3);
+        &Title {
+            margin: 0 0 0.5em;
+            color: #999;
+            font-size: 12px;
+            text-transform: uppercase;
+            text-align: right;
+            -webkit-text-size-adjust:none;
+            @include respond-to(sm-min) {
+                margin: 0 0 15px;
+            }
+        }
+        &Sub {
+            margin: 0 0 1em;
+            @include respond-to-min(568px) {
+                display: inline-block;
+                vertical-align: top;
+                width: 30%;
+                margin-left: 2%;
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+            &Title {
+                color: #fff;
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            &Example {
+                margin: 0;
+                font-size: 1.1em;
+                @include respond-to-min(568px) {
+                    font-size: 0.9em;
+                }
+            }
+        }
+        &Label {
+            background: #ffc;
+            display: inline-block;
+            padding: 0 0.2em;
+        }
+    }
+}

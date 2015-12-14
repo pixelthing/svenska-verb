@@ -107,9 +107,11 @@ var getClosest = function (elem, selector) {
 onAnimationFrame = function(callback) {
 
     if (typeof window.requestAnimationFrame === 'function') {
-        callback();
+        requestAnimationFrame(function onAnimationFrameRequestRoute() {
+            callback();
+        })
     } else {
-        setTimeout(function webfontUpdateMenuTimeout () {
+        setTimeout(function webfontUpdateMenuTimeoutRoute () {
             callback();
         },300);
     }

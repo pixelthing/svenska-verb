@@ -57,8 +57,8 @@ var verbsController = function () {
             });
 
         // set up events
-        document.querySelectorAll('[data-js-filter-group-option]').forEach(function verbInitButtonClick( button ){
-            button.addEventListener('click', filterGroup);
+        document.querySelectorAll('[data-js-filter-group-option]').forEach(function verbInitButtonClick( el ){
+            el.addEventListener('click', filterGroup);
         });
         document.querySelector('[data-js-filter-icon]').addEventListener('click', searchFocus);
         document.querySelector('[data-js-filter-input]').addEventListener('keyup', search);
@@ -75,18 +75,19 @@ var verbsController = function () {
         document.querySelector('[data-js-empty]').classList.remove('vListEmpty--active');
         verbs.forEach(function verbsPrintEach(verb, index){
             buffer += " \
-            <article class=\"vRow vGroup" + verb.group + "\"> \
-                <span class=\"vCol vColTrans\" \
+            <article class=\"vListRow vListGroup" + verb.group + "\"> \
+                <span class=\"vListCol vListColTrans\" \
                     data-verbForm=\"english\"> \
                     " + verb.trans.en + " \
                 </span> \
-                <div class=\"vColWrap js-vColWrap\" \
+                <div class=\"vListColWrap\" \
                     data-verbGroup=\"" + verb.group + "\" \
-                    data-index=\"" + index + "\" > \
-                    <span class=\"vCol vColInfinitiv\">" + verb.infinitiv + "</span> \
-                    <span class=\"vCol\">" + verb.presens + "</span> \
-                    <span class=\"vCol\">" + verb.preteritum + "</span> \
-                    <span class=\"vCol\">" + verb.perfekt + "</span> \
+                    data-index=\"" + index + "\" \
+                    data-verbClick> \
+                    <span class=\"vListCol vListColInfinitiv\">" + verb.infinitiv + "</span> \
+                    <span class=\"vListCol\">" + verb.presens + "</span> \
+                    <span class=\"vListCol\">" + verb.preteritum + "</span> \
+                    <span class=\"vListCol\">" + verb.perfekt + "</span> \
                 </div> \
             </article>";
         });
@@ -131,13 +132,13 @@ var verbsController = function () {
         } else if (!inputKeyword) {
             input.blur();
             filterCurrentSearch = null;
-            document.querySelector('.vFilterForm').classList.remove('vFilterFormActive');
+            document.querySelector('.vListFilterForm').classList.remove('vListFilterFormActive');
         } else if (inputKeyword.length < 2) {
             filterCurrentSearch = null;
-            document.querySelector('.vFilterForm').classList.remove('vFilterFormActive');
+            document.querySelector('.vListFilterForm').classList.remove('vListFilterFormActive');
         } else {
             filterCurrentSearch = inputKeyword;
-            document.querySelector('.vFilterForm').classList.add('vFilterFormActive');
+            document.querySelector('.vListFilterForm').classList.add('vListFilterFormActive');
         }
 
         verbsFiltered = verbsFilter(verbsOriginal,filterCurrentSearch);
@@ -152,11 +153,11 @@ var verbsController = function () {
         input.value = '';
         input.blur();
         // turn off the keyword search
-        document.querySelector('.vFilterForm').value = '';
-        document.querySelector('.vFilterForm').classList.remove('vFilterFormActive');
+        document.querySelector('.vListFilterForm').value = '';
+        document.querySelector('.vListFilterForm').classList.remove('vListFilterFormActive');
         // turn all group filter buttons off
         document.querySelectorAll('[data-js-filter-group-option]').forEach(function( button ){
-            button.classList.remove('vFilterGroupOptionActive');
+            button.classList.remove('vListFilterGroupOptionActive');
         });
         // reset filters
         filterCurrentGroup = null;
@@ -183,8 +184,8 @@ var verbsController = function () {
         document.querySelector('[data-js-empty]').classList.remove('vListEmpty--active');
 
         // turn all group filter buttons off
-        document.querySelectorAll('[data-js-filter-group-option]').forEach(function filterGroupEach( button ){
-            button.classList.remove('vFilterGroupOptionActive');
+        document.querySelectorAll('[data-js-filter-group-option]').forEach(function filterGroupEach( el ){
+            el.classList.remove('vListFilterGroupOptionActive');
         });
 
         // clear the overall control CSS
@@ -194,7 +195,7 @@ var verbsController = function () {
         if (filterCurrentGroup !== buttonGroup) {
             document.querySelector('[data-js-target]').classList.add('vListContainer--group' + buttonGroup);
             filterCurrentGroup = buttonGroup;
-            this.classList.add('vFilterGroupOptionActive');
+            this.classList.add('vListFilterGroupOptionActive');
         } else {
             filterCurrentGroup = null;
         }
@@ -222,12 +223,15 @@ var verbsController = function () {
         // if the event has a target
         if(ev.target) {
             // if the target is part of a row
-            var wrap = getClosest(ev.target,'.js-vColWrap');
+            var wrap = getClosest(ev.target,'[data-verbClick]');
             if (wrap) {
+                wrap.classList.add('vListColWrapActive');
                 var index = wrap.getAttribute('data-index');
                 detailFill(index);
-                document.querySelector('[data-js-verbs]').classList.add('vContainer--active');
-                pageLockController.lockPage();
+                onAnimationFrame(function() {
+                    document.querySelector('[data-js-verbs]').classList.add('vStageActive');
+                    pageLockController.lockPage();
+                })
             }
 
         }
@@ -235,7 +239,10 @@ var verbsController = function () {
 
     var detailClose = function(ev) {
         ev.preventDefault();
-        document.querySelector('[data-js-verbs]').classList.remove('vContainer--active');
+        document.querySelectorAll('.vListColWrapActive').forEach(function filterGroupEach( el ){
+            el.classList.remove('vListColWrapActive');
+        })
+        document.querySelector('[data-js-verbs]').classList.remove('vStageActive');
         pageLockController.unLockPage();
     }
 

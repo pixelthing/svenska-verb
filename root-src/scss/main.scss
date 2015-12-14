@@ -2,7 +2,9 @@
 @import "_responsive.scss";
 @import "_scaffold.scss";
 @import "_fontIcon.scss";
-@import "_verbs.scss";
+@import "_v.scss";
+@import "_v-list.scss";
+@import "_v-detail.scss";
 
 @media (media: print) {
   @import "_print.scss";

@@ -5,18 +5,18 @@ var pageLockController = function () {
     // DETAIL
 
     var lockPage = function() {
-        modalOffset = document.body.scrollTop || document.documentElement.scrollTop;
-        document.querySelector('html').classList.add('modal');
-        document.querySelector('body').style.top = '-' + modalOffset + 'px';
-        document.querySelector('html').addEventListener('click', pageLockController.backgroundClick);
+        modalOffset = document.querySelector('[data-js-verbs-list]').scrollTop;
+        document.querySelector('[data-js-verbs-list]').classList.add('vListLocked');
+        document.querySelector('[data-js-verbs-list]').style.top = '-' + modalOffset + 'px';
+        //document.querySelector('html').addEventListener('click', pageLockController.backgroundClick);
     }
 
     var unLockPage = function() {
-        document.querySelector('html').classList.remove('modal');
-        document.body.scrollTop = modalOffset;
-        document.querySelector('body').style.top = 'auto';
+        document.querySelector('[data-js-verbs-list]').classList.remove('vListLocked');
+        document.querySelector('[data-js-verbs-list]').scrollTop = modalOffset;
+        document.querySelector('[data-js-verbs-list]').style.top = 'auto';
         modalOffset = null;
-        document.querySelector('html').addEventListener('click', pageLockController.backgroundClick);
+        //document.querySelector('html').addEventListener('click', pageLockController.backgroundClick);
     }
 
     // wehn pageLock is active, a background click (that isn't within the pageLock) will unlock the page and trigger the closure of any modals/menus
