@@ -108,7 +108,7 @@ body {
   display: flex;
   transition: transform 300ms;
   will-change: transform; }
-  .vStage--active {
+  .vStageActive {
     transform: translate3d(-50%, 0, 0); }
 .vScene {
   flex: 1;
@@ -321,7 +321,7 @@ body {
     overflow: hidden;
     transition: opacity 500ms;
     transition-delay: 500ms; }
-    .vListListEmpty--active {
+    .vListListEmptyActive {
       opacity: 1;
       max-height: 200px;
       transition-delay: 200ms; }
@@ -380,7 +380,7 @@ body {
     background: #fff;
     webkit-tap-highlight-color: transparent;
     transition: background-color 500ms; }
-    .vListColWrap:active {
+    .vListColWrapActive {
       background-color: #ffcc00;
       transition: background-color 0s; }
     .vListColWrap:before {
@@ -521,12 +521,13 @@ body {
     flex-direction: column;
     margin-top: 0.5rem;
     padding: 15px;
+    background-color: #ffcc00;
     overflow: auto; }
   .vDetailFokus {
     flex: 1;
     margin: 5px 0 5px;
     padding: 10px;
-    background: #eee; }
+    background: rgba(255, 255, 255, 0.3); }
     .vDetailFokusTitle {
       margin: 0 0 0.5em;
       color: #999;

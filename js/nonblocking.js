@@ -2174,8 +2174,8 @@ var verbsController = function () {
             });
 
         // set up events
-        document.querySelectorAll('[data-js-filter-group-option]').forEach(function verbInitButtonClick( button ){
-            button.addEventListener('click', filterGroup);
+        document.querySelectorAll('[data-js-filter-group-option]').forEach(function verbInitButtonClick( el ){
+            el.addEventListener('click', filterGroup);
         });
         document.querySelector('[data-js-filter-icon]').addEventListener('click', searchFocus);
         document.querySelector('[data-js-filter-input]').addEventListener('keyup', search);
@@ -2301,8 +2301,8 @@ var verbsController = function () {
         document.querySelector('[data-js-empty]').classList.remove('vListEmpty--active');
 
         // turn all group filter buttons off
-        document.querySelectorAll('[data-js-filter-group-option]').forEach(function filterGroupEach( button ){
-            button.classList.remove('vListFilterGroupOptionActive');
+        document.querySelectorAll('[data-js-filter-group-option]').forEach(function filterGroupEach( el ){
+            el.classList.remove('vListFilterGroupOptionActive');
         });
 
         // clear the overall control CSS
@@ -2342,10 +2342,11 @@ var verbsController = function () {
             // if the target is part of a row
             var wrap = getClosest(ev.target,'[data-verbClick]');
             if (wrap) {
+                wrap.classList.add('vListColWrapActive');
                 var index = wrap.getAttribute('data-index');
                 detailFill(index);
                 onAnimationFrame(function() {
-                    document.querySelector('[data-js-verbs]').classList.add('vStage--active');
+                    document.querySelector('[data-js-verbs]').classList.add('vStageActive');
                     pageLockController.lockPage();
                 })
             }
@@ -2355,7 +2356,10 @@ var verbsController = function () {
 
     var detailClose = function(ev) {
         ev.preventDefault();
-        document.querySelector('[data-js-verbs]').classList.remove('vStage--active');
+        document.querySelectorAll('.vListColWrapActive').forEach(function filterGroupEach( el ){
+            el.classList.remove('vListColWrapActive');
+        })
+        document.querySelector('[data-js-verbs]').classList.remove('vStageActive');
         pageLockController.unLockPage();
     }
 
