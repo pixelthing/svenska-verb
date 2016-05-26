@@ -1,6 +1,7 @@
 {
-  "short_name": "SfI Verb",
-  "name": "SfI Svenska Verb",
+  "short_name": "Svenska Verb",
+  "name": "Svenska Verb",
+  "start_url": "index.html",
   "icons": [
     {
       "src": "img/icon-2x.png",

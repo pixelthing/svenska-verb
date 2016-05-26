@@ -34,11 +34,17 @@ module.exports = function(grunt) {
         src: ['svenska.json'],
         dest: '<%= config.dev %>/'
       },
-      devJs: {
+      devSw: {
         expand: true,
-        cwd: 'node_modules/angular/',
-        src: ['*.map'],
-        dest: '<%= config.dev %>/js'
+        cwd: '<%= config.src %>/js/root/',
+        src: ['*.js'],
+        dest: '<%= config.dev %>/'
+      },
+      devSw2: {
+        expand: true,
+        cwd: 'node_modules/sw-toolbox/',
+        src: ['*.js'],
+        dest: '<%= config.dev %>/js/'
       },
       devAssets: {
         expand: true,
@@ -58,11 +64,17 @@ module.exports = function(grunt) {
         src: ['svenska.json'],
         dest: '<%= config.prod %>/'
       },
-      prodJs: {
+      prodSw: {
         expand: true,
-        cwd: 'node_modules/angular/',
-        src: ['*.map'],
-        dest: '<%= config.prod %>/js'
+        cwd: '<%= config.src %>/js/root/',
+        src: ['*.js'],
+        dest: '<%= config.prod %>/'
+      },
+      prodSw2: {
+        expand: true,
+        cwd: 'node_modules/sw-toolbox/',
+        src: ['*.js'],
+        dest: '<%= config.prod %>/js/'
       },
       prodAssets: {
         expand: true,
