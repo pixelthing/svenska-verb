@@ -14,6 +14,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#005B99">
+    <script>
+      // Don't force https when serving the website locally
+      if (!(window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
+          window.location.protocol = "https";
+    </script>
     <link rel="manifest" href="manifest.json">
     <link rel="icon"                             href="img/icon-tiny.png" type="image/png" >
     <link rel="icon"             sizes="192x192" href="img/icon-4x.png">
@@ -30,7 +35,6 @@
       ga('create', 'UA-78387641-1', 'auto');
       ga('send', 'pageview');
     </script>
-    
 </head>
 <body>
 
