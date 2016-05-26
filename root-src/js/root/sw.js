@@ -2,7 +2,7 @@
   'use strict';
 
   // Load the sw-toolbox library.
-  importScripts('/js/sw-toolbox.js');
+  importScripts('js/sw-toolbox.js');
   
   global.toolbox.options.debug = true;
   
@@ -10,12 +10,18 @@
   global.addEventListener('install', event => event.waitUntil(global.skipWaiting()));
   global.addEventListener('activate', event => event.waitUntil(global.clients.claim()));
   
-  toolbox.router.get('/(.*)', toolbox.fastest, {
+  toolbox.router.get('(.*)', toolbox.fastest, {
     cache: {
       name: 'svenskaVerb1',
       maxEntries: 10
     }
   });
-  toolbox.precache(['/index.html', '/css/main.css', '/js/blocking.js', '/js/nonblocking.js', '/svenska.json']);
+  toolbox.precache([
+    'index.html', 
+    'css/main.css', 
+    'js/blocking.js', 
+    'js/nonblocking.js', 
+    'svenska.json'
+  ]);
 
 })(self);
