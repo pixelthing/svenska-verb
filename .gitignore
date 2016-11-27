@@ -5,3 +5,4 @@ root-prod
 *.scssc
 npm-debug.log
 .grunt/grunt-gh-pages/gh-pages/src/
+.publish/

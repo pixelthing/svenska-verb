@@ -9,7 +9,7 @@ var verbsFactory = function () {
             verb.search      = verb.presens + ' ' + verb.preteritum + ' ' + verb.perfekt + ' ' + verb.infinitiv + ' ' + verb.trans.en;
             return verb;
         });
-    }
+    };
 
     var conjugatePresens = function(verb) {
         if (!verb.presens) {
@@ -25,7 +25,7 @@ var verbsFactory = function () {
             }
         }
         return verb.presens;
-    }
+    };
 
     var conjugatePreteritum = function(verb) {
         if (!verb.preteritum) {
@@ -45,7 +45,7 @@ var verbsFactory = function () {
             }
         }
         return verb.preteritum;
-    }
+    };
 
     var conjugatePerfekt = function(verb) {
         if (!verb.perfekt) {
@@ -63,11 +63,11 @@ var verbsFactory = function () {
             }
         }
         return verb.perfekt;
-    }
+    };
 
     var conjugateReflexive = function(verb) {
         return ( verb.reflexive ? ' sig' : '' );
-    }
+    };
 
     var getData = function() {
 
@@ -86,7 +86,7 @@ var verbsFactory = function () {
             });
         });
 
-    }
+    };
 
     return {
         getData : getData

@@ -21,7 +21,7 @@ function attachArrayMethodsToNodeList(methodName)
   if(methodName !== "length") {
     NodeList.prototype[methodName] = Array.prototype[methodName];
   }
-};
+}
 
 // ajax
 // http://www.html5rocks.com/en/tutorials/es6/promises/
@@ -109,11 +109,11 @@ onAnimationFrame = function(callback) {
     if (typeof window.requestAnimationFrame === 'function') {
         requestAnimationFrame(function onAnimationFrameRequestRoute() {
             callback();
-        })
+        });
     } else {
         setTimeout(function webfontUpdateMenuTimeoutRoute () {
             callback();
         },300);
     }
 
-}
+};
