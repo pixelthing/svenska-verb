@@ -24,7 +24,7 @@ var options = {
   production: false,
   devServer: {
     port: 8000,
-    ui: 8000,
+    ui: 3001,
     weinre: 9092
   },
   autoprefixer: {
