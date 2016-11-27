@@ -27,6 +27,7 @@
     "gulp-sourcemaps": "^1.9.1",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
+    "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
     "npm": "^4.0.2",
     "postcss": "^5.0.4",
