@@ -75,7 +75,7 @@ gulp.task('copy', function() {
     .src([ 
       'src/views/data/*.json', 
       'src/js/root/*.js',
-      'src/views/views/pages/manifest.json',
+      'src/views/pages/manifest.json',
     ]).pipe(gulp.dest('dist/'));
   gulp
     .src([ 
