@@ -1828,7 +1828,7 @@ function attachArrayMethodsToNodeList(methodName)
   if(methodName !== "length") {
     NodeList.prototype[methodName] = Array.prototype[methodName];
   }
-};
+}
 
 // ajax
 // http://www.html5rocks.com/en/tutorials/es6/promises/
@@ -1916,14 +1916,14 @@ onAnimationFrame = function(callback) {
     if (typeof window.requestAnimationFrame === 'function') {
         requestAnimationFrame(function onAnimationFrameRequestRoute() {
             callback();
-        })
+        });
     } else {
         setTimeout(function webfontUpdateMenuTimeoutRoute () {
             callback();
         },300);
     }
 
-}
+};
 var pageLockController = function () {
 
     var modalOffset = null;
@@ -1935,7 +1935,7 @@ var pageLockController = function () {
         document.querySelector('[data-js-verbs-list]').classList.add('vListLocked');
         document.querySelector('[data-js-verbs-list]').style.top = '-' + modalOffset + 'px';
         //document.querySelector('html').addEventListener('click', pageLockController.backgroundClick);
-    }
+    };
 
     var unLockPage = function() {
         document.querySelector('[data-js-verbs-list]').classList.remove('vListLocked');
@@ -1943,24 +1943,24 @@ var pageLockController = function () {
         document.querySelector('[data-js-verbs-list]').style.top = 'auto';
         modalOffset = null;
         //document.querySelector('html').addEventListener('click', pageLockController.backgroundClick);
-    }
+    };
 
     // wehn pageLock is active, a background click (that isn't within the pageLock) will unlock the page and trigger the closure of any modals/menus
     var backgroundClick = function(ev) {
-        console.log('1111')
+        //console.log('1111')
         //var $this = $(ev.target);
         //if ($this.is('[data-js-pageLock-el]') || $this.closest('[data-js-pageLock-el]').length > 0) {
         //    return;
         //}
         //pageLockController.unLockPage();
-    }
+    };
 
     // CLOSURE
 
     return {
         lockPage: lockPage,
         unLockPage: unLockPage
-    }
+    };
 
 }();
 var verbsFactory = function () {
@@ -1974,7 +1974,7 @@ var verbsFactory = function () {
             verb.search      = verb.presens + ' ' + verb.preteritum + ' ' + verb.perfekt + ' ' + verb.infinitiv + ' ' + verb.trans.en;
             return verb;
         });
-    }
+    };
 
     var conjugatePresens = function(verb) {
         if (!verb.presens) {
@@ -1990,7 +1990,7 @@ var verbsFactory = function () {
             }
         }
         return verb.presens;
-    }
+    };
 
     var conjugatePreteritum = function(verb) {
         if (!verb.preteritum) {
@@ -2010,7 +2010,7 @@ var verbsFactory = function () {
             }
         }
         return verb.preteritum;
-    }
+    };
 
     var conjugatePerfekt = function(verb) {
         if (!verb.perfekt) {
@@ -2028,11 +2028,11 @@ var verbsFactory = function () {
             }
         }
         return verb.perfekt;
-    }
+    };
 
     var conjugateReflexive = function(verb) {
         return ( verb.reflexive ? ' sig' : '' );
-    }
+    };
 
     var getData = function() {
 
@@ -2051,7 +2051,7 @@ var verbsFactory = function () {
             });
         });
 
-    }
+    };
 
     return {
         getData : getData
@@ -2113,7 +2113,6 @@ var verbsController = function () {
     var verbsOriginal = [];
     var verbsFiltered = [];
     var verbsCount = 0;
-    var verbsFiltered = [];
     var filterCurrentGroup = null;
     var filterCurrentSearch = null;
     var filterCurrentGroupButton = null;
@@ -2175,7 +2174,7 @@ var verbsController = function () {
         document.querySelector('[data-js-target]').addEventListener('click', detailOpen);
         document.querySelector('[data-js-detail-close]').addEventListener('click', detailClose);
         document.querySelector('[data-js-empty-click]').addEventListener('click', searchClear);
-    }
+    };
 
     // PRINT
 
@@ -2207,7 +2206,7 @@ var verbsController = function () {
                 document.querySelector('[data-js-empty]').classList.add('vListEmpty--active');
             });
         }
-    }
+    };
 
     // SEARCH/FILTER
 
@@ -2224,11 +2223,11 @@ var verbsController = function () {
         searchTimeout = setTimeout(function searchTimeout() {
             searchSubmit();
         },100);
-    }
+    };
 
     var searchFocus = function() {
         document.querySelector('[data-js-filter-input]').focus();
-    }
+    };
 
     var searchSubmit = function() {
         scroll(0,0);
@@ -2253,7 +2252,7 @@ var verbsController = function () {
         verbsFiltered = verbsFilter(verbsOriginal,filterCurrentSearch);
         verbsPrint(verbsFiltered);
         searchTimeout = null;
-    }
+    };
 
     var searchClear = function() {
         var input = document.querySelector('[data-js-filter-input]');
@@ -2277,15 +2276,14 @@ var verbsController = function () {
             verbsPrint(verbsFiltered);
             document.querySelector('[data-js-empty]').classList.remove('vListEmpty--active');
         });
-    }
+    };
 
     var searchLoading = function() {
-        return
-        scroll(0,0);
-    }
+        return scroll(0,0);
+    };
 
 
-    var searchLoaded = function() {}
+    var searchLoaded = function() {};
 
     var filterGroup = function() {
         scroll(0,0);
@@ -2315,7 +2313,7 @@ var verbsController = function () {
                 document.querySelector('[data-js-empty]').classList.add('vListEmpty--active');
             });
         }
-    }
+    };
 
     var filterClear = function(ev) {
         ev.preventDefault();
@@ -2323,7 +2321,7 @@ var verbsController = function () {
         $scope.filterCurrentGroupButton = null;
         $scope.filterCurrentGroup = null;
         $scope.filterInputButton = null;
-    }
+    };
 
     // DETAIL
 
@@ -2340,34 +2338,34 @@ var verbsController = function () {
                 onAnimationFrame(function() {
                     document.querySelector('[data-js-verbs]').classList.add('vStageActive');
                     pageLockController.lockPage();
-                })
+                });
             }
 
         }
-    }
+    };
 
     var detailClose = function(ev) {
         ev.preventDefault();
         document.querySelectorAll('.vListColWrapActive').forEach(function filterGroupEach( el ){
             el.classList.remove('vListColWrapActive');
-        })
+        });
         document.querySelector('[data-js-verbs]').classList.remove('vStageActive');
         pageLockController.unLockPage();
-    }
+    };
 
 
     var detailFill = function(index) {
         index = parseInt(index);
         var verbData = verbsFiltered[index];
         document.querySelectorAll('[data-js-detail-infinitiv]').map(function detailFillMap1(obj) {obj.innerHTML = verbData.infinitiv;});
-        document.querySelectorAll('[data-js-detail-translation]').map(function detailFillMap2(obj) {obj.innerHTML = verbData.trans['en'];});
+        document.querySelectorAll('[data-js-detail-translation]').map(function detailFillMap2(obj) {obj.innerHTML = verbData.trans.en;});
         document.querySelectorAll('[data-js-detail-presens]').map(function detailFillMap3(obj) {obj.innerHTML = verbData.presens;});
         document.querySelectorAll('[data-js-detail-preterium]').map(function detailFillMap4(obj) {obj.innerHTML = verbData.preteritum;});
         document.querySelectorAll('[data-js-detail-perfekt]').map(function detailFillMap5(obj) {obj.innerHTML = verbData.perfekt;});
         document.querySelector('[data-js-detail-title-group]').setAttribute('class','vDetailTitleGrp');
         document.querySelector('[data-js-detail-title-group]').classList.add('vDetailTitleGrp' + verbData.group);
         document.querySelector('[data-js-detail-title-group]').innerHTML = verbData.group;
-    }
+    };
 
     // TOUCH SLIDE
 
@@ -2421,11 +2419,11 @@ var verbsController = function () {
 
     ready(function verbReady(){
         init();
-    })
+    });
 
     return {
         searchSubmit: searchSubmit,
         searchClear: searchClear
-    }
+    };
 
 }();
