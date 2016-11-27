@@ -17,7 +17,7 @@
     <script>
       // when running in local dev, use the proper hostname
       if (["0.0.0.0", "127.0.0.1"].indexOf(window.location.host.split(':')[0]) >= 0) {
-        alert('while running locally, you need to use "localhost" to run SW');
+        alert('while running locally, you need to use "localhost" to run SW, and limit browsersync to just code refreshes.');
       // if on production, force to https
       } else if (!(window.location.host.startsWith("localhost")) && (window.location.protocol != "https:")) {
         window.location.protocol = "https";
