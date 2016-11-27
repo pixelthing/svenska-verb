@@ -62,6 +62,7 @@ gulp.task('build', function(done) {
  * cleans dist folder then builds the website to the dist folder
  */
 gulp.task('deploy', function() {
+  options.production = true;
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
 });
