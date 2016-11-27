@@ -43,9 +43,10 @@ function errorHandler(err) {
  */
 gulp.task('default', function() {
   runSequence('build', 'serve');
-  gulp.watch(['src/views/**/*.mustache', 'src/views/**/*.json'], ['templates', reload]);
+  gulp.watch(['src/views/**/*.mustache'], ['templates', reload]);
   gulp.watch(['src/**/*.scss'], ['styles', reload]);
-  gulp.watch(['src/**/*.js'], ['jshint']); // note: we use watchify for the js
+  gulp.watch(['src/**/*.js'], ['scriptsNon','scriptsBlocking', reload]); 
+  gulp.watch(['src/views/data/*.json','src/js/root/*.js','src/views/pages/manifest.json','src/img/*'], ['copy', reload]);
 });
 
 /**
@@ -67,7 +68,6 @@ gulp.task('deploy', function() {
 
 /**
  * Task: copy
- * 
  */
 gulp.task('copy', function() {
   
