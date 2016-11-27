@@ -15,9 +15,13 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#005B99">
     <script>
-      // Don't force https when serving the website locally
-      if (!(window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
-          window.location.protocol = "https";
+      // when running in local dev, use the proper hostname
+      if (["0.0.0.0", "127.0.0.1"].indexOf(window.location.host.split(':')[0]) >= 0) {
+        alert('while running locally, you need to use "localhost" to run SW');
+      // if on production, force to https
+      } else if (!(window.location.host.startsWith("localhost")) && (window.location.protocol != "https:")) {
+        window.location.protocol = "https";
+      }
     </script>
     <link rel="manifest" href="manifest.json">
     <link rel="icon"                             href="img/icon-tiny.png" type="image/png" >
