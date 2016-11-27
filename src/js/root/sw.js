@@ -19,8 +19,8 @@
   toolbox.precache([
     'index.html', 
     'css/main.css', 
-    'js/blocking.js', 
-    'js/nonblocking.js', 
+    'js/blocking.min.js', 
+    'js/nonblocking.min.js', 
     'svenska.json'
   ]);
 
