@@ -23,7 +23,7 @@ const ghPages       = require('gulp-gh-pages');
 var options = {
   production: false,
   devServer: {
-    port: 8443,
+    port: 8000,
     ui: 8000,
     weinre: 9092
   },
@@ -43,7 +43,7 @@ function errorHandler(err) {
  */
 gulp.task('default', function() {
   runSequence('build', 'serve');
-  gulp.watch(['src/views/**/*.hbs', 'src/views/**/*.json'], ['templates', reload]);
+  gulp.watch(['src/views/**/*.mustache', 'src/views/**/*.json'], ['templates', reload]);
   gulp.watch(['src/**/*.scss'], ['styles', reload]);
   gulp.watch(['src/**/*.js'], ['jshint']); // note: we use watchify for the js
 });
@@ -97,7 +97,6 @@ gulp.task('copy', function() {
 gulp.task('serve', function() {
   browserSync({
     port: options.devServer.port,
-    https: true,
     open: false,
     server: ['./dist'],
     ui: {
