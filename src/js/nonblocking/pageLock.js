@@ -1,20 +1,24 @@
 var pageLockController = function () {
 
   var modalOffset = null;
+  var verbsList = document.querySelector('[data-js-verbs-list]');
 
   // DETAIL
 
   var lockPage = function() {
-    modalOffset = document.querySelector('[data-js-verbs-list]').scrollTop;
-    document.querySelector('[data-js-verbs-list]').classList.add('vListLocked');
-    document.querySelector('[data-js-verbs-list]').style.top = '-' + modalOffset + 'px';
+    var viewportWidth = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+    if (viewportWidth < 768) {
+      modalOffset = verbsList.scrollTop;
+      verbsList.classList.add('vListLocked');
+      verbsList.style.top = '-' + modalOffset + 'px';
+    }
     //document.querySelector('html').addEventListener('click', pageLockController.backgroundClick);
   };
 
   var unLockPage = function() {
-    document.querySelector('[data-js-verbs-list]').classList.remove('vListLocked');
-    document.querySelector('[data-js-verbs-list]').scrollTop = modalOffset;
-    document.querySelector('[data-js-verbs-list]').style.top = 'auto';
+    verbsList.classList.remove('vListLocked');
+    verbsList.scrollTop = modalOffset;
+    verbsList.style.top = 'auto';
     modalOffset = null;
     //document.querySelector('html').addEventListener('click', pageLockController.backgroundClick);
   };
