@@ -13,3 +13,22 @@ $color-footer-fore:#D6D5E8;
 $color-footer-back:#818593;
 
 $border-radius:    4px;
+
+// MEDIA QUERY STANDARD BREAKPOINTS - don't let them limit you - use the content as a guide to were breakpoints should be, but these give some consistency to the build/maintainance of the project. The breakpoints are sort of based on the bootstrap ones:
+// xxs - mobile sized (mostly in the 320-400px range)
+// xs  - small tablet vertical (7" tablets mostly around 600px, too often ignored and difficult enough to design for sometimes as the size is niether fish nor foul)
+// sm - big tablet vertical (lets be honest - there's one that we're aiming for)
+// md - big tablet horizontal, small desktop (in the 1024px range)
+// lg - big desktop (1200px+)
+
+// CONFIG
+
+$screen-xs-min:              600px;
+$screen-sm-min:              768px;
+$screen-md-min:              992px;
+$screen-lg-min:              1200px;
+
+$screen-xxs-max:             ($screen-xs-min - 1);
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
