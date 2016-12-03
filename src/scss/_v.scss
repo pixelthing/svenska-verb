@@ -9,7 +9,7 @@
     }
     &Ribbon {
         position: fixed;
-        height: 0.5em;
+        height: 8px;
         left: 0;
         right: 0;
         z-index: 4;
@@ -31,12 +31,19 @@
     }
     &Stage {
         width: 200%;
-        height: 100%;
+        height: calc(100vh - 8px);
+        margin-top: 8px;
         display: flex;
         transition: transform 300ms;
         will-change: transform;
         &Active {
             transform: translate3d(-50%,0,0);
+        }
+        @media (min-width:$screen-sm-min) {
+          width: 100%;
+          &Active {
+              transform: none;
+          }
         }
     }
     &Scene {
@@ -47,6 +54,9 @@
         height: 100%;
         flex-direction: column;
         justify-content: space-between;
+        @media (min-width:$screen-sm-min) {
+          width: 100%;
+        }
     }
 
     &Footer {

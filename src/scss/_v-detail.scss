@@ -1,9 +1,9 @@
 .vDetail {
     font-size: 18px;
-    @include respond-to(sm-min) {
+    @media (min-width: $screen-sm-min) {
         font-size: 18px;
     }
-    @include respond-to(md-min) {
+    @media (min-width: $screen-md-min) {
         font-size: 22px;
     }
     &Title {
@@ -18,13 +18,16 @@
         font-size: 24px;
         line-height: 1.1;
         box-shadow: 0 -1px 5px rgba(0,0,0,0.2);
+        @media (min-width:$screen-sm-min) {
+          order: 1;
+        }
         .android &,
         .winMob & {
             color: #fff;
             background-color: #000;
             box-shadow: none;
         }
-        @include respond-to(md-min) {
+        @media (min-width: $screen-md-min) {
             padding: 15px 2em 12px 2.5em
         }
         &Inner {
@@ -48,7 +51,7 @@
             font-weight: 300;
             text-align: center;
             line-height: 1.8em;
-            @include respond-to(md-min) {
+            @media (min-width: $screen-md-min) {
                 top: 12px;
             }
             &1 {
@@ -87,12 +90,19 @@
     }
     &Body {
         flex: 1;
+        order: 1;
         display: flex;
         flex-direction: column;
-        margin-top: 0.5rem;
         padding: 15px;
         background-color: $color-flag-yellow;
         overflow: auto;
+        @media (orientation: landscape) {
+          flex-direction: row;
+        }
+        @media (min-width:$screen-sm-min) {
+          order: 2;
+          flex-direction: column;
+        }
     }
     &Fokus {
         flex: 1;
@@ -102,20 +112,23 @@
         &Title {
             margin: 0 0 0.5em;
             color: #999;
-            font-size: 12px;
+            font-size: 0.6rem;
             text-transform: uppercase;
-            text-align: right;
             -webkit-text-size-adjust:none;
-            @include respond-to(sm-min) {
+            @media (min-width: $screen-sm-min) {
                 margin: 0 0 15px;
             }
         }
         &Sub {
-            margin: 0 0 1em;
-            @include respond-to-min(568px) {
-                display: inline-block;
+            margin: 0 0 0.7rem;
+            &:last-child {
+              margin-bottom: 0;
+            }
+            @media (min-width: $screen-sm-min) {
+                margin: 0 0 1.5rem;
+            }
+            @media (min-width: 568px) {
                 vertical-align: top;
-                width: 30%;
                 margin-left: 2%;
                 &:first-child {
                     margin-left: 0;
@@ -123,15 +136,15 @@
             }
             &Title {
                 color: #fff;
-                font-size: 12px;
+                font-size: 1rem;
                 font-weight: 700;
                 text-transform: uppercase;
             }
             &Example {
                 margin: 0;
-                font-size: 1.1em;
-                @include respond-to-min(568px) {
-                    font-size: 0.9em;
+                font-size: 1.1rem;
+                @media (min-width: 568px) {
+                    font-size: 1.5rem;
                 }
             }
         }

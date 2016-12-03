@@ -218,6 +218,11 @@ var verbsController = function () {
 
   var detailOpen = function(ev) {
     ev.preventDefault();
+    // kill any current active rows
+    var existingActive = document.querySelector('.vListColWrapActive');
+    if (existingActive) {
+      existingActive.classList.remove('vListColWrapActive');
+    }
     // if the event has a target
     if(ev.target) {
       // if the target is part of a row
