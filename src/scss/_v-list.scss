@@ -1,432 +1,434 @@
 .vList {
-    &Key {
-        order: 1;
-        height: 1.3rem;
-        color: #666;
-        background-color: #eee;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 0;
-        white-space: nowrap;
-        @media (min-width:$screen-sm-min) {
-          order: 2;
-        }
-        &>span {
-            z-index: 3;
-            padding-top: 0;
-            padding-bottom: 0;
-            font-size: 0.7rem;
-        }
+  &Key {
+    order: 1;
+    height: 1.3rem;
+    color: #666;
+    background-color: #eee;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0;
+    white-space: nowrap;
+    @media (min-width:$screen-sm-min) {
+      order: 2;
     }
-    &Filter {
-        order: 99;
-        z-index: 1;
+    &>span {
+      z-index: 3;
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: 0.7rem;
+    }
+  }
+  &Filter {
+    order: 99;
+    z-index: 1;
+    color: #000;
+    background: #fff;
+    height: 4rem;
+    padding: 14px 10px;
+    font-size: 0;
+    box-shadow: 0 -1px 5px rgba(0,0,0,0.2);
+    @media (min-width:$screen-sm-min) {
+      order: 2;
+      padding-right: 0;
+    }
+    .android &,
+    .winMob & {
+      color: #fff;
+      background-color: #000;
+      box-shadow: none;
+    }
+    &Form {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      width: 47%;
+      height: 100%;
+      font-size: 1rem;
+    }
+    &Input {
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: transparent;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0 0.5em 0 1.5em;
+      border: 1px solid #ddd;
+      color: #000;
+      //border-radius: $border-radius;
+      font-family: $font;
+      font-size: 1em;
+      line-height: 2.1em;
+      outline: none;
+      transition: all 500ms;
+      transform: scale3d(1,1,1);
+      &:focus {
+        border-color: $color-flag-yellow;
+      }
+      .vListFilterFormActive & {
+        border-color: $color-flag-yellow;
+        background: $color-flag-yellow;
         color: #000;
-        background: #fff;
-        height: 4rem;
-        padding: 14px 10px;
-        font-size: 0;
-        box-shadow: 0 -1px 5px rgba(0,0,0,0.2);
-        @media (min-width:$screen-sm-min) {
-          order: 2;
+      }
+      &Icon {
+        position: absolute;
+        left: 0.1em;
+        top: 50%;
+        z-index: 1;
+        margin-top: -0.5em;
+        color: #ccc;
+        font-size: 1.5em;
+        transition: all 500ms;
+        .vListFilterFormActive & {
+          color: darken($color-flag-yellow,20%);
         }
-        .android &,
-        .winMob & {
-            color: #fff;
-            background-color: #000;
-            box-shadow: none;
-        }
-        &Form {
-            display: inline-block;
-            vertical-align: middle;
-            position: relative;
-            width: 47%;
-            height: 100%;
-            font-size: 1rem;
-        }
-        &Input {
-            -webkit-appearance: none;
-            -webkit-tap-highlight-color: transparent;
-            display: block;
-            width: 100%;
-            height: 100%;
-            padding: 0 0.5em 0 1.5em;
-            border: 1px solid #ddd;
-            color: #000;
-            //border-radius: $border-radius;
-            font-family: $font;
-            font-size: 1em;
-            line-height: 2.1em;
-            outline: none;
-            transition: all 500ms;
-            transform: scale3d(1,1,1);
-            &:focus {
-                border-color: $color-flag-yellow;
-            }
-            .vListFilterFormActive & {
-                border-color: $color-flag-yellow;
-                background: $color-flag-yellow;
-                color: #000;
-            }
-            &Icon {
-                position: absolute;
-                left: 0.1em;
-                top: 50%;
-                z-index: 1;
-                margin-top: -0.5em;
-                color: #ccc;
-                font-size: 1.5em;
-                transition: all 500ms;
-                .vListFilterFormActive & {
-                    color: darken($color-flag-yellow,20%);
-                }
-            }
-            &Clear {
-                -webkit-tap-highlight-color: transparent;
-                position: absolute;
-                right: 0;
-                top: 50%;
-                z-index: 1;
-                width: 2em;
-                height: 2em;
-                margin-top: -1em;
-                cursor: pointer;
-                opacity: 0;
-                transform: rotate(0deg);
-                transition: all 500ms;
-                &Button {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    width: 1.2em;
-                    height: 1.2em;
-                    margin: -0.6em 0 0 -0.6em;
-                    line-height: 1.1;
-                    text-align: center;
-                    color: #fff;
-                    background-color: darken($color-flag-yellow,20%);
-                    border: 1px solid darken($color-flag-yellow,20%);
-                    border-radius: 100%;
-                }
-                .vListFilterFormActive & {
-                    opacity: 1;
-                    transform: rotate(-720deg);
-                }
-            }
-            &::-webkit-search-cancel-button {
-                display: none !important;
-            }
-            &::-ms-clear {
-                display: none !important;
-            }
-        }
-        &FocusTarget {
-            width: 0;
-            height: 0;
-            overflow: hidden;
-        }
-        &Group {
-            display: inline-block;
-            vertical-align: middle;
-            width: 50%;
-            height: 100%;
-            margin-left: 3%;
-            background: #fff;
-            //border-radius: 4px;
-            font-size: 1rem;
-            overflow: hidden;
-              
-            &Option {
-                -webkit-tap-highlight-color: transparent;
-                appearance: none;
-                display: block;
-                float: left;
-                position: relative;
-                width: 20%;
-                height: 100%;
-                margin: 0;
-                padding: 1px;
-                color: #fff;
-                background-color: #999;
-                border: none;
-                font-family: $font;
-                font-size: 0.72em;
-                line-height: 2.9em;
-                opacity: 0.3;
-                outline: none;
-                cursor: pointer;
-                transition: opacity 300ms;
-                &:before {
-                    content: '\e601';
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    width: 1.2em;
-                    height: 1.15em;
-                    margin: -0.6em 0 0 -0.6em;
-                    text-align: center;
-                    opacity: 0;
-                    font-family: icons;
-                    font-size: 1.33em;
-                    line-height: 1;
-                    border: 1px solid #fff;
-                    border-radius: 1em;
-                    -webkit-font-smoothing: antialiased;
-                    -moz-osx-font-smoothing: grayscale;
-                    transform: rotate(-720deg);
-                    transition: all 500ms;
-                }
-                //&:first-child {
-                //    border-top-left-radius: $border-radius;
-                //    border-bottom-left-radius: $border-radius;
-                //}
-                //&:last-child {
-                //    border-top-right-radius: $border-radius;
-                //    border-bottom-right-radius: $border-radius;
-                //}
-                &1 {
-                    background-color:  $color-group1;
-                }
-                &2a {
-                    background-color:  $color-group2a;
-                }
-                &2b {
-                    background-color:  $color-group2b;
-                }
-                &3 {
-                    background-color:  $color-group3;
-                }
-                &4 {
-                    background-color:  $color-group4;
-                }
-                span {
-                    display: block;
-                    opacity: 1;
-                    transform: rotate(0);
-                    transition: all 300ms;
-                }
-                &Active {
-                    opacity: 1;
-                    &:before {
-                        color: #fff;
-                        opacity: 1;
-                        transform: rotate(0);
-                    }
-                    span {
-                        opacity: 0;
-                        transform: rotate(720deg);
-                    }
-                }
-            }
-        }
-    }
-    &List {
-        flex: 1;
-        order: 2;
-        position: relative;
-        padding: 0;
-        background-color: #fff;
-        border-top: 1px solid #eee;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-        @media (min-width:$screen-sm-min) {
-          order: 3;
-        }
-        &>div {
-                transform: scale3d(1,1,1);
-        }
-        &Empty {
-            opacity: 0;
-            max-height: 0;
-            width: 15em;
-            margin: 0 auto;
-            padding: 10px;
-            color: $color-group2a;
-            border-radius: $border-radius;
-            text-align: center; 
-            overflow: hidden;
-            transition: opacity 500ms;
-            transition-delay: 500ms;
-            &Active {
-                opacity: 1;
-                max-height: 200px;
-                transition-delay: 200ms;
-            }
-            &Button {
-                -webkit-appearance: none;
-                margin: 5px 0 0;
-                padding: 1em 2em;
-                color: #fff;
-                background-color: $color-group3;
-                border: none;
-                border-radius: $border-radius;
-                font-size: 0.8em;
-                text-transform: uppercase;
-            }
-        }
-        &Count {
-            margin: 1em;
-            text-align: center;
-            font-weight: bold;
-            color: #999;
-        }
-    }
-    &Row {
-        position: relative;
-        clear: both;
-        white-space: nowrap;
-        overflow: hidden;
-        font-size: 0;
-        line-height: 0;
+      }
+      &Clear {
+        -webkit-tap-highlight-color: transparent;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        z-index: 1;
+        width: 2em;
+        height: 2em;
+        margin-top: -1em;
         cursor: pointer;
+        opacity: 0;
+        transform: rotate(0deg);
+        transition: all 500ms;
+        &Button {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 1.2em;
+          height: 1.2em;
+          margin: -0.6em 0 0 -0.6em;
+          line-height: 1.1;
+          text-align: center;
+          color: #fff;
+          background-color: darken($color-flag-yellow,20%);
+          border: 1px solid darken($color-flag-yellow,20%);
+          border-radius: 100%;
+        }
+        .vListFilterFormActive & {
+          opacity: 1;
+          transform: rotate(-720deg);
+        }
+      }
+      &::-webkit-search-cancel-button {
+        display: none !important;
+      }
+      &::-ms-clear {
+        display: none !important;
+      }
+    }
+    &FocusTarget {
+      width: 0;
+      height: 0;
+      overflow: hidden;
     }
     &Group {
+      display: inline-block;
+      vertical-align: middle;
+      width: 50%;
+      height: 100%;
+      margin-left: 3%;
+      background: #fff;
+      //border-radius: 4px;
+      font-size: 1rem;
+      overflow: hidden;
+        
+      &Option {
+        -webkit-tap-highlight-color: transparent;
+        appearance: none;
+        display: block;
+        float: left;
+        position: relative;
+        width: 20%;
+        height: 100%;
+        margin: 0;
+        padding: 1px;
+        color: #fff;
+        background-color: #999;
+        border: none;
+        font-family: $font;
+        font-size: 0.72em;
+        line-height: 2.9em;
+        opacity: 0.3;
+        outline: none;
+        cursor: pointer;
+        transition: opacity 300ms;
+        &:before {
+          content: '\e601';
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 1.2em;
+          height: 1.15em;
+          margin: -0.6em 0 0 -0.6em;
+          text-align: center;
+          opacity: 0;
+          font-family: icons;
+          font-size: 1.33em;
+          line-height: 1;
+          border: 1px solid #fff;
+          border-radius: 1em;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          transform: rotate(-720deg);
+          transition: all 500ms;
+        }
+        //&:first-child {
+        //  border-top-left-radius: $border-radius;
+        //  border-bottom-left-radius: $border-radius;
+        //}
+        //&:last-child {
+        //  border-top-right-radius: $border-radius;
+        //  border-bottom-right-radius: $border-radius;
+        //}
         &1 {
-            .vListContainer--group2a &,
-            .vListContainer--group2b &,
-            .vListContainer--group3 &,
-            .vListContainer--group4 & {
-                display: none;
-            }
+          background-color:  $color-group1;
         }
         &2a {
-            .vListContainer--group1 &,
-            .vListContainer--group2b &,
-            .vListContainer--group3 &,
-            .vListContainer--group4 & {
-                display: none;
-            }
+          background-color:  $color-group2a;
         }
         &2b {
-            .vListContainer--group1 &,
-            .vListContainer--group2a &,
-            .vListContainer--group3 &,
-            .vListContainer--group4 & {
-                display: none;
-            }
+          background-color:  $color-group2b;
         }
         &3 {
-            .vListContainer--group1 &,
-            .vListContainer--group2a &,
-            .vListContainer--group2b &,
-            .vListContainer--group4 & {
-                display: none;
-            }
+          background-color:  $color-group3;
         }
         &4 {
-            .vListContainer--group1 &,
-            .vListContainer--group2a &,
-            .vListContainer--group2b &,
-            .vListContainer--group3 & {
-                display: none;
-            }
+          background-color:  $color-group4;
         }
-    }
-    &Col {
-        display: inline-block;
-        width: 24%;
-        margin: 0;
-        padding: .3em 0 0.3em.3em;
-        overflow: hidden;
-        font-size: 1rem;
-        line-height: 2;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        &Wrap {
-            position: relative;
-            z-index: 2;
-            //transform: translate3d(0,0,0);
-            background-color: #fff;
-            webkit-tap-highlight-color: rgba(0,0,0,0);
-            outline: 0;
-            transition: background-color 200ms;
-            transition-delay: 100ms;
-            @media(pointer: 'fine') {
-              &:hover {
-                background-color: #eee;
-                transition: background-color 50ms;
-                transition-delay: 0s;
-              }
-            }
-            &Active,
-            &Active:hover {
-                background-color: $color-flag-yellow;
-                transition: background-color 50ms;
-                transition-delay: 0s;
-            }
-            &:before {
-                content: attr(data-verbGroup);
-                position: absolute;
-                left: 0.25em;
-                top: 53%;
-                z-index: 1;
-                width: 6px;
-                margin-top: -0.5em;
-                color: #fff !important;
-                font-size: 0.5em;
-                line-height: 1;
-                text-align: center;
-                .vGroup2a &,.vGroup2b & {
-                    margin-top: -1em;
-                    border-color:  $color-group2a;
-                    color:         $color-group2a;
-                    word-break: break-word;
-                    white-space: pre-wrap;
-                }
-            }
+        span {
+          display: block;
+          opacity: 1;
+          transform: rotate(0);
+          transition: all 300ms;
         }
-        &Trans {
-            display: none;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: auto;
-            z-index: 1;
+        &Active {
+          opacity: 1;
+          &:before {
             color: #fff;
-            font-weight: bold;
-            text-transform: uppercase;
-            .vListGroup1 & {
-                background-color:  $color-group1;
-            }
-            .vListGroup2a & {
-                background-color:  $color-group2a;
-            }
-            .vListGroup2b & {
-                background-color:  $color-group2b;
-            }
-            .vListGroup3 & {
-                background-color:  $color-group3;
-            }
-            .vListGroup4 & {
-                background-color:  $color-group4;
-            }
+            opacity: 1;
+            transform: rotate(0);
+          }
+          span {
+            opacity: 0;
+            transform: rotate(720deg);
+          }
         }
-        &Infinitiv {
-            position: relative;
-            width: 28%;
-            border-left: 0.6rem solid #999;
-            font-weight: bold;
-            text-overflow: initial;
-            .vListHeader & {
-                border-left: none;
-            }
-            .vListGroup1 & {
-                border-color:  $color-group1;
-            }
-            .vListGroup2a & {
-                border-color:  $color-group2a;
-            }
-            .vListGroup2b & {
-                border-color:  $color-group2b;
-            }
-            .vListGroup3 & {
-                border-color:  $color-group3;
-            }
-            .vListGroup4 & {
-                border-color:  $color-group4;
-            }
-        }
+      }
     }
+  }
+  &List {
+    flex: 1;
+    order: 2;
+    position: relative;
+    padding: 0;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    @media (min-width:$screen-sm-min) {
+      order: 3;
+    }
+    &>div {
+        transform: scale3d(1,1,1);
+    }
+    &Empty {
+      opacity: 0;
+      max-height: 0;
+      width: 15em;
+      margin: 0 auto;
+      padding: 10px;
+      color: $color-group2a;
+      border-radius: $border-radius;
+      text-align: center; 
+      overflow: hidden;
+      transition: opacity 500ms;
+      transition-delay: 500ms;
+      &Active {
+        opacity: 1;
+        max-height: 200px;
+        transition-delay: 200ms;
+      }
+      &Button {
+        -webkit-appearance: none;
+        margin: 5px 0 0;
+        padding: 1em 2em;
+        color: #fff;
+        background-color: $color-group3;
+        border: none;
+        border-radius: $border-radius;
+        font-size: 0.8em;
+        text-transform: uppercase;
+      }
+    }
+    &Count {
+      margin: 1em;
+      text-align: center;
+      font-weight: bold;
+      color: #999;
+    }
+  }
+  &Row {
+    position: relative;
+    clear: both;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    cursor: pointer;
+  }
+  &Group {
+    &1 {
+      .vListContainer--group2a &,
+      .vListContainer--group2b &,
+      .vListContainer--group3 &,
+      .vListContainer--group4 & {
+        display: none;
+      }
+    }
+    &2a {
+      .vListContainer--group1 &,
+      .vListContainer--group2b &,
+      .vListContainer--group3 &,
+      .vListContainer--group4 & {
+        display: none;
+      }
+    }
+    &2b {
+      .vListContainer--group1 &,
+      .vListContainer--group2a &,
+      .vListContainer--group3 &,
+      .vListContainer--group4 & {
+        display: none;
+      }
+    }
+    &3 {
+      .vListContainer--group1 &,
+      .vListContainer--group2a &,
+      .vListContainer--group2b &,
+      .vListContainer--group4 & {
+        display: none;
+      }
+    }
+    &4 {
+      .vListContainer--group1 &,
+      .vListContainer--group2a &,
+      .vListContainer--group2b &,
+      .vListContainer--group3 & {
+        display: none;
+      }
+    }
+  }
+  &Col {
+    display: inline-block;
+    width: 24%;
+    margin: 0;
+    padding: .3em 0 0.3em.3em;
+    overflow: hidden;
+    font-size: 1rem;
+    line-height: 2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &Wrap {
+      position: relative;
+      z-index: 2;
+      //transform: translate3d(0,0,0);
+      background-color: #fff;
+      webkit-tap-highlight-color: rgba(0,0,0,0);
+      outline: 0;
+      transition: background-color 200ms;
+      transition-delay: 100ms;
+      @media(pointer: 'fine') {
+        &:hover {
+        background-color: #eee;
+        transition: background-color 50ms;
+        transition-delay: 0s;
+        }
+      }
+      &Active,
+      &Active:hover {
+        color: $color-active-fg;
+        background-color: $color-active-bg;
+        transition: background-color 50ms;
+        transition-delay: 0s;
+      }
+      &:before {
+        content: attr(data-verbGroup);
+        position: absolute;
+        left: 0.25em;
+        top: 53%;
+        z-index: 1;
+        width: 6px;
+        margin-top: -0.5em;
+        color: #fff !important;
+        font-size: 0.5em;
+        line-height: 1;
+        text-align: center;
+        .vGroup2a &,.vGroup2b & {
+          margin-top: -1em;
+          border-color:  $color-group2a;
+          color:     $color-group2a;
+          word-break: break-word;
+          white-space: pre-wrap;
+        }
+      }
+    }
+    &Trans {
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+      z-index: 1;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      .vListGroup1 & {
+        background-color:  $color-group1;
+      }
+      .vListGroup2a & {
+        background-color:  $color-group2a;
+      }
+      .vListGroup2b & {
+        background-color:  $color-group2b;
+      }
+      .vListGroup3 & {
+        background-color:  $color-group3;
+      }
+      .vListGroup4 & {
+        background-color:  $color-group4;
+      }
+    }
+    &Infinitiv {
+      position: relative;
+      width: 28%;
+      border-left: 0.6rem solid #999;
+      font-weight: bold;
+      text-overflow: initial;
+      .vListHeader & {
+        border-left: none;
+      }
+      .vListGroup1 & {
+        border-color:  $color-group1;
+      }
+      .vListGroup2a & {
+        border-color:  $color-group2a;
+      }
+      .vListGroup2b & {
+        border-color:  $color-group2b;
+      }
+      .vListGroup3 & {
+        border-color:  $color-group3;
+      }
+      .vListGroup4 & {
+        border-color:  $color-group4;
+      }
+    }
+  }
 }

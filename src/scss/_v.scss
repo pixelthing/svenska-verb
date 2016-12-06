@@ -1,72 +1,72 @@
 .v {
-    &ViewPort {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        overflow: none;
+  &ViewPort {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: none;
+  }
+  &Ribbon {
+    position: fixed;
+    height: 8px;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: $color-flag-blue;
+    font-size: 1rem;
+    transform: scale3d(1,1,1);
+    &:after {
+      content: '';
+      position: absolute;
+      left: 1.45em;
+      width: 1.45em;
+      top: 0;
+      bottom: 0;
+      background-color: $color-flag-yellow;
     }
-    &Ribbon {
-        position: fixed;
-        height: 8px;
-        left: 0;
-        right: 0;
-        z-index: 4;
-        margin: 0;
-        padding: 0;
-        color: #fff;
-        background-color: $color-flag-blue;
-        font-size: 1rem;
-        transform: scale3d(1,1,1);
-        &:after {
-            content: '';
-            position: absolute;
-            left: 1.45em;
-            width: 1.45em;
-            top: 0;
-            bottom: 0;
-            background-color: $color-flag-yellow;
-        }
+  }
+  &Stage {
+    width: 200%;
+    height: calc(100vh - 8px);
+    margin-top: 8px;
+    display: flex;
+    transition: transform 300ms;
+    will-change: transform;
+    &Active {
+      transform: translate3d(-50%,0,0);
     }
-    &Stage {
-        width: 200%;
-        height: calc(100vh - 8px);
-        margin-top: 8px;
-        display: flex;
-        transition: transform 300ms;
-        will-change: transform;
-        &Active {
-            transform: translate3d(-50%,0,0);
-        }
-        @media (min-width:$screen-sm-min) {
-          width: 100%;
-          &Active {
-              transform: none;
-          }
-        }
+    @media (min-width:$screen-sm-min) {
+      width: 100%;
+      &Active {
+        transform: none;
+      }
     }
-    &Scene {
-        flex: 1;
-        display: flex;
-        position: relative;
-        width: 50%;
-        height: 100%;
-        flex-direction: column;
-        justify-content: space-between;
-        @media (min-width:$screen-sm-min) {
-          width: 100%;
-        }
+  }
+  &Scene {
+    flex: 1;
+    display: flex;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width:$screen-sm-min) {
+      width: 100%;
     }
+  }
 
-    &Footer {
-        padding: 0.5em 2%;
-        padding: 0.5em 2vw;
-        color: $color-footer-fore;
-        background: $color-footer-back;
-        font-size: 12px;
-        a {
-            color: #fff;
-        }
+  &Footer {
+    padding: 0.5em 2%;
+    padding: 0.5em 2vw;
+    color: $color-footer-fore;
+    background: $color-footer-back;
+    font-size: 12px;
+    a {
+      color: #fff;
     }
+  }
 }

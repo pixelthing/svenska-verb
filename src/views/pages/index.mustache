@@ -2,153 +2,165 @@
 
 <div class="vViewPort">
 
-    <!-- HEADER -->
+  <!-- HEADER -->
 
-    <div class="vRibbon"></div>
-    <div class="vStage" data-js-verbs>
+  <div class="vRibbon"></div>
+  <div class="vStage" data-js-verbs>
 
-        <!-- LIST SCENE -->
+    <!-- LIST SCENE -->
 
-        <div class="vScene vList">
+    <div class="vScene vList">
 
-            <!-- LIST -->
-            <div class="vListFilter">
-                <form class="vListFilterForm" data-js-filter-form>
-                    <div class="vListFilterInputIcon icon icon-zoom" data-js-filter-icon></div>
-                    <input type="search" 
-                        class="vListFilterInput" 
-                        placeholder="sök" 
-                        autocomplete="off"
-                        autocorrect="off" 
-                        autocapitalize="off"
-                        data-js-filter-input/>
-                    <div class="vListFilterInputClear" data-js-filter-clear>
-                        <div class="vListFilterInputClearButton icon icon-cross"></div>
-                    </div>
-                </form>
-                <a href="javascript:void(0)" class="vListFilterFocusTarget" data-js-filter-focus></a>
-                <div class="vListFilterGroup">
-                    <button class="vListFilterGroupOption vListFilterGroupOption1"
-                        data-js-filter-group-option
-                        data-group="1"><span>1</span></button>
-                    <button class="vListFilterGroupOption vListFilterGroupOption2a"
-                        data-js-filter-group-option
-                        data-group="2a"><span>2a</span></button>
-                    <button class="vListFilterGroupOption vListFilterGroupOption2b"
-                        data-js-filter-group-option
-                        data-group="2b"><span>2b</span></button>
-                    <button class="vListFilterGroupOption vListFilterGroupOption3"
-                        data-js-filter-group-option
-                        data-group="3"><span>3</span></button>
-                    <button class="vListFilterGroupOption vListFilterGroupOption4"
-                        data-js-filter-group-option
-                        data-group="4"><span>4</span></button>
-                </div>
-            </div>
-            
-            <!-- KEY -->
-            <div class="vListKey">
-                <span class="vListCol vListColInfinitiv">infinitiv  </span>
-                <span class="vListCol">presens    </span>
-                <span class="vListCol">preteritum </span>
-                <span class="vListCol">perfekt    </span>
-            </div>
+      <!-- LIST -->
+      <div class="vListFilter">
+        <form class="vListFilterForm" data-js-filter-form>
+          <div class="vListFilterInputIcon icon icon-zoom" data-js-filter-icon></div>
+          <input type="search" 
+            class="vListFilterInput" 
+            placeholder="sök" 
+            autocomplete="off"
+            autocorrect="off" 
+            autocapitalize="off"
+            data-js-filter-input/>
+          <div class="vListFilterInputClear" data-js-filter-clear>
+            <div class="vListFilterInputClearButton icon icon-cross"></div>
+          </div>
+        </form>
+        <a href="javascript:void(0)" class="vListFilterFocusTarget" data-js-filter-focus></a>
+        <div class="vListFilterGroup">
+          <button class="vListFilterGroupOption vListFilterGroupOption1"
+            data-js-filter-group-option
+            data-group="1"><span>1</span></button>
+          <button class="vListFilterGroupOption vListFilterGroupOption2a"
+            data-js-filter-group-option
+            data-group="2a"><span>2a</span></button>
+          <button class="vListFilterGroupOption vListFilterGroupOption2b"
+            data-js-filter-group-option
+            data-group="2b"><span>2b</span></button>
+          <button class="vListFilterGroupOption vListFilterGroupOption3"
+            data-js-filter-group-option
+            data-group="3"><span>3</span></button>
+          <button class="vListFilterGroupOption vListFilterGroupOption4"
+            data-js-filter-group-option
+            data-group="4"><span>4</span></button>
+        </div>
+      </div>
+      
+      <!-- KEY -->
+      <div class="vListKey">
+        <span class="vListCol vListColInfinitiv">infinitiv  </span>
+        <span class="vListCol">presens  </span>
+        <span class="vListCol">preteritum </span>
+        <span class="vListCol">perfekt  </span>
+      </div>
 
-            <!-- LIST -->
+      <!-- LIST -->
 
-            <div class="vListList" data-js-verbs-list>
+      <div class="vListList" data-js-verbs-list>
 
-                <div class="vListListInner" data-js-target></div>
+        <div class="vListListInner" data-js-target></div>
 
-                <div class="vListListCount"></div>
+        <div class="vListListCount"></div>
 
-                <!-- empty!! -->
+        <!-- empty!! -->
 
-                <div class="vListListEmpty" data-js-empty>
-                    <span class="icon icon-warning"></span> 
-                    <div>Hittade ingenting!</div>
-                    <button class="vListListEmptyButton" data-js-empty-click>
-                        <span class="icon icon-cross"></span>
-                        Rensa
-                    </button>
-                </div>
-
-
-            </div>
+        <div class="vListListEmpty" data-js-empty>
+          <span class="icon icon-warning"></span> 
+          <div>Hittade ingenting!</div>
+          <button class="vListListEmptyButton" data-js-empty-click>
+            <span class="icon icon-cross"></span>
+            Rensa
+          </button>
         </div>
 
-        <!-- DETAIL SCENE -->
 
-        <div class="vScene vDetail" data-js-detail>
+      </div>
+    </div>
 
-            <h1 class="vDetailTitle">
-                <span class="vDetailTitleClose icon icon-cross" data-js-detail-close></span>
-                <span class="vDetailTitleGrp" data-js-detail-title-group>0</span>
-                <span class="vDetailTitleInner">
-                    <span class="vDetailTitleInfinitiv" data-js-detail-infinitiv></span>
-                    <span class="vDetailTitleTranslation">(<abbrev data-js-detail-translation></abbrev>)</span>
-                </span>
-            </h1>
+    <!-- DETAIL SCENE -->
+
+    <div class="vScene vDetail" data-js-detail>
+
+      <h1 class="vDetailTitle">
+        <span class="vDetailTitleClose icon icon-cross" data-js-detail-close></span>
+        <span class="vDetailTitleGrp vDetailFade" data-js-detail-title-group>0</span>
+        <span class="vDetailTitleInner vDetailFade">
+          <span class="vDetailTitleInfinitiv" data-js-detail-infinitiv></span>
+          <span class="vDetailTitleTranslation">(<abbrev data-js-detail-translation></abbrev>)</span>
+        </span>
+      </h1>
 
 
-            <div class="vDetailBody">
+      <div class="vDetailBody">
 
-                <section class="vDetailFokus">
-                    <h3 class="vDetailFokusTitle">Nu Fokus</h3>
-                    <dl class="vDetailFokusSub">
-                        <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Perfekt</dt>
-                        <dd class="vDetailFokusSubExample">
-                            Jag har <strong class="vDetailFokusLabel" data-js-detail-perfekt></strong> 
-                        </dd>
-                    </dl>
-                    <dl class="vDetailFokusSub">
-                        <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Presens</dt>
-                        <dd class="vDetailFokusSubExample">
-                            Jag <strong class="vDetailFokusLabel" data-js-detail-presens></strong> 
-                        </dd>
-                    </dl>
-                    <dl class="vDetailFokusSub">
-                        <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-forward"></span> Futurum 1</dt>
-                        <dd class="vDetailFokusSubExample">
-                            Jag ska <strong class="vDetailFokusLabel" data-js-detail-infinitiv></strong> 
-                        </dd>
-                    </dl>
-                </section>
+        <section class="vDetailFokus vDetailFade">
+          <h3 class="vDetailFokusTitle">Nu Fokus</h3>
+          <dl class="vDetailFokusSub">
+            <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Perfekt</dt>
+            <dd class="vDetailFokusSubExample">
+              <span class="icon icon-arrow-back vDetailFokusSubExampleIcon"></span>
+              <span class="vDetailFokusSubExampleSubject">Jag har</span>
+              <strong class="vDetailFokusLabel" data-js-detail-perfekt></strong> 
+            </dd>
+          </dl>
+          <dl class="vDetailFokusSub">
+            <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Presens</dt>
+            <dd class="vDetailFokusSubExample">
+              <span class="icon icon-arrow-here vDetailFokusSubExampleIcon"></span>
+              <span class="vDetailFokusSubExampleSubject">Jag</span> 
+              <strong class="vDetailFokusLabel" data-js-detail-presens></strong> 
+            </dd>
+          </dl>
+          <dl class="vDetailFokusSub">
+            <dt class="vDetailFokusSubTitle">Futurum 1</dt>
+            <dd class="vDetailFokusSubExample">
+              <span class="icon icon-arrow-forward vDetailFokusSubExampleIcon"></span>
+              <span class="vDetailFokusSubExampleSubject">Jag ska</span> 
+              <strong class="vDetailFokusLabel" data-js-detail-infinitiv></strong> 
+            </dd>
+          </dl>
+        </section>
 
-                <section class="vDetailFokus">
-                    <h3 class="vDetailFokusTitle">Då Fokus</h3>
-                    <dl class="vDetailFokusSub">
-                        <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Plukamperfekt</dt>
-                        <dd class="vDetailFokusSubExample">
-                            Jag hade <strong class="vDetailFokusLabel" data-js-detail-perfekt></strong> 
-                        </dd>
-                    </dl>
-                    <dl class="vDetailFokusSub">
-                        <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Preteritum</dt>
-                        <dd class="vDetailFokusSubExample">
-                            Jag <strong class="vDetailFokusLabel" data-js-detail-preterium></strong> 
-                        </dd>
-                    </dl>
-                    <dl class="vDetailFokusSub">
-                        <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-forward"></span> Futurum 2</dt>
-                        <dd class="vDetailFokusSubExample">
-                            Jag skulle <strong class="vDetailFokusLabel" data-js-detail-infinitiv></strong> 
-                        </dd>
-                    </dl>
-                </section>
+        <section class="vDetailFokus vDetailFade">
+          <h3 class="vDetailFokusTitle">Då Fokus</h3>
+          <dl class="vDetailFokusSub">
+            <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-back"></span> Plukamperfekt</dt>
+            <dd class="vDetailFokusSubExample">
+              <span class="icon icon-arrow-back vDetailFokusSubExampleIcon"></span> 
+              <span class="vDetailFokusSubExampleSubject">Jag hade</span>
+              <strong class="vDetailFokusLabel" data-js-detail-perfekt></strong> 
+            </dd>
+          </dl>
+          <dl class="vDetailFokusSub">
+            <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-here"></span> Preteritum</dt>
+            <dd class="vDetailFokusSubExample">
+              <span class="icon icon-arrow-here vDetailFokusSubExampleIcon"></span>
+              <span class="vDetailFokusSubExampleSubject">Jag</span>
+              <strong class="vDetailFokusLabel" data-js-detail-preterium></strong> 
+            </dd>
+          </dl>
+          <dl class="vDetailFokusSub">
+            <dt class="vDetailFokusSubTitle"><span class="icon icon-arrow-forward"></span> Futurum 2</dt>
+            <dd class="vDetailFokusSubExample">
+              <span class="icon icon-arrow-forward vDetailFokusSubExampleIcon"></span>
+              <span class="vDetailFokusSubExampleSubject">Jag skulle</span>
+              <strong class="vDetailFokusLabel" data-js-detail-infinitiv></strong> 
+            </dd>
+          </dl>
+        </section>
 
-            </div>
-
-        </div>
+      </div>
 
     </div>
+
+  </div>
 
 </div>
 <!--
 <div class="vFooter">
-    <strong>SfI Svenska verb verktyg 2015</strong>
-    <br />
-    Free to use and fork for non-commercial use. Code on <a href="https://github.com/pixelthing/svenska-sfi-verb">GitHub</a>. Made by <a href="http://craigmorey.co.uk">Craig Morey</a>. I can't promise any support or updates, but let me know if I can help, or if there's something wrong.
+  <strong>SfI Svenska verb verktyg 2015</strong>
+  <br />
+  Free to use and fork for non-commercial use. Code on <a href="https://github.com/pixelthing/svenska-sfi-verb">GitHub</a>. Made by <a href="http://craigmorey.co.uk">Craig Morey</a>. I can't promise any support or updates, but let me know if I can help, or if there's something wrong.
 </div>
 -->
 
