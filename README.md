@@ -15,7 +15,7 @@ It's going to be built pretty iteratively, so it's starting as little more than 
 
 ## View it live:
 
-http://pixelthing.github.io/svenska-sfi-verb/
+http://pixelthing.github.io/svenska-sfi-verb/dist/
 
 ## Background
 Scratching my own itch. I was fed up with photocopied A4, or apps that never quite fitted my use-case. But on top of that, I realised my brain hasn't been wired for school-structured learning for decades, so felt the best way to try and learn was to do what I enjoy doing, what I'm good at doing, which was understanding a problem and applying it to a UX problem. Hopefully some of the verb conjugations will rub off along the way, and if it doesn't help, at least I'll have a better revision tool.
